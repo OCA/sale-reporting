@@ -11,14 +11,14 @@
         return text.replace('\n', '<br />')
 
     %>
-    %for order in objects :
+    %for order in objects:
     <% setLang(order.partner_id.lang) %>
     <%
       quotation = order.state == 'draft'
     %>
     <div class="address">
         <table class="recipient">
-            <tr><td>${order.partner_id.title or ''}  ${order.partner_id.name }</td></tr>
+            <tr><td class="name">${order.partner_id.title or ''}  ${order.partner_id.name }</td></tr>
             <tr><td>${order.partner_order_id.street or ''}</td></tr>
             <tr><td>${order.partner_order_id.street2 or ''}</td></tr>
             <tr><td>${order.partner_order_id.zip or ''} ${order.partner_order_id.city or ''}</td></tr>
@@ -43,7 +43,7 @@
         </table>
 
         <table class="shipping">
-            <tr><td class="address_title">Shipping address:</td></tr>
+            <tr><td class="address_title">${_("Shipping address:")}</td></tr>
             <tr><td >${order.partner_id.title or ''}  ${order.partner_id.name }</td></tr>
             <tr><td>${order.partner_shipping_id.street or ''}</td></tr>
             <tr><td>${order.partner_shipping_id.street2 or ''}</td></tr>
@@ -57,7 +57,7 @@
         </table>
 
         <table class="invoice">
-            <tr><td class="address_title">Invoice address:</td></tr>
+            <tr><td class="address_title">${_("Invoice address:")}</td></tr>
             <tr><td>${order.partner_id.title or ''}  ${order.partner_id.name }</td></tr>
             <tr><td>${order.partner_invoice_id.street or ''}</td></tr>
             <tr><td>${order.partner_invoice_id.street2 or ''}</td></tr>
@@ -119,17 +119,17 @@
         <tfoot>
             <tr>
                 <td colspan="4" style="border-style:none"/>
-                <td style="border-top: 2px solid"><b>Net Total:</b></td>
+                <td style="border-top: 2px solid"><b>${_("Net Total:")}</b></td>
                 <td class="amount" style="border-top:2px solid;">${formatLang(order.amount_untaxed, get_digits(dp='Sale Price'))} ${order.pricelist_id.currency_id.symbol}</td>
             </tr>
             <tr>
                 <td colspan="4" style="border-style:none"/>
-                <td style="border-style:none"><b>Taxes:</b></td>
+                <td style="border-style:none"><b>${_("Taxes:")}</b></td>
                 <td class="amount">${formatLang(order.amount_tax, get_digits(dp='Sale Price'))} ${order.pricelist_id.currency_id.symbol}</td>
             </tr>
             <tr>
                 <td colspan="4" style="border-style:none"/>
-                <td style="border-top:2px solid"><b>Total:</b></td>
+                <td style="border-top:2px solid"><b>${_("Total:")}</b></td>
                 <td class="amount" style="border-top:2px solid;">${formatLang(order.amount_total, get_digits(dp='Sale Price'))} ${order.pricelist_id.currency_id.symbol}</td>
             </tr>
         </tfoot>
