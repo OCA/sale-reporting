@@ -71,7 +71,7 @@
         </table>
     </div>
 
-    <h1 style="clear:both;">${quotation and _('Quotation N°') or _('Order N°') } ${order.name}</h1>
+    <h1 style="clear:both;">${quotation and _(u'Quotation N°') or _(u'Order N°') } ${order.name}</h1>
 
     <table class="basic_table" width="100%">
         <tr>
