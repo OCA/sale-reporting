@@ -9,7 +9,7 @@
 			}
 			.list_sale_table td {
 			border-top : thin solid #EEEEEE;
-			text-align:left;
+			text-align:right;
 			font-size:12;
 			padding-right:3px
 			padding-left:3px
@@ -167,28 +167,35 @@
             %endif
         </table>
     </div>
+    <div>
+    	
+    %if order.note1_webkit :
+    	<p class="std_text"> ${order.note1_webkit | carriage_returns} </p>
+    %endif
+    </div>
 
     <h1 style="clear:both;">${quotation and _(u'Quotation N°') or _(u'Order N°') } ${order.name}</h1>
 
     <table class="basic_table" width="100%">
         <tr>
-            <td>${_("Your Reference")}</td>
             <td>${quotation and _("Date Ordered") or _("Quotation Date")}</td>
+            <td>${_("Your Reference")}</td>
             <td>${_("Salesman")}</td>
             <td>${_('Payment Term')}</td>
+            <td>${_('Incoterm')}</td>
         </tr>
         <tr>
-            <td>${order.client_order_ref or ''}</td>
             <td>${formatLang(order.date_order, date=True)}</td>
+            <td>${order.client_order_ref or ''}</td>
             <td>${order.user_id and order.user_id.name or ''}</td>
             <td>${order.payment_term and order.payment_term.name or ''}</td>
+            <td>${order.incoterm and order.incoterm.name or ''}</td>
         </tr>
     </table>
 
     <table class="list_sale_table" width="100%" style="margin-top: 20px;">
         <thead>
             <tr>
-                <th>${_("Position")}</th>
                 <th>${_("Description")}</th>
                 <th>${_("VAT")}</th>
                 <th class="amount">${_("Quantity")}</th>
@@ -200,8 +207,7 @@
         <tbody>
             %for line in order.order_line:
                 <tr class="line">
-                    <td>${ line.sequence }</td>
-                    <td>${ line.name }</td>
+                    <td style="text-align:left;">${ line.name }</td>
                     <td>${ ', '.join([tax.name or '' for tax in line.tax_id]) }</td>
                     <td class="amount">${ formatLang(line.product_uos and line.product_uos_qty or line.product_uom_qty) } ${ line.product_uos and line.product_uos.name or line.product_uom.name }</td>
                     <td class="amount">${formatLang(line.price_unit)}</td>
@@ -210,33 +216,37 @@
                 </tr>
                 %if line.notes:
                     <tr class="line">
-                        <td colspan="6" class="note" style="font-style:italic; font-size: 10; border-top: thin solid  #ffffff ; padding:20;">${line.notes  | carriage_returns}</td>
+                        <td colspan="6" class="note" style="font-style:italic; font-size: 10; border-top: thin solid  #ffffff ; text-align:left; padding:20;">${line.notes  | carriage_returns}</td>
                     </tr>
                 %endif
             %endfor
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="5" style="border-style:none"/>
+                <td colspan="4" style="border-style:none"/>
                 <td style="border-style:none"><b>${_("Net Total:")}</b></td>
                 <td class="amount" style="border-style:none">${formatLang(order.amount_untaxed, get_digits(dp='Sale Price'))} ${order.pricelist_id.currency_id.symbol}</td>
             </tr>
             <tr>
-                <td colspan="5" style="border-style:none"/>
+                <td colspan="4" style="border-style:none"/>
                 <td style="border-style:none"><b>${_("Taxes:")}</b></td>
                 <td class="amount"style="border-style:none">${formatLang(order.amount_tax, get_digits(dp='Sale Price'))} ${order.pricelist_id.currency_id.symbol}</td>
             </tr>
             <tr>
-                <td colspan="5" style="border-style:none"/>
+                <td colspan="4" style="border-style:none"/>
                 <td style="border-style:none"><b>${_("Total:")}</b></td>
                 <td class="amount" style="border-style:none">${formatLang(order.amount_total, get_digits(dp='Sale Price'))} ${order.pricelist_id.currency_id.symbol}</td>
             </tr>
         </tfoot>
     </table>
-
-    <p style="margin-top: 40px;">${order.note or '' | carriage_returns}</p>
-
     <p style="margin-top: 20px;">${order.payment_term and order.payment_term.note or '' | carriage_returns}</p>
+
+    %if order.note :
+    	<p class="std_text">${order.note | carriage_returns}</p>
+    %endif
+    %if order.note2_webkit :
+    	<p class="std_text">${order.note2_webkit | carriage_returns}</p>
+    %endif
 
     <p style="page-break-after: always"/>
     <br/>
