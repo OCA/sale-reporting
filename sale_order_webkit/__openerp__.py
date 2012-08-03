@@ -29,7 +29,7 @@
 
 {
     'name': 'Sales Order Report using Webkit Library',
-    'version': '1.0.1',
+    'version': '1.0',
     'category': 'Reports/Webkit',
     'description': """
 Replaces the legacy rml Quotation / Sales Order report by a brand new webkit report.
