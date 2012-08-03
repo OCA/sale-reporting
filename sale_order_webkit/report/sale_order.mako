@@ -115,7 +115,7 @@
     %>
     <div class="address">
         <table class="recipient">
-            <tr><td class="name">${order.partner_id.title or ''}  ${order.partner_id.name }</td></tr>
+            <tr><td class="name">${order.partner_id.title and order.partner_id.title.name or ''}  ${order.partner_id.name }</td></tr>
             <tr><td>${order.partner_order_id.street or ''}</td></tr>
             <tr><td>${order.partner_order_id.street2 or ''}</td></tr>
             <tr><td>${order.partner_order_id.zip or ''} ${order.partner_order_id.city or ''}</td></tr>
@@ -141,7 +141,7 @@
 
         <table class="shipping">
             <tr><td class="address_title">${_("Shipping address:")}</td></tr>
-            <tr><td >${order.partner_id.title or ''}  ${order.partner_id.name }</td></tr>
+            <tr><td >${order.partner_id.title and order.partner_id.title.name or ''}  ${order.partner_id.name }</td></tr>
             <tr><td>${order.partner_shipping_id.street or ''}</td></tr>
             <tr><td>${order.partner_shipping_id.street2 or ''}</td></tr>
             <tr><td>${order.partner_shipping_id.zip or ''} ${order.partner_shipping_id.city or ''}</td></tr>
@@ -155,7 +155,7 @@
 
         <table class="invoice">
             <tr><td class="address_title">${_("Invoice address:")}</td></tr>
-            <tr><td>${order.partner_id.title or ''}  ${order.partner_id.name }</td></tr>
+            <tr><td>${order.partner_id.title and order.partner_id.title.name or ''}  ${order.partner_id.name }</td></tr>
             <tr><td>${order.partner_invoice_id.street or ''}</td></tr>
             <tr><td>${order.partner_invoice_id.street2 or ''}</td></tr>
             <tr><td>${order.partner_invoice_id.zip or ''} ${order.partner_invoice_id.city or ''}</td></tr>
