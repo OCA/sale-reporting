@@ -88,6 +88,11 @@
 				border-collapse: collapse;
 			}
 
+            tfoot.totals tr:first-child td{
+                padding-top: 15px;
+            }
+
+
 
 			.right_table {
 			right: 4cm;
@@ -115,7 +120,7 @@
     %>
     <div class="address">
         <table class="recipient">
-            <tr><td class="name">${order.partner_id.title and order.partner_id.title.name or ''}  ${order.partner_id.name }</td></tr>
+            <tr><td class="name">${order.partner_id.title or ''}  ${order.partner_id.name }</td></tr>
             <tr><td>${order.partner_order_id.street or ''}</td></tr>
             <tr><td>${order.partner_order_id.street2 or ''}</td></tr>
             <tr><td>${order.partner_order_id.zip or ''} ${order.partner_order_id.city or ''}</td></tr>
@@ -141,7 +146,7 @@
 
         <table class="shipping">
             <tr><td class="address_title">${_("Shipping address:")}</td></tr>
-            <tr><td >${order.partner_id.title and order.partner_id.title.name or ''}  ${order.partner_id.name }</td></tr>
+            <tr><td >${order.partner_id.title or ''}  ${order.partner_id.name }</td></tr>
             <tr><td>${order.partner_shipping_id.street or ''}</td></tr>
             <tr><td>${order.partner_shipping_id.street2 or ''}</td></tr>
             <tr><td>${order.partner_shipping_id.zip or ''} ${order.partner_shipping_id.city or ''}</td></tr>
@@ -155,7 +160,7 @@
 
         <table class="invoice">
             <tr><td class="address_title">${_("Invoice address:")}</td></tr>
-            <tr><td>${order.partner_id.title and order.partner_id.title.name or ''}  ${order.partner_id.name }</td></tr>
+            <tr><td>${order.partner_id.title or ''}  ${order.partner_id.name }</td></tr>
             <tr><td>${order.partner_invoice_id.street or ''}</td></tr>
             <tr><td>${order.partner_invoice_id.street2 or ''}</td></tr>
             <tr><td>${order.partner_invoice_id.zip or ''} ${order.partner_invoice_id.city or ''}</td></tr>
@@ -178,11 +183,11 @@
 
     <table class="basic_table" width="100%">
         <tr>
-            <td>${quotation and _("Date Ordered") or _("Quotation Date")}</td>
-            <td>${_("Your Reference")}</td>
-            <td>${_("Salesman")}</td>
-            <td>${_('Payment Term')}</td>
-            <td>${_('Incoterm')}</td>
+            <td style="font-weight:bold;">${quotation and _("Date Ordered") or _("Quotation Date")}</td>
+            <td style="font-weight:bold;">${_("Your Reference")}</td>
+            <td style="font-weight:bold;">${_("Salesman")}</td>
+            <td style="font-weight:bold;">${_('Payment Term')}</td>
+            <td style="font-weight:bold;">${_('Incoterm')}</td>
         </tr>
         <tr>
             <td>${formatLang(order.date_order, date=True)}</td>
@@ -197,9 +202,10 @@
         <thead>
             <tr>
                 <th>${_("Description")}</th>
-                <th>${_("VAT")}</th>
                 <th class="amount">${_("Quantity")}</th>
+                <th class="amount">${_("UoM")}</th>
                 <th class="amount">${_("Unit Price")}</th>
+                <th>${_("VAT")}</th>
                 <th class="amount">${_("Disc.(%)")}</th>
                 <th class="amount">${_("Price")}</th>
             </tr>
@@ -207,33 +213,34 @@
         <tbody>
             %for line in order.order_line:
                 <tr class="line">
-                    <td style="text-align:left;">${ line.name }</td>
-                    <td>${ ', '.join([tax.name or '' for tax in line.tax_id]) }</td>
-                    <td class="amount">${ formatLang(line.product_uos and line.product_uos_qty or line.product_uom_qty) } ${ line.product_uos and line.product_uos.name or line.product_uom.name }</td>
-                    <td class="amount">${formatLang(line.price_unit)}</td>
-                    <td class="amount">${formatLang(line.discount, digits=get_digits(dp='Sale Price'))}</td>
-                    <td class="amount">${formatLang(line.price_subtotal, digits=get_digits(dp='Sale Price'))}&nbsp;${order.pricelist_id.currency_id.symbol}</td>
+                    <td style="text-align:left; " >${ line.name }</td>
+                    <td class="amount" width="7.5%">${ formatLang(line.product_uos and line.product_uos_qty or line.product_uom_qty) }</td>
+                    <td style="text-align:center;">${ line.product_uos and line.product_uos.name or line.product_uom.name }</td>
+                    <td class="amount" width="8%">${formatLang(line.price_unit)}</td>
+                    <td style="font-style:italic; font-size: 10;">${ ', '.join([tax.name or '' for tax in line.tax_id]) }</td>
+                    <td class="amount" width="10%">${line.discount and formatLang(line.discount, digits=get_digits(dp='Sale Price')) or ''} ${line.discount and '%' or ''}</td>
+                    <td class="amount" width="13%">${formatLang(line.price_subtotal, digits=get_digits(dp='Sale Price'))}&nbsp;${order.pricelist_id.currency_id.symbol}</td>
                 </tr>
                 %if line.notes:
                     <tr class="line">
-                        <td colspan="6" class="note" style="font-style:italic; font-size: 10; border-top: thin solid  #ffffff ; text-align:left; padding:20;">${line.notes  | carriage_returns}</td>
+                        <td colspan="6" class="note" style="font-style:italic; font-size: 10; border-top: thin solid  #ffffff ; text-align:left">${line.notes  | carriage_returns}</td>
                     </tr>
                 %endif
             %endfor
         </tbody>
-        <tfoot>
+        <tfoot class="totals">
             <tr>
-                <td colspan="4" style="border-style:none"/>
+                <td colspan="5" style="border-style:none"/>
                 <td style="border-style:none"><b>${_("Net Total:")}</b></td>
                 <td class="amount" style="border-style:none">${formatLang(order.amount_untaxed, get_digits(dp='Sale Price'))} ${order.pricelist_id.currency_id.symbol}</td>
             </tr>
             <tr>
-                <td colspan="4" style="border-style:none"/>
-                <td style="border-style:none"><b>${_("Taxes:")}</b></td>
-                <td class="amount"style="border-style:none">${formatLang(order.amount_tax, get_digits(dp='Sale Price'))} ${order.pricelist_id.currency_id.symbol}</td>
+                <td colspan="5" style="border-style:none"/>
+                <td style="border-style:none" ><b>${_("Taxes:")}</b></td>
+                <td class="amount"style="border-style:none" >${formatLang(order.amount_tax, get_digits(dp='Sale Price'))} ${order.pricelist_id.currency_id.symbol}</td>
             </tr>
             <tr>
-                <td colspan="4" style="border-style:none"/>
+                <td colspan="5" style="border-style:none"/>
                 <td style="border-style:none"><b>${_("Total:")}</b></td>
                 <td class="amount" style="border-style:none">${formatLang(order.amount_total, get_digits(dp='Sale Price'))} ${order.pricelist_id.currency_id.symbol}</td>
             </tr>
