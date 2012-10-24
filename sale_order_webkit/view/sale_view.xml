@@ -56,7 +56,7 @@
                     <separator string="Header and footer" colspan="6"/>
 					<newline />
                     <field name="text_condition1_webkit" domain="[('type','=','header')]"
-                        on_change="set_comment(text_condition1_webkit)" colspan="2"/>
+                        on_change="set_comment_webkit(text_condition1_webkit)" colspan="2"/>
 
                     <field name="text_condition2_webkit" domain="[('type','=','footer')]"
                         on_change="set_note_webkit(text_condition2_webkit)" colspan="2"/>
