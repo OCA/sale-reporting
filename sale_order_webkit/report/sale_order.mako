@@ -2,106 +2,113 @@
 <head>
     <style type="text/css">
         ${css}
-			.list_sale_table {
-			border:thin solid #E3E4EA;
-			text-align:center;
-			border-collapse: collapse;
-			}
-			.list_sale_table td {
-			border-top : thin solid #EEEEEE;
-			text-align:right;
-			font-size:12;
-			padding-right:3px
-			padding-left:3px
-			padding-top:3px
-			padding-bottom:3px
-			}
 
-			.list_bank_table {
-			text-align:center;
-			border-collapse: collapse;
-			}
-			.list_bank_table td {
-			text-align:left;
-			font-size:12;
-			padding-right:3px
-			padding-left:3px
-			padding-top:3px
-			padding-bottom:3px
-			}
+.list_sale_table {
+    border:thin solid #E3E4EA;
+    text-align:center;
+    border-collapse: collapse;
+}
 
-			.list_bank_table th {
-			background-color: #EEEEEE;
-			text-align:left;
-			font-size:12;
-			font-weight:bold;
-			padding-right:3px
-			padding-left:3px
-			}
-			
-			.list_sale_table th {
-			background-color: #EEEEEE;
-			border: thin solid #000000;
-			text-align:center;
-			font-size:12;
-			font-weight:bold;
-			padding-right:3px
-			padding-left:3px
-			}
-			
-			.list_table thead {
-			    display:table-header-group;
-			}
+.list_sale_table td {
+    border-top:thin solid #EEEEEE;
+    text-align:right;
+    font-size:12;
+    padding-right:3px;
+    padding-left:3px;
+    padding-top:3px;
+    padding-bottom:3px;
+}
 
+.list_bank_table {
+    text-align:center;
+    border-collapse: collapse;
+}
 
-			.list_tax_table {
-			}
-			.list_tax_table td {
-			text-align:left;
-			font-size:12;
-			}
-			
-			.list_tax_table th {
-			}
+.list_bank_table td {
+    text-align:left;
+    font-size:12;
+    padding-right:3px;
+    padding-left:3px;
+    padding-top:3px;
+    padding-bottom:3px;
+}
+
+.list_bank_table th {
+    background-color: #EEEEEE;
+    text-align:left;
+    font-size:12;
+    font-weight:bold;
+    padding-right:3px
+    padding-left:3px
+}
+
+.list_sale_table th {
+    background-color: #EEEEEE;
+    border: thin solid #000000;
+    text-align:center;
+    font-size:12;
+    font-weight:bold;
+    padding-right:3px;
+    padding-left:3px;
+}
+
+.list_table thead {
+    display:table-header-group;
+}
 
 
-			.list_table thead {
-			    display:table-header-group;
-			}
+.list_tax_table {
+}
+.list_tax_table td {
+    text-align:left;
+    font-size:12;
+}
 
 
-			.list_total_table {
-				border-collapse: collapse;
-			}
-			.list_total_table td {
-			text-align:right;
-			font-size:12;
-			}
-
-			.no_bloc {
-				border-top: thin solid  #ffffff ;
-			}
-
-			
-			.list_total_table th {
-				background-color: #F7F7F7;
-				border-collapse: collapse;
-			}
-
-            tfoot.totals tr:first-child td{
-                padding-top: 15px;
-            }
+.list_table thead {
+    display:table-header-group;
+}
 
 
+.list_total_table {
+    border-collapse: collapse;
+}
 
-			.right_table {
-			right: 4cm;
-			width:"100%";
-			}
-			
-			.std_text {
-				font-size:12;
-				}
+.list_total_table td {
+    text-align:right;
+    font-size:12;
+}
+
+.no_bloc {
+    border-top: thin solid  #ffffff ;
+}
+
+
+.list_total_table th {
+    background-color: #F7F7F7;
+    border-collapse: collapse;
+}
+
+tfoot.totals tr:first-child td{
+    padding-top: 15px;
+}
+
+.right_table {
+    right: 4cm;
+    width:"100%";
+}
+
+.std_text {
+    font-size:12;
+}
+
+.note {
+    text-align:left;
+    font-size:10;
+    border-top:thin solid  #ffffff;
+    border-left:thin solid  #ffffff;
+    border-right:thin solid  #ffffff;
+}
 
 
     </style>
@@ -173,9 +180,9 @@
         </table>
     </div>
     <div>
-    	
-    %if order.note1_webkit :
-    	<p class="std_text"> ${order.note1_webkit | carriage_returns} </p>
+
+    %if order.note1:
+        <p class="std_text"> ${order.note1| n} </p>
     %endif
     </div>
 
@@ -221,9 +228,9 @@
                     <td class="amount" width="10%">${line.discount and formatLang(line.discount, digits=get_digits(dp='Sale Price')) or ''} ${line.discount and '%' or ''}</td>
                     <td class="amount" width="13%">${formatLang(line.price_subtotal, digits=get_digits(dp='Sale Price'))}&nbsp;${order.pricelist_id.currency_id.symbol}</td>
                 </tr>
-                %if line:
+                %if line.formatted_note:
                     <tr class="line">
-                        <td colspan="6" class="note" style="font-style:italic; font-size: 10; border-top: thin solid  #ffffff ; text-align:left">${''  | carriage_returns}</td>
+                        <td colspan="7" class="note" style="text-align:left;">${line.formatted_note| n}</td>
                     </tr>
                 %endif
             %endfor
@@ -249,10 +256,10 @@
     <p style="margin-top: 20px;">${order.payment_term and order.payment_term.note or '' | carriage_returns}</p>
 
     %if order.note :
-    	<p class="std_text">${order.note | carriage_returns}</p>
+        <p class="std_text">${order.note | carriage_returns}</p>
     %endif
-    %if order.note2_webkit :
-    	<p class="std_text">${order.note2_webkit | carriage_returns}</p>
+    %if order.note2:
+        <p class="std_text">${order.note2 | n}</p>
     %endif
 
     <p style="page-break-after: always"/>

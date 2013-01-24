@@ -31,7 +31,7 @@ class SaleConditionText(orm.Model):
         'type': fields.selection([('header', 'Top condition'),
                                   ('footer', 'Bottom condition')],
                                  'type', required=True),
-        'text': fields.text('Condition', translate=True, required=True)}
+        'text': fields.html('Condition', translate=True, required=True)}
 
 
 class SaleOrder(orm.Model):
@@ -42,8 +42,8 @@ class SaleOrder(orm.Model):
 
     _columns = {'text_condition1': fields.many2one('sale.condition_text', 'Header'),
                 'text_condition2': fields.many2one('sale.condition_text', 'Footer'),
-                'note1': fields.text('Header'),
-                'note2': fields.text('Footer')}
+                'note1': fields.html('Header'),
+                'note2': fields.html('Footer')}
 
     def _set_condition(self, cursor, uid, inv_id, commentid, key):
         """Set the text of the notes in invoices"""
