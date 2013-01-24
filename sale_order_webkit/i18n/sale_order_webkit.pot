@@ -1,0 +1,98 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* sale_order_webkit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.0.3\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2011-12-12 11:13+0000\n"
+"PO-Revision-Date: 2011-12-12 11:13+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_order_webkit
+#: report:addons/sale_order_webkit/report/sale_order.mako:78
+msgid "Your Reference"
+msgstr ""
+
+#. module: sale_order_webkit
+#: report:addons/sale_order_webkit/report/sale_order.mako:35
+msgid "Fax"
+msgstr ""
+
+#. module: sale_order_webkit
+#: report:addons/sale_order_webkit/report/sale_order.mako:32
+msgid "Tel"
+msgstr ""
+
+#. module: sale_order_webkit
+#: report:addons/sale_order_webkit/report/sale_order.mako:94
+msgid "Description"
+msgstr ""
+
+#. module: sale_order_webkit
+#: report:addons/sale_order_webkit/report/sale_order.mako:79
+msgid "Quotation Date"
+msgstr ""
+
+#. module: sale_order_webkit
+#: report:addons/sale_order_webkit/report/sale_order.mako:99
+msgid "Price"
+msgstr ""
+
+#. module: sale_order_webkit
+#: report:addons/sale_order_webkit/report/sale_order.mako:79
+msgid "Date Ordered"
+msgstr ""
+
+#. module: sale_order_webkit
+#: report:addons/sale_order_webkit/report/sale_order.mako:81
+msgid "Payment Term"
+msgstr ""
+
+#. module: sale_order_webkit
+#: report:addons/sale_order_webkit/report/sale_order.mako:38
+msgid "E-mail"
+msgstr ""
+
+#. module: sale_order_webkit
+#: report:addons/sale_order_webkit/report/sale_order.mako:74
+msgid "Quotation N°"
+msgstr ""
+
+#. module: sale_order_webkit
+#: report:addons/sale_order_webkit/report/sale_order.mako:97
+msgid "Unit Price"
+msgstr ""
+
+#. module: sale_order_webkit
+#: report:addons/sale_order_webkit/report/sale_order.mako:74
+msgid "Order N°"
+msgstr ""
+
+#. module: sale_order_webkit
+#: report:addons/sale_order_webkit/report/sale_order.mako:98
+msgid "Disc.(%)"
+msgstr ""
+
+#. module: sale_order_webkit
+#: report:addons/sale_order_webkit/report/sale_order.mako:80
+msgid "Salesman"
+msgstr ""
+
+#. module: sale_order_webkit
+#: report:addons/sale_order_webkit/report/sale_order.mako:41
+#: report:addons/sale_order_webkit/report/sale_order.mako:95
+msgid "VAT"
+msgstr ""
+
+#. module: sale_order_webkit
+#: report:addons/sale_order_webkit/report/sale_order.mako:96
+msgid "Quantity"
+msgstr ""
+
