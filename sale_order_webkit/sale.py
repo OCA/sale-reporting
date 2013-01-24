@@ -62,3 +62,11 @@ class SaleOrder(orm.Model):
 
     def set_footer(self, cursor, uid, inv_id, commentid):
         return self._set_condition(cursor, uid, inv_id, commentid, 'note2')
+
+
+class SaleOrderLine(orm.Model):
+    """ADD HTML note to sale order lines"""
+
+    _inherit = "sale.order.line"
+
+    _columns = {'formatted_note': fields.html('Formatted Note')}
