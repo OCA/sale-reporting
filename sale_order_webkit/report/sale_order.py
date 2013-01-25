@@ -33,10 +33,7 @@ class SaleOrderReport(report_sxw.rml_parse):
     def _get_company_vat(self):
         res_users_obj = pooler.get_pool(self.cr.dbname).get('res.users')
         company_vat = res_users_obj.browse(self.cr, self.uid, self.uid).company_id.partner_id.vat
-        if company_vat:
-            return company_vat
-        else:
-            return False
+        return company_vat
 
 report_sxw.report_sxw('report.sale.order.webkit',
                       'sale.order',
