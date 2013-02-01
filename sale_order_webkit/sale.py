@@ -40,8 +40,10 @@ class SaleOrder(orm.Model):
     _inherit = "sale.order"
     _description = 'Sale Order'
 
-    _columns = {'text_condition1': fields.many2one('sale.condition_text', 'Header'),
-                'text_condition2': fields.many2one('sale.condition_text', 'Footer'),
+    _columns = {'text_condition1': fields.many2one('sale.condition_text', 'Header',
+                                                   domain=[('type', '=', 'header')]),
+                'text_condition2': fields.many2one('sale.condition_text', 'Footer',
+                                                   domain=[('type', '=', 'footer')]),
                 'note1': fields.html('Header'),
                 'note2': fields.html('Footer')}
 
