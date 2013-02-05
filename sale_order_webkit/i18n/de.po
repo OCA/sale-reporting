@@ -142,7 +142,7 @@ msgstr "Verfauf Bemerkung"
 #. module: sale_order_webkit
 #: field:sale.condition_text,text:0
 msgid "Condition"
-msgstr "Bemerkung"
+msgstr "Konditionen"
 
 #. module: sale_order_webkit
 #: field:sale.condition_text,type:0
@@ -157,7 +157,7 @@ msgstr "Verkauf Bemerkung"
 #. module: sale_order_webkit
 #: model:ir.model,name:sale_order_webkit.model_sale_order
 msgid "Sales Order"
-msgstr "Bestelldatum"
+msgstr "Bestellung"
 
 #. module: sale_order_webkit
 #: view:sale.order:0
@@ -167,7 +167,7 @@ msgstr "Konditionen"
 #. module: sale_order_webkit
 #: model:ir.model,name:sale_order_webkit.model_sale_order_line
 msgid "Sales Order Line"
-msgstr "Bestelldatum"
+msgstr "Bestellung"
 
 #. module: sale_order_webkit
 #: field:sale.order.line,formatted_note:0
