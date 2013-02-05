@@ -101,7 +101,7 @@ msgstr "Quantité"
 #. module: sale_order_webkit
 #: field:sale.condition_text,name:0
 msgid "Condition summary"
-msgstr "Commentaire imprimable"
+msgstr "Texte de commentaire imprimable"
 
 #. module: sale_order_webkit
 #: selection:sale.condition_text,type:0
@@ -137,7 +137,7 @@ msgstr "Commentaire de début de page"
 #. module: sale_order_webkit
 #: model:ir.model,name:sale_order_webkit.model_sale_condition_text
 msgid "sale conditions"
-msgstr "sale conditions"
+msgstr "Commentaire imprimable"
 
 #. module: sale_order_webkit
 #: field:sale.condition_text,text:0
@@ -152,12 +152,12 @@ msgstr "type"
 #. module: sale_order_webkit
 #: view:sale.condition_text:0
 msgid "sale condition text"
-msgstr "sale condition text"
+msgstr "Commentaire imprimable"
 
 #. module: sale_order_webkit
 #: model:ir.model,name:sale_order_webkit.model_sale_order
 msgid "Sales Order"
-msgstr "Date de commande"
+msgstr "Bon de commande"
 
 #. module: sale_order_webkit
 #: view:sale.order:0
@@ -167,9 +167,9 @@ msgstr "Conditions"
 #. module: sale_order_webkit
 #: model:ir.model,name:sale_order_webkit.model_sale_order_line
 msgid "Sales Order Line"
-msgstr "Date de commande"
+msgstr "Ligne de commande"
 
 #. module: sale_order_webkit
 #: field:sale.order.line,formatted_note:0
 msgid "Formatted Note"
-msgstr "Formatted Note"
+msgstr "Note formatée"
