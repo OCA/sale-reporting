@@ -156,7 +156,6 @@ msgstr "Verkauf Bemerkung"
 
 #. module: sale_order_webkit
 #: model:ir.model,name:sale_order_webkit.model_sale_order
-#, fuzzy
 msgid "Sales Order"
 msgstr "Bestelldatum"
 
@@ -167,7 +166,6 @@ msgstr "Konditionen"
 
 #. module: sale_order_webkit
 #: model:ir.model,name:sale_order_webkit.model_sale_order_line
-#, fuzzy
 msgid "Sales Order Line"
 msgstr "Bestelldatum"
 
