@@ -156,7 +156,6 @@ msgstr "sale condition text"
 
 #. module: sale_order_webkit
 #: model:ir.model,name:sale_order_webkit.model_sale_order
-#, fuzzy
 msgid "Sales Order"
 msgstr "Date de commande"
 
@@ -167,7 +166,6 @@ msgstr "Conditions"
 
 #. module: sale_order_webkit
 #: model:ir.model,name:sale_order_webkit.model_sale_order_line
-#, fuzzy
 msgid "Sales Order Line"
 msgstr "Date de commande"
 
