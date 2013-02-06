@@ -1,0 +1,95 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* sale_order_webkit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-04 10:57+0000\n"
+"PO-Revision-Date: 2013-02-04 10:57+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_order_webkit
+#: field:sale.condition_text,name:0
+msgid "Condition summary"
+msgstr "Condition summary"
+
+#. module: sale_order_webkit
+#: selection:sale.condition_text,type:0
+msgid "Top condition"
+msgstr "Top condition"
+
+#. module: sale_order_webkit
+#: view:sale.condition_text:0
+msgid "Sale condition text"
+msgstr "Sale condition text"
+
+#. module: sale_order_webkit
+#: field:sale.order,note2:0
+#: field:sale.order,text_condition2:0
+msgid "Footer"
+msgstr "Footer"
+
+#. module: sale_order_webkit
+#: model:ir.actions.act_window,name:sale_order_webkit.action_sale_condition_form_webkit
+#: model:ir.actions.act_window,name:sale_order_webkit.action_sale_condition_webkit
+msgid "sale.condition_text"
+msgstr "sale.condition_text"
+
+#. module: sale_order_webkit
+#: selection:sale.condition_text,type:0
+msgid "Bottom condition"
+msgstr "Bottom condition"
+
+#. module: sale_order_webkit
+#: field:sale.order,note1:0
+#: field:sale.order,text_condition1:0
+msgid "Header"
+msgstr "Header"
+
+#. module: sale_order_webkit
+#: model:ir.model,name:sale_order_webkit.model_sale_condition_text
+msgid "sale conditions"
+msgstr "sale conditions"
+
+#. module: sale_order_webkit
+#: field:sale.condition_text,text:0
+msgid "Condition"
+msgstr "Condition"
+
+#. module: sale_order_webkit
+#: field:sale.condition_text,type:0
+msgid "type"
+msgstr "type"
+
+#. module: sale_order_webkit
+#: view:sale.condition_text:0
+msgid "sale condition text"
+msgstr "sale condition text"
+
+#. module: sale_order_webkit
+#: model:ir.model,name:sale_order_webkit.model_sale_order
+msgid "Sales Order"
+msgstr "Sales Order"
+
+#. module: sale_order_webkit
+#: view:sale.order:0
+msgid "Conditions"
+msgstr "Conditions"
+
+#. module: sale_order_webkit
+#: model:ir.model,name:sale_order_webkit.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Sales Order Line"
+
+#. module: sale_order_webkit
+#: field:sale.order.line,formatted_note:0
+msgid "Formatted Note"
+msgstr "Formatted Note"
+
