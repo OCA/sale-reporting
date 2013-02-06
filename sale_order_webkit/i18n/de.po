@@ -132,7 +132,7 @@ msgstr "Fusszeilen-Bemerkung"
 #. module: sale_order_webkit
 #: field:sale.order,note1:0 field:sale.order,text_condition1:0
 msgid "Header"
-msgstr "Commentaire de début de page"
+msgstr "Kopfzeile"
 
 #. module: sale_order_webkit
 #: model:ir.model,name:sale_order_webkit.model_sale_condition_text
