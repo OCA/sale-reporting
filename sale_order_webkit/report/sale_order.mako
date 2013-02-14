@@ -127,56 +127,47 @@ tfoot.totals tr:first-child td{
     %>
     <div class="address">
         <table class="recipient">
-            <tr><td class="name">${order.partner_id.title or ''}  ${order.partner_id.name }</td></tr>
-            <tr><td>${order.partner_id.street or ''}</td></tr>
-            <tr><td>${order.partner_id.street2 or ''}</td></tr>
-            <tr><td>${order.partner_id.zip or ''} ${order.partner_id.city or ''}</td></tr>
-            %if order.partner_id.state_id:
-            <tr><td>${order.partner_id.state_id.name or ''} </td></tr>
+            %if order.partner_id.parent_id:
+            <tr><td class="name">${order.partner_id.parent_id.name or ''}</td></tr>
+            <tr><td>${order.partner_id.title and order.partner_id.title.name or ''} ${order.partner_id.name }</td></tr>
+            %else:
+            <tr><td class="name">${order.partner_id.title and order.partner_id.title.name or ''} ${order.partner_id.name }</td></tr>
             %endif
-            %if order.partner_id.country_id:
-            <tr><td>${order.partner_id.country_id.name or ''} </td></tr>
-            %endif
-            %if order.partner_id.phone:
-            <tr><td>${_("Tel")}: ${order.partner_id.phone}</td></tr>
-            %endif
-            %if order.partner_id.fax:
-            <tr><td>${_("Fax")}: ${order.partner_id.fax}</td></tr>
-            %endif
-            %if order.partner_id.email:
-            <tr><td>${_("E-mail")}: ${order.partner_id.email}</td></tr>
-            %endif
-            %if order.partner_id.vat:
-            <tr><td>${_("VAT")}: ${order.partner_id.vat}</td></tr>
-            %endif
+            %for part in order.partner_id.contact_address.split("\n")[1:]:
+                %if part:
+                <tr><td>${part}</td></tr>
+                %endif
+            %endfor
         </table>
 
         <table class="shipping">
             <tr><td class="address_title">${_("Shipping address:")}</td></tr>
-            <tr><td >${order.partner_id.title or ''}  ${order.partner_id.name }</td></tr>
-            <tr><td>${order.partner_shipping_id.street or ''}</td></tr>
-            <tr><td>${order.partner_shipping_id.street2 or ''}</td></tr>
-            <tr><td>${order.partner_shipping_id.zip or ''} ${order.partner_shipping_id.city or ''}</td></tr>
-            %if order.partner_shipping_id.state_id:
-            <tr><td>${order.partner_shipping_id.state_id.name or ''} </td></tr>
+            %if order.partner_id.parent_id:
+            <tr><td>${order.partner_shipping_id.parent_id.name or ''}</td></tr>
+            <tr><td>${order.partner_shipping_id.title and order.partner_shipping_id.title.name or ''} ${order.partner_shipping_id.name }</td></tr>
+            %else:
+            <tr><td>${order.partner_shipping_id.title and order.partner_shipping_id.title.name or ''} ${order.partner_shipping_id.name }</td></tr>
             %endif
-            %if order.partner_shipping_id.country_id:
-            <tr><td>${order.partner_shipping_id.country_id.name or ''} </td></tr>
-            %endif
+            %for part in order.partner_shipping_id.contact_address.split("\n")[1:]:
+                %if part:
+                <tr><td>${part}</td></tr>
+                %endif
+            %endfor
         </table>
 
         <table class="invoice">
             <tr><td class="address_title">${_("Invoice address:")}</td></tr>
-            <tr><td>${order.partner_id.title or ''}  ${order.partner_id.name }</td></tr>
-            <tr><td>${order.partner_invoice_id.street or ''}</td></tr>
-            <tr><td>${order.partner_invoice_id.street2 or ''}</td></tr>
-            <tr><td>${order.partner_invoice_id.zip or ''} ${order.partner_invoice_id.city or ''}</td></tr>
-            %if order.partner_invoice_id.state_id:
-            <tr><td>${order.partner_invoice_id.state_id.name or ''} </td></tr>
+            %if order.partner_invoice_id.parent_id:
+            <tr><td>${order.partner_invoice_id.parent_id.name or ''}</td></tr>
+            <tr><td>${order.partner_invoice_id.title and order.partner_invoice_id.title.name or ''} ${order.partner_invoice_id.name }</td></tr>
+            %else:
+            <tr><td>${order.partner_invoice_id.title and order.partner_invoice_id.title.name or ''} ${order.partner_invoice_id.name }</td></tr>
             %endif
-            %if order.partner_invoice_id.country_id:
-            <tr><td>${order.partner_invoice_id.country_id.name or ''} </td></tr>
-            %endif
+            %for part in order.partner_invoice_id.contact_address.split("\n")[1:]:
+                %if part:
+                <tr><td>${part}</td></tr>
+                %endif
+            %endfor
         </table>
     </div>
     <div>
