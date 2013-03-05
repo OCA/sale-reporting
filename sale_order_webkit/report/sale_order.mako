@@ -244,7 +244,6 @@ tfoot.totals tr:first-child td{
             </tr>
         </tfoot>
     </table>
-    <p style="margin-top: 20px;">${order.payment_term and order.payment_term.note or '' | carriage_returns}</p>
 
     %if order.note :
         <p class="std_text">${order.note | carriage_returns}</p>
