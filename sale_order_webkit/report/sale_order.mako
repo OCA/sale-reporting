@@ -185,14 +185,12 @@ tfoot.totals tr:first-child td{
             <td style="font-weight:bold;">${_("Your Reference")}</td>
             <td style="font-weight:bold;">${_("Salesman")}</td>
             <td style="font-weight:bold;">${_('Payment Term')}</td>
-            <td style="font-weight:bold;">${_('Incoterm')}</td>
         </tr>
         <tr>
             <td>${formatLang(order.date_order, date=True)}</td>
             <td>${order.client_order_ref or ''}</td>
             <td>${order.user_id and order.user_id.name or ''}</td>
             <td>${order.payment_term and order.payment_term.name or ''}</td>
-            <td>${''}</td>
         </tr>
     </table>
 
