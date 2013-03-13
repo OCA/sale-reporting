@@ -213,7 +213,7 @@ tfoot.totals tr:first-child td{
                     <td class="amount" width="7.5%">${ formatLang(line.product_uos and line.product_uos_qty or line.product_uom_qty) }</td>
                     <td style="text-align:center;">${ line.product_uos and line.product_uos.name or line.product_uom.name }</td>
                     <td class="amount" width="8%">${formatLang(line.price_unit)}</td>
-                    <td style="font-style:italic; font-size: 10;">${ ', '.join([tax.name or '' for tax in line.tax_id]) }</td>
+                    <td style="font-style:italic; font-size: 10;">${ ', '.join([tax.description or '' for tax in line.tax_id]) }</td>
                     <td class="amount" width="10%">${line.discount and formatLang(line.discount, digits=get_digits(dp='Sale Price')) or ''} ${line.discount and '%' or ''}</td>
                     <td class="amount" width="13%">${formatLang(line.price_subtotal, digits=get_digits(dp='Sale Price'))}&nbsp;${order.pricelist_id.currency_id.symbol}</td>
                 </tr>
