@@ -26,15 +26,13 @@
 Sale product note
 =================
 
-Replaces sale descritpion in product by a HTML field.
-Then it adds this description into the HTML note
-of the sale order line when product is changed""",
+This module replaces sale description in product with a HTML field.
+It also adds this description into the HTML note
+of the sale order line when the product is set.""",
  'author': 'Camptocamp',
  'website': 'http://www.camptocamp.com',
  'depends': ['product', 'sale', 'sale_order_webkit'],
- 'init_xml': [],
- 'update_xml': [],
- 'demo_xml': [],
+ 'data': [],
  'test': [],
  'installable': True,
  'active': False,

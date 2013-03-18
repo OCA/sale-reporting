@@ -26,9 +26,9 @@
 Sale order to invoice notes
 ===========================
 
-
-Forwards sale order lines note to invoice line note
-when invoice in generated from sale order
+This module forwards the `note` field of sale order lines to the
+`note` field of invoice line when an invoice in generated from a sale
+order.
 """,
  'author': 'Camptocamp',
  'website': 'http://www.camptocamp.com',
@@ -36,9 +36,7 @@ when invoice in generated from sale order
              'html_sale_product_note',
              'invoice_webkit',
              'sale_order_webkit'],
- 'init_xml': [],
- 'update_xml': [],
- 'demo_xml': [],
+ 'data': [],
  'test': [],
  'installable': True,
  'active': False,
