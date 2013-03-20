@@ -79,6 +79,9 @@
        </field>
      </record>
 
+     <record id="sale.view_order_form_editable_list" model="ir.ui.view">
+       <field name="groups_id" eval="[(6, 0, [ref('base.group_sale_salesman'), ref('product.group_uos'), ref('product.group_stock_packaging'), ref('sale.group_mrp_properties')])]"/>
+     </record>
 
     </data>
 </openerp>
