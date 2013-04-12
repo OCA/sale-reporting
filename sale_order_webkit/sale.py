@@ -54,7 +54,7 @@ class SaleOrder(orm.Model):
             return {}
         try:
             lang = self.browse(cursor, uid, inv_id)[0].partner_id.lang
-        except Exception, exc:
+        except Exception as exc:
             lang = 'en_US'
         cond = self.pool.get('sale.condition_text').browse(cursor, uid,
                                                            commentid, {'lang': lang})
@@ -65,20 +65,22 @@ class SaleOrder(orm.Model):
 
     def set_footer(self, cursor, uid, inv_id, commentid):
         return self._set_condition(cursor, uid, inv_id, commentid, 'note2')
-        
+
     def print_quotation(self, cursor, uid, ids, context=None):
         '''
-        This function prints the sales order and mark it as sent, so that we can see more easily the next step of the workflow
+        This function prints the sales order and mark it as sent,
+        so that we can see more easily the next step of the workflow
         '''
         assert len(ids) == 1, 'This option should only be used for a single id at a time'
         wf_service = netsvc.LocalService("workflow")
         wf_service.trg_validate(uid, 'sale.order', ids[0], 'quotation_sent', cursor)
-        datas = {
-                 'model': 'sale.order',
+        datas = {'model': 'sale.order',
                  'ids': ids,
                  'form': self.read(cursor, uid, ids[0], context=context),
-        }
-        return {'type': 'ir.actions.report.xml', 'report_name': 'sale.order.webkit', 'datas': datas, 'nodestroy': True}
+                 }
+        return {'type': 'ir.actions.report.xml',
+                'report_name': 'sale.order.webkit',
+                'datas': datas, 'nodestroy': True}
 
 
 class SaleOrderLine(orm.Model):
