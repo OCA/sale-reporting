@@ -123,7 +123,7 @@ tfoot.totals tr:first-child td{
     %for order in objects:
     <% setLang(order.partner_id.lang) %>
     <%
-      quotation = order.state == 'draft'
+      quotation = order.state in ['draft', 'sent']
     %>
     <div class="address">
         <table class="recipient">
