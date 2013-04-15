@@ -185,14 +185,12 @@ tfoot.totals tr:first-child td{
             <td style="font-weight:bold;">${_("Your Reference")}</td>
             <td style="font-weight:bold;">${_("Salesman")}</td>
             <td style="font-weight:bold;">${_('Payment Term')}</td>
-            <td style="font-weight:bold;">${_('Incoterm')}</td>
         </tr>
         <tr>
             <td>${formatLang(order.date_order, date=True)}</td>
             <td>${order.client_order_ref or ''}</td>
             <td>${order.user_id and order.user_id.name or ''}</td>
             <td>${order.payment_term and order.payment_term.name or ''}</td>
-            <td>${''}</td>
         </tr>
     </table>
 
@@ -215,7 +213,7 @@ tfoot.totals tr:first-child td{
                     <td class="amount" width="7.5%">${ formatLang(line.product_uos and line.product_uos_qty or line.product_uom_qty) }</td>
                     <td style="text-align:center;">${ line.product_uos and line.product_uos.name or line.product_uom.name }</td>
                     <td class="amount" width="8%">${formatLang(line.price_unit)}</td>
-                    <td style="font-style:italic; font-size: 10;">${ ', '.join([tax.name or '' for tax in line.tax_id]) }</td>
+                    <td style="font-style:italic; font-size: 10;">${ ', '.join([tax.description or tax.name for tax in line.tax_id]) }</td>
                     <td class="amount" width="10%">${line.discount and formatLang(line.discount, digits=get_digits(dp='Sale Price')) or ''} ${line.discount and '%' or ''}</td>
                     <td class="amount" width="13%">${formatLang(line.price_subtotal, digits=get_digits(dp='Sale Price'))}&nbsp;${order.pricelist_id.currency_id.symbol}</td>
                 </tr>
@@ -244,7 +242,6 @@ tfoot.totals tr:first-child td{
             </tr>
         </tfoot>
     </table>
-    <p style="margin-top: 20px;">${order.payment_term and order.payment_term.note or '' | carriage_returns}</p>
 
     %if order.note :
         <p class="std_text">${order.note | carriage_returns}</p>
