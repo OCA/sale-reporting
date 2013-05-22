@@ -190,7 +190,7 @@ tfoot.totals tr:first-child td{
             <td>${formatLang(order.date_order, date=True)}</td>
             <td>${order.client_order_ref or ''}</td>
             <td>${order.user_id and order.user_id.name or ''}</td>
-            <td>${order.payment_term and order.payment_term.name or ''}</td>
+            <td>${order.payment_term and order.payment_term.note or ''}</td>
         </tr>
     </table>
 
