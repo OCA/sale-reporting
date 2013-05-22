@@ -170,12 +170,6 @@ tfoot.totals tr:first-child td{
             %endfor
         </table>
     </div>
-    <div>
-
-    %if order.note1:
-        <p class="std_text"> ${order.note1| n} </p>
-    %endif
-    </div>
 
     <h1 style="clear:both;">${quotation and _(u'Quotation N°') or _(u'Order N°') } ${order.name}</h1>
 
@@ -193,6 +187,12 @@ tfoot.totals tr:first-child td{
             <td>${order.payment_term and order.payment_term.note or ''}</td>
         </tr>
     </table>
+
+    <div>
+    %if order.note1:
+        <p class="std_text"> ${order.note1| n} </p>
+    %endif
+    </div>
 
     <table class="list_sale_table" width="100%" style="margin-top: 20px;">
         <thead>
