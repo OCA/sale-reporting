@@ -8,40 +8,6 @@
     text-align:center;
     border-collapse: collapse;
 }
-
-.list_sale_table td {
-    border-top:thin solid #EEEEEE;
-    text-align:right;
-    font-size:12;
-    padding-right:3px;
-    padding-left:3px;
-    padding-top:3px;
-    padding-bottom:3px;
-}
-
-.list_bank_table {
-    text-align:center;
-    border-collapse: collapse;
-}
-
-.list_bank_table td {
-    text-align:left;
-    font-size:12;
-    padding-right:3px;
-    padding-left:3px;
-    padding-top:3px;
-    padding-bottom:3px;
-}
-
-.list_bank_table th {
-    background-color: #EEEEEE;
-    text-align:left;
-    font-size:12;
-    font-weight:bold;
-    padding-right:3px
-    padding-left:3px
-}
-
 .list_sale_table th {
     background-color: #EEEEEE;
     border: thin solid #000000;
@@ -51,46 +17,32 @@
     padding-right:3px;
     padding-left:3px;
 }
-
-.list_table thead {
-    display:table-header-group;
-}
-
-
-.list_tax_table {
-}
-.list_tax_table td {
+.list_sale_table td {
+    border-top: thin solid #EEEEEE;
     text-align:left;
     font-size:12;
+    padding-right:3px;
+    padding-left:3px;
+    padding-top:3px;
+    padding-bottom:3px;
 }
-
-
-.list_table thead {
+.list_sale_table thead {
     display:table-header-group;
 }
 
-
-.list_total_table {
-    border-collapse: collapse;
+td.formatted_note {
+    text-align:left;
+    border-right:thin solid #EEEEEE;
+    border-left:thin solid #EEEEEE;
+    border-top:thin solid #EEEEEE;
+    padding-left:10px;
+    font-size:11;
 }
 
-.list_total_table td {
-    text-align:right;
-    font-size:12;
-}
+
 
 .no_bloc {
     border-top: thin solid  #ffffff ;
-}
-
-
-.list_total_table th {
-    background-color: #F7F7F7;
-    border-collapse: collapse;
-}
-
-tfoot.totals tr:first-child td{
-    padding-top: 15px;
 }
 
 .right_table {
@@ -102,14 +54,20 @@ tfoot.totals tr:first-child td{
     font-size:12;
 }
 
-.note {
-    text-align:left;
-    font-size:10;
-    border-top:thin solid  #ffffff;
-    border-left:thin solid  #ffffff;
-    border-right:thin solid  #ffffff;
+tfoot.totals tr:first-child td{
+    padding-top: 15px;
 }
 
+
+td.amount, th.amount {
+    text-align: right;
+    white-space: nowrap;
+}
+
+
+.address .recipient .shipping .invoice {
+    font-size: 12px;
+}
 
     </style>
 </head>
@@ -207,22 +165,24 @@ tfoot.totals tr:first-child td{
             </tr>
         </thead>
         <tbody>
-            %for line in order.order_line:
-                <tr class="line">
-                    <td style="text-align:left; " >${ line.name }</td>
-                    <td class="amount" width="7.5%">${ formatLang(line.product_uos and line.product_uos_qty or line.product_uom_qty) }</td>
-                    <td style="text-align:center;">${ line.product_uos and line.product_uos.name or line.product_uom.name }</td>
-                    <td class="amount" width="8%">${formatLang(line.price_unit)}</td>
-                    <td style="font-style:italic; font-size: 10;">${ ', '.join([tax.description or tax.name for tax in line.tax_id]) }</td>
-                    <td class="amount" width="10%">${line.discount and formatLang(line.discount, digits=get_digits(dp='Sale Price')) or ''} ${line.discount and '%' or ''}</td>
-                    <td class="amount" width="13%">${formatLang(line.price_subtotal, digits=get_digits(dp='Sale Price'))}&nbsp;${order.pricelist_id.currency_id.symbol}</td>
-                </tr>
-                %if line.formatted_note:
-                    <tr class="line">
-                        <td colspan="7" class="note" style="text-align:left;">${line.formatted_note| n}</td>
-                    </tr>
-                %endif
-            %endfor
+        %for line in order.order_line:
+            <tr class="line">
+                <td style="text-align:left; " >${ line.name }</td>
+                <td class="amount" width="7.5%">${ formatLang(line.product_uos and line.product_uos_qty or line.product_uom_qty) }</td>
+                <td style="text-align:center;">${ line.product_uos and line.product_uos.name or line.product_uom.name }</td>
+                <td class="amount" width="8%">${formatLang(line.price_unit)}</td>
+                <td style="font-style:italic; font-size: 10;">${ ', '.join([tax.description or tax.name for tax in line.tax_id]) }</td>
+                <td class="amount" width="10%">${line.discount and formatLang(line.discount, digits=get_digits(dp='Sale Price')) or ''} ${line.discount and '%' or ''}</td>
+                <td class="amount" width="13%">${formatLang(line.price_subtotal, digits=get_digits(dp='Sale Price'))}&nbsp;${order.pricelist_id.currency_id.symbol}</td>
+            </tr>
+            %if line.formatted_note:
+            <tr>
+              <td class="formatted_note" colspan="7">
+                ${line.formatted_note| n}
+              </td>
+            </tr>
+            %endif
+        %endfor
         </tbody>
         <tfoot class="totals">
             <tr>
