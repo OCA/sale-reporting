@@ -130,10 +130,12 @@ tfoot.totals tr:first-child td{
             %if order.partner_id.parent_id:
             <tr><td class="name">${order.partner_id.parent_id.name or ''}</td></tr>
             <tr><td>${order.partner_id.title and order.partner_id.title.name or ''} ${order.partner_id.name }</td></tr>
+            <% address_lines = order.partner_id.contact_address.split("\n")[1:] %>
             %else:
             <tr><td class="name">${order.partner_id.title and order.partner_id.title.name or ''} ${order.partner_id.name }</td></tr>
+            <% address_lines = order.partner_id.contact_address.split("\n") %>
             %endif
-            %for part in order.partner_id.contact_address.split("\n")[1:]:
+            %for part in address_lines:
                 %if part:
                 <tr><td>${part}</td></tr>
                 %endif
@@ -142,13 +144,15 @@ tfoot.totals tr:first-child td{
 
         <table class="shipping">
             <tr><td class="address_title">${_("Shipping address:")}</td></tr>
-            %if order.partner_id.parent_id:
+            %if order.partner_shipping_id.parent_id:
             <tr><td>${order.partner_shipping_id.parent_id.name or ''}</td></tr>
             <tr><td>${order.partner_shipping_id.title and order.partner_shipping_id.title.name or ''} ${order.partner_shipping_id.name }</td></tr>
+            <% address_lines = order.partner_shipping_id.contact_address.split("\n")[1:] %>
             %else:
             <tr><td>${order.partner_shipping_id.title and order.partner_shipping_id.title.name or ''} ${order.partner_shipping_id.name }</td></tr>
+            <% address_lines = order.partner_shipping_id.contact_address.split("\n") %>
             %endif
-            %for part in order.partner_shipping_id.contact_address.split("\n")[1:]:
+            %for part in address_lines:
                 %if part:
                 <tr><td>${part}</td></tr>
                 %endif
@@ -160,10 +164,12 @@ tfoot.totals tr:first-child td{
             %if order.partner_invoice_id.parent_id:
             <tr><td>${order.partner_invoice_id.parent_id.name or ''}</td></tr>
             <tr><td>${order.partner_invoice_id.title and order.partner_invoice_id.title.name or ''} ${order.partner_invoice_id.name }</td></tr>
+            <% address_lines = order.partner_invoice_id.contact_address.split("\n")[1:] %>
             %else:
             <tr><td>${order.partner_invoice_id.title and order.partner_invoice_id.title.name or ''} ${order.partner_invoice_id.name }</td></tr>
+            <% address_lines = order.partner_invoice_id.contact_address.split("\n") %>
             %endif
-            %for part in order.partner_invoice_id.contact_address.split("\n")[1:]:
+            %for part in address_lines:
                 %if part:
                 <tr><td>${part}</td></tr>
                 %endif
