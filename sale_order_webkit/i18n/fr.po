@@ -63,7 +63,7 @@ msgstr "Commentaire imprimable"
 #. module: sale_order_webkit
 #: report:addons/sale_order_webkit/report/sale_order.mako:167
 msgid "UoM"
-msgstr "UoM"
+msgstr "UdM"
 
 #. module: sale_order_webkit
 #: selection:sale.condition_text,type:0
