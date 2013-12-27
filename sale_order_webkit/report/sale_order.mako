@@ -4,46 +4,96 @@
     <style type="text/css">
         ${css}
 
-.list_sale_table {
+.list_main_table {
     border:thin solid #E3E4EA;
     text-align:center;
     border-collapse: collapse;
 }
-.list_sale_table th {
-    background-color: #EEEEEE;
+table.list_main_table {
+    margin-top: 20px;
+}
+.list_main_headers {
+    padding: 0;
+}
+.list_main_headers th {
     border: thin solid #000000;
+    padding-right:3px;
+    padding-left:3px;
+    background-color: #EEEEEE;
     text-align:center;
     font-size:12;
     font-weight:bold;
-    padding-right:3px;
-    padding-left:3px;
 }
-.list_sale_table td {
-    border-top: thin solid #EEEEEE;
-    text-align:left;
-    font-size:12;
+.list_main_table td {
     padding-right:3px;
     padding-left:3px;
     padding-top:3px;
     padding-bottom:3px;
 }
-.list_sale_table thead {
-    display:table-header-group;
+.list_main_lines,
+.list_main_footers {
+    padding: 0;
+}
+.list_main_footers {
+    padding-top: 15px;
+}
+.list_main_lines td,
+.list_main_footers td,
+.list_main_footers th {
+    border-style: none;
+    text-align:left;
+    font-size:12;
+    padding:0;
+}
+.list_main_footers th {
+    text-align:right;
 }
 
-td.formatted_note {
+td .total_empty_cell {
+    width: 77%;
+}
+td .total_sum_cell {
+    width: 13%;
+}
+
+.nobreak {
+    page-break-inside: avoid;
+}
+caption.formatted_note {
     text-align:left;
     border-right:thin solid #EEEEEE;
     border-left:thin solid #EEEEEE;
     border-top:thin solid #EEEEEE;
     padding-left:10px;
     font-size:11;
+    caption-side: bottom;
+}
+caption.formatted_note p {
+    margin: 0;
 }
 
-
-
-.no_bloc {
-    border-top: thin solid  #ffffff ;
+.main_col1 {
+    width: 40%;
+}
+td.main_col1 {
+    text-align:left;
+}
+.main_col2,
+.main_col3,
+.main_col4,
+.main_col6 {
+    width: 10%;
+}
+.main_col5 {
+    width: 7%;
+}
+td.main_col5 {
+    text-align: center;
+    font-style:italic;
+    font-size: 10;
+}
+.main_col7 {
+    width: 13%;
 }
 
 .right_table {
@@ -55,16 +105,19 @@ td.formatted_note {
     font-size:12;
 }
 
-tfoot.totals tr:first-child td{
-    padding-top: 15px;
+th.date {
+    width: 90px;
 }
-
 
 td.amount, th.amount {
     text-align: right;
     white-space: nowrap;
 }
 
+td.date {
+    white-space: nowrap;
+    width: 90px;
+}
 
 .address .recipient .shipping .invoice {
     font-size: 12px;
@@ -77,8 +130,27 @@ td.amount, th.amount {
     <%
     def carriage_returns(text):
         return text.replace('\n', '<br />')
-
     %>
+
+    <%def name="address(partner)">
+        <%doc>
+            XXX add a helper for address in report_webkit module as this won't be suported in v8.0
+        </%doc>
+        %if partner.parent_id:
+            <tr><td class="name">${partner.parent_id.name or ''}</td></tr>
+            <tr><td>${partner.title and partner.title.name or ''} ${partner.name}</td></tr>
+            <% address_lines = partner.contact_address.split("\n")[1:] %>
+        %else:
+            <tr><td class="name">${partner.title and partner.title.name or ''} ${partner.name}</td></tr>
+            <% address_lines = partner.contact_address.split("\n") %>
+        %endif
+        %for part in address_lines:
+            % if part:
+                <tr><td>${part}</td></tr>
+            % endif
+        %endfor
+    </%def>
+
     %for order in objects:
     <% setLang(order.partner_id.lang) %>
     <%
@@ -86,53 +158,17 @@ td.amount, th.amount {
     %>
     <div class="address">
         <table class="recipient">
-            %if order.partner_id.parent_id:
-            <tr><td class="name">${order.partner_id.parent_id.name or ''}</td></tr>
-            <tr><td>${order.partner_id.title and order.partner_id.title.name or ''} ${order.partner_id.name }</td></tr>
-            <% address_lines = order.partner_id.contact_address.split("\n")[1:] %>
-            %else:
-            <tr><td class="name">${order.partner_id.title and order.partner_id.title.name or ''} ${order.partner_id.name }</td></tr>
-            <% address_lines = order.partner_id.contact_address.split("\n") %>
-            %endif
-            %for part in address_lines:
-                %if part:
-                <tr><td>${part}</td></tr>
-                %endif
-            %endfor
+          ${address(partner=order.partner_id)}
         </table>
 
         <table class="shipping">
-            <tr><td class="address_title">${_("Shipping address:")}</td></tr>
-            %if order.partner_shipping_id.parent_id:
-            <tr><td>${order.partner_shipping_id.parent_id.name or ''}</td></tr>
-            <tr><td>${order.partner_shipping_id.title and order.partner_shipping_id.title.name or ''} ${order.partner_shipping_id.name }</td></tr>
-            <% address_lines = order.partner_shipping_id.contact_address.split("\n")[1:] %>
-            %else:
-            <tr><td>${order.partner_shipping_id.title and order.partner_shipping_id.title.name or ''} ${order.partner_shipping_id.name }</td></tr>
-            <% address_lines = order.partner_shipping_id.contact_address.split("\n") %>
-            %endif
-            %for part in address_lines:
-                %if part:
-                <tr><td>${part}</td></tr>
-                %endif
-            %endfor
+          <tr><td class="address_title">${_("Shipping address:")}</td></tr>
+          ${address(partner=order.partner_shipping_id)}
         </table>
 
         <table class="invoice">
-            <tr><td class="address_title">${_("Invoice address:")}</td></tr>
-            %if order.partner_invoice_id.parent_id:
-            <tr><td>${order.partner_invoice_id.parent_id.name or ''}</td></tr>
-            <tr><td>${order.partner_invoice_id.title and order.partner_invoice_id.title.name or ''} ${order.partner_invoice_id.name }</td></tr>
-            <% address_lines = order.partner_invoice_id.contact_address.split("\n")[1:] %>
-            %else:
-            <tr><td>${order.partner_invoice_id.title and order.partner_invoice_id.title.name or ''} ${order.partner_invoice_id.name }</td></tr>
-            <% address_lines = order.partner_invoice_id.contact_address.split("\n") %>
-            %endif
-            %for part in address_lines:
-                %if part:
-                <tr><td>${part}</td></tr>
-                %endif
-            %endfor
+          <tr><td class="address_title">${_("Invoice address:")}</td></tr>
+          ${address(partner=order.partner_invoice_id)}
         </table>
     </div>
 
@@ -140,13 +176,13 @@ td.amount, th.amount {
 
     <table class="basic_table" width="100%">
         <tr>
-            <td style="font-weight:bold;">${quotation and _("Date Ordered") or _("Quotation Date")}</td>
-            <td style="font-weight:bold;">${_("Your Reference")}</td>
-            <td style="font-weight:bold;">${_("Salesman")}</td>
-            <td style="font-weight:bold;">${_('Payment Term')}</td>
+            <th class="date">${quotation and _("Date Ordered") or _("Quotation Date")}</td>
+            <th>${_("Your Reference")}</td>
+            <th>${_("Salesman")}</td>
+            <th>${_('Payment Term')}</td>
         </tr>
         <tr>
-            <td>${formatLang(order.date_order, date=True)}</td>
+            <td class="date">${formatLang(order.date_order, date=True)}</td>
             <td>${order.client_order_ref or ''}</td>
             <td>${order.user_id and order.user_id.name or ''}</td>
             <td>${order.payment_term and order.payment_term.note or ''}</td>
@@ -155,59 +191,91 @@ td.amount, th.amount {
 
     <div>
     %if order.note1:
-        <p class="std_text"> ${order.note1| n} </p>
+        <p class="std_text"> ${order.note1 | n} </p>
     %endif
     </div>
 
-    <table class="list_sale_table" width="100%" style="margin-top: 20px;">
-        <thead>
-            <tr>
-                <th>${_("Description")}</th>
-                <th class="amount">${_("Quantity")}</th>
-                <th class="amount">${_("UoM")}</th>
-                <th class="amount">${_("Unit Price")}</th>
-                <th>${_("VAT")}</th>
-                <th class="amount">${_("Disc.(%)")}</th>
-                <th class="amount">${_("Price")}</th>
-            </tr>
-        </thead>
-        <tbody>
+    <table class="list_main_table" width="100%">
+      <thead>
+        <tr>
+          <th class="list_main_headers" style="width: 100%">
+            <table style="width:100%">
+              <tr>
+                <th class="main_col1">${_("Description")}</th>
+                <th class="amount main_col2">${_("Quantity")}</th>
+                <th class="amount main_col3">${_("UoM")}</th>
+                <th class="amount main_col4">${_("Unit Price")}</th>
+                <th class="main_col5">${_("VAT")}</th>
+                <th class="amount main_col6">${_("Disc.(%)")}</th>
+                <th class="amount main_col7">${_("Price")}</th>
+              </tr>
+            </table>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
         %for line in order.order_line:
-            <tr class="line">
-                <td style="text-align:left; " >${ line.name }</td>
-                <td class="amount" width="7.5%">${ formatLang(line.product_uos and line.product_uos_qty or line.product_uom_qty) }</td>
-                <td style="text-align:center;">${ line.product_uos and line.product_uos.name or line.product_uom.name }</td>
-                <td class="amount" width="8%">${formatLang(line.price_unit)}</td>
-                <td style="font-style:italic; font-size: 10;">${ ', '.join([tax.description or tax.name for tax in line.tax_id]) }</td>
-                <td class="amount" width="10%">${line.discount and formatLang(line.discount, digits=get_digits(dp='Sale Price')) or ''} ${line.discount and '%' or ''}</td>
-                <td class="amount" width="13%">${formatLang(line.price_subtotal, digits=get_digits(dp='Sale Price'))}&nbsp;${order.pricelist_id.currency_id.symbol}</td>
-            </tr>
-            %if line.formatted_note:
-            <tr>
-              <td class="formatted_note" colspan="7">
-                ${line.formatted_note| n}
-              </td>
-            </tr>
-            %endif
+          <tr>
+            <td class="list_main_lines" style="width: 100%">
+              <div class="nobreak">
+                <table style="width:100%">
+                  <tr>
+                    <td class="main_col1">${ line.name }</td>
+                    <td class="amount main_col2">${ formatLang(line.product_uos and line.product_uos_qty or line.product_uom_qty) }</td>
+                    <td class="amount main_col3">${ line.product_uos and line.product_uos.name or line.product_uom.name }</td>
+                    <td class="amount main_col4">${formatLang(line.price_unit)}</td>
+                    <td class="main_col5">${ ', '.join([tax.description or tax.name for tax in line.tax_id]) }</td>
+                    <td class="amount main_col6">${line.discount and formatLang(line.discount, digits=get_digits(dp='Sale Price')) or ''} ${line.discount and '%' or ''}</td>
+                    <td class="amount main_col7">${formatLang(line.price_subtotal, digits=get_digits(dp='Sale Price'))}&nbsp;${order.pricelist_id.currency_id.symbol}</td>
+                  </tr>
+                  %if line.formatted_note:
+                    <caption class="formatted_note">
+                      ${line.formatted_note| n}
+                    </caption>
+                  %endif
+                </table>
+              </div>
+            </td>
+          </tr>
         %endfor
-        </tbody>
-        <tfoot class="totals">
-            <tr>
-                <td colspan="5" style="border-style:none"/>
-                <td style="border-style:none"><b>${_("Net Total:")}</b></td>
-                <td class="amount" style="border-style:none">${formatLang(order.amount_untaxed, get_digits(dp='Sale Price'))} ${order.pricelist_id.currency_id.symbol}</td>
-            </tr>
-            <tr>
-                <td colspan="5" style="border-style:none"/>
-                <td style="border-style:none" ><b>${_("Taxes:")}</b></td>
-                <td class="amount"style="border-style:none" >${formatLang(order.amount_tax, get_digits(dp='Sale Price'))} ${order.pricelist_id.currency_id.symbol}</td>
-            </tr>
-            <tr>
-                <td colspan="5" style="border-style:none"/>
-                <td style="border-style:none"><b>${_("Total:")}</b></td>
-                <td class="amount" style="border-style:none">${formatLang(order.amount_total, get_digits(dp='Sale Price'))} ${order.pricelist_id.currency_id.symbol}</td>
-            </tr>
-        </tfoot>
+      </tbody>
+      <tfoot class="totals">
+        <tr>
+          <td class="list_main_footers" style="width: 100%">
+            <div class="nobreak">
+              <table style="width:100%">
+                <tr>
+                  <td class="total_empty_cell"/>
+                  <th>
+                    ${_("Net Total:")}
+                  </th>
+                  <td class="amount total_sum_cell">
+                    ${formatLang(order.amount_untaxed, get_digits(dp='Sale Price'))} ${order.pricelist_id.currency_id.symbol}
+                  </td>
+                </tr>
+                <tr>
+                  <td class="total_empty_cell"/>
+                  <th>
+                    ${_("Taxes:")}
+                  </th>
+                  <td class="amount total_sum_cell">
+                    ${formatLang(order.amount_tax, get_digits(dp='Sale Price'))} ${order.pricelist_id.currency_id.symbol}
+                  </td>
+                </tr>
+                <tr>
+                  <td class="total_empty_cell"/>
+                  <th>
+                    ${_("Total:")}
+                  </th>
+                  <td class="amount total_sum_cell">
+                    <b>${formatLang(order.amount_total, get_digits(dp='Sale Price'))} ${order.pricelist_id.currency_id.symbol}</b>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
     </table>
 
     %if order.note :
@@ -216,9 +284,7 @@ td.amount, th.amount {
     %if order.note2:
         <p class="std_text">${order.note2 | n}</p>
     %endif
-
-    <p style="page-break-after: always"/>
-    <br/>
+    <p style="page-break-after:always"/>
     %endfor
 </body>
 </html>
