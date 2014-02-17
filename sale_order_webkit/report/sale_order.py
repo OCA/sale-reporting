@@ -48,11 +48,8 @@ class SaleOrderReport(report_sxw.rml_parse):
         except ValueError:
             #group named group_discount_per_so_line doesn't exist
             return False
-        return group_id in [x.id for x in res_users_obj.browse(
-            cr,
-            uid,
-            uid,
-            context=context).groups_id]
+        groups = res_users_obj.browse(cr, uid, uid, context=context).group_id
+        return any(x for x in groups if x.id == group_id)
 
     def _get_company_vat(self):
         res_users_obj = pooler.get_pool(self.cr.dbname).get('res.users')
