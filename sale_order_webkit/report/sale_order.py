@@ -29,20 +29,36 @@ class SaleOrderReport(report_sxw.rml_parse):
         super(SaleOrderReport, self).__init__(cr, uid, name, context=context)
         self.localcontext.update({'time': time,
                                   'company_vat': self._get_company_vat,
-                                  'show_discount':self._show_discount,
-        })
+                                  'show_discount': self._show_discount,
+                                  })
 
     def _show_discount(self, uid, context=None):
+        """ check if the user belongs to group_discount_per_so_line group
+        """
         cr = self.cr
+        pool = pooler.get_pool(self.cr.dbname)
+        res_users_obj = pool.get('res.users')
+        model_data_obj = pool.get('ir.model.data')
         try:
-            group_id = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'sale', 'group_discount_per_so_line')[1]
-        except:
+            group_id = model_data_obj.get_object_reference(
+                cr,
+                uid,
+                'sale',
+                'group_discount_per_so_line')[1]
+        except ValueError:
+            #group named group_discount_per_so_line doesn't exist
             return False
-        return group_id in [x.id for x in self.pool.get('res.users').browse(cr, uid, uid, context=context).groups_id]
+        return group_id in [x.id for x in res_users_obj.browse(
+            cr,
+            uid,
+            uid,
+            context=context).groups_id]
 
     def _get_company_vat(self):
         res_users_obj = pooler.get_pool(self.cr.dbname).get('res.users')
-        company_vat = res_users_obj.browse(self.cr, self.uid, self.uid).company_id.partner_id.vat
+        company_vat = res_users_obj.browse(
+            self.cr, self.uid, self.uid
+        ).company_id.partner_id.vat
         return company_vat
 
 report_sxw.report_sxw('report.sale.order.webkit',
