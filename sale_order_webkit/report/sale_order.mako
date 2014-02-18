@@ -206,7 +206,9 @@ td.date {
                 <th class="amount main_col3">${_("UoM")}</th>
                 <th class="amount main_col4">${_("Unit Price")}</th>
                 <th class="main_col5">${_("VAT")}</th>
+                %if show_discount(user.id):
                 <th class="amount main_col6">${_("Disc.(%)")}</th>
+                %endif
                 <th class="amount main_col7">${_("Price")}</th>
               </tr>
             </table>
@@ -225,7 +227,9 @@ td.date {
                     <td class="amount main_col3">${ line.product_uos and line.product_uos.name or line.product_uom.name }</td>
                     <td class="amount main_col4">${formatLang(line.price_unit)}</td>
                     <td class="main_col5">${ ', '.join([tax.description or tax.name for tax in line.tax_id]) }</td>
+                    %if show_discount(user.id):
                     <td class="amount main_col6">${line.discount and formatLang(line.discount, digits=get_digits(dp='Sale Price')) or ''} ${line.discount and '%' or ''}</td>
+                    %endif
                     <td class="amount main_col7">${formatLang(line.price_subtotal, digits=get_digits(dp='Sale Price'))}&nbsp;${order.pricelist_id.currency_id.symbol}</td>
                   </tr>
                   %if line.formatted_note:
