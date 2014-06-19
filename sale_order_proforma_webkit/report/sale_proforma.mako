@@ -300,9 +300,6 @@ td.vat {
     </table>
 
     <div>
-    %if inv.note1:
-        <p class="std_text"> ${inv.note1 | n} </p>
-    %endif
     </div>
 
     <table class="list_main_table" width="100%" style="margin-top: 20px;">
@@ -338,11 +335,6 @@ td.vat {
                     <td class="amount main_col6">${line.discount and formatLang(line.discount, digits=get_digits(dp='Account')) or ''} ${line.discount and '%' or ''}</td>
                     <td class="amount main_col7">${formatLang(line.price_subtotal, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</td>
                   </tr>
-                  %if line.formatted_note:
-                    <caption class="formatted_note">
-                      ${line.formatted_note| n}
-                    </caption>
-                  %endif
                 </table>
               </div>
             </td>
@@ -398,9 +390,6 @@ td.vat {
     <br/>
     %if inv.note :
         <p class="std_text">${inv.note | carriage_returns}</p>
-    %endif
-    %if inv.note2 :
-        <p class="std_text">${inv.note2 | n}</p>
     %endif
     %if inv.fiscal_position :
         <br/>

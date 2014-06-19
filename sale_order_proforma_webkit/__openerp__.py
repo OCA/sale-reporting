@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-{'name': 'Sales Order ProFormat Report using Webkit Library',
+{'name': 'Sales Order ProForma Report using Webkit Library',
  'version': '1.1.1',
  'category': 'Reports/Webkit',
  'description': """
