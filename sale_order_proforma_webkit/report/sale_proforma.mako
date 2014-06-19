@@ -397,7 +397,9 @@ td.vat {
         ${inv.fiscal_position.note | n}
         </p>
     %endif
-    <p style="page-break-after:always"/>
+    %if inv != objects[-1]:
+        <p style="page-break-after:always"/>
+    %endif
     %endfor
 </body>
 </html>
