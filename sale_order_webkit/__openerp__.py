@@ -20,7 +20,7 @@
 ##############################################################################
 
 {'name': 'Sales Order Report using Webkit Library',
- 'version': '1.1.1',
+ 'version': '1.1.2',
  'category': 'Reports/Webkit',
  'description': """
 Sale order webkit

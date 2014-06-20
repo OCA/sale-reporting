@@ -7,7 +7,11 @@
             model="sale.order"
             file="sale_order_webkit/report/sale_order.mako"
             string="Quotation - Order"
-            webkit_header="base_headers_webkit.base_reports_portrait_header"
             report_type="webkit"/>
   </data>
+  <data noupdate="1">
+        <record id="sale.report_sale_order" model="ir.actions.report.xml">
+           <field name="webkit_header" ref="base_headers_webkit.base_reports_portrait_header"></field>
+        </record>
+   </data>
 </openerp>
