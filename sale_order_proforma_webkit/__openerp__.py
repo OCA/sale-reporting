@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #   Copyright (c) 2014 Camptocamp SA (http://www.camptocamp.com)
-#     @author Romain Deheele ,Vincent Renaville 
+#     @author Romain Deheele, Vincent Renaville 
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -28,7 +28,7 @@ Sale order webkit
 
 * Add a sale proforma report in webkit .
 
-Depends on base_header_webkit community addon available here:
+Depends on base_headers_webkit community addon available here:
 `https://launchpad.net/webkit-utils <https://launchpad.net/webkit-utils>`_
     """,
  'author': 'Camptocamp',
