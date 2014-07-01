@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <report id="sale_sale_proforma"
+                model="sale.order"
+                name="sale.proforma"
+                auto="False"
+                file="sale_order_proforma_webkit/report/sale_proforma.mako"
+                string="Pro Forma"
+                webkit_header="base_headers_webkit.base_reports_portrait_header"
+                report_type="webkit"/>
+
+        <record id="property_sale_proforma_webkit" model="ir.property">
+            <field name="name">webkit_header</field>
+            <field eval="0" name="company_id"/>
+            <field name="fields_id" ref="report_webkit.field_ir_act_report_xml_webkit_header"/>
+            <field eval="'ir.header_webkit,'+str(ref('base_headers_webkit.base_reports_portrait_header'))" model="ir.header_webkit" name="value"/>
+            <field eval="'ir.actions.report.xml,'+str(ref('sale_order_proforma_webkit.sale_sale_proforma'))" model="ir.actions.report.xml" name="res_id"/>
+        </record>
+
+    </data>
+</openerp>
