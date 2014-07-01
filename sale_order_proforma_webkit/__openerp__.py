@@ -19,17 +19,24 @@
 #
 ##############################################################################
 
-{'name': 'Sales Order ProForma Report using Webkit Library',
+{'name': 'Sale Order ProForma',
+ 'summary': 'New webkit report',
  'version': '1.1.1',
  'category': 'Reports/Webkit',
  'description': """
 Sale order webkit
-#################
+=================
 
-* Add a sale proforma report in webkit .
+* Add a sale ProForma webkit report on Sale Order.
 
 Depends on base_headers_webkit community addon available here:
 `https://launchpad.net/webkit-utils <https://launchpad.net/webkit-utils>`_
+
+Contributors
+------------
+
+ * Romain Deheele <romain.deheele@camptocamp.com>
+ * Vincent Renaville <vincent.renaville@camptocamp.com>
     """,
  'author': 'Camptocamp',
  'website': 'http://www.camptocamp.com',
