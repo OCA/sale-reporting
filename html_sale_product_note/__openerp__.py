@@ -34,6 +34,6 @@ of the sale order line when the product is set.""",
  'depends': ['product', 'sale', 'sale_order_webkit'],
  'data': [],
  'test': [],
- 'installable': True,
+ 'installable': False,
  'active': False,
  }

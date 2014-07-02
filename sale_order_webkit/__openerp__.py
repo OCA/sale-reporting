@@ -41,6 +41,6 @@ Depends on base_header_webkit community addon available here:
           'view/sale_view.xml'],
  'demo_xml': [],
  'test': [],
- 'installable': True,
+ 'installable': False,
  'active': False,
  }

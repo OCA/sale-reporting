@@ -38,6 +38,6 @@ order.
              'sale_order_webkit'],
  'data': [],
  'test': [],
- 'installable': True,
+ 'installable': False,
  'active': False,
  }
