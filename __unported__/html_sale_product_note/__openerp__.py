@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#   Copyright (c) 2014 Camptocamp SA (http://www.camptocamp.com)
-#     @author Romain Deheele, Vincent Renaville 
+#   Copyright (c) 2013 Camptocamp SA (http://www.camptocamp.com)
+#   @author Nicolas Bessi
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,32 +19,21 @@
 #
 ##############################################################################
 
-{'name': 'Sale Order ProForma',
- 'summary': 'New webkit report',
- 'version': '1.1.1',
- 'category': 'Reports/Webkit',
+{'name': 'HTML note in product reported in sale order report',
+ 'version': '1.0.1',
+ 'category': 'other',
  'description': """
-Sale order webkit
+Sale product note
 =================
 
-* Add a sale ProForma webkit report on Sale Order.
-
-Depends on base_headers_webkit community addon available here:
-`https://launchpad.net/webkit-utils <https://launchpad.net/webkit-utils>`_
-
-Contributors
-------------
-
- * Romain Deheele <romain.deheele@camptocamp.com>
- * Vincent Renaville <vincent.renaville@camptocamp.com>
-    """,
+This module replaces sale description in product with a HTML field.
+It also adds this description into the HTML note
+of the sale order line when the product is set.""",
  'author': 'Camptocamp',
  'website': 'http://www.camptocamp.com',
- 'depends': ['base', 'report_webkit', 'base_headers_webkit', 'sale'],
- 'data': ['report.xml',
-          ],
- 'demo_xml': [],
+ 'depends': ['product', 'sale', 'sale_order_webkit'],
+ 'data': [],
  'test': [],
- 'installable': True,
+ 'installable': False,
  'active': False,
  }

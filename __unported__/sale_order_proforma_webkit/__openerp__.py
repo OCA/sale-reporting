@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#   Copyright (c) 2011 Camptocamp SA (http://www.camptocamp.com)
-#   @author Nicolas Bessi, Vincent Renaville, Guewen Baconnier
+#   Copyright (c) 2014 Camptocamp SA (http://www.camptocamp.com)
+#     @author Romain Deheele, Vincent Renaville 
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,28 +19,32 @@
 #
 ##############################################################################
 
-{'name': 'Sales Order Report using Webkit Library',
- 'version': '1.1.3',
+{'name': 'Sale Order ProForma',
+ 'summary': 'New webkit report',
+ 'version': '1.1.1',
  'category': 'Reports/Webkit',
  'description': """
 Sale order webkit
-#################
+=================
 
-* Replaces the legacy RML Quotation/Sales Order report by a brand new webkit report.
-* Add header and footer notes
-* Add HTML note on Sale Order lines
+* Add a sale ProForma webkit report on Sale Order.
 
-Depends on base_header_webkit community addon available here:
+Depends on base_headers_webkit community addon available here:
 `https://launchpad.net/webkit-utils <https://launchpad.net/webkit-utils>`_
+
+Contributors
+------------
+
+ * Romain Deheele <romain.deheele@camptocamp.com>
+ * Vincent Renaville <vincent.renaville@camptocamp.com>
     """,
  'author': 'Camptocamp',
  'website': 'http://www.camptocamp.com',
  'depends': ['base', 'report_webkit', 'base_headers_webkit', 'sale'],
- 'data': ['security/ir.model.access.csv',
-          'sale_report.xml',
-          'view/sale_view.xml'],
+ 'data': ['report.xml',
+          ],
  'demo_xml': [],
  'test': [],
- 'installable': True,
+ 'installable': False,
  'active': False,
  }
