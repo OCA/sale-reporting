@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/OCA/stock-reporting.svg?branch=master)](https://travis-ci.org/OCA/sale-reporting-workflow)
-[![Coverage Status](https://img.shields.io/coveralls/OCA/sale-reporting.svg)](https://coveralls.io/r/OCA/sale-reporting-workflow?branch=master)
+[![Build Status](https://travis-ci.org/OCA/stock-reporting.svg?branch=master)](https://travis-ci.org/OCA/sale-reporting)
+[![Coverage Status](https://img.shields.io/coveralls/OCA/sale-reporting.svg)](https://coveralls.io/r/OCA/sale-reporting?branch=master)
 
 
 Sale Reporting
