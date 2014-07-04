@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/OCA/stock-logistics-workflow.svg?branch=7.0)](https://travis-ci.org/OCA/stock-logistics-workflow)
-[![Coverage Status](https://img.shields.io/coveralls/OCA/stock-logistics-workflow.svg)](https://coveralls.io/r/OCA/stock-logistics-workflow?branch=7.0)
+[![Build Status](https://travis-ci.org/OCA/sale-reporting.svg?branch=7.0)](https://travis-ci.org/OCA/sale-reporting)
+[![Coverage Status](https://img.shields.io/coveralls/OCA/sale-reporting.svg)](https://coveralls.io/r/OCA/sale-reporting?branch=7.0)
 
 
 
