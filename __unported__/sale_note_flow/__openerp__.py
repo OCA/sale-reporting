@@ -19,21 +19,25 @@
 #
 ##############################################################################
 
-{'name': 'HTML note in product reported in sale order report',
- 'version': '1.0.1',
+{'name': 'HTML note from sale order in invoice',
+ 'version': '1.0.0',
  'category': 'other',
  'description': """
-Sale product note
-=================
+Sale order to invoice notes
+===========================
 
-This module replaces sale description in product with a HTML field.
-It also adds this description into the HTML note
-of the sale order line when the product is set.""",
+This module forwards the `note` field of sale order lines to the
+`note` field of invoice line when an invoice in generated from a sale
+order.
+""",
  'author': 'Camptocamp',
  'website': 'http://www.camptocamp.com',
- 'depends': ['product', 'sale', 'sale_order_webkit'],
+ 'depends': ['html_invoice_product_note',
+             'html_sale_product_note',
+             'invoice_webkit',
+             'sale_order_webkit'],
  'data': [],
  'test': [],
- 'installable': True,
+ 'installable': False,
  'active': False,
  }

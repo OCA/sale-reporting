@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#   Copyright (c) 2013 Camptocamp SA (http://www.camptocamp.com)
-#   @author Nicolas Bessi
+#   Copyright (c) 2011 Camptocamp SA (http://www.camptocamp.com)
+#   @author Nicolas Bessi, Vincent Renaville, Guewen Baconnier
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,25 +19,28 @@
 #
 ##############################################################################
 
-{'name': 'HTML note from sale order in invoice',
- 'version': '1.0.0',
- 'category': 'other',
+{'name': 'Sales Order Report using Webkit Library',
+ 'version': '1.1.3',
+ 'category': 'Reports/Webkit',
  'description': """
-Sale order to invoice notes
-===========================
+Sale order webkit
+#################
 
-This module forwards the `note` field of sale order lines to the
-`note` field of invoice line when an invoice in generated from a sale
-order.
-""",
+* Replaces the legacy RML Quotation/Sales Order report by a brand new webkit report.
+* Add header and footer notes
+* Add HTML note on Sale Order lines
+
+Depends on base_header_webkit community addon available here:
+`https://launchpad.net/webkit-utils <https://launchpad.net/webkit-utils>`_
+    """,
  'author': 'Camptocamp',
  'website': 'http://www.camptocamp.com',
- 'depends': ['html_invoice_product_note',
-             'html_sale_product_note',
-             'invoice_webkit',
-             'sale_order_webkit'],
- 'data': [],
+ 'depends': ['base', 'report_webkit', 'base_headers_webkit', 'sale'],
+ 'data': ['security/ir.model.access.csv',
+          'sale_report.xml',
+          'view/sale_view.xml'],
+ 'demo_xml': [],
  'test': [],
- 'installable': True,
+ 'installable': False,
  'active': False,
  }
