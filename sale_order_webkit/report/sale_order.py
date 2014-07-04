@@ -46,7 +46,7 @@ class SaleOrderReport(report_sxw.rml_parse):
                 'sale',
                 'group_discount_per_so_line')[1]
         except ValueError:
-            #group named group_discount_per_so_line doesn't exist
+            # group named group_discount_per_so_line doesn't exist
             return False
         groups = res_users_obj.browse(cr, uid, uid, context=context).groups_id
         return any(x for x in groups if x.id == group_id)
