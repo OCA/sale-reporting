@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/OCA/sale-reporting.svg?branch=6.1)](https://travis-ci.org/OCA/sale-reporting)
-[![Coverage Status](https://img.shields.io/coveralls/OCA/sale-reporting.svg)](https://coveralls.io/r/OCA/sale-reporting?branch=6.1)
+[![Coverage Status](https://coveralls.io/repos/OCA/sale-reporting/badge.png?branch=6.1)](https://coveralls.io/r/OCA/sale-reporting?branch=6.1)
 
 
 
