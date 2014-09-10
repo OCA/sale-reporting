@@ -1,6 +1,5 @@
-[![Build Status](https://travis-ci.org/OCA/sale-reporting.svg?branch=master)](https://travis-ci.org/OCA/sale-reporting)
-[![Coverage Status](https://coveralls.io/repos/OCA/sale-reporting/badge.png?branch=master)](https://coveralls.io/r/OCA/sale-reporting?branch=master)
-
+[![Build Status](https://travis-ci.org/OCA/sale-reporting.svg?branch=8.0)](https://travis-ci.org/OCA/sale-reporting)
+[![Coverage Status](https://coveralls.io/repos/OCA/sale-reporting/badge.png?branch=8.0)](https://coveralls.io/r/OCA/sale-reporting?branch=8.0)
 
 Sale Reporting
 ==============

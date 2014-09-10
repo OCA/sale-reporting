@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #   Copyright (c) 2014 Camptocamp SA (http://www.camptocamp.com)
-#     @author Romain Deheele, Vincent Renaville 
+#     @author Romain Deheele, Vincent Renaville
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
