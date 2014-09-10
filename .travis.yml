@@ -4,8 +4,8 @@ python:
   - "2.7"
 
 env:
-  - VERSION="7.0" ODOO_REPO="odoo/odoo"
-  - VERSION="7.0" ODOO_REPO="OCA/OCB"
+  - VERSION="8.0" ODOO_REPO="odoo/odoo"
+  - VERSION="8.0" ODOO_REPO="OCA/OCB"
 
 virtualenv:
   system_site_packages: true
@@ -14,8 +14,8 @@ install:
  - git clone https://github.com/OCA/maintainer-quality-tools.git $HOME/maintainer-quality-tools
  - export PATH=$HOME/maintainer-quality-tools/travis:$PATH
  - travis_install_nightly
- - git clone https://github.com/OCA/account-invoice-reporting -b 7.0 $HOME/account-invoice-reporting
- - git clone https://github.com/OCA/webkit-tools -b 7.0 $HOME/webkit-tools
+ - git clone https://github.com/OCA/account-invoice-reporting -b 8.0 $HOME/account-invoice-reporting
+ - git clone https://github.com/OCA/webkit-tools -b 8.0 $HOME/webkit-tools
 
 script:
   - travis_run_tests
