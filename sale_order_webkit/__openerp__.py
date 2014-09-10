@@ -26,7 +26,8 @@
 Sale order webkit
 #################
 
-* Replaces the legacy RML Quotation/Sales Order report by a brand new webkit report.
+* Replaces the legacy RML Quotation/Sales Order report by a brand new webkit
+  report.
 * Add header and footer notes
 * Add HTML note on Sale Order lines
 
