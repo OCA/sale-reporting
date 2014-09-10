@@ -36,9 +36,9 @@ class SaleOrderline(orm.Model):
 
     _inherit = "sale.order.line"
 
-    def _prepare_order_line_invoice_line(self, cr, uid, line, account_id=False, context=None):
-        res = super(SaleOrderline, self)._prepare_order_line_invoice_line(cr, uid, line,
-                                                                          account_id=False,
-                                                                          context=context)
+    def _prepare_order_line_invoice_line(self, cr, uid, line, account_id=False,
+                                         context=None):
+        res = super(SaleOrderline, self)._prepare_order_line_invoice_line(
+            cr, uid, line, account_id=False, context=context)
         res.update({'formatted_note': line.formatted_note})
         return res

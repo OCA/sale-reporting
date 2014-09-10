@@ -42,38 +42,52 @@ class SaleOrder(orm.Model):
     _inherit = "sale.order"
     _description = 'Sale Order'
 
-    _columns = {'text_condition1': fields.many2one('sale.condition_text', 'Header',
-                                                   domain=[('type', '=', 'header')]),
-                'text_condition2': fields.many2one('sale.condition_text', 'Footer',
-                                                   domain=[('type', '=', 'footer')]),
-                'note1': fields.html('Header'),
-                'note2': fields.html('Footer')}
+    _columns = {
+        'text_condition1': fields.many2one(
+            'sale.condition_text', 'Header',
+            domain=[('type', '=', 'header')]),
+        'text_condition2': fields.many2one(
+            'sale.condition_text', 'Footer',
+            domain=[('type', '=', 'footer')]),
+        'note1': fields.html('Header'),
+        'note2': fields.html('Footer')}
 
-    def _set_condition(self, cursor, uid, inv_id, commentid, key, partner_id=False):
+    def _set_condition(self, cursor, uid, inv_id, commentid, key,
+                       partner_id=False):
         """Set the text of the notes in invoices"""
         if not commentid:
             return {}
         if not partner_id:
-            raise osv.except_osv(_('No Customer Defined !'), _('Before choosing condition text select a customer.'))
-        lang = self.pool.get('res.partner').browse(cursor, uid, partner_id).lang or 'en_US'
-        cond = self.pool.get('sale.condition_text').browse(cursor, uid,
-                                                           commentid, {'lang': lang})
+            raise osv.except_osv(
+                _('No Customer Defined !'),
+                _('Before choosing condition text select a customer.'))
+        lang = self.pool.get('res.partner').browse(
+            cursor, uid, partner_id
+        ).lang or 'en_US'
+        cond = self.pool.get('sale.condition_text').browse(
+            cursor, uid, commentid, {'lang': lang})
         return {'value': {key: cond.text}}
 
     def set_header(self, cursor, uid, inv_id, commentid, partner_id=False):
-        return self._set_condition(cursor, uid, inv_id, commentid, 'note1', partner_id)
+        return self._set_condition(cursor, uid, inv_id, commentid, 'note1',
+                                   partner_id)
 
     def set_footer(self, cursor, uid, inv_id, commentid, partner_id=False):
-        return self._set_condition(cursor, uid, inv_id, commentid, 'note2', partner_id)
+        return self._set_condition(cursor, uid, inv_id, commentid, 'note2',
+                                   partner_id)
 
     def print_quotation(self, cursor, uid, ids, context=None):
         '''
         This function prints the sales order and mark it as sent,
         so that we can see more easily the next step of the workflow
         '''
-        assert len(ids) == 1, 'This option should only be used for a single id at a time'
+        assert len(ids) == 1, (
+            'This option should only be used for a single id at a time'
+        )
+
         wf_service = netsvc.LocalService("workflow")
-        wf_service.trg_validate(uid, 'sale.order', ids[0], 'quotation_sent', cursor)
+        wf_service.trg_validate(uid, 'sale.order', ids[0], 'quotation_sent',
+                                cursor)
         datas = {'model': 'sale.order',
                  'ids': ids,
                  'form': self.read(cursor, uid, ids[0], context=context),
