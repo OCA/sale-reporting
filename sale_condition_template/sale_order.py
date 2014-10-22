@@ -51,16 +51,21 @@ class SaleOrder(orm.Model):
 
     def action_invoice_create(self, cr, uid, ids,
                               grouped=False,
-                              states=['confirmed', 'done', 'exception'],
+                              states=None,
                               date_invoice=False, context=None):
         # function is design to return only one id
         invoice_obj = self.pool['account.invoice']
         _super = super(SaleOrder, self)
-        inv_id = _super.action_invoice_create(cr, uid, ids,
-                                              grouped=grouped,
-                                              states=states,
-                                              date_invoice=date_invoice,
-                                              context=context)
+        _super_kwargs = {'grouped': grouped,
+                         'date_invoice': date_invoice,
+                         'context': context,
+                         }
+        if states is not None:
+            # do not pass the 'states' when None so
+            # _super.action_invoice_create will use its default value,
+            # which is ['confirmed', 'done', 'exception']
+            _super_kwargs['states'] = states
+        inv_id = _super.action_invoice_create(cr, uid, ids, **_super_kwargs)
 
         invoice = invoice_obj.browse(cr, uid, inv_id, context=context)
         if isinstance(ids, (tuple, list)):
