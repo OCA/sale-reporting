@@ -27,6 +27,7 @@
  "author": "Camptocamp",
  "data": ["sale_order_view.xml",
           'base_condition_template_view.xml',
+          'views/report_saleorder.xml',
           'security/ir.model.access.csv',
           ],
  "category": "Sale",
