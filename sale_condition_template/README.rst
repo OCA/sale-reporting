@@ -1,14 +1,14 @@
-Sale Conditions
-===============
+Sale Comments
+=============
 
-Adds template condition texts on sales orders and invoices.
+Adds comments on sales orders.
+The comments can be edited directly on the sales orders or loaded from
+templates.
 
-Templates are categorized by their position on the document.
+Two positions are available for the comments:
 
-Two positions are available:
-
-- before sale order/invoice lines
-- after sale order/invoice lines
+- above sale order lines
+- below sale order lines
 
 Texts are copied on the invoice when you will create invoice from sale order.
 

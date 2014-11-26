@@ -6,9 +6,9 @@
       <field name="inherit_id" ref="sale.view_order_form"/>
       <field name="arch" type="xml">
         <xpath expr="//page[@string='Other Information']" position="after">
-          <page string="Conditions" name="conditions">
-            <label string="The conditions will be displayed on the printed document. You can load a predefined template, write your own text or load a template and then modify it only for this document." colspan="2"/>
-            <group string="Top Conditions">
+          <page string="Comments" name="comments">
+            <label string="The comments will be displayed on the printed document. You can load a predefined template, write your own text or load a template and then modify it only for this document." colspan="2"/>
+            <group string="Top Comments">
                 <field name="condition_template1_id"
                   string="Load a template"
                   domain="[('position','=','before_lines')]"
@@ -16,7 +16,7 @@
                   on_change="set_note1(condition_template1_id, partner_id)"/>
               <field name="note1" nolabel="1" colspan="2"/>
             </group>
-            <group string="Bottom Conditions">
+            <group string="Bottom Comments">
               <field name="condition_template2_id"
                 string="Load a template"
                 context="{'default_position': 'after_lines'}"

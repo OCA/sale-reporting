@@ -28,12 +28,12 @@ class SaleOrder(orm.Model):
     _columns = {
         'condition_template1_id': fields.many2one(
             'base.condition.template',
-            'Template Top conditions'),
+            'Top Comment Template'),
         'condition_template2_id': fields.many2one(
             'base.condition.template',
-            'Template Bottom conditions'),
-        'note1': fields.html('Top conditions'),
-        'note2': fields.html('Bottom conditions'),
+            'Bottom Comment Template'),
+        'note1': fields.html('Top Comment'),
+        'note2': fields.html('Bottom Comment'),
     }
 
     def set_condition(self, cr, uid, cond_id, field_name, partner_id):

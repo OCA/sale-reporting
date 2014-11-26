@@ -18,8 +18,8 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #
-{"name": "Sale Conditions",
- "summary": "Condition texts templates on Sale documents",
+{"name": "Sale Comments",
+ "summary": "Comments texts templates on Sale documents",
  "version": "1.4",
  "depends": ["sale",
              "invoice_condition_template",
