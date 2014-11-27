@@ -65,7 +65,7 @@ msgstr ""
 #. module: sale_condition_template
 #: field:sale.order,note1:0
 msgid "Top Comment"
-msgstr "Commentaires du haut"
+msgstr "Commentaire du haut"
 
 #. module: sale_condition_template
 #: field:sale.order,condition_template1_id:0
