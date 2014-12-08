@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* sale_condition_template
+#	* sale_comment_template
 #
 msgid ""
 msgstr ""
@@ -15,58 +15,58 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: sale_condition_template
+#. module: sale_comment_template
 #: field:sale.order,note2:0
 msgid "Bottom Comment"
 msgstr ""
 
-#. module: sale_condition_template
+#. module: sale_comment_template
 #: field:sale.order,condition_template2_id:0
 msgid "Bottom Comment Template"
 msgstr ""
 
-#. module: sale_condition_template
-#: view:sale.order:sale_condition_template.sale_order_form_add_condition
+#. module: sale_comment_template
+#: view:sale.order:sale_comment_template.sale_order_form_add_condition
 msgid "Bottom Comments"
 msgstr ""
 
-#. module: sale_condition_template
-#: view:sale.order:sale_condition_template.sale_order_form_add_condition
+#. module: sale_comment_template
+#: view:sale.order:sale_comment_template.sale_order_form_add_condition
 msgid "Comments"
 msgstr ""
 
-#. module: sale_condition_template
-#: model:ir.ui.menu,name:sale_condition_template.menu_base_condition_template_sale
+#. module: sale_comment_template
+#: model:ir.ui.menu,name:sale_comment_template.menu_base_condition_template_sale
 msgid "Document Conditions"
 msgstr ""
 
-#. module: sale_condition_template
-#: view:sale.order:sale_condition_template.sale_order_form_add_condition
+#. module: sale_comment_template
+#: view:sale.order:sale_comment_template.sale_order_form_add_condition
 msgid "Load a template"
 msgstr ""
 
-#. module: sale_condition_template
-#: model:ir.model,name:sale_condition_template.model_sale_order
+#. module: sale_comment_template
+#: model:ir.model,name:sale_comment_template.model_sale_order
 msgid "Sales Order"
 msgstr ""
 
-#. module: sale_condition_template
-#: view:sale.order:sale_condition_template.sale_order_form_add_condition
+#. module: sale_comment_template
+#: view:sale.order:sale_comment_template.sale_order_form_add_condition
 msgid "The comments will be displayed on the printed document. You can load a predefined template, write your own text or load a template and then modify it only for this document."
 msgstr ""
 
-#. module: sale_condition_template
+#. module: sale_comment_template
 #: field:sale.order,note1:0
 msgid "Top Comment"
 msgstr ""
 
-#. module: sale_condition_template
+#. module: sale_comment_template
 #: field:sale.order,condition_template1_id:0
 msgid "Top Comment Template"
 msgstr ""
 
-#. module: sale_condition_template
-#: view:sale.order:sale_condition_template.sale_order_form_add_condition
+#. module: sale_comment_template
+#: view:sale.order:sale_comment_template.sale_order_form_add_condition
 msgid "Top Comments"
 msgstr ""
 
