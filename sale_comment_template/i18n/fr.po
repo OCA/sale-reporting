@@ -22,27 +22,27 @@ msgid "Bottom Comment"
 msgstr "Commentaires du bas"
 
 #. module: sale_comment_template
-#: field:sale.order,condition_template2_id:0
+#: field:sale.order,comment_template2_id:0
 msgid "Bottom Comment Template"
 msgstr "Modèle de commentaire du bas"
 
 #. module: sale_comment_template
-#: view:sale.order:sale_comment_template.sale_order_form_add_condition
+#: view:sale.order:sale_comment_template.sale_order_form_add_comment
 msgid "Bottom Comments"
 msgstr "Commentaires du bas"
 
 #. module: sale_comment_template
-#: view:sale.order:sale_comment_template.sale_order_form_add_condition
+#: view:sale.order:sale_comment_template.sale_order_form_add_comment
 msgid "Comments"
 msgstr "Commentaires"
 
 #. module: sale_comment_template
-#: model:ir.ui.menu,name:sale_comment_template.menu_base_condition_template_sale
-msgid "Document Conditions"
+#: model:ir.ui.menu,name:sale_comment_template.menu_base_comment_template_sale
+msgid "Document Comments"
 msgstr "Commentaires de documents"
 
 #. module: sale_comment_template
-#: view:sale.order:sale_comment_template.sale_order_form_add_condition
+#: view:sale.order:sale_comment_template.sale_order_form_add_comment
 msgid "Load a template"
 msgstr "Utiliser un modèle"
 
@@ -52,7 +52,7 @@ msgid "Sales Order"
 msgstr "Commande"
 
 #. module: sale_comment_template
-#: view:sale.order:sale_comment_template.sale_order_form_add_condition
+#: view:sale.order:sale_comment_template.sale_order_form_add_comment
 msgid ""
 "The comments will be displayed on the printed document. You can load a "
 "predefined template, write your own text or load a template and then modify "
@@ -68,11 +68,11 @@ msgid "Top Comment"
 msgstr "Commentaire du haut"
 
 #. module: sale_comment_template
-#: field:sale.order,condition_template1_id:0
+#: field:sale.order,comment_template1_id:0
 msgid "Top Comment Template"
 msgstr "Modèle de commentaire du haut"
 
 #. module: sale_comment_template
-#: view:sale.order:sale_comment_template.sale_order_form_add_condition
+#: view:sale.order:sale_comment_template.sale_order_form_add_comment
 msgid "Top Comments"
 msgstr "Commentaires du haut"
