@@ -22,32 +22,32 @@ from openerp.osv import orm, fields
 
 
 class SaleOrder(orm.Model):
-    """Add text condition"""
+    """Add text comment"""
 
     _inherit = "sale.order"
     _columns = {
-        'condition_template1_id': fields.many2one(
-            'base.condition.template',
-            'Template Top conditions'),
-        'condition_template2_id': fields.many2one(
-            'base.condition.template',
-            'Template Bottom conditions'),
-        'note1': fields.html('Top conditions'),
-        'note2': fields.html('Bottom conditions'),
+        'comment_template1_id': fields.many2one(
+            'base.comment.template',
+            'Top Comment Template'),
+        'comment_template2_id': fields.many2one(
+            'base.comment.template',
+            'Bottom Comment Template'),
+        'note1': fields.html('Top Comment'),
+        'note2': fields.html('Bottom Comment'),
     }
 
-    def set_condition(self, cr, uid, cond_id, field_name, partner_id):
+    def set_comment(self, cr, uid, cond_id, field_name, partner_id):
         if not cond_id:
             return {'value': {field_name: ''}}
-        cond_obj = self.pool['base.condition.template']
+        cond_obj = self.pool['base.comment.template']
         text = cond_obj.get_value(cr, uid, cond_id, partner_id)
         return {'value': {field_name: text}}
 
     def set_note1(self, cr, uid, so_id, cond_id, partner_id):
-        return self.set_condition(cr, uid, cond_id, 'note1', partner_id)
+        return self.set_comment(cr, uid, cond_id, 'note1', partner_id)
 
     def set_note2(self, cr, uid, so_id, cond_id, partner_id):
-        return self.set_condition(cr, uid, cond_id, 'note2', partner_id)
+        return self.set_comment(cr, uid, cond_id, 'note2', partner_id)
 
     def action_invoice_create(self, cr, uid, ids,
                               grouped=False,
@@ -73,8 +73,8 @@ class SaleOrder(orm.Model):
             ids = ids[0]
 
         order = self.browse(cr, uid, ids, context=context)
-        inv_data = {'condition_template1_id': order.condition_template1_id.id,
-                    'condition_template2_id': order.condition_template2_id.id,
+        inv_data = {'comment_template1_id': order.comment_template1_id.id,
+                    'comment_template2_id': order.comment_template2_id.id,
                     'note1': order.note1,
                     'note2': order.note2}
         invoice.write(inv_data)

@@ -18,15 +18,15 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #
-{"name": "Sale Conditions",
- "summary": "Condition texts templates on Sale documents",
+{"name": "Sale Comments",
+ "summary": "Comments texts templates on Sale documents",
  "version": "1.4",
  "depends": ["sale",
-             "invoice_condition_template",
+             "invoice_comment_template",
              ],
  "author": "Camptocamp",
  "data": ["sale_order_view.xml",
-          'base_condition_template_view.xml',
+          'base_comment_template_view.xml',
           'views/report_saleorder.xml',
           'security/ir.model.access.csv',
           ],
