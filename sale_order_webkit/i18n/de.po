@@ -1,49 +1,50 @@
 # Translation of OpenERP Server.
 # This file contains the translation of the following modules:
-#	* sale_order_webkit
+# 	* sale_order_webkit
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-27 12:56+0000\n"
-"PO-Revision-Date: 2013-11-27 12:56+0000\n"
-"Last-Translator: <>\n"
+"PO-Revision-Date: 2015-01-05 16:38+0100\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: de\n"
 
 #. module: sale_order_webkit
 #: field:sale.condition_text,name:0
 msgid "Condition summary"
-msgstr "Zustand Zusammenfassung"
+msgstr "Vereinbarungszusammenfassung"
 
 #. module: sale_order_webkit
 #: view:sale.condition_text:0
 msgid "sale condition text"
-msgstr "Verkauf Bedingungstext"
+msgstr "Vereinbarungstext zum Verkauf"
 
 #. module: sale_order_webkit
 #: report:addons/sale_order_webkit/report/sale_order.mako:168
 msgid "Unit Price"
-msgstr "Einheitspreis"
+msgstr "Einzelpreis"
 
 #. module: sale_order_webkit
 #: view:sale.order:0
 msgid "Your bottom conditions here"
-msgstr "Your bottom conditions here"
+msgstr "Schlussbestimmungen"
 
 #. module: sale_order_webkit
 #: report:addons/sale_order_webkit/report/sale_order.mako:139
 msgid "Order N°"
-msgstr "Ihre Bodenbedingungen hier"
+msgstr "Auftragsnr."
 
 #. module: sale_order_webkit
 #: report:addons/sale_order_webkit/report/sale_order.mako:170
 msgid "Disc.(%)"
-msgstr "Rabatt.(%)"
+msgstr "Rab. (%)"
 
 #. module: sale_order_webkit
 #: view:sale.order:0
@@ -68,7 +69,7 @@ msgstr "ME"
 #. module: sale_order_webkit
 #: selection:sale.condition_text,type:0
 msgid "Top condition"
-msgstr "Top Zustand"
+msgstr "Einleitende Vereinbarung"
 
 #. module: sale_order_webkit
 #: report:addons/sale_order_webkit/report/sale_order.mako:165
@@ -76,56 +77,54 @@ msgid "Description"
 msgstr "Beschreibung"
 
 #. module: sale_order_webkit
-#: field:sale.order,note1:0
-#: field:sale.order,text_condition1:0
+#: field:sale.order,note1:0 field:sale.order,text_condition1:0
 msgid "Header"
-msgstr "Header"
+msgstr "Kopf"
 
 #. module: sale_order_webkit
 #: report:addons/sale_order_webkit/report/sale_order.mako:171
 msgid "Price"
-msgstr "Kopfzeile"
+msgstr "Preis"
 
 #. module: sale_order_webkit
 #: report:addons/sale_order_webkit/report/sale_order.mako:169
 msgid "VAT"
-msgstr "Mehrwertsteuer"
+msgstr "USt"
 
 #. module: sale_order_webkit
 #: field:sale.condition_text,type:0
 msgid "type"
-msgstr "Typ"
+msgstr "Art"
 
 #. module: sale_order_webkit
 #: field:sale.condition_text,text:0
 msgid "Condition"
-msgstr "Condition"
+msgstr "Bedingung"
 
 #. module: sale_order_webkit
 #: report:addons/sale_order_webkit/report/sale_order.mako:207
 msgid "Total:"
-msgstr "Zustand:"
+msgstr "Gesamt:"
 
 #. module: sale_order_webkit
-#: field:sale.order,note2:0
-#: field:sale.order,text_condition2:0
+#: field:sale.order,note2:0 field:sale.order,text_condition2:0
 msgid "Footer"
-msgstr "Zustand"
+msgstr "Fußnote"
 
 #. module: sale_order_webkit
 #: report:addons/sale_order_webkit/report/sale_order.mako:105
 msgid "Shipping address:"
-msgstr "Lieferadresse:"
+msgstr "Lieferanschrift:"
 
 #. module: sale_order_webkit
 #: report:addons/sale_order_webkit/report/sale_order.mako:143
 msgid "Date Ordered"
-msgstr "Datum bestellt"
+msgstr "Bestelldatum"
 
 #. module: sale_order_webkit
 #: report:addons/sale_order_webkit/report/sale_order.mako:122
 msgid "Invoice address:"
-msgstr "Rechnungsadresse:"
+msgstr "Rechnungsanschrift:"
 
 #. module: sale_order_webkit
 #: report:addons/sale_order_webkit/report/sale_order.mako:144
@@ -135,7 +134,7 @@ msgstr "Ihre Referenz"
 #. module: sale_order_webkit
 #: field:sale.order.line,formatted_note:0
 msgid "Formatted Note"
-msgstr "Formatierte Hinweis"
+msgstr "Formatierter Hinweis"
 
 #. module: sale_order_webkit
 #: report:addons/sale_order_webkit/report/sale_order.mako:166
@@ -145,17 +144,17 @@ msgstr "Menge"
 #. module: sale_order_webkit
 #: view:sale.order:0
 msgid "Your top conditions here"
-msgstr "Your top conditions here"
+msgstr "Einleitende Bedingungen"
 
 #. module: sale_order_webkit
 #: view:sale.condition_text:0
 msgid "Sale condition text"
-msgstr "Sale condition text"
+msgstr "Text der Verkaufsbedingungen"
 
 #. module: sale_order_webkit
 #: report:addons/sale_order_webkit/report/sale_order.mako:143
 msgid "Quotation Date"
-msgstr "Verkauf Bedingungstext"
+msgstr "Angebotsdatum"
 
 #. module: sale_order_webkit
 #: model:ir.actions.act_window,name:sale_order_webkit.action_sale_condition_form_webkit
@@ -166,7 +165,7 @@ msgstr "sale.condition_text"
 #. module: sale_order_webkit
 #: report:addons/sale_order_webkit/report/sale_order.mako:146
 msgid "Payment Term"
-msgstr "Zahlungs-Ausdruck"
+msgstr "Zahlungsmodalitäten"
 
 #. module: sale_order_webkit
 #: report:addons/sale_order_webkit/report/sale_order.mako:197
@@ -176,17 +175,17 @@ msgstr "Nettosumme:"
 #. module: sale_order_webkit
 #: report:addons/sale_order_webkit/report/sale_order.mako:139
 msgid "Quotation N°"
-msgstr "Zitat Nr."
+msgstr "Angebot Nr."
 
 #. module: sale_order_webkit
 #: model:ir.model,name:sale_order_webkit.model_sale_order_line
 msgid "Sales Order Line"
-msgstr "Kundenaufträge Linien"
+msgstr "Auftragsposition"
 
 #. module: sale_order_webkit
 #: model:ir.model,name:sale_order_webkit.model_sale_order
 msgid "Sales Order"
-msgstr "Kundenauftrags"
+msgstr "Verkaufsauftrag"
 
 #. module: sale_order_webkit
 #: report:addons/sale_order_webkit/report/sale_order.mako:145
@@ -196,5 +195,4 @@ msgstr "Verkäufer"
 #. module: sale_order_webkit
 #: selection:sale.condition_text,type:0
 msgid "Bottom condition"
-msgstr "Bodenzustand"
-
+msgstr "Schlussbestimmungen"
