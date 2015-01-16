@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: de\n"
+
+#. module: sale_report_proforma_webkit
+#: report:addons/sale_report_proforma_webkit/report/sale_proforma.mako:301
+msgid "Thank you for your prompt payment"
+msgstr "Vielen Dank für Ihre zügige Zahlung"
+
+#. module: sale_report_proforma_webkit
+#: report:addons/sale_report_proforma_webkit/report/sale_proforma.mako:218
+msgid "Responsible"
+msgstr "Verantwortlich"
+
+#. module: sale_report_proforma_webkit
+#: report:addons/sale_report_proforma_webkit/report/sale_proforma.mako:211
+msgid "Subject : "
+msgstr "Betreff:"
+
+#. module: sale_report_proforma_webkit
+#: report:addons/sale_report_proforma_webkit/report/sale_proforma.mako:243
+msgid "Unit Price"
+msgstr "Einzelpreis"
+
+#. module: sale_report_proforma_webkit
+#: report:addons/sale_report_proforma_webkit/report/sale_proforma.mako:245
+msgid "Disc.(%)"
+msgstr "Rab. (%)"
+
+#. module: sale_report_proforma_webkit
+#: report:addons/sale_report_proforma_webkit/report/sale_proforma.mako:208
+msgid "PRO-FORMA"
+msgstr "PRO-FORMA"
+
+#. module: sale_report_proforma_webkit
+#: report:addons/sale_report_proforma_webkit/report/sale_proforma.mako:280
+msgid "Taxes:"
+msgstr "Steuern:"
+
+#. module: sale_report_proforma_webkit
+#: report:addons/sale_report_proforma_webkit/report/sale_proforma.mako:240
+msgid "Description"
+msgstr "Beschreibung"
+
+#. module: sale_report_proforma_webkit
+#: report:addons/sale_report_proforma_webkit/report/sale_proforma.mako:220
+msgid "Our reference"
+msgstr "Unsere Referenz"
+
+#. module: sale_report_proforma_webkit
+#: report:addons/sale_report_proforma_webkit/report/sale_proforma.mako:216
+msgid "Invoice Date"
+msgstr "Rechnungsdatum"
+
+#. module: sale_report_proforma_webkit
+#: report:addons/sale_report_proforma_webkit/report/sale_proforma.mako:217
+msgid "Due Date"
+msgstr "Fälligkeitsdatum"
+
+#. module: sale_report_proforma_webkit
+#: report:addons/sale_report_proforma_webkit/report/sale_proforma.mako:242
+msgid "UoM"
+msgstr "ME"
+
+#. module: sale_report_proforma_webkit
+#: report:addons/sale_report_proforma_webkit/report/sale_proforma.mako:244
+msgid "Taxes"
+msgstr "Steuern"
+
+#. module: sale_report_proforma_webkit
+#: report:addons/sale_report_proforma_webkit/report/sale_proforma.mako:187
+msgid "Shipping address:"
+msgstr "Lieferanschrift"
+
+#. module: sale_report_proforma_webkit
+#: report:addons/sale_report_proforma_webkit/report/sale_proforma.mako:288
+msgid "Total:"
+msgstr "Gesamt:"
+
+#. module: sale_report_proforma_webkit
+#: report:addons/sale_report_proforma_webkit/report/sale_proforma.mako:219
+msgid "Payment Term"
+msgstr "Zahlungsbedingungen"
+
+#. module: sale_report_proforma_webkit
+#: report:addons/sale_report_proforma_webkit/report/sale_proforma.mako:241
+msgid "Qty"
+msgstr "Menge"
+
+#. module: sale_report_proforma_webkit
+#: report:addons/sale_report_proforma_webkit/report/sale_proforma.mako:205
+msgid "Identification number : "
+msgstr "Ident-Nummer:"
+
+#. module: sale_report_proforma_webkit
+#: report:addons/sale_report_proforma_webkit/report/sale_proforma.mako:246
+msgid "Net Sub Total"
+msgstr "Netto-Zwischensumme"
+
+#. module: sale_report_proforma_webkit
+#: report:addons/sale_report_proforma_webkit/report/sale_proforma.mako:272
+msgid "Net :"
+msgstr "Netto:"
