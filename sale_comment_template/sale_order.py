@@ -49,33 +49,14 @@ class SaleOrder(orm.Model):
     def set_note2(self, cr, uid, so_id, cond_id, partner_id):
         return self.set_comment(cr, uid, cond_id, 'note2', partner_id)
 
-    def action_invoice_create(self, cr, uid, ids,
-                              grouped=False,
-                              states=None,
-                              date_invoice=False, context=None):
-        # function is design to return only one id
-        invoice_obj = self.pool['account.invoice']
-        _super = super(SaleOrder, self)
-        _super_kwargs = {'grouped': grouped,
-                         'date_invoice': date_invoice,
-                         'context': context,
-                         }
-        if states is not None:
-            # do not pass the 'states' when None so
-            # _super.action_invoice_create will use its default value,
-            # which is ['confirmed', 'done', 'exception']
-            _super_kwargs['states'] = states
-        inv_id = _super.action_invoice_create(cr, uid, ids, **_super_kwargs)
-
-        invoice = invoice_obj.browse(cr, uid, inv_id, context=context)
-        if isinstance(ids, (tuple, list)):
-            assert len(ids) == 1, "1 ID expected, got: %s" % (ids, )
-            ids = ids[0]
-
-        order = self.browse(cr, uid, ids, context=context)
-        inv_data = {'comment_template1_id': order.comment_template1_id.id,
-                    'comment_template2_id': order.comment_template2_id.id,
-                    'note1': order.note1,
-                    'note2': order.note2}
-        invoice.write(inv_data)
-        return inv_id
+    def _prepare_invoice(self, cr, uid, order, lines, context=None):
+        values = super(SaleOrder, self)._prepare_invoice(cr, uid,
+                                                         order, lines,
+                                                         context=context)
+        values.update({
+            'comment_template1_id': order.comment_template1_id.id,
+            'comment_template2_id': order.comment_template2_id.id,
+            'note1': order.note1,
+            'note2': order.note2,
+        })
+        return values
