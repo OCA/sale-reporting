@@ -40,6 +40,7 @@ Contributors
     """,
  'author': 'Camptocamp',
  'website': 'http://www.camptocamp.com',
+ 'license': 'AGPL-3',
  'depends': ['base', 'report_webkit', 'base_headers_webkit', 'sale'],
  'data': ['report.xml',
           ],

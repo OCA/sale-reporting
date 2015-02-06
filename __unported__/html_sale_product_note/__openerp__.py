@@ -31,6 +31,7 @@ It also adds this description into the HTML note
 of the sale order line when the product is set.""",
  'author': 'Camptocamp',
  'website': 'http://www.camptocamp.com',
+ 'license': 'AGPL-3',
  'depends': ['product', 'sale', 'sale_order_webkit'],
  'data': [],
  'test': [],
