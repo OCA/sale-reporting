@@ -35,6 +35,7 @@ Depends on base_header_webkit community addon available here:
     """,
  'author': 'Camptocamp',
  'website': 'http://www.camptocamp.com',
+ 'license': 'AGPL-3',
  'depends': ['base', 'report_webkit', 'base_headers_webkit', 'sale'],
  'data': ['security/ir.model.access.csv',
           'sale_report.xml',

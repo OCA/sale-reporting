@@ -32,6 +32,7 @@ order.
 """,
  'author': 'Camptocamp',
  'website': 'http://www.camptocamp.com',
+ 'license': 'AGPL-3',
  'depends': ['html_invoice_product_note',
              'html_sale_product_note',
              'invoice_webkit',
