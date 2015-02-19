@@ -57,7 +57,7 @@ class SaleOrderLine(osv.osv):
 
     _columns = {
         "order_line_currency": fields.many2one('res.currency', 'Currency'),
-        "amount_currency_calculated": fields.float('Amount converted'),
+        "amount_currency_calculated": fields.float('Amount converted', readonly=True),
     }
 
     def _compute_currency(

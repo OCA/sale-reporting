@@ -68,6 +68,7 @@ Contributors
     },
     'data': [
         'views/sale_order_line.xml',
+        'report/sale_report_view.xml',
     ],
     'installable': True,
 }

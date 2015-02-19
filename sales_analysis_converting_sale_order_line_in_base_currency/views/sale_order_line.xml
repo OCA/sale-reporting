@@ -12,7 +12,7 @@
                     <xpath
                         expr="//notebook//tree/field[@name='price_unit']"
                         position="after">
-                        <field name="order_line_currency" />
+                        <field name="order_line_currency" invisible="1" />
                         <field name="amount_currency_calculated" />
                     </xpath>
 
