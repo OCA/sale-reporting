@@ -125,6 +125,16 @@ class SaleOrderLine(osv.osv):
         method, the company_id isn't always saved. But the company_id
         should be the user_id's company so we can get it from there.
         """
+        predicate_keys = [
+            'order_id', 'product_id', 'order_line_currency', 'price_unit'
+        ]
+        has_keys = reduce(lambda r, key: r and key in values,
+                          predicate_keys,
+                          True)
+
+        if not has_keys:
+            return
+
         sale_model = self.pool['sale.order']
         product_model = self.pool['product.product']
         cur_model = self.pool['res.currency']
