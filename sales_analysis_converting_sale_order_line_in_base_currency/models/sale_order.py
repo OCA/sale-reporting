@@ -163,6 +163,7 @@ class SaleOrderLine(osv.osv):
                 'order_id': line.order_id.id,
                 'product_id': line.product_id.id,
                 'order_line_currency': line.order_line_currency.id,
+                'price_unit': line.price_unit,
             }
 
             defaults.update(values)

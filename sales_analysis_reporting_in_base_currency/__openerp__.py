@@ -60,8 +60,8 @@ Contributors
 * Loïc Faure-Lacroix <loic.lacroix@savoirfairelinux.com>
 """,
     'depends': [
-        'sales_analysis_converting_sale_order_line_in_base_currency',
         'sales_analysis_reporting_in_base_currency_inherited',
+        'sales_analysis_converting_sale_order_line_in_base_currency',
     ],
     'external_dependencies': {
         'python': [],

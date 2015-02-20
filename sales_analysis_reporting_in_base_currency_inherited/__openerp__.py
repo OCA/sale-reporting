@@ -21,7 +21,7 @@
 ###############################################################################
 
 {
-    'name': 'Sales analysis reporting in base currency',
+    'name': 'Sales analysis reporting in base currency inherited',
     'version': '0.1',
     'author': 'Savoir-faire Linux',
     'maintainer': 'Savoir-faire Linux',
