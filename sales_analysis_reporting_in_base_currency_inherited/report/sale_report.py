@@ -2,6 +2,14 @@ from openerp import tools
 from openerp.osv import fields, osv
 
 class SaleReport(osv.osv):
+
+    """
+    Extend the sale_report view.
+
+    Extending the sale.stock override in 
+    odoo/addons/sale_stock/report/sale_report.py
+    """
+
     _inherit = "sale.report"
 
     _columns = {

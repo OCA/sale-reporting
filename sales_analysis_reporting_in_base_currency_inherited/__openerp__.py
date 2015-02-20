@@ -19,4 +19,36 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ###############################################################################
-from . import models
+
+{
+    'name': 'Sales analysis reporting in base currency',
+    'version': '0.1',
+    'author': 'Savoir-faire Linux',
+    'maintainer': 'Savoir-faire Linux',
+    'website': 'http://www.savoirfairelinux.com',
+    'license': 'AGPL-3',
+    'category': 'Others',
+    'summary': 'Sales Analysis replace the total_price to the calculated one',
+    'description': """
+Sales analysis reporting in base currency
+=========================================
+
+Modify the Sales analysis report to show prices in one
+consistant currency.
+
+Contributors
+------------
+* Loïc Faure-Lacroix <loic.lacroix@savoirfairelinux.com>
+""",
+    'depends': [
+        'sale_stock',
+        'sales_analysis_converting_sale_order_line_in_base_currency',
+    ],
+    'external_dependencies': {
+        'python': [],
+    },
+    'data': [
+        "report/sale_report_view.xml",
+    ],
+    'installable': True,
+}

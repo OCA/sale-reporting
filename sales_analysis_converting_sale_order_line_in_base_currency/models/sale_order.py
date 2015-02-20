@@ -56,15 +56,19 @@ class SaleOrderLine(osv.osv):
     _inherit = 'sale.order.line'
 
     _columns = {
-        "order_line_currency": fields.many2one('res.currency', 'Currency'),
-        "amount_currency_calculated": fields.float('Amount converted', readonly=True),
+        "order_line_currency": fields.many2one(
+            'res.currency', 'Currency'
+        ),
+        "amount_currency_calculated": fields.float(
+            'Amount converted', readonly=True
+        ),
     }
 
     def _compute_currency(
-        self, cr, uid, ids, base_currency, line_currency, lst_price,
+        self, cr, uid, base_currency, line_currency, lst_price,
         line_price, context=None
     ):
-
+        """Compute the base price of the product."""
         decimal_precision = self.pool['decimal.precision']
         precision = decimal_precision.precision_get(cr, uid, 'Account')
 
@@ -103,13 +107,72 @@ class SaleOrderLine(osv.osv):
         line_price = line.price_unit
 
         return self._compute_currency(
-            cr, uid, ids,
+            cr, uid,
             base_currency,
             line_currency,
             lst_price,
             line_price,
             context
         )
+
+    def compute_draft_line_base_currency(
+        self, cr, uid, values, context=None
+    ):
+        """
+        Update the values with the computed amount calculated.
+
+        It used the user_id to get the company_id as during the create
+        method, the company_id isn't always saved. But the company_id
+        should be the user_id's company so we can get it from there.
+        """
+        sale_model = self.pool['sale.order']
+        product_model = self.pool['product.product']
+        cur_model = self.pool['res.currency']
+
+        order_id = sale_model.browse(cr, uid, values['order_id'])
+        product_id = product_model.browse(cr, uid, values['product_id'])
+        currency_id = cur_model.browse(cr, uid, values['order_line_currency'])
+
+        base_currency = order_id.user_id.company_id.currency_id.rate
+        lst_price = product_id.lst_price
+        line_currency = currency_id.rate
+        line_price = values['price_unit']
+
+        new_price = self._compute_currency(
+            cr, uid,
+            base_currency,
+            line_currency,
+            lst_price,
+            line_price,
+            context
+        )
+        values["amount_currency_calculated"] = new_price
+
+    def create(self, cr, uid, values, context=None):
+        """Add the amount_currency_calculated to new record."""
+        self.compute_draft_line_base_currency(cr, uid, values, context=context)
+        base_func = super(SaleOrderLine, self).create
+        return base_func(cr, uid, values, context=context)
+
+    def write(self, cr, uid, ids, values, context=None):
+        """Update the amount_currency_calculated to draft lines."""
+        line = self.browse(cr, uid, ids[0])
+
+        if line.state == 'draft':
+            defaults = {
+                'order_id': line.order_id.id,
+                'product_id': line.product_id.id,
+                'order_line_currency': line.order_line_currency.id,
+            }
+
+            defaults.update(values)
+            values = defaults
+            self.compute_draft_line_base_currency(
+                cr, uid, values, context=context
+            )
+
+        base_func = super(SaleOrderLine, self).write
+        return base_func(cr, uid, ids, values, context=context)
 
     def product_id_change(
         self, cr, uid, ids, pricelist, product, qty=0,

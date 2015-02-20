@@ -28,7 +28,7 @@
     'website': 'http://www.savoirfairelinux.com',
     'license': 'AGPL-3',
     'category': 'Others',
-    'summary': 'Sales Analysis conversion of price to base currency',
+    'summary': 'Sales Analysis use consistant line price',
     'description': """
 Sales analysis reporting in base currency
 =========================================
@@ -60,14 +60,13 @@ Contributors
 * Loïc Faure-Lacroix <loic.lacroix@savoirfairelinux.com>
 """,
     'depends': [
-        'account',
-        'sale',
+        'sales_analysis_converting_sale_order_line_in_base_currency',
+        'sales_analysis_reporting_in_base_currency_inherited',
     ],
     'external_dependencies': {
         'python': [],
     },
     'data': [
-        'views/sale_order_line.xml',
     ],
     'installable': True,
 }
