@@ -169,12 +169,18 @@ class SaleOrderLine(osv.osv):
         line = self.browse(cr, uid, ids[0])
 
         if line.state == 'draft':
-            defaults = {
-                'order_id': line.order_id.id,
-                'product_id': line.product_id.id,
-                'order_line_currency': line.order_line_currency.id,
-                'price_unit': line.price_unit,
-            }
+            defaults = {}
+
+            if line.order_id.id:
+                defaults['order_id'] = line.order_id.id
+
+            if line.product_id.id:
+                defaults['product_id'] = line.product_id.id
+
+            if line.order_line_currency.id:
+                defaults['order_line_currency'] = line.order_line_currency.id
+
+            defaults['price_unit'] = line.price_unit
 
             defaults.update(values)
             values = defaults
