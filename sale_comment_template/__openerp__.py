@@ -24,7 +24,7 @@
  "depends": ["sale",
              "invoice_comment_template",
              ],
- "author": "Camptocamp",
+ "author": "Camptocamp,Odoo Community Association (OCA)",
  "data": ["sale_order_view.xml",
           'base_comment_template_view.xml',
           'views/report_saleorder.xml',

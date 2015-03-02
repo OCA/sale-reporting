@@ -29,7 +29,7 @@ Sale product note
 This module replaces sale description in product with a HTML field.
 It also adds this description into the HTML note
 of the sale order line when the product is set.""",
- 'author': 'Camptocamp',
+ 'author': "Camptocamp,Odoo Community Association (OCA)",
  'website': 'http://www.camptocamp.com',
  'license': 'AGPL-3',
  'depends': ['product', 'sale', 'sale_order_webkit'],
