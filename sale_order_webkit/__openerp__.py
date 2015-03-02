@@ -34,7 +34,7 @@ Sale order webkit
 Depends on base_header_webkit community addon available here:
 `https://launchpad.net/webkit-utils <https://launchpad.net/webkit-utils>`_
     """,
- 'author': 'Camptocamp',
+ 'author': "Camptocamp,Odoo Community Association (OCA)",
  'website': 'http://www.camptocamp.com',
  'depends': ['base', 'report_webkit', 'base_headers_webkit', 'sale'],
  'data': ['security/ir.model.access.csv',

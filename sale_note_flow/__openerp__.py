@@ -30,7 +30,7 @@ This module forwards the `note` field of sale order lines to the
 `note` field of invoice line when an invoice in generated from a sale
 order.
 """,
- 'author': 'Camptocamp',
+ 'author': "Camptocamp,Odoo Community Association (OCA)",
  'website': 'http://www.camptocamp.com',
  'depends': ['html_invoice_product_note',
              'html_sale_product_note',
