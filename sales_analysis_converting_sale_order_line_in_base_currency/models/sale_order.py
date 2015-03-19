@@ -19,14 +19,51 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ###############################################################################
-from openerp.osv import fields, osv
+from openerp.osv import fields, orm
 
 
-class SaleOrder(osv.osv):
+class SaleOrder(orm.Model):
 
     """Override the sale.order model."""
 
     _inherit = 'sale.order'
+
+    _columns = {
+        'converted_amount_total': fields.function(
+            lambda self, *a, **b: self._compute_converted_total(*a, **b),
+            method=True,
+            type='float',
+            store=True,
+            string='Converted Amount',
+        ),
+        'converted_amount_total_untaxed': fields.function(
+            lambda self, *a, **b: self._compute_converted_total(*a, **b),
+            method=True,
+            type='float',
+            store=True,
+            string='Converted Amount',
+        ),
+        'company_currency_id': fields.related(
+            'company_id',
+            'currency_id',
+            type="many2one",
+            relation="res.currency",
+            string="Company Currency",
+            readonly=True,
+            store=True
+        ),
+    }
+
+    def _compute_converted_total(self, cr, uid, ids, field_name, arg, context):
+        res = {}
+
+        for obj in self.browse(cr, uid, ids):
+            total = 0
+            for line in obj.order_line:
+                total += line.amount_currency_calculated * line.product_uom_qty
+            res[obj.id] = total
+
+        return res
 
     def action_button_confirm(self, cr, uid, ids, context=None):
         """
@@ -49,7 +86,7 @@ class SaleOrder(osv.osv):
                 })
 
 
-class SaleOrderLine(osv.osv):
+class SaleOrderLine(orm.Model):
 
     """Override the sale.order.line model."""
 
@@ -166,10 +203,12 @@ class SaleOrderLine(osv.osv):
 
     def write(self, cr, uid, ids, values, context=None):
         """Update the amount_currency_calculated to draft lines."""
-        line = self.browse(cr, uid, ids[0])
+        base_func = super(SaleOrderLine, self).write
+        ret = True
 
-        if line.state == 'draft':
-            defaults = {}
+        for line in self.browse(cr, uid, ids):
+
+            defaults = values.copy()
 
             if line.order_id.id:
                 defaults['order_id'] = line.order_id.id
@@ -182,14 +221,14 @@ class SaleOrderLine(osv.osv):
 
             defaults['price_unit'] = line.price_unit
 
-            defaults.update(values)
-            values = defaults
-            self.compute_draft_line_base_currency(
-                cr, uid, values, context=context
-            )
+            if line.state == 'draft':
+                self.compute_draft_line_base_currency(
+                    cr, uid, defaults, context=context
+                )
 
-        base_func = super(SaleOrderLine, self).write
-        return base_func(cr, uid, ids, values, context=context)
+            ret = ret and base_func(cr, uid, [line.id], defaults, context=context)
+
+        return ret
 
     def product_id_change(
         self, cr, uid, ids, pricelist, product, qty=0,

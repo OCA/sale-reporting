@@ -16,6 +16,43 @@
                         <field name="amount_currency_calculated" />
                     </xpath>
 
+                    <xpath
+                        expr="//notebook/page/group[@name='sale_total']"
+                        position="after">
+
+                        <div
+                            class="oe_right"
+                            style="margin-right: 10px"
+                            >
+                                <group class="oe_subtotal_footer oe_right" colspan="2" name="converted_sale_total">
+                                    <field name="company_currency_id" invisible="1" />
+                                    <field
+                                        name="converted_amount_total_untaxed"
+                                        widget='monetary'
+                                        options="{'currency_field': 'company_currency_id'}"
+                                        />
+                                    <div class="oe_subtotal_footer_separator oe_inline">
+                                        <label for="amount_total" />
+                                        <button
+                                            name="button_dummy"
+                                            states="draft,sent"
+                                            string="(update)"
+                                            type="object"
+                                            class="oe_edit_only oe_link"
+                                            />
+                                    </div>
+                                    <field
+                                        name="converted_amount_total"
+                                        nolabel="1"
+                                        class="oe_subtotal_footer_separator"
+                                        widget='monetary'
+                                        options="{'currency_field': 'company_currency_id'}"
+                                        />
+                                </group>
+                            </div>
+
+                    </xpath>
+
                 </data>
             </field>
         </record>
