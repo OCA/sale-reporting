@@ -20,7 +20,7 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
+from openerp.osv import orm
 
 
 class sale(orm.Model):
@@ -30,10 +30,8 @@ class sale(orm.Model):
         """Copied form the original function. Remove the default
         value for price list. Price list can be configured for each partner."""
         context = context or {}
-        v = {}
-        if shop_id:
-            shop = self.pool['sale.shop'].browse(
-                cr, uid, shop_id, context=context)
-            if shop.project_id.id:
-                v['project_id'] = shop.project_id.id
+        v = super(sale, self).onchange_shop_id(
+            cr, uid, ids, shop_id, context=context)['value']
+        if 'pricelist_id' in v:
+            del v['pricelist_id']
         return {'value': v}
