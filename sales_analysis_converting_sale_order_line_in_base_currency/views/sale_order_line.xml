@@ -22,6 +22,7 @@
                         <!-- Necessary for onchange events -->
                         <field name="order_line_currency" invisible="1" />
                         <field name="amount_currency_calculated" />
+                        <field name="converted_amount_subtotal" />
                     </xpath>
 
                     <xpath

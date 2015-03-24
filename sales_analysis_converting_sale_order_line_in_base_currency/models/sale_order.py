@@ -33,14 +33,12 @@ class SaleOrder(orm.Model):
             lambda self, *a, **b: self._compute_converted_total(*a, **b),
             method=True,
             type='float',
-            store=True,
             string='Converted Amount',
         ),
         'converted_amount_total_untaxed': fields.function(
             lambda self, *a, **b: self._compute_converted_total(*a, **b),
             method=True,
             type='float',
-            store=True,
             string='Converted Amount',
         ),
         'company_currency_id': fields.related(
@@ -60,7 +58,7 @@ class SaleOrder(orm.Model):
         for obj in self.browse(cr, uid, ids):
             total = 0
             for line in obj.order_line:
-                total += line.amount_currency_calculated * line.product_uom_qty
+                total += line.converted_amount_subtotal
             res[obj.id] = total
 
         return res
@@ -99,7 +97,23 @@ class SaleOrderLine(orm.Model):
         "amount_currency_calculated": fields.float(
             'Amount converted', readonly=True
         ),
+        "converted_amount_subtotal": fields.function(
+            lambda self, *a, **b: self._compute_converted_subtotal(*a, **b),
+            method=True,
+            type='float',
+            string='Converted Subtotal',
+        ),
     }
+
+    def _compute_converted_subtotal(
+        self, cr, uid, ids, field_name, arg, context
+    ):
+        res = {}
+
+        for obj in self.browse(cr, uid, ids):
+            res[obj.id] = obj.amount_currency_calculated * obj.product_uom_qty
+
+        return res
 
     def _compute_currency(
         self, cr, uid, base_currency, line_currency, lst_price,
@@ -226,7 +240,8 @@ class SaleOrderLine(orm.Model):
                     cr, uid, defaults, context=context
                 )
 
-            ret = ret and base_func(cr, uid, [line.id], defaults, context=context)
+            base_ret = base_func(cr, uid, [line.id], defaults, context=context)
+            ret = ret and base_ret
 
         return ret
 
