@@ -55,7 +55,7 @@ class SaleOrder(orm.Model):
     def _compute_converted_total(self, cr, uid, ids, field_name, arg, context):
         res = {}
 
-        for obj in self.browse(cr, uid, ids):
+        for obj in self.browse(cr, uid, ids, context=context):
             total = 0
             for line in obj.order_line:
                 total += line.converted_amount_subtotal
@@ -74,7 +74,7 @@ class SaleOrder(orm.Model):
         base_func = super(SaleOrder, self).action_button_confirm
         base_func(cr, uid, ids, context=context)
 
-        for o in self.browse(cr, uid, ids):
+        for o in self.browse(cr, uid, ids, context=context):
             base_currency = o.company_id.currency_id.rate
 
             for line in o.order_line:
@@ -110,7 +110,7 @@ class SaleOrderLine(orm.Model):
     ):
         res = {}
 
-        for obj in self.browse(cr, uid, ids):
+        for obj in self.browse(cr, uid, ids, context=context):
             res[obj.id] = obj.amount_currency_calculated * obj.product_uom_qty
 
         return res
@@ -220,7 +220,7 @@ class SaleOrderLine(orm.Model):
         base_func = super(SaleOrderLine, self).write
         ret = True
 
-        for line in self.browse(cr, uid, ids):
+        for line in self.browse(cr, uid, ids, context=context):
 
             defaults = values.copy()
 
