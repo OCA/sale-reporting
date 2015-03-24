@@ -46,4 +46,6 @@ class TestReport(common.TransactionCase):
         report_obj = self.sale_report_m.browse(cr, uid, max(ids2))
 
         self.assertEqual(len(ids2) - len(ids), 2)
-        self.assertEqual(report_obj.price_total_calculated, 10)
+        # Currency not added to lines so 0 we can't calculate the price
+        # without currency
+        self.assertEqual(report_obj.price_total_calculated, 0)
