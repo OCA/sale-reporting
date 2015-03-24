@@ -1,7 +1,7 @@
 from openerp import tools
-from openerp.osv import fields, osv
+from openerp.osv import fields, orm
 
-class SaleReport(osv.osv):
+class SaleReport(orm.Model):
 
     """
     Extend the sale_report view.
@@ -70,4 +70,3 @@ class SaleReport(osv.osv):
                     s.project_id
             )
         """)
-SaleReport()
