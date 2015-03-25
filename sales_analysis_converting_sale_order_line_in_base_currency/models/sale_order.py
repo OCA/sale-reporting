@@ -224,16 +224,18 @@ class SaleOrderLine(orm.Model):
 
             defaults = values.copy()
 
-            if line.order_id.id:
+            if not 'order_id' in defaults and line.order_id.id:
                 defaults['order_id'] = line.order_id.id
 
-            if line.product_id.id:
+            if not 'product_id' in defaults and line.product_id.id:
                 defaults['product_id'] = line.product_id.id
 
-            if line.order_line_currency.id:
+            if (not 'order_line_currency' in defaults and
+                    line.order_line_currency.id):
                 defaults['order_line_currency'] = line.order_line_currency.id
 
-            defaults['price_unit'] = line.price_unit
+            if not 'price_unit' in defaults:
+                defaults['price_unit'] = line.price_unit
 
             if line.state == 'draft':
                 self.compute_draft_line_base_currency(
