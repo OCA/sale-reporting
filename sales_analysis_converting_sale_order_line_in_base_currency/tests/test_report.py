@@ -1,5 +1,6 @@
 from openerp.tests import common
 
+
 class TestReport(common.TransactionCase):
 
     def setUp(self):
@@ -16,9 +17,6 @@ class TestReport(common.TransactionCase):
 
     def test_converting_same_currency(self):
         cr, uid, context = self.cr, self.uid, self.context
-
-        ids = self.sale_report_m.search(cr, uid, [], context=context)
-        count = len(ids)
 
         user_obj = self.user_m.browse(cr, uid, uid, context=context)
         pricelist_id = self.ref("product.list0")
@@ -55,11 +53,8 @@ class TestReport(common.TransactionCase):
         self.assertEqual(report_obj.order_line[0].amount_currency_calculated,
                          10)
 
-    def test_converting_same_currency(self):
+    def test_converting_different_currencies(self):
         cr, uid, context = self.cr, self.uid, self.context
-
-        ids = self.sale_report_m.search(cr, uid, [], context=context)
-        count = len(ids)
 
         user_obj = self.user_m.browse(cr, uid, uid, context=context)
         pricelist_id = self.ref("product.list0")
@@ -109,6 +104,7 @@ class TestReport(common.TransactionCase):
 
         for line in report_obj.order_line:
 
-            exchange = currency_id.rate / line.order_line_currency.rate 
+            exchange = currency_id.rate / line.order_line_currency.rate
             new_price = exchange * line.price_unit
-            self.assertAlmostEqual(line.amount_currency_calculated, new_price, 6)
+            self.assertAlmostEqual(line.amount_currency_calculated,
+                                   new_price, 6)

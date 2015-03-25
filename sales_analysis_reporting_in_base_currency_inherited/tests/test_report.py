@@ -1,5 +1,6 @@
 from openerp.tests import common
 
+
 class TestReport(common.TransactionCase):
 
     def setUp(self):
@@ -12,14 +13,12 @@ class TestReport(common.TransactionCase):
     def make_lines(self, *args):
         return map(lambda x: (0, 0, x), args)
 
-
     def test_load_report(self):
         cr, uid, context = self.cr, self.uid, self.context
 
         ids = self.sale_report_m.search(cr, uid, [], context=context)
-        count = len(ids)
 
-        sale_order_id = self.sale_order_m.create(cr, uid, {
+        self.sale_order_m.create(cr, uid, {
             "name": "Sale report test",
             "partner_id": self.ref("base.res_partner_1"),
             "partner_invoice_id": self.ref("base.res_partner_1"),
