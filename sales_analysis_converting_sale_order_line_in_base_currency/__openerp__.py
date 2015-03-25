@@ -50,7 +50,7 @@ sales in your base currency.
 
 This module has dependencies to :
 ---------------------------------
-* account
+* sale
 
 **Warning : this module will not work in a multi
 company setup**
@@ -60,7 +60,6 @@ Contributors
 * Loïc Faure-Lacroix <loic.lacroix@savoirfairelinux.com>
 """,
     'depends': [
-        'account',
         'sale',
     ],
     'external_dependencies': {

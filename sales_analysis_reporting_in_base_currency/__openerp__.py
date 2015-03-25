@@ -50,7 +50,8 @@ sales in your base currency.
 
 This module has dependencies to :
 ---------------------------------
-* account
+* sales_analysis_reporting_in_base_currency_inherited
+* sales_analysis_converting_sale_order_line_in_base_currency
 
 **Warning : this module will not work in a multi
 company setup**

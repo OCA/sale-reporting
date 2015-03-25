@@ -36,6 +36,11 @@ Sales analysis reporting in base currency
 Modify the Sales analysis report to show prices in one
 consistant currency.
 
+This module has dependencies to :
+---------------------------------
+* sale_stock
+* sales_analysis_converting_sale_order_line_in_base_currency
+
 Contributors
 ------------
 * Loïc Faure-Lacroix <loic.lacroix@savoirfairelinux.com>
