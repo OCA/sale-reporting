@@ -1,6 +1,47 @@
 <?xml version="1.0"?>
 <openerp>
     <data>
+        <record id="view_order_tree" model="ir.ui.view">
+            <field name="name">sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="priority">32</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath
+                        expr="//tree/field[@name='amount_total']"
+                        position="after">
+                        <field name="currency_id" />
+                        <field
+                            name="converted_amount_total"
+                            sum="Total tax not included"
+                            />
+                        <field name="company_currency_id" />
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="view_quotation_tree" model="ir.ui.view">
+            <field name="name">sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="priority">32</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath
+                        expr="//tree/field[@name='amount_total']"
+                        position="after">
+                        <field name="currency_id" />
+                        <field
+                            name="converted_amount_total"
+                            sum="Total tax not included"
+                            />
+                        <field name="company_currency_id" />
+                    </xpath>
+                </data>
+            </field>
+        </record>
 
         <record id="view_order_form" model="ir.ui.view">
             <field name="name">sale.order.form</field>
