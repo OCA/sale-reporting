@@ -54,14 +54,14 @@
                         expr="//notebook//form//field[@name='name']"
                         position="after">
                         <!-- Necessary for onchange events -->
-                        <field name="order_line_currency" invisible="1" />
+                        <field name="currency_id" invisible="1" />
                     </xpath>
 
                     <xpath
                         expr="//notebook//tree/field[@name='price_unit']"
                         position="after">
                         <!-- Necessary for onchange events -->
-                        <field name="order_line_currency" invisible="1" />
+                        <field name="currency_id" invisible="1" />
                         <field name="amount_currency_calculated" />
                         <field name="converted_amount_subtotal" />
                     </xpath>

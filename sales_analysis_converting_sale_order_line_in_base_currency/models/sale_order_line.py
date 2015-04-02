@@ -30,7 +30,7 @@ class SaleOrderLine(orm.Model):
     _inherit = 'sale.order.line'
 
     _columns = {
-        "order_line_currency": fields.many2one(
+        "currency_id": fields.many2one(
             'res.currency', 'Currency'
         ),
         "amount_currency_calculated": fields.float(
@@ -96,7 +96,7 @@ class SaleOrderLine(orm.Model):
         line = self.browse(cr, uid, ids[0])
 
         lst_price = line.product_id.lst_price
-        line_currency = line.order_line_currency.rate
+        line_currency = line.currency_id.rate
         line_price = line.price_unit
 
         return self._compute_currency(
@@ -119,7 +119,7 @@ class SaleOrderLine(orm.Model):
         should be the user_id's company so we can get it from there.
         """
         predicate_keys = [
-            'order_id', 'product_id', 'order_line_currency', 'price_unit'
+            'order_id', 'product_id', 'currency_id', 'price_unit'
         ]
         has_keys = reduce(lambda r, key: r and key in values,
                           predicate_keys,
@@ -134,7 +134,7 @@ class SaleOrderLine(orm.Model):
 
         order_id = sale_model.browse(cr, uid, values['order_id'])
         product_id = product_model.browse(cr, uid, values['product_id'])
-        currency_id = cur_model.browse(cr, uid, values['order_line_currency'])
+        currency_id = cur_model.browse(cr, uid, values['currency_id'])
 
         base_currency = order_id.user_id.company_id.currency_id.rate
         lst_price = product_id.lst_price
@@ -172,9 +172,9 @@ class SaleOrderLine(orm.Model):
             if 'product_id' not in defaults and line.product_id.id:
                 defaults['product_id'] = line.product_id.id
 
-            if ('order_line_currency' not in defaults and
-                    line.order_line_currency.id):
-                defaults['order_line_currency'] = line.order_line_currency.id
+            if ('currency_id' not in defaults and
+                    line.currency_id.id):
+                defaults['currency_id'] = line.currency_id.id
 
             if 'price_unit' not in defaults:
                 defaults['price_unit'] = line.price_unit
@@ -196,9 +196,9 @@ class SaleOrderLine(orm.Model):
         fiscal_position=False, flag=False, context=None
     ):
         """
-        Add the order_line_currency to the view.
+        Add the currency_id to the view.
 
-        The order_line_currency is necessary on order lines. It is then
+        The currency_id is necessary on order lines. It is then
         used to recompute the actual base price of the item.
 
         As price_unit can be different from the lst_price, it's not certain
@@ -218,6 +218,6 @@ class SaleOrderLine(orm.Model):
             price_list = lists.browse(cr, uid, pricelist)
             currency_id = price_list.currency_id
 
-            res['value']['order_line_currency'] = currency_id.id
+            res['value']['currency_id'] = currency_id.id
 
         return res

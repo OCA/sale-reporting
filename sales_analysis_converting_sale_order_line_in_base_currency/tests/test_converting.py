@@ -61,7 +61,7 @@ class TestConvertingPrice(common.TransactionCase):
                     "product_id": self.ref("product.product_product_3"),
                     "product_uom_qty": 1,
                     "price_unit": 10,
-                    "order_line_currency": currency_id.id,
+                    "currency_id": currency_id.id,
                 }
             )
         }, context=context)
@@ -100,21 +100,21 @@ class TestConvertingPrice(common.TransactionCase):
                     "product_id": self.ref("product.product_product_3"),
                     "product_uom_qty": 1,
                     "price_unit": 20,
-                    "order_line_currency": currency_id.id,
+                    "currency_id": currency_id.id,
                 },
                 {
                     "name": "product_3",
                     "product_id": self.ref("product.product_product_3"),
                     "product_uom_qty": 1,
                     "price_unit": 10,
-                    "order_line_currency": currency_cad_id,
+                    "currency_id": currency_cad_id,
                 },
                 {
                     "name": "product_3",
                     "product_id": self.ref("product.product_product_3"),
                     "product_uom_qty": 1,
                     "price_unit": 15,
-                    "order_line_currency": currency_cad_id,
+                    "currency_id": currency_cad_id,
                 }
             )
         }, context=context)
@@ -125,7 +125,7 @@ class TestConvertingPrice(common.TransactionCase):
 
         for line in report_obj.order_line:
 
-            exchange = currency_id.rate / line.order_line_currency.rate
+            exchange = currency_id.rate / line.currency_id.rate
             new_price = exchange * line.price_unit
             self.assertAlmostEqual(line.amount_currency_calculated,
                                    new_price, 6)
@@ -156,21 +156,21 @@ class TestConvertingPrice(common.TransactionCase):
                     "product_id": self.ref("product.product_product_3"),
                     "product_uom_qty": 1,
                     "price_unit": 20,
-                    "order_line_currency": currency_id.id,
+                    "currency_id": currency_id.id,
                 },
                 {
                     "name": "product_3",
                     "product_id": self.ref("product.product_product_3"),
                     "product_uom_qty": 1,
                     "price_unit": 10,
-                    "order_line_currency": currency_cad_id,
+                    "currency_id": currency_cad_id,
                 },
                 {
                     "name": "product_3",
                     "product_id": self.ref("product.product_product_3"),
                     "product_uom_qty": 1,
                     "price_unit": 15,
-                    "order_line_currency": currency_cad_id,
+                    "currency_id": currency_cad_id,
                 }
             )
         }, context=context)
@@ -181,7 +181,7 @@ class TestConvertingPrice(common.TransactionCase):
 
         for line in report_obj.order_line:
 
-            exchange = currency_id.rate / line.order_line_currency.rate
+            exchange = currency_id.rate / line.currency_id.rate
             new_price = exchange * line.price_unit
             self.assertAlmostEqual(line.amount_currency_calculated,
                                    new_price, 6)
