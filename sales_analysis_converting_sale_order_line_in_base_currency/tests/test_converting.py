@@ -136,8 +136,19 @@ class TestConvertingPrice(common.TransactionCase):
         self.assertEqual(vals['value']['currency_id'],
                          pricelist_obj.currency_id.id)
 
+        val = self.sale_order_line_m._compute_currency(
+            cr, uid, 1, None, 10, 15
+        )
+        self.assertEqual(val, 15)
+
+        val = self.sale_order_line_m._compute_currency(
+            cr, uid, 1, 2, 10, 30
+        )
+        self.assertEqual(val, 15)
+
         # Check first
         self.check_sale_order(sale_order_obj, currency_id)
+
 
         # Call confirm
         self.sale_order_m.action_button_confirm(

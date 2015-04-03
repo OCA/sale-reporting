@@ -79,8 +79,8 @@ class SaleOrderLine(orm.Model):
                 # isn't purely dependent on lst_price
                 return line_price * to_base
 
-        # Otherwise return the lst_price
-        return lst_price
+        # Otherwise return the line_price
+        return line_price
 
     def compute_amount_currency(
         self, cr, uid, ids, base_currency, context=None
