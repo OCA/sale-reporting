@@ -120,18 +120,42 @@ class TestConvertingPrice(common.TransactionCase):
             )
         }, context=context)
 
-        report_obj = self.sale_order_m.browse(
+        sale_order_obj = self.sale_order_m.browse(
             cr, uid, sale_order_id, context=context
         )
 
+        # Check first
+        self.check_sale_order(sale_order_obj, currency_id)
+
+        # Call confirm
+        self.sale_order_m.action_button_confirm(
+            cr, uid, [sale_order_id], context=context
+        )
+
+        # Check again above if everything is still right
+        self.check_sale_order(sale_order_obj, currency_id)
+
+    def check_sale_order(self, sale_order_obj, currency_id):
+        cr = self.cr
+
         precision = get_precision("Account")(cr)[1]
 
-        for line in report_obj.order_line:
+        total = 0
+
+        for line in sale_order_obj.order_line:
 
             exchange = currency_id.rate / line.currency_id.rate
             new_price = exchange * line.price_unit
             self.assertEqual(line.amount_currency_calculated,
                              round(new_price, precision))
+            subtotal = line.amount_currency_calculated * line.product_uom_qty
+
+            self.assertEqual(line.converted_amount_subtotal, subtotal)
+
+            total += subtotal
+
+        self.assertEqual(sale_order_obj.converted_amount_total, total)
+        self.assertEqual(sale_order_obj.converted_amount_total_untaxed, total)
 
     def test_converting_different_currencies_write(self):
         cr, uid, context = self.cr, self.uid, self.context
@@ -195,5 +219,25 @@ class TestConvertingPrice(common.TransactionCase):
             line.refresh()
 
             self.assertEqual(line.price_unit, 30, "Price should be 30")
+            self.assertEqual(line.amount_currency_calculated,
+                             round(30 * exchange, precision))
+
+        # Call confirm
+        self.sale_order_m.action_button_confirm(
+            cr, uid, [sale_order_id], context=context
+        )
+
+        for line in report_obj.order_line:
+
+            exchange = currency_id.rate / line.currency_id.rate
+            new_price = exchange * line.price_unit
+            self.assertEqual(line.amount_currency_calculated,
+                             round(new_price, precision))
+
+            line.write({"price_unit": 40}, context=context)
+            line.refresh()
+
+            self.assertEqual(line.price_unit, 40, "Price should be 40")
+            # Should not change anything on the converted price
             self.assertEqual(line.amount_currency_calculated,
                              round(30 * exchange, precision))
