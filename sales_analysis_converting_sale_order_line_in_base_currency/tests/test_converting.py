@@ -20,6 +20,7 @@
 #
 ###############################################################################
 from openerp.tests import common
+from openerp.addons.decimal_precision import get_precision
 
 
 class TestConvertingPrice(common.TransactionCase):
@@ -123,12 +124,14 @@ class TestConvertingPrice(common.TransactionCase):
             cr, uid, sale_order_id, context=context
         )
 
+        precision = get_precision("Account")(cr)[1]
+
         for line in report_obj.order_line:
 
             exchange = currency_id.rate / line.currency_id.rate
             new_price = exchange * line.price_unit
-            self.assertAlmostEqual(line.amount_currency_calculated,
-                                   new_price, 6)
+            self.assertEqual(line.amount_currency_calculated,
+                             round(new_price, precision))
 
     def test_converting_different_currencies_write(self):
         cr, uid, context = self.cr, self.uid, self.context
@@ -179,16 +182,18 @@ class TestConvertingPrice(common.TransactionCase):
             cr, uid, sale_order_id, context=context
         )
 
+        precision = get_precision("Account")(cr)[1]
+
         for line in report_obj.order_line:
 
             exchange = currency_id.rate / line.currency_id.rate
             new_price = exchange * line.price_unit
-            self.assertAlmostEqual(line.amount_currency_calculated,
-                                   new_price, 6)
+            self.assertEqual(line.amount_currency_calculated,
+                             round(new_price, precision))
 
             line.write({"price_unit": 30}, context=context)
             line.refresh()
 
             self.assertEqual(line.price_unit, 30, "Price should be 30")
-            self.assertAlmostEqual(line.amount_currency_calculated,
-                                   30 * exchange, 6)
+            self.assertEqual(line.amount_currency_calculated,
+                             round(30 * exchange, precision))
