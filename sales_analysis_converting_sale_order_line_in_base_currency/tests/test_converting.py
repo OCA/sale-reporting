@@ -31,6 +31,7 @@ class TestConvertingPrice(common.TransactionCase):
 
         self.sale_report_m = self.registry('sale.report')
         self.sale_order_m = self.registry('sale.order')
+        self.sale_order_line_m = self.registry('sale.order.line')
         self.user_m = self.registry('res.users')
         self.pricelist_m = self.registry('product.pricelist')
 
@@ -123,6 +124,17 @@ class TestConvertingPrice(common.TransactionCase):
         sale_order_obj = self.sale_order_m.browse(
             cr, uid, sale_order_id, context=context
         )
+
+        # Call on change product id
+        line1 = sale_order_obj.order_line[0]
+        vals = self.sale_order_line_m.product_id_change(
+            cr, uid, [line1.id], self.ref("product.list0"),
+            self.ref("product.product_product_3"),
+            qty=20,
+            partner_id=self.ref("base.res_partner_1"),
+        )
+        self.assertEqual(vals['value']['currency_id'],
+                         pricelist_obj.currency_id.id)
 
         # Check first
         self.check_sale_order(sale_order_obj, currency_id)
