@@ -69,12 +69,12 @@ class SaleOrderLine(orm.Model):
             price_unit = None
 
             if lst_price:
-                to_currency = (line_currency / base_currency)
+                to_currency = (line_currency / float(base_currency))
                 price_unit = lst_price * to_currency
                 price_unit = round(price_unit, precision)
 
             if price_unit != line_price:
-                to_base = (base_currency / line_currency)
+                to_base = (base_currency / float(line_currency))
                 # If price don't match, it means that the line_price
                 # isn't purely dependent on lst_price
                 return line_price * to_base

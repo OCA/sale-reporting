@@ -149,7 +149,6 @@ class TestConvertingPrice(common.TransactionCase):
         # Check first
         self.check_sale_order(sale_order_obj, currency_id)
 
-
         # Call confirm
         self.sale_order_m.action_button_confirm(
             cr, uid, [sale_order_id], context=context
