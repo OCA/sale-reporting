@@ -36,13 +36,13 @@ class SaleOrderLine(orm.Model):
         "amount_currency_calculated": fields.float(
             'Amount converted',
             readonly=True,
-            digits_compute=get_precision("Account"),
+            digits_compute=get_precision("Product Price"),
         ),
         "converted_amount_subtotal": fields.function(
             lambda self, *a, **b: self._compute_converted_subtotal(*a, **b),
             method=True,
             type='float',
-            digits_compute=get_precision("Account"),
+            digits_compute=get_precision("Product Price"),
             string='Converted Subtotal',
         ),
     }
@@ -63,7 +63,7 @@ class SaleOrderLine(orm.Model):
     ):
         """Compute the base price of the product."""
         decimal_precision = self.pool['decimal.precision']
-        precision = decimal_precision.precision_get(cr, uid, 'Account')
+        precision = decimal_precision.precision_get(cr, uid, 'Product Price')
 
         if line_currency:
             price_unit = None

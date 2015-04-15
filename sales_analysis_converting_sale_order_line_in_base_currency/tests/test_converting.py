@@ -160,7 +160,7 @@ class TestConvertingPrice(common.TransactionCase):
     def check_sale_order(self, sale_order_obj, currency_id):
         cr = self.cr
 
-        precision = get_precision("Account")(cr)[1]
+        precision = get_precision("Price Unit")(cr)[1]
 
         total = 0
 
@@ -228,7 +228,7 @@ class TestConvertingPrice(common.TransactionCase):
             cr, uid, sale_order_id, context=context
         )
 
-        precision = get_precision("Account")(cr)[1]
+        precision = get_precision("Price Unit")(cr)[1]
 
         for line in report_obj.order_line:
 

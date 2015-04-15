@@ -34,14 +34,14 @@ class SaleOrder(orm.Model):
             lambda self, *a, **b: self._compute_converted_total(*a, **b),
             method=True,
             type='float',
-            digits_compute=get_precision("Account"),
+            digits_compute=get_precision("Product Price"),
             string='Converted Amount',
         ),
         'converted_amount_total_untaxed': fields.function(
             lambda self, *a, **b: self._compute_converted_total(*a, **b),
             method=True,
             type='float',
-            digits_compute=get_precision("Account"),
+            digits_compute=get_precision("Product Price"),
             string='Converted Amount',
         ),
         'company_currency_id': fields.related(
