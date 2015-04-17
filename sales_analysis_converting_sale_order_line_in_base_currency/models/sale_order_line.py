@@ -42,7 +42,7 @@ class SaleOrderLine(orm.Model):
             lambda self, *a, **b: self._compute_converted_subtotal(*a, **b),
             method=True,
             type='float',
-            digits_compute=get_precision("Product Price"),
+            digits_compute=get_precision("Account"),
             string='Converted Subtotal',
         ),
     }

@@ -160,7 +160,8 @@ class TestConvertingPrice(common.TransactionCase):
     def check_sale_order(self, sale_order_obj, currency_id):
         cr = self.cr
 
-        precision = get_precision("Price Unit")(cr)[1]
+        precision = get_precision("Product Price")(cr)[1]
+        account_precision = get_precision("Account")(cr)[1]
 
         total = 0
 
@@ -170,7 +171,10 @@ class TestConvertingPrice(common.TransactionCase):
             new_price = exchange * line.price_unit
             self.assertEqual(line.amount_currency_calculated,
                              round(new_price, precision))
-            subtotal = line.amount_currency_calculated * line.product_uom_qty
+            subtotal = round(
+                line.amount_currency_calculated * line.product_uom_qty,
+                account_precision
+            )
 
             self.assertEqual(line.converted_amount_subtotal, subtotal)
 
