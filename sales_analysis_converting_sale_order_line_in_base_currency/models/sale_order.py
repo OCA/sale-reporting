@@ -60,8 +60,11 @@ class SaleOrder(orm.Model):
 
         for obj in self.browse(cr, uid, ids, context=context):
             total = 0
+
             for line in obj.order_line:
-                total += line.converted_amount_subtotal
+                precision = line._columns['converted_amount_subtotal'].digits[1]
+                total += round(line.converted_amount_subtotal, precision)
+
             res[obj.id] = total
 
         return res
