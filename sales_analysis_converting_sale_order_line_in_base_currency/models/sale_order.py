@@ -62,8 +62,8 @@ class SaleOrder(orm.Model):
             total = 0
 
             for line in obj.order_line:
-                precision = line._columns['converted_amount_subtotal'].digits[1]
-                total += round(line.converted_amount_subtotal, precision)
+                digits = line._columns['converted_amount_subtotal'].digits[1]
+                total += round(line.converted_amount_subtotal, digits)
 
             res[obj.id] = total
 
