@@ -12,7 +12,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
-[sale_comment_template](sale_comment_template/) | 1.4 | Comments texts templates on Sale documents
+[sale_comment_template](sale_comment_template/) | 8.0.1.4.0 | Comments texts templates on Sale documents
 
 Unported addons
 ---------------

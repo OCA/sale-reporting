@@ -20,7 +20,7 @@
 #
 {"name": "Sale Comments",
  "summary": "Comments texts templates on Sale documents",
- "version": "1.4",
+ "version": "8.0.1.4.0",
  "depends": ["sale",
              "invoice_comment_template",
              ],
