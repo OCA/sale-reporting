@@ -1,0 +1,135 @@
+.list_main_table {
+    border:thin solid #E3E4EA;
+    text-align:center;
+    border-collapse: collapse;
+}
+
+table.list_main_table {
+    margin-top: 20px;
+}
+
+.list_main_headers {
+    padding: 0;
+}
+
+.list_main_headers th {
+    border: thin solid #000000;
+    padding-right:3px;
+    padding-left:3px;
+    background-color: #EEEEEE;
+    text-align:center;
+    font-size:12;
+    font-weight:bold;
+}
+
+.list_main_table td {
+    padding-right:3px;
+    padding-left:3px;
+    padding-top:3px;
+    padding-bottom:3px;
+}
+
+.list_main_lines,
+.list_main_footers {
+    padding: 0;
+}
+
+.list_main_footers {
+    padding-top: 15px;
+}
+
+.list_main_lines td,
+.list_main_footers td,
+.list_main_footers th {
+    border-style: none;
+    text-align:left;
+    font-size:12;
+    padding:0;
+}
+
+.list_main_footers th {
+    text-align:right;
+}
+
+td .total_empty_cell {
+    width: 77%;
+}
+
+td .total_sum_cell {
+    width: 13%;
+}
+
+.nobreak {
+    page-break-inside: avoid;
+}
+
+caption.formatted_note {
+    text-align:left;
+    border-right:thin solid #EEEEEE;
+    border-left:thin solid #EEEEEE;
+    border-top:thin solid #EEEEEE;
+    padding-left:10px;
+    font-size:11;
+    caption-side: bottom;
+}
+
+caption.formatted_note p {
+    margin: 0;
+}
+
+
+.main_col1 {
+    width: 40%;
+}
+
+td.main_col1 {
+    text-align:left;
+}
+
+.main_col2,
+.main_col3,
+.main_col4,
+.main_col6 {
+    width: 10%;
+}
+
+.main_col5 {
+    width: 7%;
+}
+
+td.main_col5 {
+    text-align: center;
+    font-style:italic;
+    font-size: 10;
+}
+
+.main_col7 {
+    width: 13%;
+}
+
+.right_table {
+    right: 4cm;
+    width:"100%";
+}
+
+.std_text {
+    font-size:12;
+}
+
+th.date {
+    width: 90px;
+}
+
+td.amount, th.amount {
+    text-align: right;
+    white-space: nowrap;
+}
+
+td.date {
+    white-space: nowrap;
+    width: 90px;
+}
+
+.address .recipient .shipping .invoice {
+    font-size: 12px;
+}
