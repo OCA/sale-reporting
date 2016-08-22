@@ -22,4 +22,4 @@
               'views/report_saleorder_qweb.xml',
               'views/sale_view.xml'],
     'installable': True,
- }
+}
