@@ -8,6 +8,10 @@ This project aim to deal with modules related to manage sale report.
 You'll find modules that implement various report related to sales in general.
 
 [//]: # (addons)
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
 [sale_comment_template](sale_comment_template/) | 9.0.1.0.0 | Comments texts templates on Sale documents
 
 Unported addons
