@@ -8,9 +8,9 @@
           <span t-field="o.note1"/>
         </p>
       </xpath>
-      <xpath expr="//p[@t-field='o.note']" position="after">
-        <p t-if="o.note2">
-          <span t-field="o.note2"/>
+      <xpath expr="//p[@t-field='doc.note']" position="after">
+        <p t-if="doc.note2">
+          <span t-field="doc.note2"/>
         </p>
       </xpath>
     </template>
