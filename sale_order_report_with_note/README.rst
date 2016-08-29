@@ -14,13 +14,13 @@ Sale Order Report With Note
 Installation
 ============
 
-To install this module there is no external library required.
+No specific installation requirements.
 
 
 Configuration
 =============
 
-To configure this module, no configuration is required.
+No configuration is required.
 
 
 Usage

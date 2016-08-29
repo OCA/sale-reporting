@@ -12,9 +12,9 @@
     'category': 'Reports/Qweb',
     'license': 'AGPL-3',
     "author": "Camptocamp SA,"
-                "Eficent Business and IT Consulting Services S.L., "
-                "Serpent Consulting Services Pvt. Ltd.,"
-                "Odoo Community Association (OCA)",
+              "Eficent, "
+              "Serpent CS,"
+              "Odoo Community Association (OCA)",
     'website': "https://odoo-community.org/",
     'depends': ['sale'],
     'data': ['security/ir.model.access.csv',

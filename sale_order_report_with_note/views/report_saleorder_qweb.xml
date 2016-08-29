@@ -7,7 +7,7 @@
                         <template id="so_css" inherit_id="web.layout">
                             <xpath expr="//head" position="inside">
                                 <link rel="stylesheet"
-                                    href="/sale_order_report/static/src/css/so.css" />
+                                    href="/sale_order_report_with_note/static/src/css/so.css" />
                             </xpath>
                         </template>
                         <div class="row">
