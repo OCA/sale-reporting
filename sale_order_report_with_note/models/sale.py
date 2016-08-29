@@ -63,7 +63,7 @@ class SaleOrder(models.Model):
     @api.multi
     def print_quotation(self):
         self.filtered(lambda s: s.state == 'draft').write({'state': 'sent'})
-        xml = 'sale_order_report.report_saleorder_qweb'
+        xml = 'sale_order_report_with_note.report_saleorder_qweb'
         return self.env['report'].get_action(self, xml)
 
 
