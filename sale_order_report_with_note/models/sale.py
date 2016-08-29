@@ -69,7 +69,7 @@ class SaleOrder(models.Model):
         assert len(self.ids) == 1, '''This option should only be used
         for a single id at a time'''
         self.signal_workflow('quotation_sent')
-        xml = 'sale_order_report.report_saleorder_qweb'
+        xml = 'sale_order_report_with_note.report_saleorder_qweb'
         return self.env['report'].get_action(self, xml)
 
 
