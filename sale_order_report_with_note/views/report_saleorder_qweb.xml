@@ -155,7 +155,7 @@
                             <t t-if="o.note2">
                                 <t t-raw="o.note2"/>
                             </t>
-                        <br/>s
+                        <br/>
                     </div>
                 </t>
             </t>
