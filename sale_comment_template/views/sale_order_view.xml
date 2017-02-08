@@ -12,16 +12,14 @@
                 <field name="comment_template1_id"
                   string="Load a template"
                   domain="[('position','=','before_lines')]"
-                  context="{'default_position': 'before_lines'}"
-                  on_change="set_note1(comment_template1_id, partner_id)"/>
+                  context="{'default_position': 'before_lines'}"/>
               <field name="note1" nolabel="1" colspan="2"/>
             </group>
             <group string="Bottom Comments">
               <field name="comment_template2_id"
                 string="Load a template"
                 context="{'default_position': 'after_lines'}"
-                domain="[('position','=','after_lines')]"
-                on_change="set_note2(comment_template2_id, partner_id)"/>
+                domain="[('position','=','after_lines')]"/>
               <field name="note2" nolabel="1" colspan="2"/>
             </group>
           </page>
