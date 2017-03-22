@@ -6,10 +6,9 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
-                <h1 position="after">
-                    <label for="proforma" />
+                <group name="sales_person" position="inside">
                     <field name="proforma" />
-                </h1>
+                </group>
             </field>
         </record>
     </data>
