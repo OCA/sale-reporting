@@ -5,7 +5,7 @@
       <field name="model">sale.order</field>
       <field name="inherit_id" ref="sale.view_order_form"/>
       <field name="arch" type="xml">
-        <xpath expr="//page[@string='Other Information']" position="after">
+        <xpath expr="/form/sheet[1]/notebook[1]/page[2]" position="after">
           <page string="Comments" name="comments">
             <label string="The comments will be displayed on the printed document. You can load a predefined template, write your own text or load a template and then modify it only for this document." colspan="2"/>
             <group string="Top Comments">
