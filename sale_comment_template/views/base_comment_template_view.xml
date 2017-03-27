@@ -4,7 +4,7 @@
     <menuitem name="Document Comments"
       id="menu_base_comment_template_sale"
       action="base_comment_template.action_base_comment_template"
-      parent="base.menu_base_config"/>
+      parent="base.menu_sale_general_settings"/>
   </data>
 </openerp>
 
