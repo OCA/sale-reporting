@@ -24,6 +24,7 @@ from openerp.tools.translate import _
 
 
 class SaleConditionText(orm.Model):
+
     """Sale order Textual information"""
     _name = "sale.condition_text"
     _description = "sale conditions"
@@ -37,6 +38,7 @@ class SaleConditionText(orm.Model):
 
 
 class SaleOrder(orm.Model):
+
     """Adds condition to SO"""
 
     _inherit = "sale.order"
@@ -98,6 +100,7 @@ class SaleOrder(orm.Model):
 
 
 class SaleOrderLine(orm.Model):
+
     """ADD HTML note to sale order lines"""
 
     _inherit = "sale.order.line"
