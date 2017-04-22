@@ -4,9 +4,10 @@
 {
  'name': 'Sale Comments',
  'summary': 'Comments texts templates on Sale documents',
- 'version': '9.0.1.0.0',
+ 'version': '9.0.1.0.1',
  'license': 'AGPL-3',
  'depends': ['sale',
+             'base_comment_template',
              'invoice_comment_template',
              ],
  'author': 'Camptocamp,Odoo Community Association (OCA)',
