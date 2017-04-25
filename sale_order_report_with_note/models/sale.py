@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
-#   Copyright (c) 2013 Camptocamp SA (http://www.camptocamp.com)
-#   @author Vincent Renaville
-# © 2015 Eficent Business and IT Consulting Services S.L.
-# - Jordi Ballester Alomar
-# © 2015 Serpent Consulting Services Pvt. Ltd. - Sudhir Arya
+# Copyright 2013 Camptocamp SA (http://www.camptocamp.com) - Vincent Renaville
+# Copyright 2015 Eficent Business and IT Consulting Services S.L.
+# Copyright 2015 Serpent Consulting Services Pvt. Ltd.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from openerp import api, fields, models, _

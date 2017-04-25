@@ -10,19 +10,6 @@ Sale Order Report With Note
   a qweb report and adds header and footer notes on the sale order 
   and quotation
 
-
-Installation
-============
-
-No specific installation requirements.
-
-
-Configuration
-=============
-
-No configuration is required.
-
-
 Usage
 =====
 
