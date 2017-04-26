@@ -13,6 +13,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
+[sale_proforma_report](sale_proforma_report/) | 9.0.1.0.0 | Proforma report option in sale orders
 [sale_reporting_weight](sale_reporting_weight/) | 9.0.1.0.0 | Weights in the sales analysis view
 
 
