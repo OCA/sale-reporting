@@ -3,15 +3,15 @@
 # * sale_proforma_report
 # 
 # Translators:
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: odoomrp-wip (8.0)\n"
+"Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-07 10:45+0000\n"
-"PO-Revision-Date: 2015-09-20 19:05+0000\n"
-"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
-"Language-Team: Slovenian (http://www.transifex.com/oca/odoomrp-wip-8-0/language/sl/)\n"
+"POT-Creation-Date: 2017-04-26 02:58+0000\n"
+"PO-Revision-Date: 2017-04-26 02:58+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -19,24 +19,24 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
 #. module: sale_proforma_report
-#: view:website:sale.report_saleorder_document
-msgid "Order N°"
-msgstr "Nalog št."
+#: model:ir.ui.view,arch_db:sale_proforma_report.report_saleorder_proforma
+msgid "Order #"
+msgstr ""
 
 #. module: sale_proforma_report
-#: field:sale.order,proforma:0
+#: model:ir.model.fields,field_description:sale_proforma_report.field_sale_order_proforma
 msgid "Proforma"
 msgstr "Pro-forma"
 
 #. module: sale_proforma_report
-#: view:website:sale.report_saleorder_document
-msgid "Proforma Nº"
-msgstr "Pro-forma št."
+#: model:ir.ui.view,arch_db:sale_proforma_report.report_saleorder_proforma
+msgid "Proforma #"
+msgstr ""
 
 #. module: sale_proforma_report
-#: view:website:sale.report_saleorder_document
-msgid "Quotation N°"
-msgstr "Predračun št."
+#: model:ir.ui.view,arch_db:sale_proforma_report.report_saleorder_proforma
+msgid "Quotation #"
+msgstr ""
 
 #. module: sale_proforma_report
 #: model:ir.model,name:sale_proforma_report.model_sale_order
