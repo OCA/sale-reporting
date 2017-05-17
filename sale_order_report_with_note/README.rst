@@ -11,18 +11,6 @@ Sale Order Report With Note
   and quotation
 
 
-Installation
-============
-
-No specific installation requirements.
-
-
-Configuration
-=============
-
-No configuration is required.
-
-
 Usage
 =====
 
