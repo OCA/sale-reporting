@@ -10,7 +10,7 @@ This module creates:
 
 * A checkbox 'proforma' on the sales order
 
-* Proforma header on sale order report if checkbox is clicked
+* A proforma header on sale order report if checkbox is clicked
 
 
 Usage
@@ -18,7 +18,7 @@ Usage
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/148/9.0
+   :target: https://runbot.odoo-community.org/runbot/148/10.0
 
 
 Bug Tracker
