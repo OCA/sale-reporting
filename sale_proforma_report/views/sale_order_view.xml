@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="sale_order_proforma_form_view">
+        <field name="name">sale.order.proforma.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <group name="sales_person" position="inside">
+                <field name="proforma" />
+            </group>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_saleorder_proforma" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[@class='page']/h2" position="replace">
+            <h2>
+                <span
+                    t-if="doc.state not in ['draft','sent'] and doc.proforma == False">Order # </span>
+                <span
+                    t-if="doc.state in ['draft','sent'] and doc.proforma == False">Quotation # </span>
+                <span t-if="doc.proforma == True">Proforma # </span>
+                <span t-field="doc.name" />
+            </h2>
+        </xpath>
+    </template>
+</odoo>
