@@ -9,6 +9,13 @@ You'll find modules that implement various report related to sales in general.
 
 [//]: # (addons)
 
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[sale_proforma_report](sale_proforma_report/) | 10.0.1.0.0 | Proforma report option in sale orders
+
+
 Unported addons
 ---------------
 addon | version | summary
