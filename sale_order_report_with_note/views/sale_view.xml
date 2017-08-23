@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
     <!-- Sale condition text views -->
@@ -72,7 +72,9 @@
                     <group>
                         <field name="text_condition1" domain="[('type','=','header')]" colspan="2" />
                         <field name="text_condition2" domain="[('type','=','footer')]" colspan="2" />
+                        <separator string="Header Text"/>
                         <field name="note1" colspan="4" nolabel="1" placeholder="Your top conditions here"/>
+                        <separator string="Footer Text"/>
                         <field name="note2" colspan="4" nolabel="1" placeholder="Your bottom conditions here"/>
                     </group>
                 </page>
@@ -81,7 +83,7 @@
     </record>
 
     <record id="sale.view_order_form_editable_list" model="ir.ui.view">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_sale_salesman'), ref('product.group_uos'), ref('product.group_stock_packaging'), ref('sale.group_mrp_properties')])]"/>
+        <field name="groups_id" eval="[(6, 0, [ref('sales_team.group_sale_salesman'), ref('product.group_uom'), ref('product.group_stock_packaging'), ref('sale.group_mrp_properties')])]"/>
     </record>
 
 </odoo>

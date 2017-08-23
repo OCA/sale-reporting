@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <report id="sale.report_sale_order"
         string="Quotation - Order"
         model="sale.order"
@@ -7,4 +8,5 @@
         report_type="qweb-pdf"
         menu="True"
     />
+
 </odoo>

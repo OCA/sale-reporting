@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
-#   Copyright (c) 2013 Camptocamp SA (http://www.camptocamp.com)
+#   Copyright 2017 Camptocamp SA (http://www.camptocamp.com)
 #   @author Vincent Renaville
-# © 2015 Eficent Business and IT Consulting Services S.L.
-# - Jordi Ballester Alomar
-# © 2015 Serpent Consulting Services Pvt. Ltd. - Sudhir Arya
+# Copyright 2017 Eficent Business and IT Consulting Services S.L.
+# Copyright 2017 Serpent Consulting Services Pvt. Ltd.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from openerp import api, fields, models, _
-from openerp.exceptions import Warning
+from odoo import api, fields, models, _
+from odoo.exceptions import UserError
 
 
 class SaleConditionText(models.Model):
@@ -16,11 +15,21 @@ class SaleConditionText(models.Model):
     _name = "sale.condition_text"
     _description = "sale conditions"
 
-    name = fields.Char('Condition summary', required=True)
-    type = fields.Selection([('header', 'Top condition'),
-                             ('footer', 'Bottom condition')],
-                            'type', required=True)
-    text = fields.Html('Condition', translate=True, required=True)
+    name = fields.Char(
+        'Condition summary',
+        required=True
+    )
+    type = fields.Selection(
+        [('header', 'Top condition'),
+         ('footer', 'Bottom condition')],
+        'Type',
+        required=True
+    )
+    text = fields.Html(
+        'Condition',
+        translate=True,
+        required=True
+    )
 
 
 class SaleOrder(models.Model):
@@ -29,19 +38,24 @@ class SaleOrder(models.Model):
     _inherit = "sale.order"
     _description = 'Sale Order'
 
-    text_condition1 = fields.Many2one('sale.condition_text', 'Header',
-                                      domain=[('type', '=', 'header')])
-    text_condition2 = fields.Many2one('sale.condition_text', 'Footer',
-                                      domain=[('type', '=', 'footer')])
+    text_condition1 = fields.Many2one(
+        'sale.condition_text',
+        'Header',
+        domain=[('type', '=', 'header')]
+    )
+    text_condition2 = fields.Many2one(
+        'sale.condition_text',
+        'Footer',
+        domain=[('type', '=', 'footer')]
+    )
     note1 = fields.Html('Header')
     note2 = fields.Html('Footer')
 
     @api.onchange('text_condition1', 'partner_id')
     def set_header(self):
         if self.text_condition1 and not self.partner_id:
-            raise Warning(_('No Customer Defined !'
-                            '\n Before choosing condition text'
-                            ' select a customer.'))
+            raise UserError(_('''No Customer Defined Before choosing condition
+                                text select a customer.'''))
         ctx = dict(self._context)
         lang = self.partner_id.lang or 'en_US'
         self.text_condition1.with_context(ctx).write({'lang': lang})
@@ -51,9 +65,8 @@ class SaleOrder(models.Model):
     @api.onchange('text_condition2', 'partner_id')
     def set_footer(self):
         if self.text_condition2 and not self.partner_id:
-            raise Warning(_('No Customer Defined !'
-                            '\n Before choosing condition text'
-                            ' select a customer.'))
+            raise UserError(_('''No Customer Defined Before choosing condition
+                                text select a customer.'''))
         ctx = dict(self._context)
         lang = self.partner_id.lang or 'en_US'
         self.text_condition2.with_context(ctx).write({'lang': lang})
