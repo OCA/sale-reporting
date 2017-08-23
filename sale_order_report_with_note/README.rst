@@ -6,10 +6,8 @@
 Sale Order Report With Note
 =============================
 
-* This module replaces the webkit Quotation / Sale Order report by
-  a qweb report and adds header and footer notes on the sale order 
-  and quotation
-
+* This module extends Quotation / Sale Order qweb report by adding
+  header and footer notes to it.
 
 Usage
 =====
@@ -18,7 +16,7 @@ Usage
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/148/9.0
+   :target: https://runbot.odoo-community.org/runbot/148/10.0
 
 Bug Tracker
 ===========
