@@ -6,9 +6,8 @@
 Sale Order Report With Note
 =============================
 
-* This module replaces the webkit Quotation / Sale Order report by
-  a qweb report and adds header and footer notes on the sale order 
-  and quotation
+* This module extends Quotation / Sale Order qweb report by
+  adding header and footer notes on the sale order and quotation
 
 
 Usage
