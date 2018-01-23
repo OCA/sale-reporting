@@ -25,6 +25,7 @@
              "invoice_comment_template",
              ],
  "author": "Camptocamp,Odoo Community Association (OCA)",
+ "license": "AGPL-3",
  "data": ["sale_order_view.xml",
           'base_comment_template_view.xml',
           'views/report_saleorder.xml',
@@ -32,4 +33,4 @@
           ],
  "category": "Sale",
  "installable": True,
- "active": False, }
+ }
