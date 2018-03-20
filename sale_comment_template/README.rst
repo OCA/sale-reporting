@@ -60,6 +60,7 @@ Contributors
 * Yannick Vaucher <yannick.vaucher@camptocamp.com>
 * Simone Rubino <simone.rubino@agilebg.com>
 * Miquel Raïch <miquel.raich@eficent.com>
+* Vicent Cubells <vicent.cubells@tecnativa.com>
 
 Do not contact contributors directly about support or help with technical issues.
 
