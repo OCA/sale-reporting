@@ -1,0 +1,63 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_product_image
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-26 14:09+0000\n"
+"PO-Revision-Date: 2018-03-26 15:19+0100\n"
+"Last-Translator: Pedro Castro Silva <pedrocs@exo.pt>\n"
+"Language-Team: \n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: sale_order_product_image
+#: model:ir.ui.view,arch_db:sale_order_product_image.view_order_form
+msgid "Image"
+msgstr "Imagem"
+
+#. module: sale_order_product_image
+#: model:ir.model.fields,help:sale_order_product_image.field_sale_order_line_product_image
+msgid "Image of the product variant (Small-sized image of product template if false)."
+msgstr "Imagem da variante do produto (Imagem de pequena dimensão do modelo de produto, se falso)."
+
+#. module: sale_order_product_image
+#: code:addons/sale_order_product_image/models/res_config.py:36
+#, python-format
+msgid "Invalid product image size: %s. Please choose a number between 5 and 50."
+msgstr "Tamanho de imagem de produto inválida: %s. Por favor, escolha um número entre 5 e 50."
+
+#. module: sale_order_product_image
+#: model:ir.model.fields,help:sale_order_product_image.field_sale_config_settings_product_image_size
+msgid "Maximum size (in millimeters) for product images in sales orders and quotations. The default value is 20mm."
+msgstr "Tamanho máximo (em milímetros) para as imagens de produto em orçamentos e encomendas de venda. O valor predefinido é 20mm."
+
+#. module: sale_order_product_image
+#: model:ir.model.fields,field_description:sale_order_product_image.field_sale_config_settings_product_image_size
+msgid "Product image size"
+msgstr "Tamanho da Imagem do Produto"
+
+#. module: sale_order_product_image
+#: model:ir.model,name:sale_order_product_image.model_sale_order
+msgid "Sales Order"
+msgstr "Encomenda de Vendas"
+
+#. module: sale_order_product_image
+#: model:ir.model,name:sale_order_product_image.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Linha da Encomenda de Venda"
+
+#. module: sale_order_product_image
+#: model:ir.model.fields,field_description:sale_order_product_image.field_sale_order_line_product_image
+msgid "Small-sized image"
+msgstr "Imagem em pequeno formato"
+
+#. module: sale_order_product_image
+#: model:ir.model,name:sale_order_product_image.model_sale_config_settings
+msgid "sale.config.settings"
+msgstr "sale.config.settings"
