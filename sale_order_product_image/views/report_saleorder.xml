@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_saleorder_document" inherit_id="sale.report_saleorder_document">
+
+        <!-- Calculate max. product image size  -->
+        <xpath expr="//table[@class='table table-condensed']" position="before">
+            <t t-set="image_size" t-value="doc.get_product_image_size()"/>
+        </xpath>
+
+        <!-- Empty Column Headers  -->
+        <xpath expr="//table[@class='table table-condensed']/thead/tr/th[1]" position="after">
+            <th></th>
+        </xpath>
+
+        <!-- Product Image  -->
+        <xpath expr="//span[@t-field='l.name']/.." position="after">
+            <td class="text-center">
+                <img t-if="l.product_id and l.product_id.image"
+                     t-att-src="('data:image/png;base64,' + l.product_id.image)" class="img-rounded"
+                     t-att-style="('height: %smm; max-width: %smm;' % (image_size, image_size))"/>
+            </td>
+
+        </xpath>
+
+    </template>
+</odoo>
