@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <report id="sale.report_sale_order"
+        string="Quotation - Order"
+        model="sale.order"
+        name="sale_order_report_with_note.report_saleorder_qweb"
+        report_type="qweb-pdf"
+        menu="True"
+    />
+
+</odoo>
