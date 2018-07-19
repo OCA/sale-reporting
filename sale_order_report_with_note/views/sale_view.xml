@@ -10,7 +10,8 @@
             <form string="sale condition text">
                 <group>
                     <field name="name" select="1"/>
-                    <field name="type" select="1"/>
+                    <field name="condition_type" select="1"/>
+                    <field name="lang"/>
                     <field name="text" colspan="4"/>
                 </group>
             </form>
@@ -25,7 +26,8 @@
         <field name="arch" type="xml">
             <tree string="Sale condition text">
                 <field name="name" select="1"/>
-                <field name="type" select="1"/>
+                <field name="condition_type" select="1"/>
+                <field name="lang"/>
                 <field name="text"/>
             </tree>
         </field>
@@ -70,8 +72,8 @@
             <notebook  position="inside">
                 <page string="Conditions">
                     <group>
-                        <field name="text_condition1" domain="[('type','=','header')]" colspan="2" />
-                        <field name="text_condition2" domain="[('type','=','footer')]" colspan="2" />
+                        <field name="text_condition1" domain="[('condition_type','=','header')]" colspan="2" />
+                        <field name="text_condition2" domain="[('condition_type','=','footer')]" colspan="2" />
                         <separator string="Header Text"/>
                         <field name="note1" colspan="4" nolabel="1" placeholder="Your top conditions here"/>
                         <separator string="Footer Text"/>

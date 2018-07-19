@@ -1,167 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <template id="report_saleorder_qweb">
-        <t t-call="report.html_container">
-            <t t-foreach="docs" t-as="o">
-                <t t-call="report.internal_layout">
-                    <div class="page" style="font-size:13px;">
-                        <template id="so_css" inherit_id="web.layout">
-                            <xpath expr="//head" position="inside">
-                                <link rel="stylesheet"
-                                    href="/sale_order_report_with_note/static/src/css/so.css" />
-                            </xpath>
-                        </template>
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <div class="Address">
-                                    <strong>Shipping address :</strong>
-                                    <div t-field="o.partner_shipping_id" 
-                                        t-field-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": true}'/>
-                                </div>
-                                <div class="Address">
-                                    <strong >Invoice address:</strong>
-                                        <div t-field="o.partner_invoice_id"
-                                            t-field-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": true}'/>
-                                </div>
-                            </div>
-                            <div class="col-xs-5 col-xs-offset-1">
-                                <div t-field="o.partner_id"
-                                    t-field-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": true}' />
-                            </div>
-                        </div>
-                        <h3 style="clear:both; padding-top: 20px;">
-                            <span t-if="o.state not in ['draft','sent']">Order N° </span>
-                            <span t-if="o.state in ['draft','sent']">Quotation N° </span>
-                            <span t-field="o.name"/>
-                        </h3>
-                        <table class="table table-bordered table-condensed" width="100%">
-                            <tr>
-                                <th style="text-align:center" class="date" t-if="o.state not in ['draft','sent']">Quotation Date</th>
-                                <th style="text-align:center" class="date" t-if="o.state in ['draft','sent']">Date Ordered</th>
-                                <th style="text-align:center" >Your Reference</th>
-                                <th style="text-align:center">Salesman</th>
-                                <th style="text-align:center">Payment Term</th>
-                            </tr>
-                            <tr>
-                                <td class="date"><t t-esc="o.date_order"/></td>
-                                <td><t t-esc="o.client_order_ref"/></td>
-                                <td style="text-align:center"><t t-esc="o.user_id.name"/></td>
-                                <td style="text-align:center"><t t-esc="o.payment_term_id.name"/></td>
-                            </tr>
-                        </table>
-                        <t t-if="o.note1"><t t-raw="o.note1"/></t>
-                            <table class="list_main_table" width="100%">
-                                <thead>
-                                    <tr>
-                                        <th class="list_main_headers" style="width: 100%">
-                                            <table style="width:100%">
-                                                <tr>
-                                                    <th class="main_col1">Description</th>
-                                                    <th class="amount main_col2">Quantity</th>
-                                                    <th class="amount main_col3">UoM</th>
-                                                    <th class="amount main_col4">Unit Price</th>
-                                                    <th class="main_col5">VAT</th>
-                                                    <th class="amount main_col6" groups="sale.group_discount_per_so_line">Disc.(%)</th>
-                                                    <th class="amount main_col7">Price</th>
-                                                </tr>
-                                            </table>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="line" t-foreach="o.order_line" t-as="order_line">
-                                        <td class="list_main_lines" style="width: 100%">
-                                            <div class="nobreak">
-                                                <table style="width:100%">
-                                                    <tr>
-                                                        <td class="main_col1">
-                                                            <span t-field="order_line.name"/>
-                                                        </td>
-                                                        <td class="amount main_col2">
-                                                            <t t-if="order_line.product_uom_qty">
-                                                                <span t-field="order_line.product_uom_qty"/>
-                                                            </t>
-                                                        </td>
-                                                        <td class="amount main_col3">
-                                                            <t t-if="order_line.product_uom_qty">
-                                                                <span t-field="order_line.product_uom.name"/>
-                                                            </t>
-                                                        </td>
-                                                        <td class="amount main_col4">
-                                                            <span t-field="order_line.price_unit"/>
-                                                        </td>
-                                                        <td class="main_col5">
-                                                            <span t-esc="', '.join(map(lambda x: x.name, order_line.tax_id))"/>
-                                                        </td>
-                                                        <td groups="sale.group_discount_per_so_line" class="amount main_col6">
-                                                            <span t-field="order_line.discount"/>
-                                                        </td>
-                                                        <td class="amount main_col7">
-                                                            <span t-field="order_line.price_subtotal"
-                                                                t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
-                                                        </td>
-                                                    </tr>
-                                                    <t t-if="order_line.formatted_note">
-                                                        <caption class="formatted_note">
-                                                            <span t-field="order_line.formatted_note"/>
-                                                        </caption>
-                                                    </t>
-                                                </table>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                <tfoot class="totals">
-                                    <tr>
-                                        <td class="list_main_footers" style="width: 100%">
-                                            <div class="nobreak">
-                                                <table style="width:100%">
-                                                    <tr>
-                                                        <td class="total_empty_cell"/>
-                                                        <th>
-                                                            Net Total:
-                                                        </th>
-                                                        <td class="amount total_sum_cell">
-                                                            <span t-field="o.amount_untaxed"
-                                                                t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="total_empty_cell"/>
-                                                        <th>
-                                                            Taxes:
-                                                        </th>
-                                                        <td class="amount total_sum_cell">
-                                                            <span t-field="o.amount_tax"
-                                                                t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="total_empty_cell"/>
-                                                        <th>
-                                                            Total:
-                                                        </th>
-                                                        <td class="amount total_sum_cell">
-                                                            <b><span t-field="o.amount_total"
-                                                                t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/></b>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                            <p t-field="o.note" />
-                            <t t-if="o.note2">
-                                <t t-raw="o.note2"/>
-                            </t>
-                        <br/>
-                    </div>
-                </t>
-            </t>
+<template id="report_saleorder_document" inherit_id="sale.report_saleorder_document">
+    <xpath expr="//div[@class='oe_structure']" position="before">
+        <template id="sale_css" inherit_id="web.layout">
+            <xpath expr="//head" position="inside">
+                <link rel="stylesheet"
+                    href="/sale_order_report_with_note/static/src/css/sale.css" />
+            </xpath>
+        </template>
+    </xpath>
+    <xpath expr="//t[@t-set='display_discount']" position="after">
+        <t t-if="doc.note1"><t t-raw="doc.note1"/></t>
+    </xpath>
+    <xpath expr="//t[@t-foreach='page']/t[@t-as='l']" position="inside">
+        <t t-if="l.formatted_note">
+            <tr style="padding:0;">
+                <td colspan="7" style="padding:0;">
+                    <table style="width:100%;border:0;padding:0;">
+                        <caption class="formatted_note">
+                            <span t-field="l.formatted_note"/>
+                        </caption>
+                    </table>
+                </td>
+            </tr>
         </t>
-    </template>
+    </xpath>
+    <xpath expr="//p[@t-field='doc.note']" position="after">
+        <t t-if="doc.note2">
+            <t t-raw="doc.note2"/>
+        </t>
+    </xpath>
+</template>
 
 </odoo>

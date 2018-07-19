@@ -1,10 +1,10 @@
-.. image:: https://img.shields.io/badge/license-AGPLv3-blue.svg
-   :target: https://www.gnu.org/licenses/agpl.html
+.. image:: https://img.shields.io/badge/license-AGPL--3-blue.png
+   :target: https://www.gnu.org/licenses/agpl
    :alt: License: AGPL-3
 
-=============================
+===========================
 Sale Order Report With Note
-=============================
+===========================
 
 * This module extends Quotation / Sale Order qweb report by adding
   header and footer notes to it.
@@ -33,7 +33,7 @@ Credits
 Images
 ------
 
-* Odoo Community Association: `Icon <https://github.com/OCA/maintainer-tools/blob/master/template/module/static/description/icon.svg>`_.
+* Odoo Community Association: `Icon <https://odoo-community.org/logo.png>`_.
 
 Contributors
 ------------
@@ -41,6 +41,7 @@ Contributors
 * Vincent Renaville <vincent.renaville@camptocamp.com>
 * Jordi Ballester Alomar <jordi.ballester@eficent.com>
 * Serpent Consulting Services Pvt. Ltd. <support@serpentcs.com>
+* Miquel Raïch <miquel.raich@eficent.com>
 
 Maintainer
 ----------
