@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="report_saleorder_document" inherit_id="sale.report_saleorder_document">
+    <xpath expr="//div[@class='oe_structure']" position="before">
+        <template id="sale_css" inherit_id="web.layout">
+            <xpath expr="//head" position="inside">
+                <link rel="stylesheet"
+                    href="/sale_order_report_with_note/static/src/css/sale.css" />
+            </xpath>
+        </template>
+    </xpath>
+    <xpath expr="//t[@t-set='display_discount']" position="after">
+        <t t-if="doc.note1"><t t-raw="doc.note1"/></t>
+    </xpath>
+    <xpath expr="//t[@t-foreach='page']/t[@t-as='l']" position="inside">
+        <t t-if="l.formatted_note">
+            <tr style="padding:0;">
+                <td colspan="7" style="padding:0;">
+                    <table style="width:100%;border:0;padding:0;">
+                        <caption class="formatted_note">
+                            <span t-field="l.formatted_note"/>
+                        </caption>
+                    </table>
+                </td>
+            </tr>
+        </t>
+    </xpath>
+    <xpath expr="//p[@t-field='doc.note']" position="after">
+        <t t-if="doc.note2">
+            <t t-raw="doc.note2"/>
+        </t>
+    </xpath>
+</template>
+
+</odoo>
