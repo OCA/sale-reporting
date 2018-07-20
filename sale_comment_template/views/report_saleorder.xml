@@ -3,10 +3,31 @@
 
     <template id="report_saleorder_document_comments"
       inherit_id="sale.report_saleorder_document">
-      <xpath expr="//table[contains(@class, 'table-condensed')]" position="before">
+      <xpath expr="//div[@class='oe_structure']" position="before">
+        <template id="sale_css" inherit_id="web.layout">
+            <xpath expr="//head" position="inside">
+                <link rel="stylesheet"
+                    href="/sale_comment_template/static/src/css/sale.css" />
+            </xpath>
+        </template>
+      </xpath>
+      <xpath expr="//table[hasclass('table-condensed')]" position="before">
         <p t-if="doc.note1">
           <span t-field="doc.note1"/>
         </p>
+      </xpath>
+      <xpath expr="//t[@t-foreach='page']/t[@t-as='l']" position="inside">
+        <t t-if="l.formatted_note">
+            <tr style="padding:0;">
+                <td colspan="7" style="padding:0;">
+                    <table style="width:100%;border:0;padding:0;">
+                        <caption class="formatted_note">
+                            <span t-field="l.formatted_note"/>
+                        </caption>
+                    </table>
+                </td>
+            </tr>
+        </t>
       </xpath>
       <xpath expr="//p[@t-field='doc.note']" position="after">
         <p t-if="doc.note2">

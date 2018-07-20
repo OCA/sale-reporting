@@ -1,4 +1,4 @@
-.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
+.. image:: https://img.shields.io/badge/license-AGPL--3-blue.png
    :target: https://www.gnu.org/licenses/agpl
    :alt: License: AGPL-3
 
@@ -6,16 +6,23 @@
 Sale Comments
 =============
 
-Adds comments on sales orders.
-The comments can be edited directly on the sales orders or loaded from
-templates.
+Adds comments on
 
-Two positions are available for the comments:
+#. sales orders:
 
-- above sale order lines
-- below sale order lines
+   The comments can be edited directly on the sales orders or loaded from
+   templates.
 
-Texts are copied on the invoice when you will create invoice from sale order.
+   Two positions are available for the comments:
+
+   - above sale order lines
+   - below sale order lines
+
+   Texts are copied on the invoice when you will create invoice from sale order.
+
+#. sale order lines:
+
+   The formatted comments can be edited directly on the sales order lines.
 
 Installation
 ============
@@ -38,12 +45,21 @@ Bugs are tracked on `GitHub Issues
 check there if your issue has already been reported. If you spotted it first,
 help us smash it by providing detailed and welcomed feedback.
 
+Credits
+=======
+
+Images
+------
+
+* Odoo Community Association: `Icon <https://odoo-community.org/logo.png>`_.
+
 Contributors
 ------------
 
 * Nicolas Bessi <nicolas.bessi@camptocamp.com>
 * Yannick Vaucher <yannick.vaucher@camptocamp.com>
 * Simone Rubino <simone.rubino@agilebg.com>
+* Miquel Raïch <miquel.raich@eficent.com>
 
 Do not contact contributors directly about support or help with technical issues.
 

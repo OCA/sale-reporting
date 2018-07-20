@@ -24,7 +24,15 @@
             </group>
           </page>
         </xpath>
+        <xpath expr="/form/sheet/notebook/page/field/form/field[@name='name']" position="after">
+              <group>
+                  <field name="formatted_note" colspan="4"/>
+              </group>
+        </xpath>
       </field>
     </record>
 
+    <record id="sale.view_order_form_editable_list" model="ir.ui.view">
+        <field name="groups_id" eval="[(6, 0, [ref('sales_team.group_sale_salesman'), ref('product.group_uom'), ref('product.group_stock_packaging'), ref('sale.group_mrp_properties')])]"/>
+    </record>
 </odoo>
