@@ -9,3 +9,5 @@
 * `DynApps <https://www.dynapps.be>`_:
 
   * Raf Ven <raf.ven@dynapps.be>
+* `ForgeFlow <https://www.forgeflow.com>`_:
+* Miquel Raïch <miquel.raich@forgeflow.com>
