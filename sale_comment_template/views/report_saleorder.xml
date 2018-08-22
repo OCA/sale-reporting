@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_saleorder_document_comments"
+      inherit_id="sale.report_saleorder_document">
+      <xpath expr="//table[hasclass('table-condensed')]" position="before">
+        <p t-if="doc.note1">
+          <span t-field="doc.note1"/>
+        </p>
+      </xpath>
+      <xpath expr="//p[@t-field='doc.note']" position="after">
+        <p t-if="doc.note2">
+          <span t-field="doc.note2"/>
+        </p>
+      </xpath>
+    </template>
+
+</odoo>
