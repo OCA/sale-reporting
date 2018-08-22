@@ -1,8 +1,8 @@
 # Copyright 2017 Simone Rubino - Agile Business Group
+# Copyright 2018 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo.tests.common import TransactionCase
-from odoo import report
 
 
 class TestAccountInvoiceReport(TransactionCase):
@@ -11,7 +11,6 @@ class TestAccountInvoiceReport(TransactionCase):
         self.base_comment_model = self.env['base.comment.template']
         self.before_comment = self._create_comment('before_lines')
         self.after_comment = self._create_comment('after_lines')
-
         self.sale_order = self.env.ref('sale.sale_order_7')
         self.sale_order.update({
             'comment_template1_id': self.before_comment.id,
@@ -19,8 +18,6 @@ class TestAccountInvoiceReport(TransactionCase):
         })
         self.sale_order._set_note1()
         self.sale_order._set_note2()
-
-        self.invoice_ids = self.sale_order.action_invoice_create()
 
     def _create_comment(self, position):
         return self.base_comment_model.create({
@@ -30,15 +27,20 @@ class TestAccountInvoiceReport(TransactionCase):
         })
 
     def test_comments_in_sale_order(self):
-        (res, _) = report. \
-            render_report(self.env.cr, self.env.uid,
-                          [self.sale_order.id], 'sale.report_saleorder', {})
-        self.assertRegexpMatches(res, self.before_comment.text)
-        self.assertRegexpMatches(res, self.after_comment.text)
+        res = self.env['ir.actions.report']._get_report_from_name(
+            'sale.report_saleorder'
+        ).render_qweb_html(self.sale_order.ids)
+        self.assertRegexpMatches(str(res[0]), self.before_comment.text)
+        self.assertRegexpMatches(str(res[0]), self.after_comment.text)
 
     def test_comments_in_generated_invoice(self):
-        (res, _) = report. \
-            render_report(self.env.cr, self.env.uid,
-                          self.invoice_ids, 'account.report_invoice', {})
-        self.assertRegexpMatches(res, self.before_comment.text)
-        self.assertRegexpMatches(res, self.after_comment.text)
+        invoice_ids = self.sale_order.action_invoice_create()
+        invoice = self.env['account.invoice'].browse(invoice_ids)
+        self.assertEqual(
+            invoice.comment_template1_id,
+            self.sale_order.comment_template1_id,
+        )
+        self.assertEqual(
+            invoice.comment_template2_id,
+            self.sale_order.comment_template2_id,
+        )
