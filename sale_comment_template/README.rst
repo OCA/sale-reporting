@@ -44,8 +44,9 @@ Texts are copied on the invoice when you will create invoice from sale order.
 Installation
 ============
 
-To install this module, you need to have the module `Invoice Comments
-<https://github.com/OCA/account-invoice-reporting/tree/10.0/invoice_comment_template>`_.
+To install this module, you need to have the module
+`account_invoice_comment_template`, available in `OCA/account-invoice-reporting
+<https://github.com/OCA/account-invoice-reporting>`_.
 
 Bug Tracker
 ===========
@@ -64,14 +65,18 @@ Authors
 ~~~~~~~
 
 * Camptocamp
+* Tecnativa
 
 Contributors
 ~~~~~~~~~~~~
 
-* Xavier Jimenez <xavier.jimenez@qubiq.es>
 * Nicolas Bessi <nicolas.bessi@camptocamp.com>
 * Yannick Vaucher <yannick.vaucher@camptocamp.com>
 * Simone Rubino <simone.rubino@agilebg.com>
+* Xavier Jimenez <xavier.jimenez@qubiq.es>
+* `Tecnativa <https://www.tecnativa.com>`_:
+
+  * Pedro M. Baeza
 
 Do not contact contributors directly about support or help with technical issues.
 
