@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_saleorder_document_image" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//t[@t-foreach='doc.order_lines_layouted()']//tr/th[1]" position="before">
+            <th>Image</th>
+        </xpath>
+        <xpath expr="//tbody[hasclass('sale_tbody')]//t[@t-as='l']/tr/td[1]" position="before">
+            <td>
+                <span t-field="l.product_id.image_small" t-field-options="{'widget': 'image', 'class': 'img-rounded'}"/>
+            </td>
+        </xpath>
+    </template>
+
+</odoo>
