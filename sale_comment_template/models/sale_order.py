@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright 2013-2014 Nicolas Bessi (Camptocamp SA)
+# Copyright 2018 Eficent Business and IT Consulting Services S.L.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields, api
@@ -39,3 +40,11 @@ class SaleOrder(models.Model):
             'note2': self.note2,
         })
         return values
+
+
+class SaleOrderLine(models.Model):
+    """Add text comment"""
+
+    _inherit = "sale.order.line"
+
+    formatted_note = fields.Html('Formatted Note')
