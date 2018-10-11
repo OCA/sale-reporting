@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo11-addon-sale_comment_template',
+        'odoo11-addon-sale_order_report_product_image',
     ],
     classifiers=[
         'Programming Language :: Python',
