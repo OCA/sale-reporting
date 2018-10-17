@@ -13,7 +13,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
-[sale_comment_template](sale_comment_template/) | 10.0.1.1.0 | Comments texts templates on Sale documents
+[sale_comment_template](sale_comment_template/) | 10.0.1.2.0 | Comments texts templates on Sale documents
 [sale_proforma_report](sale_proforma_report/) | 10.0.1.0.0 | Proforma report option in sale orders
 
 
