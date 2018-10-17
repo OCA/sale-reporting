@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-20 10:46+0000\n"
-"PO-Revision-Date: 2014-10-22 08:13+0000\n"
+"POT-Creation-Date: 2018-04-04 10:08+0000\n"
+"PO-Revision-Date: 2018-03-20 10:46+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "Language: \n"
@@ -19,48 +19,37 @@ msgstr ""
 #. module: sale_comment_template
 #: model:ir.model.fields,field_description:sale_comment_template.field_sale_order_note2
 msgid "Bottom Comment"
-msgstr "Commentaires du bas"
+msgstr "Comentario inferior"
 
 #. module: sale_comment_template
 #: model:ir.model.fields,field_description:sale_comment_template.field_sale_order_comment_template2_id
 msgid "Bottom Comment Template"
-msgstr "Modèle de commentaire du bas"
+msgstr "Plantilla del comentario inferior"
 
 #. module: sale_comment_template
 #: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
 msgid "Bottom Comments"
-msgstr "Commentaires du bas"
+msgstr "Comentarios de la parte inferior"
 
 #. module: sale_comment_template
 #: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
 msgid "Comments"
-msgstr "Commentaires"
-
-#. module: sale_comment_template
-#: model:ir.model.fields,field_description:sale_comment_template.field_res_partner_comment_template_id
-#: model:ir.model.fields,field_description:sale_comment_template.field_res_users_comment_template_id
-msgid "Conditions template"
-msgstr ""
+msgstr "Comentarios"
 
 #. module: sale_comment_template
 #: model:ir.ui.menu,name:sale_comment_template.menu_base_comment_template_sale
 msgid "Document Comments"
-msgstr "Commentaires de documents"
+msgstr "Comentarios del documento"
 
 #. module: sale_comment_template
 #: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
 msgid "Load a template"
-msgstr "Utiliser un modèle"
-
-#. module: sale_comment_template
-#: model:ir.model,name:sale_comment_template.model_res_partner
-msgid "Partner"
-msgstr ""
+msgstr "Cargar una plantilla"
 
 #. module: sale_comment_template
 #: model:ir.model,name:sale_comment_template.model_sale_order
 msgid "Sales Order"
-msgstr "Commande"
+msgstr "Pedido de venta"
 
 #. module: sale_comment_template
 #: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
@@ -69,21 +58,22 @@ msgid ""
 "predefined template, write your own text or load a template and then modify "
 "it only for this document."
 msgstr ""
-"Les commentaires seront affichés sur le document imprimé. Vous pouvez "
-"charger un modèle prédéfini, écrire votre propre texte ou encore charger un "
-"modèle puis le modifier uniquement pour ce document."
+"Los comentarios se mostrarán en los documentos impresos. Puede cargar una "
+"plantilla pedefinida, escribir su propio texto o cargar una plantilla y "
+"modificarla para este documento."
 
 #. module: sale_comment_template
 #: model:ir.model.fields,field_description:sale_comment_template.field_sale_order_note1
 msgid "Top Comment"
-msgstr "Commentaire du haut"
+msgstr "Comentario superior"
 
 #. module: sale_comment_template
 #: model:ir.model.fields,field_description:sale_comment_template.field_sale_order_comment_template1_id
 msgid "Top Comment Template"
-msgstr "Modèle de commentaire du haut"
+msgstr "Plantilla del comentario superior"
 
 #. module: sale_comment_template
 #: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
 msgid "Top Comments"
-msgstr "Commentaires du haut"
+msgstr "Comentarios de la parte superior"
+
