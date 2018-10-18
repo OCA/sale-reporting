@@ -1,7 +1,7 @@
 # Copyright 2013-2014 Nicolas Bessi (Camptocamp SA)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields, api
+from odoo import api, fields, models
 
 
 class SaleOrder(models.Model):
@@ -38,3 +38,12 @@ class SaleOrder(models.Model):
             'note2': self.note2,
         })
         return values
+
+    @api.onchange('partner_id')
+    def onchange_partner_id_sale_comment(self):
+        if self.partner_id:
+            comment_template = self.partner_id.comment_template_id
+            if comment_template.position == 'before_lines':
+                self.comment_template1_id = comment_template
+            elif comment_template.position == 'after_lines':
+                self.comment_template2_id = comment_template
