@@ -11,6 +11,9 @@ class TestAccountInvoiceReport(TransactionCase):
         self.base_comment_model = self.env['base.comment.template']
         self.before_comment = self._create_comment('before_lines')
         self.after_comment = self._create_comment('after_lines')
+        self.partner_id = self.env['res.partner'].create({
+            'name': 'Partner Test'
+        })
         self.sale_order = self.env.ref('sale.sale_order_7')
         self.sale_order.update({
             'comment_template1_id': self.before_comment.id,
@@ -44,3 +47,20 @@ class TestAccountInvoiceReport(TransactionCase):
             invoice.comment_template2_id,
             self.sale_order.comment_template2_id,
         )
+
+    def test_onchange_partner_id(self):
+        self.partner_id.comment_template_id = self.after_comment.id
+        vals = {
+            'partner_id': self.partner_id.id,
+        }
+        new_sale = self.env['sale.order'].new(vals)
+        new_sale.onchange_partner_id_sale_comment()
+        sale_dict = new_sale._convert_to_write(new_sale._cache)
+        new_sale = self.env['sale.order'].create(sale_dict)
+        self.assertEqual(new_sale.comment_template2_id, self.after_comment)
+        self.partner_id.comment_template_id = self.before_comment.id
+        new_sale = self.env['sale.order'].new(vals)
+        new_sale.onchange_partner_id_sale_comment()
+        sale_dict = new_sale._convert_to_write(new_sale._cache)
+        new_sale = self.env['sale.order'].create(sale_dict)
+        self.assertEqual(new_sale.comment_template1_id, self.before_comment)
