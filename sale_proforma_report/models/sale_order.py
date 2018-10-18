@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2016 OdooMRP Team
 # Copyright 2016 AvanzOSC (<http://www.avanzosc.es>)
 # Copyright 2016 Tecnativa (<http://www.tecnativa.com>)

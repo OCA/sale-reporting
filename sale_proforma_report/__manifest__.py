@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2016 OdooMRP Team
 # Copyright 2016 AvanzOSC (<http://www.avanzosc.es>)
 # Copyright 2016 Tecnativa (<http://www.tecnativa.com>)
@@ -8,14 +7,17 @@
 
 {
     "name": "Sale Proforma Report",
-    "version": "10.0.1.0.0",
+    "version": "11.0.1.0.0",
+    "development_status": "Mature",
     "depends": [
         "sale",
     ],
     "author": "OdooMRP team,"
               "AvanzOSC,"
               "Tecnativa,"
-              "Eficent",
+              "Eficent,"
+              "Odoo Community Association (OCA)",
+    "license": "AGPL-3",
     "category": "Sale",
     "website": "https://github.com/OCA/sale-reporting",
     "summary": "Proforma report option in sale orders",
