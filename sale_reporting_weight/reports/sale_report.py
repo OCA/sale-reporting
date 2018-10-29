@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
 # Copyright 2017 Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import fields, models
-import openerp.addons.decimal_precision as dp
+from odoo import fields, models
+import odoo.addons.decimal_precision as dp
 
 
 class SaleReport(models.Model):
