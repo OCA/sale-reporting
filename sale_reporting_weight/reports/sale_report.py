@@ -1,25 +1,24 @@
-# -*- coding: utf-8 -*-
 # Copyright 2017 Pedro M. Baeza <pedro.baeza@tecnativa.com>
+# Copyright 2018 David Vidal <david.vidal@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import fields, models
-import openerp.addons.decimal_precision as dp
+from odoo import models
 
 
 class SaleReport(models.Model):
     _inherit = "sale.report"
 
-    weight = fields.Float(digits=dp.get_precision('Stock Weight'))
-
     def _select(self):
         select_str = super(SaleReport, self)._select()
-        select_str += """
-            , CASE
-                WHEN u.category_id = imd.res_id
-                THEN SUM(l.product_uom_qty / u.factor * u2.factor)
-                ELSE SUM(p.weight * l.product_uom_qty / u.factor * u2.factor)
-            END AS weight
-            """
+        select_str = select_str.replace(
+            'sum(p.weight * l.product_uom_qty / u.factor * u2.factor) '
+            'as weight,',
+            'CASE'
+            '    WHEN u.category_id = imd.res_id'
+            '    THEN SUM(l.product_uom_qty / u.factor * u2.factor)'
+            '    ELSE SUM(p.weight * l.product_uom_qty / u.factor * u2.factor)'
+            'END AS weight,'
+        )
         return select_str
 
     def _from(self):
