@@ -15,7 +15,9 @@ class SaleReport(models.Model):
     def _select(self):
         select_str = super(SaleReport, self)._select()
         select_str += """,
-            sum((l.price_subtotal / l.product_uom_qty) * l.qty_delivered)
+            sum((l.price_subtotal /
+                 coalesce(nullif(l.product_uom_qty, 0), 1)
+                ) * l.qty_delivered)
             as price_subtotal_delivered
         """
         return select_str
