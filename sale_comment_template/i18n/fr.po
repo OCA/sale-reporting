@@ -37,12 +37,6 @@ msgid "Comments"
 msgstr "Commentaires"
 
 #. module: sale_comment_template
-#: model:ir.model.fields,field_description:sale_comment_template.field_res_partner_comment_template_id
-#: model:ir.model.fields,field_description:sale_comment_template.field_res_users_comment_template_id
-msgid "Conditions template"
-msgstr ""
-
-#. module: sale_comment_template
 #: model:ir.ui.menu,name:sale_comment_template.menu_base_comment_template_sale
 msgid "Document Comments"
 msgstr "Commentaires de documents"
@@ -51,11 +45,6 @@ msgstr "Commentaires de documents"
 #: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
 msgid "Load a template"
 msgstr "Utiliser un modèle"
-
-#. module: sale_comment_template
-#: model:ir.model,name:sale_comment_template.model_res_partner
-msgid "Partner"
-msgstr ""
 
 #. module: sale_comment_template
 #: model:ir.model,name:sale_comment_template.model_sale_order
