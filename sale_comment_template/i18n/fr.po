@@ -48,8 +48,8 @@ msgstr "Utiliser un modèle"
 
 #. module: sale_comment_template
 #: model:ir.model,name:sale_comment_template.model_sale_order
-msgid "Sales Order"
-msgstr "Commande"
+msgid "Quotation"
+msgstr ""
 
 #. module: sale_comment_template
 #: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
@@ -76,3 +76,6 @@ msgstr "Modèle de commentaire du haut"
 #: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
 msgid "Top Comments"
 msgstr "Commentaires du haut"
+
+#~ msgid "Sales Order"
+#~ msgstr "Commande"
