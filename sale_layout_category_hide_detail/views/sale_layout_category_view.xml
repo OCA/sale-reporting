@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 Tecnativa - Ernesto Tejeda
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="report_configuration_form_view" model="ir.ui.view">
+        <field name="name">report.configuration.form.view.inherit</field>
+        <field name="model">sale.layout_category</field>
+        <field name="inherit_id" ref="sale.report_configuration_form_view"/>
+        <field name="arch" type="xml">
+            <field name="subtotal" position="before">
+                <field name="hide_details"/>
+            </field>
+            <field name="subtotal" position="attributes">
+                <attribute name="attrs">{'invisible': [('hide_details', '=', True)]}</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="report_configuration_tree_view" model="ir.ui.view">
+        <field name="name">report.configuration.tree.view.inherit</field>
+        <field name="model">sale.layout_category</field>
+        <field name="inherit_id" ref="sale.report_configuration_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="subtotal" position="before">
+                <field name="hide_details"/>
+            </field>
+            <field name="subtotal" position="attributes">
+                <attribute name="attrs">{'invisible': [('hide_details', '=', True)]}</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="report_configuration_search_view" model="ir.ui.view" >
+        <field name="name">report.configuration.search.view.inherit</field>
+        <field name="model">sale.layout_category</field>
+        <field name="inherit_id" ref="sale.report_configuration_search_view"/>
+        <field name="arch" type="xml">
+            <search>
+                <filter string="Hide details" domain="[('hide_details','=','True')]"/>
+            </search>
+        </field>
+    </record>
+</odoo>

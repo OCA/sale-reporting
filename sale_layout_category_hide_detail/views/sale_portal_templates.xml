@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 Tecnativa - Ernesto Tejeda
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template id="portal_order_page_layouted_hide_detail" inherit_id="sale.portal_order_page" priority="9999">
+        <xpath expr="//t[@t-foreach='order.order_line']" position="replace">
+            <t t-foreach="order.order_lines_layouted()" t-as="page">
+                <t t-foreach="page" t-as="layout_category">
+                    <t t-set="lines_subtotal" t-value="layout_category['lines_subtotal']" groups="sale.group_sale_layout"/>
+                    <t t-if="layout_category_size > 1 or page_size > 1 or layout_category['hide_details']" groups="sale.group_sale_layout">
+                        <div class="row orders_vertical_align" style="border-bottom: 1px solid black; padding-top: 5px; padding-bottom: 5px; background-color: rgb(245, 245, 245);">
+                            <div class="col-sm-8 col-xs-8 text-left" style="font-weight: bold;">&amp;bull;
+                                <t t-esc="layout_category['name']"/>
+                            </div>
+                            <div t-if="layout_category['hide_details']" class="col-sm-8 col-xs-8 text-right">
+                                <span t-esc="lines_subtotal" t-options="{'widget': 'monetary', 'display_currency': order.pricelist_id.currency_id}"/>
+                            </div>
+                        </div>
+                    </t>
+
+                    <t>$0</t>
+
+                    <t t-if="(layout_category_size > 1 or page_size > 1) and layout_category['subtotal'] and not layout_category['hide_details']" groups="sale.group_sale_layout">
+                        <div class="row orders_vertical_align text-right">
+                            <div class="col-sm-12 col-xs-12">
+                                <strong>Subtotal: </strong>
+                                <span t-esc="lines_subtotal" t-options="{'widget': 'monetary', 'display_currency': order.pricelist_id.currency_id}"/>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </xpath>
+        <xpath expr="//t[@t-foreach='order.order_line']" position="attributes">
+            <attribute name="t-foreach">layout_category['lines']</attribute>
+        </xpath>
+    </template>
+</odoo>

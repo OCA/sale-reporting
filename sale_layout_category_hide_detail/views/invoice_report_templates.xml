@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 Tecnativa - Ernesto Tejeda
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template id="report_invoice_layouted_hide_detail" inherit_id="sale.report_invoice_layouted">
+		<xpath expr='//tr[.//t[@t-esc="layout_category[&#39;name&#39;]"]]/..' position="attributes">
+			<attribute name="t-if" add="layout_category['hide_details']" separator=" or "/>
+        </xpath>
+		<xpath expr='//td[.//t[@t-esc="layout_category[&#39;name&#39;]"]]' position="attributes">
+			<attribute name="t-att-colspan">3 if layout_category['hide_details'] else 7</attribute>
+		</xpath>
+		<xpath expr='//td[.//t[@t-esc="layout_category[&#39;name&#39;]"]]' position="after">
+			<td t-if="layout_category['hide_details']" colspan="4" class="text-right" style="border-bottom: 1px solid black;">
+				<span t-esc="layout_category['lines_subtotal']" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+			</td>
+		</xpath>
+        <xpath expr="//tr[.//span[@t-esc='subtotal']]" position="attributes">
+			<attribute name="t-if">not layout_category['hide_details']</attribute>
+		</xpath>
+    </template>
+</odoo>
