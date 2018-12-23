@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_sale_last_sale_report_tree" model="ir.ui.view">
+        <field name="name">sale.last.sale.report.tree</field>
+        <field name="model">sale.last.sale.report</field>
+        <field name="arch" type="xml">
+            <tree string="Last Sale Analysis">
+                <field name="partner_id"/>
+                <field name="product_category_id"/>
+                <field name="product_id"/>
+                <field name="date_order"/>
+                <field name="days_since"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_sale_last_sale_report_pivot" model="ir.ui.view">
+        <field name="name">sale.last.sale.report.pivot</field>
+        <field name="model">sale.last.sale.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Last Sale Analysis" disable_linking="True">
+                <field name="partner_id" type="row"/>
+                <field name="product_category_id" type="col"/>
+                <field name="days_since" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+
+    <record id="view_sale_last_sale_report_search" model="ir.ui.view">
+        <field name="name">sale.last.sale.report.search</field>
+        <field name="model">sale.last.sale.report</field>
+        <field name="arch" type="xml">
+            <search string="Last Sale Analysis">
+
+                <field name="partner_id"/>
+                <field name="product_id"/>
+                <field name="product_category_id" filter_domain="[('product_category_id', 'child_of', self)]"/>
+                <field name="company_id"/>
+
+                <filter name="more_than_30_days" string="More than 30 days"
+                        domain="[('days_since', '&gt;=', 30)]"/>
+                <filter name="more_than_60_days" string="More than 60 days"
+                        domain="[('days_since', '&gt;=', 60)]"/>
+                <filter name="more_than_90_days" string="More than 90 days"
+                        domain="[('days_since', '&gt;=', 90)]"/>
+
+                <separator/>
+                
+                <filter name="this_year" string="This year"
+                        domain="[('date_order', '&gt;=', context_today().strftime('%Y-01-01'))]"/>
+                
+                <group expand="1" string="Group By...">
+                    <filter string="Partner" name="partner" context="{'group_by':'partner_id'}"/>
+                    <filter string="Product" context="{'group_by':'product_id'}"/>
+                    <filter string="Product Category" name="category_product" context="{'group_by':'product_category_id'}"/>
+                    <filter string="Company" icon="terp-go-home" context="{'group_by':'company_id'}"/>
+                </group> 
+            </search>
+        </field>
+    </record>
+
+    <record id="action_sale_last_sale_report" model="ir.actions.act_window">
+        <field name="name">Last Sale Analysis</field>
+        <field name="res_model">sale.last.sale.report</field>
+        <field name="view_mode">pivot</field>
+    </record>
+
+    <menuitem
+        id="menu_action_sale_last_sale_report"
+        action="action_sale_last_sale_report"
+        name="Last Sale Analysis"
+        parent="sale.menu_sale_report"
+        sequence="10" />
+
+    <record id="action_sale_last_sale_report_partner" model="ir.actions.act_window">
+        <field name="name">Last Sale Analysis</field>
+        <field name="res_model">sale.last.sale.report</field>
+        <field name="view_mode">pivot</field>
+        <field name="binding_model_id" ref="base.model_res_partner"/>
+        <field name="binding_type">action_form_only</field>
+        <field name="context">{'search_default_partner_id': active_ids or [active_id]}</field>
+        <field name="groups_id" eval="[(6,0,[ref('sales_team.group_sale_salesman')])]" />
+    </record>
+
+</odoo>
