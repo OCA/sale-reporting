@@ -3,18 +3,18 @@
 
 {
     "name": "Sale Order Report Product Image",
-    "summary": "Comments texts templates on Sale documents",
-    "version": "11.0.1.0.0",
+    "summary": "Show product images on Sale documents",
+    "version": "12.0.1.0.0",
+    "category": "Sale",
+    "website": "https://github.com/OCA/sale-reporting",
     "author": "Tecnativa,"
               "Odoo Community Association (OCA)",
-    "website": "https://github.com/OCA/sale-reporting",
     "license": "AGPL-3",
+    "installable": True,
     "depends": [
         "sale",
     ],
     "data": [
-        'views/report_saleorder.xml',
+        "views/report_saleorder.xml",
     ],
-    "category": "Sale",
-    'installable': True,
 }
