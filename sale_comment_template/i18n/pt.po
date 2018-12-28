@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2018-12-23 18:58+0000\n"
+"PO-Revision-Date: 2018-12-28 03:40+0000\n"
 "Last-Translator: Pedro Castro Silva <pedrocs@exo.pt>\n"
 "Language-Team: none\n"
 "Language: pt\n"
@@ -39,7 +39,7 @@ msgstr "Comentários"
 #. module: sale_comment_template
 #: model:ir.ui.menu,name:sale_comment_template.menu_base_comment_template_sale
 msgid "Document Comments"
-msgstr "Comentário do Documento"
+msgstr "Comentários de Documentos"
 
 #. module: sale_comment_template
 #: model:ir.model.fields,field_description:sale_comment_template.field_sale_order_line_formatted_note
