@@ -42,6 +42,11 @@ msgid "Document Comments"
 msgstr "Comentarios del documento"
 
 #. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order_line_formatted_note
+msgid "Formatted Note"
+msgstr ""
+
+#. module: sale_comment_template
 #: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
 msgid "Load a template"
 msgstr "Cargar una plantilla"
@@ -49,6 +54,12 @@ msgstr "Cargar una plantilla"
 #. module: sale_comment_template
 #: model:ir.model,name:sale_comment_template.model_sale_order
 msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: sale_comment_template
+#: model:ir.model,name:sale_comment_template.model_sale_order_line
+#, fuzzy
+msgid "Sales Order Line"
 msgstr "Pedido de venta"
 
 #. module: sale_comment_template
@@ -76,4 +87,3 @@ msgstr "Plantilla del comentario superior"
 #: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
 msgid "Top Comments"
 msgstr "Comentarios de la parte superior"
-
