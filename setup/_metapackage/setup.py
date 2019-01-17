@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo11-addon-sale_comment_template',
+        'odoo11-addon-sale_layout_category_hide_detail',
         'odoo11-addon-sale_order_report_product_image',
         'odoo11-addon-sale_report_delivered_subtotal',
     ],
