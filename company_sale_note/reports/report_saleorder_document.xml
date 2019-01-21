@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template id="report_saleorder_document" inherit_id="	sale.report_saleorder_document" priority="250">
+        <p t-field="doc.not" position="before">
+            <p t-if="o.company_id.sale_note_place = 'before'">
+                <span t-field="o.company_id.sale_note"/>
+            </p>
+        </p>
+        <p t-if="doc.fiscal_position_id and doc.fiscal_position_id.note" position="after">
+            <p t-if="o.company_id.sale_note_place == 'after'">
+                <span t-field="o.company_id.sale_note"/>
+            </p>
+        </p>
+    </template>
+</odoo>
