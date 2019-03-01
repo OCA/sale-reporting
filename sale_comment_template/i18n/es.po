@@ -7,14 +7,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-04 10:08+0000\n"
-"PO-Revision-Date: 2018-03-20 10:46+0000\n"
-"Last-Translator: <>\n"
+"PO-Revision-Date: 2019-03-01 15:53+0000\n"
+"Last-Translator: Marta Vázquez Rodríguez <vazrodmar@gmail.com>\n"
 "Language-Team: \n"
-"Language: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.4\n"
 
 #. module: sale_comment_template
 #: model:ir.model.fields,field_description:sale_comment_template.field_sale_order_note2
@@ -44,7 +45,7 @@ msgstr "Comentarios del documento"
 #. module: sale_comment_template
 #: model:ir.model.fields,field_description:sale_comment_template.field_sale_order_line_formatted_note
 msgid "Formatted Note"
-msgstr ""
+msgstr "Nota Formateada"
 
 #. module: sale_comment_template
 #: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
@@ -58,9 +59,8 @@ msgstr "Pedido de venta"
 
 #. module: sale_comment_template
 #: model:ir.model,name:sale_comment_template.model_sale_order_line
-#, fuzzy
 msgid "Sales Order Line"
-msgstr "Pedido de venta"
+msgstr "Línea Pedido de venta"
 
 #. module: sale_comment_template
 #: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
