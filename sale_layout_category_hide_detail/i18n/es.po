@@ -7,26 +7,27 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0-20180919\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-18 18:12+0000\n"
-"PO-Revision-Date: 2018-12-18 18:12+0000\n"
-"Last-Translator: <>\n"
+"PO-Revision-Date: 2019-03-01 15:53+0000\n"
+"Last-Translator: Marta Vázquez Rodríguez <vazrodmar@gmail.com>\n"
 "Language-Team: \n"
-"Language: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.4\n"
 
 #. module: sale_layout_category_hide_detail
 #: model:ir.ui.view,arch_db:sale_layout_category_hide_detail.portal_invoice_report_layouted_hide_detail
 #: model:ir.ui.view,arch_db:sale_layout_category_hide_detail.portal_order_page_layouted_hide_detail
 msgid "&amp;bull;"
-msgstr "&amp;bull;"
+msgstr "&amp; bull;"
 
 #. module: sale_layout_category_hide_detail
 #: model:ir.ui.view,arch_db:sale_layout_category_hide_detail.portal_invoice_report_layouted_hide_detail
 #: model:ir.ui.view,arch_db:sale_layout_category_hide_detail.portal_order_page_layouted_hide_detail
 msgid "<strong>Subtotal: </strong>"
-msgstr "<strong>Subtotal: </strong>"
+msgstr "<strong> Subtotal: </strong>"
 
 #. module: sale_layout_category_hide_detail
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_layout_category_hide_details
@@ -47,9 +48,9 @@ msgstr "Presupuesto"
 #. module: sale_layout_category_hide_detail
 #: model:ir.model,name:sale_layout_category_hide_detail.model_res_config_settings
 msgid "res.config.settings"
-msgstr ""
+msgstr "'res.config.settings'"
 
 #. module: sale_layout_category_hide_detail
 #: model:ir.model,name:sale_layout_category_hide_detail.model_sale_layout_category
 msgid "sale.layout_category"
-msgstr "sale.layout_category"
+msgstr "'sale.layout_category'"
