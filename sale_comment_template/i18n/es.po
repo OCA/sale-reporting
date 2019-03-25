@@ -1,0 +1,72 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sale_comment_template
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-18 06:40+0000\n"
+"PO-Revision-Date: 2018-10-18 06:40+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order_note2
+msgid "Bottom Comment"
+msgstr "Comentario inferior"
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order_comment_template2_id
+msgid "Bottom Comment Template"
+msgstr "Plantilla del comentario inferior"
+
+#. module: sale_comment_template
+#: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
+msgid "Bottom Comments"
+msgstr "Comentarios de la parte inferior"
+
+#. module: sale_comment_template
+#: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
+msgid "Comments"
+msgstr "Comentarios"
+
+#. module: sale_comment_template
+#: model:ir.ui.menu,name:sale_comment_template.menu_base_comment_template_sale
+msgid "Document Comments"
+msgstr "Comentarios del documentos"
+
+#. module: sale_comment_template
+#: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
+msgid "Load a template"
+msgstr "Cargar una plantialla"
+
+#. module: sale_comment_template
+#: model:ir.model,name:sale_comment_template.model_sale_order
+msgid "Quotation"
+msgstr "Presupuesto"
+
+#. module: sale_comment_template
+#: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
+msgid "The comments will be displayed on the printed document. You can load a predefined template, write your own text or load a template and then modify it only for this document."
+msgstr "Los comentarios se mostrarán en los documentos impresos. Puede cargar una plantilla pedefinida, escribir su propio texto o cargar una plantilla y modificarla para este documento."
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order_note1
+msgid "Top Comment"
+msgstr "Comentario superior"
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order_comment_template1_id
+msgid "Top Comment Template"
+msgstr "Plantilla del comentario superior"
+
+#. module: sale_comment_template
+#: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
+msgid "Top Comments"
+msgstr "Comentarios de la parte superior"
+
