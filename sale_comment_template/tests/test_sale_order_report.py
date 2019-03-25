@@ -2,9 +2,12 @@
 # Copyright 2018 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
+import odoo.tests
 from odoo.tests.common import TransactionCase
 
 
+@odoo.tests.common.at_install(False)
+@odoo.tests.common.post_install(True)
 class TestAccountInvoiceReport(TransactionCase):
     def setUp(self, *args, **kwargs):
         super(TestAccountInvoiceReport, self).setUp()
@@ -15,6 +18,11 @@ class TestAccountInvoiceReport(TransactionCase):
             'name': 'Partner Test'
         })
         self.sale_order = self.env.ref('sale.sale_order_7')
+        # Trigger qty_to_invoice again
+        for order_line in self.sale_order.order_line:
+            order_line.product_id.invoice_policy = 'order'
+        self.sale_order.action_confirm()
+
         self.sale_order.update({
             'comment_template1_id': self.before_comment.id,
             'comment_template2_id': self.after_comment.id

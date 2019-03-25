@@ -6,21 +6,21 @@
 {
     "name": "Sale Comments",
     "summary": "Comments texts templates on Sale documents",
-    "version": "11.0.1.1.0",
-    "depends": [
-        "sale",
-        "account_invoice_comment_template",
-    ],
+    "version": "12.0.1.0.0",
+    "category": "Sale",
     "author": "Camptocamp,"
               "Tecnativa,"
               "Odoo Community Association (OCA)",
     "license": "AGPL-3",
+    "installable": True,
+    "depends": [
+        "sale",
+        "account_invoice_comment_template",
+    ],
     "data": [
         "views/sale_order_view.xml",
-        'views/base_comment_template_view.xml',
-        'views/report_saleorder.xml',
-        'security/ir.model.access.csv',
+        "views/base_comment_template_view.xml",
+        "views/report_saleorder.xml",
+        "security/ir.model.access.csv",
     ],
-    "category": "Sale",
-    'installable': True,
 }

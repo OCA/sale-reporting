@@ -6,5 +6,6 @@
 
   * Pedro M. Baeza <pedro.baeza@tecnativa.com>
   * Vicent Cubells <vicent.cubells@tecnativa.com>
+* `DynApps <https://www.dynapps.be>`_:
 
-Do not contact contributors directly about support or help with technical issues.
+  * Raf Ven <raf.ven@dynapps.be>
