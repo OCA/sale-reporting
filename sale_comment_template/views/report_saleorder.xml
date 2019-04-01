@@ -17,17 +17,17 @@
         </p>
       </xpath>
       <xpath expr="//t[@t-foreach='page']/t[@t-as='l']" position="inside">
-        <t t-if="l.formatted_note">
-            <tr style="padding:0;">
-                <td colspan="7" style="padding:0;">
-                    <table style="width:100%;border:0;padding:0;">
-                        <caption class="formatted_note">
-                            <span t-field="l.formatted_note"/>
-                        </caption>
-                    </table>
-                </td>
-            </tr>
-        </t>
+            <t t-if="l.formatted_note and l.formatted_note != '&lt;p&gt;&lt;br&gt;&lt;/p&gt;'">
+                <tr style="padding:0;">
+                    <td colspan="7" style="padding:0;">
+                        <table style="width:100%;border:0;padding:0;">
+                            <caption class="formatted_note">
+                                <span t-field="l.formatted_note"/>
+                            </caption>
+                        </table>
+                    </td>
+                </tr>
+            </t>
       </xpath>
       <xpath expr="//p[@t-field='doc.note']" position="after">
         <p t-if="doc.note2">
