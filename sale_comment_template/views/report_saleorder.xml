@@ -8,7 +8,7 @@
           <span t-field="doc.note1"/>
         </p>
       </xpath>
-      <xpath expr="//p[@t-field='doc.note']" position="after">
+      <xpath expr="//p[@id='fiscal_position_remark']" position="after">
         <p t-if="doc.note2">
           <span t-field="doc.note2"/>
         </p>
