@@ -17,22 +17,22 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: sale_comment_template
-#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order_note2
+#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__note2
 msgid "Bottom Comment"
 msgstr "Commentaires du bas"
 
 #. module: sale_comment_template
-#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order_comment_template2_id
+#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__comment_template2_id
 msgid "Bottom Comment Template"
 msgstr "Modèle de commentaire du bas"
 
 #. module: sale_comment_template
-#: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
+#: model_terms:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
 msgid "Bottom Comments"
 msgstr "Commentaires du bas"
 
 #. module: sale_comment_template
-#: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
+#: model_terms:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
 msgid "Comments"
 msgstr "Commentaires"
 
@@ -42,17 +42,19 @@ msgid "Document Comments"
 msgstr "Commentaires de documents"
 
 #. module: sale_comment_template
-#: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
+#: model_terms:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
 msgid "Load a template"
 msgstr "Utiliser un modèle"
 
 #. module: sale_comment_template
 #: model:ir.model,name:sale_comment_template.model_sale_order
-msgid "Sales Order"
+#, fuzzy
+#| msgid "Sales Order"
+msgid "Sale Order"
 msgstr "Commande"
 
 #. module: sale_comment_template
-#: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
+#: model_terms:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
 msgid ""
 "The comments will be displayed on the printed document. You can load a "
 "predefined template, write your own text or load a template and then modify "
@@ -63,16 +65,16 @@ msgstr ""
 "modèle puis le modifier uniquement pour ce document."
 
 #. module: sale_comment_template
-#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order_note1
+#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__note1
 msgid "Top Comment"
 msgstr "Commentaire du haut"
 
 #. module: sale_comment_template
-#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order_comment_template1_id
+#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__comment_template1_id
 msgid "Top Comment Template"
 msgstr "Modèle de commentaire du haut"
 
 #. module: sale_comment_template
-#: model:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
+#: model_terms:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
 msgid "Top Comments"
 msgstr "Commentaires du haut"
