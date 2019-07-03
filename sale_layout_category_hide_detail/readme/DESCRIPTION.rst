@@ -1,4 +1,4 @@
-This module allows you to set a new 'Hide details' boolean field on True in
-*Report Layout Categories* if you want to hide its lines of
-*Quotations / Sales Orders* and *Invoices* in the PDF report and in the
-website.
+This module allows you to check/uncheck the new 'Show details' and
+'Show subtotal' flags in *Sale order section lines* and
+*Customer invoice section lines* if you want to show or hide their
+lines or their subtotals in the PDF report and in the website.
