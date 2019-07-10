@@ -1,11 +1,10 @@
-# -*- coding: utf-8 -*-
-# Copyright (C) 2012 - TODAY, Open Source Integrators
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# Copyright (C) 2019 - TODAY, Open Source Integrators
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 {
     'name': 'Sale Backorder Report',
     'version': '12.0.1.0.0',
-    'license': 'AGPL-3',
+    'license': 'LGPL-3',
     'author': 'Open Source Integrators, Odoo Community Association (OCA)',
     'summary': 'Report of Un-Invoice Goods Delivered and Backorders',
     'category': 'Sale',

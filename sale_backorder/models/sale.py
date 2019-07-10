@@ -1,12 +1,8 @@
-# -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Copyright (C) 2019 - TODAY, Open Source Integrators
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 from odoo import api, fields, models
 from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT
-
-PRODUCT_TYPE_SELECTION = [('consu', "Consumable"),
-                          ('service', "Service"),
-                          ('product', "Product")]
 
 
 class SaleOrder(models.Model):
@@ -87,9 +83,6 @@ class SaleOrderLine(models.Model):
                                  compute='_compute_uigd_value', store=True)
     bo_value = fields.Monetary(string="Backorder Value",
                                compute='_compute_bo_value', store=True)
-    prod_type = fields.Selection(string="Product Type",
-                                 selection=PRODUCT_TYPE_SELECTION,
-                                 related="product_id.type")
     product_type = fields.Selection(string='Product Type',
                                     related='product_id.product_tmpl_id.type')
 
@@ -123,16 +116,16 @@ class SaleOrderLine(models.Model):
         for line in self:
             max_date = False
             for move in line.move_ids:
-                if move.state == 'done':
-                    if move.location_dest_id.usage == "customer":
-                        if move.to_refund:
-                            continue
-                        else:
-                            if max_date:
-                                if max_date < move.date:
-                                    max_date = move.date
-                            else:
+                if move.state == 'done' and \
+                        move.location_dest_id.usage == "customer":
+                    if move.to_refund:
+                        continue
+                    else:
+                        if max_date:
+                            if max_date < move.date:
                                 max_date = move.date
+                        else:
+                            max_date = move.date
             line.last_date_delivered = max_date
 
     @api.multi
@@ -145,7 +138,7 @@ class SaleOrderLine(models.Model):
                     if inv_line.invoice_id.type == 'out_invoice':
                         if max_date and inv_line.invoice_id.date:
                             if max_date < inv_line.invoice_id.date:
-                                    max_date = inv_line.invoice_id.date
+                                max_date = inv_line.invoice_id.date
                         else:
                             max_date = inv_line.invoice_id.date
                     elif inv_line.invoice_id.type == 'out_refund':

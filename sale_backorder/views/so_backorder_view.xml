@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
     <record id="so_backorder_tree_view" model="ir.ui.view">
@@ -24,13 +25,15 @@
         <field name="view_mode">tree,form</field>
         <field name="view_id" ref="sale_backorder.so_backorder_tree_view"/>
         <field name="view_type">form</field>
-        <field name="domain">['&amp;', ('product_type', '=', 'product'), '|', ('bo_value', '!=', 0), ('uigd_value', '!=', 0)]</field>
+        <field name="context">{'create': False, 'edit': False}</field>
+        <field name="domain">['&amp;', ('product_type', '=', 'product'), '|',
+            ('bo_value', '!=', 0), ('uigd_value', '!=', 0)]
+        </field>
     </record>
 
-    <menuitem
-            id="menu_so_backorder"
-            action="action_so_backorder"
-            parent="sale.sale_order_menu"
-            sequence="11"/>
+    <menuitem id="menu_so_backorder"
+              action="action_so_backorder"
+              parent="sale.sale_order_menu"
+              sequence="11"/>
 
 </odoo>

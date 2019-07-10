@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
     <record id="so_backorder_report_view" model="ir.ui.view">
@@ -28,9 +29,8 @@
         <field name="target">new</field>
     </record>
 
-    <menuitem
-            id="menu_so_backorder_report"
-            action="action_so_backorder_wizard"
-            parent="sale.sale_order_menu"
-            sequence="12"/>
+    <menuitem id="menu_so_backorder_report"
+              action="action_so_backorder_wizard"
+              parent="sale.sale_order_menu"
+              sequence="12"/>
 </odoo>
