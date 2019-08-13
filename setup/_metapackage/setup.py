@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo12-addon-sale_backorder',
         'odoo12-addon-sale_comment_template',
+        'odoo12-addon-sale_layout_category_hide_detail',
         'odoo12-addon-sale_order_report_product_image',
     ],
     classifiers=[
