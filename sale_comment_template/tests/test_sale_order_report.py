@@ -57,7 +57,7 @@ class TestAccountInvoiceReport(TransactionCase):
         )
 
     def test_onchange_partner_id(self):
-        self.partner_id.comment_template_id = self.after_comment.id
+        self.partner_id.property_comment_template_id = self.after_comment.id
         vals = {
             'partner_id': self.partner_id.id,
         }
@@ -66,7 +66,7 @@ class TestAccountInvoiceReport(TransactionCase):
         sale_dict = new_sale._convert_to_write(new_sale._cache)
         new_sale = self.env['sale.order'].create(sale_dict)
         self.assertEqual(new_sale.comment_template2_id, self.after_comment)
-        self.partner_id.comment_template_id = self.before_comment.id
+        self.partner_id.property_comment_template_id = self.before_comment.id
         new_sale = self.env['sale.order'].new(vals)
         new_sale.onchange_partner_id_sale_comment()
         sale_dict = new_sale._convert_to_write(new_sale._cache)
