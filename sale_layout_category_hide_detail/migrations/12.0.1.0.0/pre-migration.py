@@ -7,7 +7,8 @@ from openupgradelib import openupgrade
 @openupgrade.migrate()
 def migrate(env, version):
     openupgrade.logged_query(
-        env.cr, """
+        env.cr,
+        """
         UPDATE sale_order_line sol
         SET show_details = NOT slc.hide_details,
             show_subtotal = slc.subtotal
@@ -17,7 +18,8 @@ def migrate(env, version):
         """,
     )
     openupgrade.logged_query(
-        env.cr, """
+        env.cr,
+        """
         UPDATE account_invoice_line ail
         SET show_details = NOT slc.hide_details,
             show_subtotal = slc.subtotal
