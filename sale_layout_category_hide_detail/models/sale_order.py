@@ -13,3 +13,9 @@ class SaleOrderLine(models.Model):
     show_subtotal = fields.Boolean(
         string="Show subtotal",
         default=True)
+
+    def _prepare_invoice_line(self, qty):
+        res = super()._prepare_invoice_line(qty)
+        res.update(show_details=self.show_details,
+                   show_subtotal=self.show_subtotal)
+        return res
