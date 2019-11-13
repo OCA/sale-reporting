@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2019 Tecnativa - Ernesto Tejeda
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+     <!--TODO Revoir les combinaisons de OR pour que les icones ne diparaissent pas-->
+     
 <odoo>
     <record id="view_order_form" model="ir.ui.view">
         <field name="name">sale.order.hide.detail.form</field>
@@ -12,24 +14,31 @@
                     <field name="show_details"
                            attrs="{'invisible': [('display_type', '!=', 'line_section')]}"/>
                     <field name="show_subtotal"
-                           attrs="{'invisible': ['|', ('display_type', '!=', 'line_section'), ('show_details', '!=', True)]}"/>
+                           attrs="{'invisible': ['|',('display_type', '!=', 'line_section'), ('show_details', '!=', True)]}"/>
                 </group>
             </xpath>
-            <xpath expr="//field[@name='order_line']/tree" position="inside">
-                <field name="show_details"
-                       widget="boolean_fa_icon"
-                       options="{
-                            'show_in_line_section': true,
-                            'fa_icons': {
-                                'icon_true': 'fa-eye',
-                                'icon_false': 'fa-eye-slash',
-                            },
-                            'terminology': {
-                                'hover_true': 'Switch to: details hidden',
-                                'hover_false': 'Switch to: details shown',
-                            },
-                       }"
-                       attrs="{'invisible': [('display_type', '!=', 'line_section')]}"/>
+            <xpath expr="//field[@name='order_line']/form//field[@name='name']" position="after">
+                <group>
+                    <field name="add_page_break"
+                           attrs="{'invisible': [('display_type', '!=', 'line_section')]}"/>
+                </group>
+            </xpath>
+            
+            <xpath expr="//field[@name='order_line']/tree" position="inside"> 
+				<field name="show_details"
+					   widget="boolean_fa_icon"
+					   options="{
+							'show_in_line_section': true,
+							'fa_icons': {
+								'icon_true': 'fa-eye',
+								'icon_false': 'fa-eye-slash',
+							},
+							'terminology': {
+								'hover_true': 'Switch to: details hidden',
+								'hover_false': 'Switch to: details shown',
+							},
+					   }"
+					   attrs="{'invisible': [('display_type', '!=', 'line_section')]}"/>	
                 <field name="show_subtotal"
                        widget="boolean_fa_icon"
                        options="{
@@ -43,11 +52,31 @@
                                 'hover_false': 'Switch to: subtotal shown',
                             },
                        }"
-                       attrs="{'invisible': ['|', ('display_type', '!=', 'line_section'), ('show_details', '!=', True)]}"/>
+                       attrs="{'invisible': ['|',('display_type', '!=', 'line_section'), ('show_details', '!=', True)]}"/>
+            </xpath>            
+            <xpath expr="//field[@name='order_line']/tree" position="inside"> 
+				<field name="add_page_break"
+					   widget="boolean_fa_icon"
+					   options="{
+							'show_in_line_section': true,
+							'fa_icons': {
+								'icon_false': 'fa-file',
+								'icon_true': 'fa-copy',
+							},
+							'terminology': {
+								'hover_false': 'Switch to: remove page-break',
+								'hover_true': 'Switch to: insert page-break',							},
+					   }"
+					   attrs="{'invisible': [('display_type', '!=', 'line_section')]}"/>
             </xpath>
+
             <xpath expr="//field[@name='order_line']/kanban[hasclass('o_kanban_mobile')]/templates" position="before">
                 <field name="show_details"/>
+                <field name="add_page_break"/>
                 <field name="show_subtotal"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/kanban[hasclass('o_kanban_mobile')]/templates" position="before">
+                <field name="add_page_break"/>
             </xpath>
             <xpath expr="//field[@name='order_line']/kanban[hasclass('o_kanban_mobile')]//t[@t-esc='record.name.value']/../.." position="attributes">
                 <attribute name="class"/>
@@ -59,6 +88,8 @@
                         <span class="float-right text-right">
                             <span t-attf-class="ml-3 fa #{record.show_details.raw_value ? 'fa-eye' : 'fa-eye-slash'}"
                                   t-att-aria-label="record.show_details.raw_value ? 'Details shown' : 'Details hidden'"/>
+                            <span t-attf-class="ml-3 fa #{record.add_page_break.raw_value ? 'fa-file' : 'fa-copy'}"
+                                  t-att-aria-label="record.add_page_break.raw_value ? 'Page-break' : 'No page-break'"/>
                             <span t-if="record.show_details.raw_value"
                                   t-attf-class="ml-3 fa #{record.show_subtotal.raw_value ? 'fa-plus-circle' : 'fa-minus-circle'}"
                                   t-att-aria-label="record.show_subtotal.raw_value ? 'Subtotal shown' : 'Subtotal hidden'"/>
