@@ -52,7 +52,7 @@ odoo.define('sale_layout_category_hide_detail.boolean_fa_icon_widget', function 
             var hover_false = terminology && _t(terminology.hover_false) || _t('Click to check');
             var tip = this.value ? hover_true : hover_false;
             //set template and add it to $el
-            var template = "<span class='fa %s' title='%s' aria-label='%s'></span>";
+            var template = "<span class='fas %s' title='%s' aria-label='%s'></span>";
             this.$el.empty().append(_.str.sprintf(template, fa_class, tip))
         },
 
