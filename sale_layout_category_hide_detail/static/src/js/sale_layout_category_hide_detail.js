@@ -4,19 +4,26 @@
 odoo.define('sale_layout_category_hide_detail.sale_layout_category_hide_detail', function (require) {
     "use strict";
 
-    var fieldRegistry = require('web.field_registry');
-    var section_and_note_one2many = fieldRegistry.get('section_and_note_one2many');
+    var sectionAndNoteListRenderer = require('account.section_and_note_backend');
 
     var SectionAndNoteListRenderer = {
         _renderBodyCell: function (record, node, index, options) {
             var $cell = this._super.apply(this, arguments);
 
-            var options = this.state.fieldsInfo.list[node.attrs.name].options;
-            var show_in_line_section = options.show_in_line_section;
+            var options;
+            var show_in_line_section;
 
             var isSection = record.data.display_type === 'line_section';
             var isNote = record.data.display_type === 'line_note';
             if (isSection || isNote) {
+
+                if (node.attrs.name in this.state.fieldsInfo.list){
+                    options = this.state.fieldsInfo.list[node.attrs.name].options;
+                    show_in_line_section = options.show_in_line_section;
+                } else {
+                    show_in_line_section = false;
+                }
+
                 if (show_in_line_section) {
                     return $cell.removeClass('o_hidden');
                 } else if (node.attrs.name === "name") {
@@ -37,29 +44,32 @@ odoo.define('sale_layout_category_hide_detail.sale_layout_category_hide_detail',
             var section_fields_count = 0;
             var self = this;
             this.columns.forEach(function(elem) {
-                var options = self.state.fieldsInfo.list[elem.attrs.name].options;
-                if (options.show_in_line_section)
-                    section_fields_count ++;
+                var options;
+
+                if (elem.attrs.name in self.state.fieldsInfo.list){
+                    options = self.state.fieldsInfo.list[elem.attrs.name].options;
+                    if (options.show_in_line_section)
+                        section_fields_count ++;
+                }
             });
             return section_fields_count;
         },
         _renderHeaderCell: function (node) {
             var $th = this._super.apply(this, arguments);
-            var options = this.state.fieldsInfo.list[node.attrs.name].options;
-            var show_in_line_section = options.show_in_line_section;
+            var options;
+            var show_in_line_section;
+
+            if (!(node.attrs.name in this.state.fieldsInfo.list)){
+                return $th;
+            }
+            options = this.state.fieldsInfo.list[node.attrs.name].options;
+            show_in_line_section = options.show_in_line_section;
             if (show_in_line_section)
                 $th.text("").removeClass('o_column_sortable');
             return $th
         },
     };
 
-    section_and_note_one2many.include({
-        _getRenderer: function () {
-            var result = this._super.apply(this, arguments);
-            if (this.view.arch.tag === 'tree') {
-                result.include(SectionAndNoteListRenderer)
-            }
-            return result
-        },
-    });
+    sectionAndNoteListRenderer.include(SectionAndNoteListRenderer);
+
 });
