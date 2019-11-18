@@ -20,6 +20,10 @@
                         name="show_subtotal"
                         attrs="{'invisible': ['|', ('display_type', '!=', 'line_section'), ('show_details', '!=', True)]}"
                     />
+                    <field
+                        name="show_line_amount"
+                        attrs="{'invisible': ['|', ('display_type', '!=', 'line_section'), ('show_details', '!=', True)]}"
+                    />
                 </group>
             </xpath>
             <xpath expr="//field[@name='order_line']/tree" position="inside">
@@ -51,6 +55,22 @@
                             'terminology': {
                                 'hover_true': 'Switch to: subtotal hidden',
                                 'hover_false': 'Switch to: subtotal shown',
+                            },
+                       }"
+                    attrs="{'invisible': ['|', ('display_type', '!=', 'line_section'), ('show_details', '!=', True)]}"
+                />
+                <field
+                    name="show_line_amount"
+                    widget="boolean_fa_icon"
+                    options="{
+                            'show_in_line_section': true,
+                            'fa_icons': {
+                                'icon_true': 'fa-usd',
+                                'icon_false': 'fa-toggle-off',
+                            },
+                            'terminology': {
+                                'hover_true': 'Switch to: line amount hidden',
+                                'hover_false': 'Switch to: line amount shown',
                             },
                        }"
                     attrs="{'invisible': ['|', ('display_type', '!=', 'line_section'), ('show_details', '!=', True)]}"

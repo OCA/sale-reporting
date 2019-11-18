@@ -73,5 +73,35 @@
         </tr>
       </t>
     </xpath>
+
+    <xpath expr="//td[@name='td_priceunit']/span" position="attributes">
+      <attribute
+                name="t-if"
+                add="not current_section or current_section.show_line_amount"
+                separator=" and "
+            />
+    </xpath>
+    <xpath expr="//td[@name='td_taxes']/span" position="attributes">
+      <attribute
+                name="t-if"
+                add="not current_section or current_section.show_line_amount"
+                separator=" and "
+            />
+    </xpath>
+    <xpath expr="//td[@name='td_subtotal']/span" position="attributes">
+      <attribute
+                name="t-if"
+                add="not current_section or current_section.show_line_amount"
+                separator=" and "
+            />
+    </xpath>
+    <xpath expr="//td[@t-if='display_discount']/span" position="attributes">
+      <attribute
+                name="t-if"
+                add="not current_section or current_section.show_line_amount"
+                separator=" and "
+            />
+    </xpath>
+
   </template>
 </odoo>

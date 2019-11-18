@@ -44,6 +44,12 @@ msgid "Show details"
 msgstr ""
 
 #. module: sale_layout_category_hide_detail
+#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_line_amount
+#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_line_amount
+msgid "Show line amount"
+msgstr ""
+
+#. module: sale_layout_category_hide_detail
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_subtotal
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_subtotal
 msgid "Show subtotal"
