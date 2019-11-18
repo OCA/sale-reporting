@@ -21,6 +21,15 @@
 		<xpath expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-right')]/td/strong" position="after">
 			<strong class="mr16">Subtotal <span t-field="current_section.name"/></strong>
 		</xpath>
+
+<!--This xpath gives weird results as the page break seems to come after the next section title-->
+		<xpath expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-right')]/td/span" position="after">
+			<t t-if="current_section.add_page_break">	
+					<div style="page-break-after:always;"><span style="display: none;"> </span></div>
+			</t>
+		</xpath>
+		
+		
 		<xpath expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-right')]" position="after">
 			<t t-if="not current_section.show_details">
 				<tr class="bg-200 o_line_section">
