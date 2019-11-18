@@ -20,5 +20,5 @@
         "views/sale_portal_templates.xml",
     ],
     "application": False,
-    'installable': True,
+    "installable": True,
 }
