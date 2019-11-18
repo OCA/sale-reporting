@@ -6,7 +6,6 @@
         <xpath expr="." position="inside">
             <script type="text/javascript" src="/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js"></script>
             <script type="text/javascript" src="/sale_layout_category_hide_detail/static/src/js/sale_layout_category_hide_detail.js"></script>
-            <script type="text/javascript" src="/delivery/static/src/js/hide_details_translations.js"></script>
         </xpath>
     </template>
 </odoo>
