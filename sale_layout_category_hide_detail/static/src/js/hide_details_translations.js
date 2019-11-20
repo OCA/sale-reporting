@@ -9,3 +9,5 @@ _t("Switch to: details hidden");
 _t("Switch to: details shown");
 _t("Switch to: subtotal hidden");
 _t("Switch to: subtotal shown");
+_t("Switch to: remove page-break");
+_t("Switch to: insert page-break");
