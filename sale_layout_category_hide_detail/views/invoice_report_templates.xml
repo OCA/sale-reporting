@@ -2,7 +2,7 @@
 <!-- Copyright 2018-2019 Tecnativa - Ernesto Tejeda
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
-    <template id="report_invoice_document_hide_detail" inherit_id="account.report_invoice_document">
+    <template id="report_invoice_document_hide_detail" inherit_id="account.report_invoice_document"  priority="16">
 		<xpath expr="//tbody[hasclass('invoice_tbody')]//t[@name='account_invoice_line_accountable']" position="attributes">
 			<attribute name="t-if" add="((not current_section) or current_section.show_details)" separator=" and "/>
 		</xpath>
@@ -15,6 +15,14 @@
 		<xpath expr="//tbody[hasclass('invoice_tbody')]//tr[hasclass('is-subtotal', 'text-right')]" position="attributes">
 			<attribute name="t-if" add="current_section.show_details and current_section.show_subtotal" separator=" and "/>
 		</xpath>
+		
+<!--This xpath gives weird results as the page break seems to come after the next section title-->
+		<xpath expr="//tbody[hasclass('invoice_tbody')]//tr[hasclass('is-subtotal', 'text-right')]/td/span" position="after">
+			<t t-if="current_section.add_page_break">	
+					<div style="display:block; clear:both;page-break-after:always !important;"><span style="display: none;"> </span></div><br/>
+			</t>
+		</xpath>		
+		
 		<xpath expr="//tbody[hasclass('invoice_tbody')]//tr[hasclass('is-subtotal', 'text-right')]" position="after">
 			<t t-if="not current_section.show_details">
 				<tr class="bg-200 o_line_section">
