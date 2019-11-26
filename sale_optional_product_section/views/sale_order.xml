@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <record id="sale_subscription_line_subscription_ids" model="ir.ui.view">
+    <field name="name">sale.order.optional.product.section</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale_management.sale_order_form_quote" />
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='sale_order_option_ids']" position="attributes">
+        <attribute name="widget">section_and_note_one2many</attribute>
+      </xpath>
+      <xpath
+                expr="//field[@name='sale_order_option_ids']//tree/control"
+                position="inside"
+            >
+        <create
+                    string="Add a section"
+                    context="{'default_display_type': 'line_section'}"
+                />
+        <create string="Add a note" context="{'default_display_type': 'line_note'}" />
+      </xpath>
+      <xpath expr="//field[@name='sale_order_option_ids']//tree" position="inside">
+        <field name="display_type" invisible="1" />
+      </xpath>
+      <xpath
+                expr="//field[@name='sale_order_option_ids']//tree//field[@name='product_id']"
+                position="attributes"
+            >
+        <attribute name="attrs">{'required': [('display_type', '=', False)]}</attribute>
+      </xpath>
+    </field>
+  </record>
+</odoo>

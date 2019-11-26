@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <template
+        id="report_saleorder_document_inherit_sale_management"
+        inherit_id="sale_management.report_saleorder_document_inherit_sale_management"
+    >
+    <xpath expr="//div[@t-field='option.price_unit']" position="attributes">
+      <attribute name="t-if" add="not option.display_type" separator=" and " />
+    </xpath>
+    <xpath expr="//tbody/tr" position="attributes">
+      <attribute
+                name="t-att-class"
+                add="'bg-200 font-weight-bold o_line_section' if option.display_type == 'line_section' else 'font-italic o_line_note' if option.display_type == 'line_note' else ''"
+            />
+    </xpath>
+  </template>
+</odoo>
