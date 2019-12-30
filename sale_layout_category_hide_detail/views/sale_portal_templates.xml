@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018-2019 Tecnativa - Ernesto Tejeda
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+  <template id="sale_order_portal_content_hide_detail" inherit_id="sale.sale_order_portal_content" priority="9999">
+    <xpath expr="//tbody[hasclass('sale_tbody')]//t[@t-if='not line.display_type']" position="attributes">
+      <attribute name="t-if" add="(not current_section or current_section.show_details)" separator=" and "/>
+    </xpath>
+    <xpath expr='//tbody[hasclass("sale_tbody")]//t[@t-if="line.display_type == &apos;line_section&apos;"]//td' position="attributes">
+      <attribute name="t-if" add="line.show_details" separator=" and "/>
+    </xpath>
+    <xpath expr='//tbody[hasclass("sale_tbody")]//t[@t-if="line.display_type == &apos;line_note&apos;"]//td' position="attributes">
+      <attribute name="t-if" add="(not current_section or current_section.show_details)" separator=" and "/>
+    </xpath>
+    <xpath expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-right')]" position="attributes">
+      <attribute name="t-if" add="current_section.show_details and current_section.show_subtotal" separator=" and "/>
+    </xpath>
+    <xpath expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-right')]/td/strong" position="attributes">
+      <attribute name="class" add="d-none" separator=" "/>
+    </xpath>
+    <xpath expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-right')]/td/strong" position="after">
+      <strong class="mr16">Subtotal <span t-field="current_section.name"/></strong>
+    </xpath>
+    <xpath expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-right')]" position="after">
+      <t t-if="not current_section.show_details">
+        <tr class="bg-200 o_line_section">
+          <td colspan="99">
+            <span t-field="current_section.name" class="font-weight-bold"/>
+            <span class="float-right">
+              <span class="float-right"
+                t-esc="current_subtotal"
+                t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}'
+                />
+            </span>
+          </td>
+        </tr>
+      </t>
+    </xpath>
+  </template>
+</odoo>
