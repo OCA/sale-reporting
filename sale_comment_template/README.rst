@@ -23,18 +23,29 @@ Sale Comments
     :target: https://runbot.odoo-community.org/runbot/148/12.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| |badge5|
+|badge1| |badge2| |badge3| |badge4| |badge5| 
 
 Adds comments on sales orders.
 The comments can be edited directly on the sales orders or loaded from
 templates.
 
-Two positions are available for the comments:
+Adds comments on
 
-- above sale order lines
-- at the end of the sale report
+#. sales orders:
 
-Texts are copied on the invoice when you will create invoice from sale order.
+   The comments can be edited directly on the sales orders or loaded from
+   templates.
+
+   Two positions are available for the comments:
+
+   - above sale order lines
+   - below sale order lines
+
+   Texts are copied on the invoice when you will create invoice from sale order.
+
+#. sale order lines:
+
+   The formatted comments can be edited directly on the sales order lines.
 
 **Table of contents**
 
@@ -81,6 +92,8 @@ Contributors
 * `DynApps <https://www.dynapps.be>`_:
 
   * Raf Ven <raf.ven@dynapps.be>
+* `ForgeFlow <https://www.forgeflow.com>`_:
+* Miquel Raïch <miquel.raich@forgeflow.com>
 
 Maintainers
 ~~~~~~~~~~~
