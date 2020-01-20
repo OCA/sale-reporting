@@ -42,6 +42,11 @@ msgid "Document Comments"
 msgstr "Commentaires de documents"
 
 #. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order_line__formatted_note
+msgid "Formatted Note"
+msgstr ""
+
+#. module: sale_comment_template
 #: model_terms:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
 msgid "Load a template"
 msgstr "Utiliser un modèle"
@@ -51,6 +56,13 @@ msgstr "Utiliser un modèle"
 #, fuzzy
 #| msgid "Sales Order"
 msgid "Sale Order"
+msgstr "Commande"
+
+#. module: sale_comment_template
+#: model:ir.model,name:sale_comment_template.model_sale_order_line
+#, fuzzy
+#| msgid "Sales Order"
+msgid "Sales Order Line"
 msgstr "Commande"
 
 #. module: sale_comment_template
