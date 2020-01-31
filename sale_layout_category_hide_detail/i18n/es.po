@@ -18,22 +18,22 @@ msgstr ""
 
 #. module: sale_layout_category_hide_detail
 #. openerp-web
-#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:52
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
 #, python-format
 msgid "Click to check"
 msgstr ""
 
 #. module: sale_layout_category_hide_detail
 #. openerp-web
-#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:51
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
 #, python-format
 msgid "Click to uncheck"
 msgstr ""
 
 #. module: sale_layout_category_hide_detail
-#: model:ir.model,name:sale_layout_category_hide_detail.model_account_invoice_line
-msgid "Invoice Line"
-msgstr "Linea de factura"
+#: model:ir.model,name:sale_layout_category_hide_detail.model_account_move_line
+msgid "Journal Item"
+msgstr ""
 
 #. module: sale_layout_category_hide_detail
 #: model:ir.model,name:sale_layout_category_hide_detail.model_sale_order_line
@@ -41,13 +41,13 @@ msgid "Sales Order Line"
 msgstr "Línea de pedido de venta"
 
 #. module: sale_layout_category_hide_detail
-#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_invoice_line__show_details
+#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_details
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_details
 msgid "Show details"
 msgstr "Mostrar detalles"
 
 #. module: sale_layout_category_hide_detail
-#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_invoice_line__show_subtotal
+#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_subtotal
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_subtotal
 msgid "Show subtotal"
 msgstr "Mostrar subtotal"
@@ -60,28 +60,31 @@ msgstr "Subtotal"
 
 #. module: sale_layout_category_hide_detail
 #. openerp-web
-#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:8
+#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:0
 #, python-format
 msgid "Switch to: details hidden"
 msgstr "Cambiar a: detalles ocultos"
 
 #. module: sale_layout_category_hide_detail
 #. openerp-web
-#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:9
+#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:0
 #, python-format
 msgid "Switch to: details shown"
 msgstr "Cambiar a: detalles mostrados"
 
 #. module: sale_layout_category_hide_detail
 #. openerp-web
-#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:10
+#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:0
 #, python-format
 msgid "Switch to: subtotal hidden"
 msgstr "Cambiar a: subtotal oculto"
 
 #. module: sale_layout_category_hide_detail
 #. openerp-web
-#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:11
+#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:0
 #, python-format
 msgid "Switch to: subtotal shown"
 msgstr "Cambiar a: subtotal mostrado"
+
+#~ msgid "Invoice Line"
+#~ msgstr "Linea de factura"
