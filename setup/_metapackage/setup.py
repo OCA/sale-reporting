@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo13-addon-sale_layout_category_hide_detail',
+        'odoo13-addon-sale_report_delivered_subtotal',
     ],
     classifiers=[
         'Programming Language :: Python',
