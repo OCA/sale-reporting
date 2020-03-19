@@ -28,18 +28,18 @@ following:
 
 The behavior described before is the same for Quotations and Invoices.
 
-.. |eye-icon| image:: sale_layout_category_hide_detail/static/description/readme-icons/eye.png
+.. |eye-icon| image:: ../static/description/readme-icons/eye.png
    :alt: plus-circle icon
    :width: 12 px
 
-.. |eye-slash-icon| image:: sale_layout_category_hide_detail/static/description/readme-icons/eye-slash.png
+.. |eye-slash-icon| image:: ../static/description/readme-icons/eye-slash.png
    :alt: minus-circle icon
    :width: 12 px
 
-.. |plus-circle-icon| image:: sale_layout_category_hide_detail/static/description/readme-icons/plus-circle.png
+.. |plus-circle-icon| image:: ../static/description/readme-icons/plus-circle.png
    :alt: plus-circle icon
    :width: 12 px
 
-.. |minus-circle-icon| image:: sale_layout_category_hide_detail/static/description/readme-icons/minus-circle.png
+.. |minus-circle-icon| image:: ../static/description/readme-icons/minus-circle.png
    :alt: minus-circle icon
    :width: 12 px
