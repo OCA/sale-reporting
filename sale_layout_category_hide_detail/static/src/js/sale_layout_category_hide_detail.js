@@ -11,8 +11,8 @@ odoo.define('sale_layout_category_hide_detail.sale_layout_category_hide_detail',
         _renderBodyCell: function (record, node, index, options) {
             var $cell = this._super.apply(this, arguments);
 
-            var options = this.state.fieldsInfo.list[node.attrs.name].options;
-            var show_in_line_section = options.show_in_line_section;
+            var field_info = this.state.fieldsInfo.list[node.attrs.name];
+            var show_in_line_section = field_info && field_info.options.show_in_line_section;
 
             var isSection = record.data.display_type === 'line_section';
             var isNote = record.data.display_type === 'line_note';
@@ -37,17 +37,16 @@ odoo.define('sale_layout_category_hide_detail.sale_layout_category_hide_detail',
             var section_fields_count = 0;
             var self = this;
             this.columns.forEach(function(elem) {
-                var options = self.state.fieldsInfo.list[elem.attrs.name].options;
-                if (options.show_in_line_section)
+                var field_info = self.state.fieldsInfo.list[elem.attrs.name];
+                if (field_info && field_info.options.show_in_line_section)
                     section_fields_count ++;
             });
             return section_fields_count;
         },
         _renderHeaderCell: function (node) {
             var $th = this._super.apply(this, arguments);
-            var options = this.state.fieldsInfo.list[node.attrs.name].options;
-            var show_in_line_section = options.show_in_line_section;
-            if (show_in_line_section)
+            var field_info = this.state.fieldsInfo.list[node.attrs.name];
+            if (field_info && field_info.options.show_in_line_section)
                 $th.text("").removeClass('o_column_sortable');
             return $th
         },
