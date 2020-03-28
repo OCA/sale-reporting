@@ -12,6 +12,7 @@ setuptools.setup(
         'odoo11-addon-sale_layout_category_hide_detail',
         'odoo11-addon-sale_order_report_product_image',
         'odoo11-addon-sale_report_delivered_subtotal',
+        'odoo11-addon-sale_report_supplier_filter',
     ],
     classifiers=[
         'Programming Language :: Python',
