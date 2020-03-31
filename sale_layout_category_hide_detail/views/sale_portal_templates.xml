@@ -3,6 +3,7 @@
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
   <template id="sale_order_portal_content_hide_detail" inherit_id="sale.sale_order_portal_content" priority="9999">
+    <!-- Show details -->
     <xpath expr="//tbody[hasclass('sale_tbody')]//t[@t-if='not line.display_type']" position="attributes">
       <attribute name="t-if" add="(not current_section or current_section.show_details)" separator=" and "/>
     </xpath>
@@ -12,6 +13,20 @@
     <xpath expr='//tbody[hasclass("sale_tbody")]//t[@t-if="line.display_type == &apos;line_note&apos;"]//td' position="attributes">
       <attribute name="t-if" add="(not current_section or current_section.show_details)" separator=" and "/>
     </xpath>
+    <!-- Show prices -->
+    <xpath expr="//tbody[hasclass('sale_tbody')]//div[@t-field='line.price_unit']" position="attributes">
+        <attribute name="t-if" add="(current_section and current_section.show_price)" separator=" and "/>
+    </xpath>
+    <xpath expr="//tbody[hasclass('sale_tbody')]//div[@t-if='line.discount']" position="attributes">
+        <attribute name="t-if" add="(current_section and current_section.show_price)" separator=" and "/>
+    </xpath>
+    <xpath expr="//tbody[hasclass('sale_tbody')]//span[@t-field='line.price_subtotal']" position="attributes">
+        <attribute name="t-if" add="(current_section and current_section.show_price)" separator=" and "/>
+    </xpath>
+    <xpath expr="//tbody[hasclass('sale_tbody')]//span[@t-field='line.price_total']" position="attributes">
+        <attribute name="t-if" add="(current_section and current_section.show_price)" separator=" and "/>
+    </xpath>
+    <!-- Show subtotal -->
     <xpath expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-right')]" position="attributes">
       <attribute name="t-if" add="current_section.show_details and current_section.show_subtotal" separator=" and "/>
     </xpath>
@@ -37,4 +52,5 @@
       </t>
     </xpath>
   </template>
+
 </odoo>
