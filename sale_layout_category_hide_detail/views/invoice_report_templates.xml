@@ -3,9 +3,27 @@
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
     <template id="report_invoice_document_hide_detail" inherit_id="account.report_invoice_document">
+		<!-- Show detail -->
+		<xpath expr="//tbody[hasclass('invoice_tbody')]//t[@t-if='not line.display_type']/td[hasclass('o_price_total')]/span[2]" position="attributes">
+			<attribute name="t-if" add="(current_section and current_section.show_price)" separator=" and "/>
+		</xpath>
 		<xpath expr="//tbody[hasclass('invoice_tbody')]//t[@name='account_invoice_line_accountable']" position="attributes">
 			<attribute name="t-if" add="(not current_section or current_section.show_details)" separator=" and "/>
 		</xpath>
+		<!-- Show prices -->
+		<xpath expr="//tbody[hasclass('invoice_tbody')]//span[@t-field='line.price_unit']" position="attributes">
+			<attribute name="t-if" add="(current_section and current_section.show_price)" separator=" and "/>
+		</xpath>
+		<xpath expr="//tbody[hasclass('invoice_tbody')]//span[@t-field='line.discount']" position="attributes">
+			<attribute name="t-if" add="(current_section and current_section.show_price)" separator=" and "/>
+		</xpath>
+		<xpath expr="//tbody[hasclass('invoice_tbody')]//span[@t-field='line.price_subtotal']" position="attributes">
+			<attribute name="t-if" add="(current_section and current_section.show_price)" separator=" and "/>
+		</xpath>
+		<xpath expr="//tbody[hasclass('invoice_tbody')]//span[@t-field='line.price_total']" position="attributes">
+			<attribute name="t-if" add="(current_section and current_section.show_price)" separator=" and "/>
+		</xpath>
+		<!-- Show subtotal -->
 		<xpath expr='//tbody[hasclass("invoice_tbody")]//t[@t-if="line.display_type == &apos;line_section&apos;"]//td' position="attributes">
 			<attribute name="t-if" add="line.show_details" separator=" and "/>
 		</xpath>

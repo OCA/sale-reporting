@@ -13,3 +13,6 @@ class AccountInvoiceLine(models.Model):
     show_subtotal = fields.Boolean(
         string="Show subtotal",
         default=True)
+    show_price = fields.Boolean(
+        string="Show Price",
+        default=True)

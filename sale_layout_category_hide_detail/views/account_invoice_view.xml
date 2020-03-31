@@ -13,6 +13,8 @@
                     <group>
                         <field name="show_details"
                                attrs="{'invisible': [('display_type', '!=', 'line_section')]}"/>
+                        <field name="show_price"
+                               attrs="{'invisible': [('display_type', '!=', 'line_section')]}"/>
                         <field name="show_subtotal"
                                attrs="{'invisible': ['|', ('display_type', '!=', 'line_section'), ('show_details', '!=', True)]}"/>
                     </group>
@@ -35,28 +37,43 @@
                                     'icon_false': 'fa-eye-slash',
                                 },
                                 'terminology': {
-                                    'hover_true': 'Switch to: details hidden',
-                                    'hover_false': 'Switch to: details shown',
+                                    'hover_true': 'Show details',
+                                    'hover_false': 'Show details',
                                 },
                            }"
                            attrs="{'invisible': [('display_type', '!=', 'line_section')]}"/>
+                    <field name="show_price"
+                           widget="boolean_fa_icon"
+                           options="{
+                                'show_in_line_section': true,
+                                'fa_icons': {
+                                    'icon_true': 'fa-check-circle',
+                                    'icon_false': 'fa-circle',
+                                },
+                                'terminology': {
+                                    'hover_true': 'Show prices',
+                                    'hover_false': 'Show prices',
+                                },
+                           }"
+                           attrs="{'invisible': ['|', ('display_type', '!=', 'line_section'), ('show_details', '!=', True)]}"/>
                     <field name="show_subtotal"
                            widget="boolean_fa_icon"
                            options="{
                                 'show_in_line_section': true,
                                 'fa_icons': {
-                                    'icon_true': 'fa-plus-circle',
-                                    'icon_false': 'fa-minus-circle',
+                                    'icon_true': 'fa-check-circle',
+                                    'icon_false': 'fa-circle',
                                 },
                                 'terminology': {
-                                    'hover_true': 'Switch to: subtotal hidden',
-                                    'hover_false': 'Switch to: subtotal shown',
+                                    'hover_true': 'Show subtotals',
+                                    'hover_false': 'Show subtotals',
                                 },
                            }"
                            attrs="{'invisible': ['|', ('display_type', '!=', 'line_section'), ('show_details', '!=', True)]}"/>
                 </xpath>
                 <xpath expr="//field[@name='invoice_line_ids']/kanban[hasclass('o_kanban_mobile')]/templates" position="before">
                     <field name="show_details"/>
+                    <field name="show_price"/>
                     <field name="show_subtotal"/>
                 </xpath>
                 <xpath expr="//field[@name='invoice_line_ids']/kanban[hasclass('o_kanban_mobile')]//t[@t-esc='record.name.value']/../.." position="attributes">
@@ -70,7 +87,10 @@
                                 <span t-attf-class="ml-3 fa #{record.show_details.raw_value ? 'fa-eye' : 'fa-eye-slash'}"
                                       t-att-aria-label="record.show_details.raw_value ? 'Details shown' : 'Details hidden'"/>
                                 <span t-if="record.show_details.raw_value"
-                                      t-attf-class="ml-3 fa #{record.show_subtotal.raw_value ? 'fa-plus-circle' : 'fa-minus-circle'}"
+                                      t-attf-class="ml-3 fa #{record.show_price.raw_value ? 'fa-check-circle' : 'fa-circle'}"
+                                      t-att-aria-label="record.show_price.raw_value ? 'Price shown' : 'Price hidden'"/>
+                                <span t-if="record.show_details.raw_value"
+                                      t-attf-class="ml-3 fa #{record.show_subtotal.raw_value ? 'fa-check-circle' : 'fa-circle'}"
                                       t-att-aria-label="record.show_subtotal.raw_value ? 'Subtotal shown' : 'Subtotal hidden'"/>
                             </span>
                         </div>

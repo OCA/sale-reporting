@@ -5,7 +5,6 @@
 // This code does nothing but marks the strings as translatable
 var _t = function(x) { return x; };
 
-_t("Switch to: details hidden");
-_t("Switch to: details shown");
-_t("Switch to: subtotal hidden");
-_t("Switch to: subtotal shown");
+_t("Show details");
+_t("Show prices");
+_t("Show subtotals");

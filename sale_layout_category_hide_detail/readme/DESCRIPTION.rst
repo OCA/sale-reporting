@@ -1,4 +1,10 @@
-This module allows you to check/uncheck the new 'Show details' and
-'Show subtotal' flags in *Sale order section lines* and
-*Customer invoice section lines* if you want to show or hide their
-lines or their subtotals in the PDF report and in the website.
+This module allows you to hide/show information on your Sale Orders and
+Invoices sections.
+
+- Hide/show details
+- Hide/show prices
+- Hide/show subtotals
+
+.. image:: ../static/description/sample_config.png
+
+.. image:: ../static/description/sample_report.png
