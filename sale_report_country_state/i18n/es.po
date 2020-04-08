@@ -17,18 +17,24 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: sale_report_country_state
-#: model:ir.model,name:sale_report_country_state.model_report_all_channels_sales
-msgid "All sales orders grouped by sales channels"
-msgstr "Todos los pedidos de venta agrupados por canal"
-
-#. module: sale_report_country_state
-#: model:ir.model.fields,field_description:sale_report_country_state.field_report_all_channels_sales_state_id
-#: model:ir.model.fields,field_description:sale_report_country_state.field_sale_report_state_id
-#: model:ir.ui.view,arch_db:sale_report_country_state.view_order_product_search
+#: model:ir.model.fields,field_description:sale_report_country_state.field_report_all_channels_sales__state_id
+#: model:ir.model.fields,field_description:sale_report_country_state.field_sale_report__state_id
+#: model_terms:ir.ui.view,arch_db:sale_report_country_state.view_order_product_search
 msgid "Partner's State"
 msgstr "Provincia de la Empresa"
 
 #. module: sale_report_country_state
 #: model:ir.model,name:sale_report_country_state.model_sale_report
-msgid "Sales Orders Statistics"
-msgstr "Estadísticas de pedidos de ventas"
+msgid "Sales Analysis Report"
+msgstr ""
+
+#. module: sale_report_country_state
+#: model:ir.model,name:sale_report_country_state.model_report_all_channels_sales
+msgid "Sales by Channel (All in One)"
+msgstr ""
+
+#~ msgid "All sales orders grouped by sales channels"
+#~ msgstr "Todos los pedidos de venta agrupados por canal"
+
+#~ msgid "Sales Orders Statistics"
+#~ msgstr "Estadísticas de pedidos de ventas"
