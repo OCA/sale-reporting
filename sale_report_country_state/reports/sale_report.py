@@ -12,16 +12,17 @@ class SaleReport(models.Model):
         readonly=True,
     )
 
-    def _select(self):
-        select_str = super()._select()
-        select_str += """,
+    def _query(self, with_clause='', fields=None, groupby='', from_clause=''):
+        if fields is None:
+            fields = {}
+        select_str = """ ,
             partner.state_id as state_id
         """
-        return select_str
-
-    def _group_by(self):
-        group_by_str = super()._group_by()
-        group_by_str += """,
+        fields.update({
+            'state_id': select_str,
+        })
+        groupby += """,
             partner.state_id
         """
-        return group_by_str
+        return super()._query(with_clause=with_clause, fields=fields,
+                              groupby=groupby, from_clause=from_clause)
