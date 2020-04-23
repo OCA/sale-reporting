@@ -4,7 +4,8 @@
 
 {
     'name': 'Product Brand in Sales Analysis',
-    'version': '9.0.1.0.0',
+    'version': '10.0.1.0.0',
+    'description': 'Adds product brand to the sale report.',
     'category': 'Product',
     'author': 'Tecnativa,'
               'Odoo Community Association (OCA)',
