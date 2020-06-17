@@ -11,3 +11,5 @@
   * Raf Ven <raf.ven@dynapps.be>
 * `ForgeFlow <https://www.forgeflow.com>`_:
 * Miquel Raïch <miquel.raich@forgeflow.com>
+
+* Kranokporn Th. <kranokpornt@ecosoft.co.th>
