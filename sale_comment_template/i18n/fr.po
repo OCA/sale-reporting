@@ -54,14 +54,12 @@ msgstr "Utiliser un modèle"
 #. module: sale_comment_template
 #: model:ir.model,name:sale_comment_template.model_sale_order
 #, fuzzy
-#| msgid "Sales Order"
 msgid "Sale Order"
 msgstr "Commande"
 
 #. module: sale_comment_template
 #: model:ir.model,name:sale_comment_template.model_sale_order_line
 #, fuzzy
-#| msgid "Sales Order"
 msgid "Sales Order Line"
 msgstr "Commande"
 
