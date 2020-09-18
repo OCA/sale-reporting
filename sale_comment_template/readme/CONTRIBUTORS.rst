@@ -11,3 +11,4 @@
   * Raf Ven <raf.ven@dynapps.be>
 * `ForgeFlow <https://www.forgeflow.com>`_:
 * Miquel Raïch <miquel.raich@forgeflow.com>
+* Chandresh Thakkar <chandresh.thakkar.serpentcs@gmail.com>
