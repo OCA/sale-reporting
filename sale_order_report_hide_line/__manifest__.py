@@ -7,7 +7,7 @@
     "category": "Sale",
     "author": "Radovan Skolnik, " "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/sale-workflow",
-    "depends": ["sale",],
+    "depends": ["sale"],
     "data": ["views/sale_views.xml", "views/sale_report_templates.xml"],
     "installable": True,
     "license": "AGPL-3",
