@@ -1,0 +1,25 @@
+<!-- Copyright 2019 Open Source Integrators
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template
+        id="report_saleorder_document_show_in_report"
+        inherit_id="sale.report_saleorder_document"
+    >
+        <xpath expr="//t[@t-foreach='doc.order_line']" position="attributes">
+            <attribute
+                name="t-foreach"
+            >doc.order_line.filtered(lambda x: (x.show_in_report or x.price_unit>0 or x.display_type))</attribute>
+        </xpath>
+    </template>
+
+    <template
+        id="sale_order_portal_content_show_in_report"
+        inherit_id="sale.sale_order_portal_content"
+    >
+        <xpath expr="//t[@t-foreach='sale_order.order_line']" position="attributes">
+            <attribute
+                name="t-foreach"
+            >sale_order.order_line.filtered(lambda x: (x.show_in_report or x.price_unit>0 or x.display_type))</attribute>
+        </xpath>
+    </template>
+</odoo>
