@@ -2,12 +2,11 @@
 # Copyright 2018 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-import odoo.tests
+from odoo.tests import tagged
 from odoo.tests.common import TransactionCase
 
 
-@odoo.tests.common.at_install(False)
-@odoo.tests.common.post_install(True)
+@tagged("post_install", "-at_install")
 class TestAccountInvoiceReport(TransactionCase):
     def setUp(self, *args, **kwargs):
         super(TestAccountInvoiceReport, self).setUp()
@@ -43,14 +42,13 @@ class TestAccountInvoiceReport(TransactionCase):
         res = (
             self.env["ir.actions.report"]
             ._get_report_from_name("sale.report_saleorder")
-            .render_qweb_html(self.sale_order.ids)
+            ._render_qweb_html(self.sale_order.ids)
         )
-        self.assertRegexpMatches(str(res[0]), self.before_comment.text)
-        self.assertRegexpMatches(str(res[0]), self.after_comment.text)
+        self.assertRegex(str(res[0]), self.before_comment.text)
+        self.assertRegex(str(res[0]), self.after_comment.text)
 
     def test_comments_in_generated_invoice(self):
-        invoice_ids = self.sale_order.action_invoice_create()
-        invoice = self.env["account.invoice"].browse(invoice_ids)
+        invoice = self.sale_order._create_invoices()
         self.assertEqual(
             invoice.comment_template1_id,
             self.sale_order.comment_template1_id,
