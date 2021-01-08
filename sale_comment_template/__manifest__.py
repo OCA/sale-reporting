@@ -8,9 +8,7 @@
     "summary": "Comments texts templates on Sale documents",
     "version": "12.0.1.1.0",
     "category": "Sale",
-    "author": "Camptocamp,"
-              "Tecnativa,"
-              "Odoo Community Association (OCA)",
+    "author": "Camptocamp," "Tecnativa," "Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "installable": True,
     "depends": [
