@@ -30,7 +30,6 @@ class SaleOrder(models.Model):
         if comment:
             self.note2 = comment.get_value(self.partner_id.id)
 
-    @api.multi
     def _prepare_invoice(self):
         values = super(SaleOrder, self)._prepare_invoice()
         values.update(
