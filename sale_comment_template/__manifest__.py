@@ -14,7 +14,7 @@
     "installable": True,
     "depends": [
         "sale",
-        "account_invoice_comment_template",
+        "account_comment_template",
     ],
     "data": [
         "views/sale_order_view.xml",
