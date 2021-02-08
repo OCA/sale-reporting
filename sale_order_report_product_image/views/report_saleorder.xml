@@ -17,7 +17,7 @@
         >
             <td>
                 <span
-                    t-field="line.product_id.image_small"
+                    t-field="line.product_id.image_128"
                     t-options="{'widget': 'image', 'class': 'img-rounded'}"
                 />
             </td>
