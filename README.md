@@ -15,7 +15,11 @@ TODO: add repo description.
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[sale_comment_template](sale_comment_template/) | 14.0.1.0.0 | Comments texts templates on Sale documents
 
 [//]: # (end addons)
 
