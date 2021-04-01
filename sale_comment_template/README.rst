@@ -17,7 +17,7 @@ Sale Comments
     :target: https://github.com/OCA/sale-reporting/tree/14.0/sale_comment_template
     :alt: OCA/sale-reporting
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/sale-reporting-12-0/sale-reporting-12-0-sale_comment_template
+    :target: https://translation.odoo-community.org/projects/sale-reporting-14-0/sale-reporting-14-0-sale_comment_template
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
     :target: https://runbot.odoo-community.org/runbot/148/14.0
@@ -94,6 +94,7 @@ Contributors
   * Raf Ven <raf.ven@dynapps.be>
 * `ForgeFlow <https://www.forgeflow.com>`_:
 * Miquel Raïch <miquel.raich@forgeflow.com>
+* Pierre Verkest <pierreverkest84@gmail.com>
 
 Maintainers
 ~~~~~~~~~~~
