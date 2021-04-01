@@ -1,0 +1,12 @@
+caption.formatted_note {
+    text-align: left;
+    border-right: thin solid #eeeeee;
+    border-left: thin solid #eeeeee;
+    border-top: thin solid #eeeeee;
+    padding-left: 10px;
+    font-size: 11;
+}
+
+caption.formatted_note p {
+    margin: 0;
+}
