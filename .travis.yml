@@ -11,7 +11,10 @@ addons:
   apt:
     packages:
       - expect-dev  # provides unbuffer utility
-      - python-lxml # because pip installation is slow
+
+stages:
+  - linting
+  - test
 
 env:
   global:
@@ -22,15 +25,18 @@ env:
     # - WKHTMLTOPDF_VERSION="0.12.5"
     # Set the above to install a `wkhtmltopdf` version that is not the one provided
     # by the `pov-wkhtmltopdf` repo.
-  - PHANTOMJS_VERSION="latest"
-    # The above line controls the PhantomJS version that is used for JS testing.
-    #   It is not necessary to include this value unless you are altering the default.
-    #   Use `OS` to skip the PhantomJS upgrade & use the system version instead.
 
-  matrix:
-  - LINT_CHECK="1"
-  - TESTS="1" ODOO_REPO="odoo/odoo" MAKEPOT="1"
-  - TESTS="1" ODOO_REPO="OCA/OCB"
+jobs:
+  include:
+    - stage: linting
+      env:
+        - LINT_CHECK="1"
+    - stage: test
+      env:
+        - TESTS=1 ODOO_REPO="odoo/odoo" MAKEPOT="1"
+    - stage: test
+      env:
+        - TESTS=1 ODOO_REPO="OCA/OCB"
 
 install:
   - git clone --depth=1 https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
