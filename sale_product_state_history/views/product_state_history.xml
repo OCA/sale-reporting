@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2020 ACSONE SA/NV
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
 
-    <menuitem action="product_state_history.action_product_state_history_wizard"
-              id="menu_report_product_state_history"
-              parent="sales_team.menu_sale_report"
-              sequence="90"/>
+    <menuitem
+        action="product_state_history.action_product_state_history_wizard"
+        id="menu_report_product_state_history"
+        parent="sales_team.menu_sale_report"
+        sequence="90"
+    />
 
-    <menuitem action="product_state_history.product_state_history_act_window"
-              id="menu_product_state_history"
-              parent="sales_team.menu_sale_report"
-              groups="base.group_no_one"
-              sequence="91"/>
+    <menuitem
+        action="product_state_history.product_state_history_act_window"
+        id="menu_product_state_history"
+        parent="sales_team.menu_sale_report"
+        groups="base.group_no_one"
+        sequence="91"
+    />
 
 </odoo>
