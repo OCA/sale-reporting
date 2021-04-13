@@ -20,5 +20,5 @@ msgstr ""
 
 #. module: sale_report_delivered_subtotal
 #: model:ir.model.fields,field_description:sale_report_delivered_subtotal.field_sale_report__price_subtotal_delivered
-msgid "Total Price Delivered"
+msgid "Subtotal Delivered"
 msgstr ""
