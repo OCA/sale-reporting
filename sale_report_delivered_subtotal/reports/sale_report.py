@@ -7,7 +7,7 @@ from odoo import fields, models
 class SaleReport(models.Model):
     _inherit = "sale.report"
 
-    price_subtotal_delivered = fields.Float(string="Total Price Delivered")
+    price_subtotal_delivered = fields.Float(string="Subtotal Delivered")
 
     def _query(self, with_clause="", fields=None, groupby="", from_clause=""):
         if fields is None:
