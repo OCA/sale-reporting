@@ -1,0 +1,2 @@
+odoo14-addon-product-state @ git+https://github.com/ecosoft-odoo/product-attribute.git@14.0-mig-product_state#subdirectory=setup/product_state
+odoo14-addon-product-state-history @ git+https://github.com/acsone/product-attribute.git@14.0-mig-product_state_history-dro#subdirectory=setup/product_state_history
