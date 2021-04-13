@@ -5,7 +5,7 @@
     "name": "Sale Product State History",
     "summary": """
         Allows to get a report on products per product state on date""",
-    "version": "10.0.1.0.0",
+    "version": "14.0.1.0.0",
     "license": "AGPL-3",
     "category": "Sales",
     "maintainers": ["rousseldenis"],
