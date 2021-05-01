@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo14-addon-sale_comment_template',
+        'odoo14-addon-sale_outgoing_product',
     ],
     classifiers=[
         'Programming Language :: Python',
