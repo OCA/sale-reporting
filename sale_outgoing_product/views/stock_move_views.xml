@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="action_outgoing_stock_move" model="ir.actions.act_window">
+        <field name="name">Outgoing  Products</field>
+        <field name="res_model">stock.move</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,kanban</field>
+        <field
+            name="domain"
+            eval="[('picking_id.picking_type_id.code','=','outgoing'), ('location_id.usage','=','internal'), ('location_dest_id.usage', '!=', 'internal')]"
+        />
+        <field
+            name="view_ids"
+            eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('stock.view_move_tree_receipt_picking')}),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('stock.view_move_kandan')})]"
+        />
+        <field name="context">{'search_default_future': True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Show products to be delivered.
+            </p>
+        </field>
+    </record>
+    <menuitem
+        id="menu_action_picking_tree_in_move"
+        action="action_outgoing_stock_move"
+        parent="sale.menu_sale_report"
+        sequence="100"
+    />
+</odoo>
