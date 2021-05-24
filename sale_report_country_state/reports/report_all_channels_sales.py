@@ -7,9 +7,7 @@ class ReportAllChannelsSales(models.Model):
     _inherit = "report.all.channels.sales"
 
     state_id = fields.Many2one(
-        comodel_name="res.country.state",
-        string="Partner's State",
-        readonly=True,
+        comodel_name="res.country.state", string="Partner's State", readonly=True,
     )
 
     def _so(self):
@@ -18,7 +16,9 @@ class ReportAllChannelsSales(models.Model):
             "rp.country_id AS country_id,",
             """rp.country_id AS country_id,
                rp.state_id AS state_id,
-            """, 1)
+            """,
+            1,
+        )
         return so_str
 
     def get_main_request(self):
@@ -27,5 +27,7 @@ class ReportAllChannelsSales(models.Model):
             "country_id,",
             """country_id,
                state_id,
-            """, 1)
+            """,
+            1,
+        )
         return request_str
