@@ -4,8 +4,9 @@
 * Xavier Jimenez <xavier.jimenez@qubiq.es>
 * `Tecnativa <https://www.tecnativa.com>`_:
 
-  * Pedro M. Baeza <pedro.baeza@tecnativa.com>
-  * Vicent Cubells <vicent.cubells@tecnativa.com>
+  * Pedro M. Baeza
+  * Vicent Cubells
+  * Vicent Martínez
 * `DynApps <https://www.dynapps.be>`_:
 
   * Raf Ven <raf.ven@dynapps.be>
