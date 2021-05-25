@@ -7,7 +7,7 @@ class ReportAllChannelsSales(models.Model):
     _inherit = "report.all.channels.sales"
 
     state_id = fields.Many2one(
-        comodel_name="res.country.state", string="Partner's State", readonly=True,
+        comodel_name="res.country.state", string="Customer State", readonly=True,
     )
 
     def _so(self):
