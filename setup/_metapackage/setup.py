@@ -8,6 +8,7 @@ setuptools.setup(
     description="Meta package for oca-sale-reporting Odoo addons",
     version=version,
     install_requires=[
+        'odoo13-addon-sale_comment_template',
         'odoo13-addon-sale_layout_category_hide_detail',
         'odoo13-addon-sale_report_country_state',
         'odoo13-addon-sale_report_delivered_subtotal',
