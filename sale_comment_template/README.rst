@@ -14,26 +14,26 @@ Sale Comments
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fsale--reporting-lightgray.png?logo=github
-    :target: https://github.com/OCA/sale-reporting/tree/12.0/sale_comment_template
+    :target: https://github.com/OCA/sale-reporting/tree/13.0/sale_comment_template
     :alt: OCA/sale-reporting
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/sale-reporting-12-0/sale-reporting-12-0-sale_comment_template
+    :target: https://translation.odoo-community.org/projects/sale-reporting-13-0/sale-reporting-13-0-sale_comment_template
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
-    :target: https://runbot.odoo-community.org/runbot/148/12.0
+    :target: https://runbot.odoo-community.org/runbot/148/13.0
     :alt: Try me on Runbot
 
 |badge1| |badge2| |badge3| |badge4| |badge5| 
 
 Adds comments on sales orders.
-The comments can be edited directly on the sales orders or loaded from
+The comments can be loaded from
 templates.
 
 Adds comments on
 
 #. sales orders:
 
-   The comments can be edited directly on the sales orders or loaded from
+   The comments can be loaded from
    templates.
 
    Two positions are available for the comments:
@@ -41,11 +41,7 @@ Adds comments on
    - above sale order lines
    - below sale order lines
 
-   Texts are copied on the invoice when you will create invoice from sale order.
-
-#. sale order lines:
-
-   The formatted comments can be edited directly on the sales order lines.
+   Comments are copied on the invoice when you will create invoice from sale order.
 
 **Table of contents**
 
@@ -65,7 +61,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/sale-reporting/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/sale-reporting/issues/new?body=module:%20sale_comment_template%0Aversion:%2012.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/sale-reporting/issues/new?body=module:%20sale_comment_template%0Aversion:%2013.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -87,8 +83,9 @@ Contributors
 * Xavier Jimenez <xavier.jimenez@qubiq.es>
 * `Tecnativa <https://www.tecnativa.com>`_:
 
-  * Pedro M. Baeza <pedro.baeza@tecnativa.com>
-  * Vicent Cubells <vicent.cubells@tecnativa.com>
+  * Pedro M. Baeza
+  * Vicent Cubells
+  * Víctor Martínez
 * `DynApps <https://www.dynapps.be>`_:
 
   * Raf Ven <raf.ven@dynapps.be>
@@ -108,6 +105,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/sale-reporting <https://github.com/OCA/sale-reporting/tree/12.0/sale_comment_template>`_ project on GitHub.
+This module is part of the `OCA/sale-reporting <https://github.com/OCA/sale-reporting/tree/13.0/sale_comment_template>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
