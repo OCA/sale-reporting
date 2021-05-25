@@ -1,0 +1,86 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sale_comment_template
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2020-03-23 15:13+0000\n"
+"Last-Translator: Maria Sparenberg <maria.sparenberg@gmx.net>\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10\n"
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__note2
+msgid "Bottom Comment"
+msgstr "Suffix-Textbaustein"
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__comment_template2_id
+msgid "Bottom Comment Template"
+msgstr "Suffix-Textbausteinvorlage"
+
+#. module: sale_comment_template
+#: model_terms:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
+msgid "Bottom Comments"
+msgstr "Suffix-Textbausteine"
+
+#. module: sale_comment_template
+#: model_terms:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
+msgid "Comments"
+msgstr "Textbausteine"
+
+#. module: sale_comment_template
+#: model:ir.ui.menu,name:sale_comment_template.menu_base_comment_template_sale
+msgid "Document Comments"
+msgstr "Textbausteine"
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order_line__formatted_note
+msgid "Formatted Note"
+msgstr "Zusätzlicher Hinweis"
+
+#. module: sale_comment_template
+#: model_terms:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
+msgid "Load a template"
+msgstr "Textbausteinvorlage laden"
+
+#. module: sale_comment_template
+#: model:ir.model,name:sale_comment_template.model_sale_order
+msgid "Sale Order"
+msgstr "Verkaufsauftrag"
+
+#. module: sale_comment_template
+#: model:ir.model,name:sale_comment_template.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Auftragsposition"
+
+#. module: sale_comment_template
+#: model_terms:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
+msgid "The comments will be displayed on the printed document. You can load a predefined template, write your own text or load a template and then modify it only for this document."
+msgstr ""
+"Diese Textbausteine werden auf Dokumentbelegen gedruckt. Es kann eine "
+"bereits existierende Vorlage geladen, ein neuer eigenständiger Text "
+"geschrieben oder eine Vorlage nach dem Laden nur für dieses Dokument "
+"angepasst werden."
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__note1
+msgid "Top Comment"
+msgstr "Präfix-Textbaustein"
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__comment_template1_id
+msgid "Top Comment Template"
+msgstr "Präfix-Textbausteinvorlage"
+
+#. module: sale_comment_template
+#: model_terms:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
+msgid "Top Comments"
+msgstr "Präfix-Textbausteine"
