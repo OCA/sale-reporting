@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <filter name="country_id" position="after">
                 <filter
-                    string="Partner's State"
+                    string="Customer State"
                     name="state_id"
                     context="{'group_by':'state_id'}"
                 />

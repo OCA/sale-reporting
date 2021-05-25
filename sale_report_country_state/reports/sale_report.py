@@ -7,7 +7,7 @@ class SaleReport(models.Model):
     _inherit = "sale.report"
 
     state_id = fields.Many2one(
-        comodel_name="res.country.state", string="Partner's State", readonly=True,
+        comodel_name="res.country.state", string="Customer State", readonly=True,
     )
 
     def _query(self, with_clause="", fields=None, groupby="", from_clause=""):
@@ -16,9 +16,7 @@ class SaleReport(models.Model):
         select_str = """ ,
             partner.state_id as state_id
         """
-        fields.update(
-            {"state_id": select_str,}
-        )
+        fields.update({"state_id": select_str})
         groupby += """,
             partner.state_id
         """

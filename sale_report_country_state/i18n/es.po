@@ -32,9 +32,3 @@ msgstr ""
 #: model:ir.model,name:sale_report_country_state.model_report_all_channels_sales
 msgid "Sales by Channel (All in One)"
 msgstr ""
-
-#~ msgid "All sales orders grouped by sales channels"
-#~ msgstr "Todos los pedidos de venta agrupados por canal"
-
-#~ msgid "Sales Orders Statistics"
-#~ msgstr "Estadísticas de pedidos de ventas"
