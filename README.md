@@ -19,7 +19,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
-[sale_comment_template](sale_comment_template/) | 14.0.1.0.1 | Comments texts templates on Sale documents
+[sale_comment_template](sale_comment_template/) | 14.0.2.0.0 | Comments texts templates on Sale documents
 [sale_outgoing_product](sale_outgoing_product/) | 14.0.1.0.0 | Module that generates a view for outgoing product
 
 [//]: # (end addons)
