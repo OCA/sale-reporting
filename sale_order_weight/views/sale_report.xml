@@ -3,32 +3,50 @@
      Copyright 2016 Andrea Cometa - Apulia Software
      License AGPL-3.0 or later (http://www.gnu.org/licenses/gpl.html).
  -->
-<openerp>
-    <data>
+<odoo>
         <template
-            id="report_invoice_origin_group"
-            inherit_id="sale.report_saleorder_document"
-        >
+        id="report_saleorder_document"
+        inherit_id="sale.report_saleorder_document"
+    >
             <xpath
-                expr="//table[@class='table table-condensed']/thead/tr/th[3]"
-                position="after"
-            >
+            expr="//table[hasclass('o_main_table')]/thead/tr/th[@name='th_priceunit']"
+            position="after"
+        >
+                <t
+                t-set="weight_uom_name"
+                t-value="doc.env['product.template']._get_weight_uom_name_from_ir_config_parameter()"
+            />
+                <t
+                t-set="weight_precision"
+                t-value="(doc.env['product.template']._fields['weight'].get_digits(doc.env) or (None, None))[1]"
+            />
                 <th class="text-right">Weight</th>
             </xpath>
             <xpath
-                expr="//table[@class='table table-condensed']/tbody/tr/td[3]"
-                position="after"
-            >
+            expr="//table[hasclass('o_main_table')]/tbody//tr//td[@name='td_priceunit']"
+            position="after"
+        >
                 <td class="text-right">
-                    <span
-                        t-esc="l.product_id and (l.product_id.weight*l.product_uom_qty) or 0.0"
+                    <t t-set="line_weight" t-value="line.total_weight()" />
+                    <t t-if="line_weight">
+                        <span
+                        t-esc="line_weight"
+                        t-options="{'widget': 'float', 'precision': weight_precision}"
                     />
+                        <span t-esc="weight_uom_name" />
+                    </t>
                 </td>
             </xpath>
-            <xpath expr="//p[@t-field='o.note']" position="before">
-                <span><b>Total Weight:</b></span>
-                <span t-esc="o.total_weight()" />
+            <xpath expr="//p[@t-field='doc.note']" position="before">
+                <t t-set="order_weight" t-value="doc.total_weight()" />
+                <t t-if="order_weight">
+                    <span><b>Total Weight:</b></span>
+                    <span
+                    t-esc="order_weight"
+                    t-options="{'widget': 'float', 'precision': weight_precision}"
+                />
+                    <span t-esc="weight_uom_name" />
+                </t>
             </xpath>
         </template>
-    </data>
-</openerp>
+</odoo>
