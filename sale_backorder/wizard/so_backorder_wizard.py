@@ -8,7 +8,7 @@ class SOBackorderWizard(models.TransientModel):
     _name = "sobackorder.report.wizard"
     _description = "SO Backorder Report Wizard"
 
-    def action_print_report(self, data):
+    def action_print_report(self):
         data = self.env["sale.order.line"].search(
             [
                 "&",
