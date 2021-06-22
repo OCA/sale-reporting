@@ -9,8 +9,15 @@ class SOBackorderWizard(models.TransientModel):
     _description = "SO Backorder Report Wizard"
 
     def action_print_report(self, data):
-        data = self.env['sale.order.line'].search(
-            ['&', ('product_type', '=', 'product'),
-             '|', ('bo_value', '!=', 0), ('uigd_value', '!=', 0)])
-        return self.env.ref('sale_backorder.action_so_backorder_report').\
-            report_action(data)
+        data = self.env["sale.order.line"].search(
+            [
+                "&",
+                ("product_type", "=", "product"),
+                "|",
+                ("bo_value", "!=", 0),
+                ("uigd_value", "!=", 0),
+            ]
+        )
+        return self.env.ref("sale_backorder.action_so_backorder_report").report_action(
+            data
+        )
