@@ -11,6 +11,7 @@
     "website": "https://github.com/OCA/sale-reporting",
     "depends": ["sale_management", "sale_stock"],
     "data": [
+        "security/ir.model.access.csv",
         "views/so_backorder_view.xml",
         "views/sale_view.xml",
         "report/so_backorder_report.xml",

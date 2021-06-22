@@ -22,8 +22,6 @@
     <record id="action_so_backorder_wizard" model="ir.actions.act_window">
         <field name="name">Generate SO Backorder Report</field>
         <field name="res_model">sobackorder.report.wizard</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="view_type">form</field>
         <field name="view_mode">form</field>
         <field name="view_id" ref="so_backorder_report_view" />
         <field name="target">new</field>
