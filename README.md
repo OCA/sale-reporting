@@ -17,12 +17,12 @@ This project aim to deal with modules related to manage sale report. You'll find
 
 Available addons
 ----------------
-addon | version | summary
---- | --- | ---
-[sale_comment_template](sale_comment_template/) | 13.0.1.0.0 | Comments texts templates on Sale documents
-[sale_layout_category_hide_detail](sale_layout_category_hide_detail/) | 13.0.1.1.0 | Hide details for sections in sale orders and invoices for reports and customer portal
-[sale_report_country_state](sale_report_country_state/) | 13.0.1.0.0 | Sale Report Filter by State
-[sale_report_delivered_subtotal](sale_report_delivered_subtotal/) | 13.0.1.0.1 | Sale Report Delivered subtotal
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[sale_comment_template](sale_comment_template/) | 13.0.1.0.0 |  | Comments texts templates on Sale documents
+[sale_layout_category_hide_detail](sale_layout_category_hide_detail/) | 13.0.1.1.0 |  | Hide details for sections in sale orders and invoices for reports and customer portal
+[sale_report_country_state](sale_report_country_state/) | 13.0.1.0.0 |  | Sale Report Filter by State
+[sale_report_delivered_subtotal](sale_report_delivered_subtotal/) | 13.0.1.0.1 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) | Sale Report Delivered subtotal
 
 [//]: # (end addons)
 
