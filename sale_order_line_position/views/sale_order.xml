@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form.sale.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <xpath
+                expr="//field[@name='order_line']//form//field[@name='sequence']"
+                position="after"
+            >
+              <field name="position" force_save="1" />
+            </xpath>
+            <xpath
+                expr="//field[@name='order_line']//tree//field[@name='sequence']"
+                position="after"
+            >
+              <field name="position" string="Pos" force_save="1" optional="hide" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
