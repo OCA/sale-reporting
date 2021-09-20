@@ -14,6 +14,11 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: sale_report_delivered_subtotal
+#: model:ir.model.fields,field_description:sale_report_delivered_subtotal.field_sale_report__weight_delivered
+msgid "Gross Weight Delivered"
+msgstr ""
+
+#. module: sale_report_delivered_subtotal
 #: model:ir.model,name:sale_report_delivered_subtotal.model_sale_report
 msgid "Sales Analysis Report"
 msgstr ""
