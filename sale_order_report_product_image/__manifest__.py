@@ -7,14 +7,9 @@
     "version": "12.0.1.0.0",
     "category": "Sale",
     "website": "https://github.com/OCA/sale-reporting",
-    "author": "Tecnativa,"
-              "Odoo Community Association (OCA)",
+    "author": "Tecnativa," "Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "installable": True,
-    "depends": [
-        "sale",
-    ],
-    "data": [
-        "views/report_saleorder.xml",
-    ],
+    "depends": ["sale",],
+    "data": ["views/report_saleorder.xml",],
 }
