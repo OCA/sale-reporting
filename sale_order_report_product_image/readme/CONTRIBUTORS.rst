@@ -1,6 +1,7 @@
 * `Tecnativa <https://www.tecnativa.com>`_:
 
-  * Vicent Cubells <vicent.cubells@tecnativa.com>
+  * Vicent Cubells
+  * Víctor Martínez
 
 * `DynApps <https://www.dynapps.be>`_:
 
