@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="report_saleorder_document_image"
+        inherit_id="sale.report_saleorder_document"
+    >
+        <xpath expr="//th[@name='th_description']" position="before">
+            <th name="th_image" class="text-left">Image</th>
+        </xpath>
+        <xpath expr="//td[@name='td_name']" position="before">
+            <td name="td_image">
+                <span
+                    t-field="line.product_id.image_128"
+                    t-options="{'widget': 'image', 'class': 'img-rounded', 'resize': '64x64'}"
+                />
+            </td>
+        </xpath>
+    </template>
+</odoo>
