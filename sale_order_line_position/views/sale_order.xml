@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
+
     <record id="view_order_form_inherit" model="ir.ui.view">
         <field name="name">sale.order.form.sale.inherit</field>
         <field name="model">sale.order</field>
@@ -20,4 +21,15 @@
             </xpath>
         </field>
     </record>
+
+    <record model="ir.actions.server" id="action_compute_sale_position">
+      <field name="name">Recompute positions</field>
+      <field name="model_id" ref="sale.model_sale_order" />
+      <field name="binding_model_id" ref="sale.model_sale_order" />
+      <field name="state">code</field>
+      <field name="code">
+        records.recompute_positions()
+      </field>
+    </record>
+
 </odoo>
