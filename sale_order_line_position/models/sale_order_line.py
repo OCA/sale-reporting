@@ -15,15 +15,6 @@ class SaleOrderLine(models.Model):
         for record in self:
             record.position_formatted = record._format_position(record.position)
 
-    @api.onchange("sequence")
-    def _onchange_sequence(self):
-        if self.order_id.locked_positions:
-            return
-        lines = self.order_id.order_line.filtered(
-            lambda x: not x.display_type and x.sequence < self.sequence
-        )
-        self.position = len(lines) + 1
-
     @api.model_create_multi
     def create(self, vals_list):
         vals_list = self._add_next_position_on_new_line(vals_list)
