@@ -14,15 +14,19 @@ class SaleOrder(models.Model):
         for record in self:
             record.locked_positions = record.state != "draft"
 
+    def action_confirm(self):
+        self.recompute_positions()
+        return super().action_confirm()
+
     def action_quotation_send(self):
         self.recompute_positions()
         return super().action_quotation_send()
 
     def recompute_positions(self):
-        self.ensure_one()
-        if self.locked_positions:
-            return
-        lines = self.order_line.filtered(lambda l: not l.display_type)
-        lines.sorted(key=lambda x: x.sequence)
-        for position, line in enumerate(lines, start=1):
-            line.position = position
+        for sale in self:
+            if sale.locked_positions:
+                continue
+            lines = sale.order_line.filtered(lambda l: not l.display_type)
+            lines.sorted(key=lambda x: (x.sequence, x.id))
+            for position, line in enumerate(lines, start=1):
+                line.position = position
