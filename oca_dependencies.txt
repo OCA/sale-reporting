@@ -2,3 +2,4 @@
 account-invoice-reporting
 reporting-engine
 margin-analysis
+sale-workflow
