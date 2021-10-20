@@ -111,7 +111,8 @@ class SaleReportDeliverd(models.Model):
                 THEN -1
               ELSE 0
             END AS signed_qty,
-            COALESCE(sm.product_uom_qty, sol.product_uom_qty) / u.factor *
+            (CASE WHEN t.type IN ('product', 'consu') THEN COALESCE(sm.product_uom_qty, 0.0)
+                ELSE sol.product_uom_qty END) / u.factor *
                 u2.factor as unsigned_product_uom_qty,
             COALESCE(sm.product_uom_qty * sol.price_reduce, sol.price_subtotal) /
                 CASE COALESCE(s.currency_rate, 0)
