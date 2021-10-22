@@ -19,6 +19,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[product_sold_by_delivery_week](product_sold_by_delivery_week/) | 13.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Adds a field that graphically hints the weekly product sales
 [sale_comment_template](sale_comment_template/) | 13.0.1.0.0 |  | Comments texts templates on Sale documents
 [sale_layout_category_hide_detail](sale_layout_category_hide_detail/) | 13.0.1.1.0 |  | Hide details for sections in sale orders and invoices for reports and customer portal
 [sale_order_line_position](sale_order_line_position/) | 13.0.1.0.0 |  | Adds position number on sale order line.
