@@ -12,6 +12,7 @@ setuptools.setup(
         'odoo13-addon-sale_comment_template',
         'odoo13-addon-sale_layout_category_hide_detail',
         'odoo13-addon-sale_order_line_position',
+        'odoo13-addon-sale_order_product_recommendation_product_sold_by_delivery_week',
         'odoo13-addon-sale_order_report_product_image',
         'odoo13-addon-sale_report_country_state',
         'odoo13-addon-sale_report_delivered',
