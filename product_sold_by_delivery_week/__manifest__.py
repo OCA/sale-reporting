@@ -1,4 +1,5 @@
 # Copyright 2021 Tecnativa - David Vidal
+# Copyright 2021 Tecnativa - Carlos Dauden
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name": "Product weekly sales hint",
@@ -11,6 +12,11 @@
     "maintainers": ["chienandalu"],
     "license": "AGPL-3",
     "depends": ["sale_stock"],
-    "data": ["data/ir_cron.xml", "views/product_views.xml", "views/sale_views.xml"],
+    "data": [
+        "data/ir_cron.xml",
+        "security/product_sold_by_delivery_week_security.xml",
+        "views/product_views.xml",
+        "views/sale_views.xml",
+    ],
     "post_init_hook": "post_init_hook",
 }
