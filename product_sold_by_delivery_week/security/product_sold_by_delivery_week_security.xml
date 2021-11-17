@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="group_weekly_selling_order_line" model="res.groups">
+        <field name="name">Weekly selling info in order lines</field>
+        <field name="category_id" ref="base.module_category_hidden" />
+    </record>
+    <record id="group_weekly_selling_product_list" model="res.groups">
+        <field name="name">Weekly selling info in product list</field>
+        <field name="category_id" ref="base.module_category_hidden" />
+    </record>
+</odoo>
