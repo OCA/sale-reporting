@@ -5,7 +5,10 @@
     <record id="product_template_tree_view" model="ir.ui.view">
         <field name="model">product.template</field>
         <field name="inherit_id" ref="product.product_template_tree_view" />
-        <field name="groups_id" eval="[(4, ref('sales_team.group_sale_salesman'))]" />
+        <field
+            name="groups_id"
+            eval="[(4, ref('product_sold_by_delivery_week.group_weekly_selling_product_list'))]"
+        />
         <field name="arch" type="xml">
             <field name="name" position="after">
                 <!-- The BS badge class provides some styles that will avoid that
@@ -22,7 +25,10 @@
     <record id="product_product_tree_view" model="ir.ui.view">
         <field name="model">product.product</field>
         <field name="inherit_id" ref="product.product_product_tree_view" />
-        <field name="groups_id" eval="[(4, ref('sales_team.group_sale_salesman'))]" />
+        <field
+            name="groups_id"
+            eval="[(4, ref('product_sold_by_delivery_week.group_weekly_selling_product_list'))]"
+        />
         <field name="arch" type="xml">
             <field name="name" position="after">
                 <!-- The BS badge class provides some styles that will avoid that

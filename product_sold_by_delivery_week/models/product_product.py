@@ -1,4 +1,5 @@
 # Copyright 2021 Tecnativa - David Vidal
+# Copyright 2021 Tecnativa - Carlos Dauden
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 from babel.dates import DateTimeFormat
 
@@ -43,21 +44,30 @@ class ProductProduct(models.Model):
 
     def _weekly_sold_delivered_domain(self, date_start, date_end):
         company_id = self.env.context.get("force_company", self.env.user.company_id.id)
-        domain = [
-            ("product_id", "in", self.ids),
-            ("date", ">=", date_start),
-            ("date", "<", date_end),
-            ("state", "=", "done"),
-            ("sale_line_id", "!=", False),
-            ("picking_code", "=", "outgoing"),
-            ("company_id", "=", company_id),
-        ]
         warehouse_id = self.env.context.get("weekly_warehouse_id")
         partner_id = self.env.context.get("weekly_partner_id")
+        # Previous search to improve performance instead of using the ORM huge ids sql
+        picking_type_domain = [
+            ("company_id", "=", company_id),
+            ("code", "=", "outgoing"),
+        ]
         if warehouse_id:
-            domain += [("warehouse_id", "=", warehouse_id)]
+            picking_type_domain += [("warehouse_id", "=", warehouse_id)]
+        picking_types = self.env["stock.picking.type"].search(picking_type_domain)
+        picking_domain = [
+            ("date_done", ">=", date_start),
+            ("date_done", "<", date_end),
+            ("picking_type_id", "in", picking_types.ids),
+        ]
         if partner_id:
-            domain += [("picking_partner_id", "child_of", partner_id)]
+            picking_domain += [("partner_id", "child_of", partner_id)]
+        pickings = self.env["stock.picking"].search(picking_domain)
+        domain = [
+            ("product_id", "in", self.ids),
+            ("picking_id", "in", pickings.ids),
+            ("state", "=", "done"),
+            ("sale_line_id", "!=", False),
+        ]
         return domain
 
     def _weekly_sold_delivered(self):

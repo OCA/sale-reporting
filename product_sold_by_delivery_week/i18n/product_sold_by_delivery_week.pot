@@ -52,3 +52,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:product_sold_by_delivery_week.field_product_template__weekly_sold_delivered
 msgid "Weekly Sold Delivered"
 msgstr ""
+
+#. module: product_sold_by_delivery_week
+#: model:res.groups,name:product_sold_by_delivery_week.group_weekly_selling_order_line
+msgid "Weekly selling info in order lines"
+msgstr ""
+
+#. module: product_sold_by_delivery_week
+#: model:res.groups,name:product_sold_by_delivery_week.group_weekly_selling_product_list
+msgid "Weekly selling info in product list"
+msgstr ""
