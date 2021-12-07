@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template
+        id="report_saleorder_document_image"
+        inherit_id="sale.report_saleorder_document"
+    >
+        <xpath
+            expr="//table[hasclass('o_main_table')]/thead/tr/th[1]"
+            position="before"
+        >
+            <th>Image</th>
+        </xpath>
+        <xpath
+            expr="//tbody[hasclass('sale_tbody')]//t[@t-as='line']/tr/t[@t-if='not line.display_type']/td[1]"
+            position="before"
+        >
+            <td>
+                <span
+                    t-field="line.product_id.image_128"
+                    t-options="{'widget': 'image', 'class': 'img-rounded'}"
+                />
+            </td>
+        </xpath>
+    </template>
+
+</odoo>
