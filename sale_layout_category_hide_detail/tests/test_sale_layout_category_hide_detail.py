@@ -9,7 +9,7 @@ class TestSaleLayoutCategoryHideDetail(common.SavepointCase):
     def setUpClass(cls):
         super(TestSaleLayoutCategoryHideDetail, cls).setUpClass()
         cls.product = cls.env["product.product"].create(
-            {"name": "Producto test", "type": "consu"}
+            {"name": "Producto test", "type": "consu", "invoice_policy": "order"}
         )
         cls.partner = cls.env["res.partner"].create({"name": "partner_test"})
         cls.sale_order = cls.env["sale.order"].create({"partner_id": cls.partner.id})
@@ -25,19 +25,19 @@ class TestSaleLayoutCategoryHideDetail(common.SavepointCase):
 
     def test_prepare_invoice_line(self):
         res = self.so_line._prepare_invoice_line()
-        self.assertEquals(res["quantity"], 10)
-        self.assertEquals(res["product_id"], self.product.id)
-        self.assertEquals(res["show_details"], True)
-        self.assertEquals(res["show_subtotal"], True)
+        self.assertEqual(res["quantity"], 10)
+        self.assertEqual(res["product_id"], self.product.id)
+        self.assertEqual(res["show_details"], True)
+        self.assertEqual(res["show_subtotal"], True)
         self.so_line.write({"show_details": False, "show_subtotal": False})
         res = self.so_line._prepare_invoice_line()
-        self.assertEquals(res["quantity"], 10)
-        self.assertEquals(res["product_id"], self.product.id)
-        self.assertEquals(res["show_details"], False)
-        self.assertEquals(res["show_subtotal"], False)
+        self.assertEqual(res["quantity"], 10)
+        self.assertEqual(res["product_id"], self.product.id)
+        self.assertEqual(res["show_details"], False)
+        self.assertEqual(res["show_subtotal"], False)
 
     def test_create_invoices(self):
         self.so_line.write({"show_details": False, "show_subtotal": False})
         invoice = self.sale_order._create_invoices()
-        self.assertEquals(invoice.invoice_line_ids.show_details, False)
-        self.assertEquals(invoice.invoice_line_ids.show_subtotal, False)
+        self.assertEqual(invoice.invoice_line_ids.show_details, False)
+        self.assertEqual(invoice.invoice_line_ids.show_subtotal, False)
