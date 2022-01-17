@@ -369,12 +369,15 @@ ul.auto-toc {
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 <p><a class="reference external" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/licence-AGPL--3-blue.png" /></a> <a class="reference external" href="https://github.com/OCA/sale-reporting/tree/14.0/sale_order_line_position"><img alt="OCA/sale-reporting" src="https://img.shields.io/badge/github-OCA%2Fsale--reporting-lightgray.png?logo=github" /></a> <a class="reference external" href="https://translation.odoo-community.org/projects/sale-reporting-14-0/sale-reporting-14-0-sale_order_line_position"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external" href="https://runbot.odoo-community.org/runbot/148/14.0"><img alt="Try me on Runbot" src="https://img.shields.io/badge/runbot-Try%20me-875A7B.png" /></a></p>
 <p>This module adds an auto computed position on sale order line.
-This position number is added on the report.</p>
+This position number is also printed on the report.</p>
 <p>The position can be used to keep track of each line during
 the delivery and invoicing of the order with the customer.
 This is why there are related modules on <cite>account-invoice-reporting</cite>
 and <cite>stock-logisics-reporting</cite>.</p>
-<p>The position is not changed on the line after the order has been send.</p>
+<p>The positions are recomputed when the sale order is printed, sent and set to confirm.</p>
+<p>The positions are not changed on the line after the order has been confirmed, but if
+new line are added they will receive a position number.</p>
+<p>An action is also availabled to manually recompute the positions.</p>
 <p><strong>Table of contents</strong></p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
