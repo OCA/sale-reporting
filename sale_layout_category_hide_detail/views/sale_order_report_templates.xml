@@ -52,7 +52,7 @@
             expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-right')]/td/strong"
             position="after"
         >
-      <strong class="mr16">Subtotal <span t-field="current_section.name" /></strong>
+      <strong class="mr16">Subtotal</strong>
     </xpath>
     <xpath
             expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-right')]"
