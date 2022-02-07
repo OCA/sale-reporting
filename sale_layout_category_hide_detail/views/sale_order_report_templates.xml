@@ -32,13 +32,65 @@
                 separator=" and "
             />
     </xpath>
+    <!-- Show prices -->
+    <xpath
+            expr="//tbody[hasclass('sale_tbody')]//span[@t-field='line.price_unit']"
+            position="attributes"
+        >
+        <attribute
+                name="t-if"
+                add="(not current_section or (current_section and current_section.show_line_amount))"
+                separator=" "
+            />
+    </xpath>
+    <xpath
+            expr="//tbody[hasclass('sale_tbody')]//td[@name='td_taxes']/span"
+            position="attributes"
+        >
+        <attribute
+                name="t-if"
+                add="(not current_section or (current_section and current_section.show_line_amount))"
+                separator=" "
+            />
+    </xpath>
+    <xpath
+            expr="//tbody[hasclass('sale_tbody')]//span[@t-field='line.discount']"
+            position="attributes"
+        >
+        <attribute
+                name="t-if"
+                add="(not current_section or (current_section and current_section.show_line_amount))"
+                separator=" "
+            />
+    </xpath>
+    <xpath
+            expr="//tbody[hasclass('sale_tbody')]//span[@t-field='line.price_subtotal']"
+            position="attributes"
+        >
+        <attribute
+                name="t-if"
+                add="(not current_section or (current_section and current_section.show_line_amount))"
+                separator=" "
+            />
+    </xpath>
+    <xpath
+            expr="//tbody[hasclass('sale_tbody')]//span[@t-field='line.price_total']"
+            position="attributes"
+        >
+        <attribute
+                name="t-if"
+                add="(not current_section or (current_section and current_section.show_line_amount))"
+                separator=" "
+            />
+    </xpath>
+    <!-- Show subtotals -->
     <xpath
             expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-right')]"
             position="attributes"
         >
       <attribute
                 name="t-if"
-                add="current_section.show_details and current_section.show_subtotal"
+                add="(not current_section or (current_section.show_details and current_section.show_subtotal))"
                 separator=" and "
             />
     </xpath>
@@ -73,35 +125,5 @@
         </tr>
       </t>
     </xpath>
-
-    <xpath expr="//td[@name='td_priceunit']/span" position="attributes">
-      <attribute
-                name="t-if"
-                add="not current_section or current_section.show_line_amount"
-                separator=" and "
-            />
-    </xpath>
-    <xpath expr="//td[@name='td_taxes']/span" position="attributes">
-      <attribute
-                name="t-if"
-                add="not current_section or current_section.show_line_amount"
-                separator=" and "
-            />
-    </xpath>
-    <xpath expr="//td[@name='td_subtotal']/span" position="attributes">
-      <attribute
-                name="t-if"
-                add="not current_section or current_section.show_line_amount"
-                separator=" and "
-            />
-    </xpath>
-    <xpath expr="//td[@t-if='display_discount']/span" position="attributes">
-      <attribute
-                name="t-if"
-                add="not current_section or current_section.show_line_amount"
-                separator=" and "
-            />
-    </xpath>
-
   </template>
 </odoo>

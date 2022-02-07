@@ -4,3 +4,4 @@
   * Pedro M. Baeza
 
 * Denis Roussel <denis.roussel@acsone.eu>
+* Jeroen Evens <jeroen.evens@protonmail.com>
