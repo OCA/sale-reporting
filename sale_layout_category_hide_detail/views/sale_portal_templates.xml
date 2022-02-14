@@ -55,10 +55,7 @@
                 separator=" and "
             />
     </xpath>
-    <xpath
-            expr='//tbody[hasclass("sale_tbody")]//span[@t-esc="&apos;, &apos;.join(map(lambda x: (x.description or x.name), line.tax_id))"]'
-            position="attributes"
-        >
+    <xpath expr='//tbody[hasclass("sale_tbody")]//td[5]/span' position="attributes">
         <attribute
                 name="t-if"
                 add="(not current_section or (current_section and current_section.show_line_amount))"
