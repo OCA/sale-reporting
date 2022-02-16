@@ -110,7 +110,12 @@ msgstr ""
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__margin
-msgid "Margin"
+msgid "Margin delivered"
+msgstr ""
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__margin_percent
+msgid "Margin delivered(%)"
 msgstr ""
 
 #. module: sale_report_delivered
@@ -251,7 +256,7 @@ msgstr ""
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__price_subtotal
-msgid "Untaxed Total"
+msgid "Untaxed total delivered"
 msgstr ""
 
 #. module: sale_report_delivered
