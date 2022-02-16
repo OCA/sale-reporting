@@ -3,7 +3,7 @@
 
 from psycopg2.extensions import AsIs
 
-from odoo import fields, models, tools
+from odoo import api, fields, models, tools
 
 
 class SaleReportDeliverd(models.Model):
@@ -21,7 +21,7 @@ class SaleReportDeliverd(models.Model):
     partner_id = fields.Many2one("res.partner", "Customer", readonly=True)
     company_id = fields.Many2one("res.company", "Company", readonly=True)
     user_id = fields.Many2one("res.users", "Salesperson", readonly=True)
-    price_subtotal = fields.Float("Untaxed Total", readonly=True)
+    price_subtotal = fields.Float("Untaxed total delivered", readonly=True)
     product_tmpl_id = fields.Many2one("product.template", "Product", readonly=True)
     categ_id = fields.Many2one("product.category", "Product Category", readonly=True)
     nbr = fields.Integer("# of Lines", readonly=True)
@@ -56,7 +56,8 @@ class SaleReportDeliverd(models.Model):
     order_id = fields.Many2one("sale.order", "Order", readonly=True)
     picking_id = fields.Many2one("stock.picking", "Picking", readonly=True)
     amount_cost = fields.Float("Amount cost", readonly=True)
-    margin = fields.Float("Margin", readonly=True)
+    margin = fields.Float("Margin delivered", readonly=True)
+    margin_percent = fields.Float(string="Margin delivered(%)", readonly=True)
 
     def _select(self):
         select_str = """
@@ -90,9 +91,12 @@ class SaleReportDeliverd(models.Model):
             sum(signed_qty * unsigned_product_uom_qty) AS product_uom_qty,
             sum(signed_qty * unsigned_price_subtotal) AS price_subtotal,
             sum(COALESCE(-sub.amount_cost, signed_qty *
-                sub.unsigned_purchase_price * unsigned_product_uom_qty)) AS amount_cost,
+                ROUND(sub.unsigned_purchase_price * unsigned_product_uom_qty,
+                      sub.decimal_places))) AS amount_cost,
             sum(signed_qty * unsigned_price_subtotal - COALESCE(-sub.amount_cost, signed_qty *
-                sub.unsigned_purchase_price * unsigned_product_uom_qty)) AS margin
+                ROUND(sub.unsigned_purchase_price * unsigned_product_uom_qty,
+                      sub.decimal_places))) AS margin,
+            0 AS margin_percent
         """
         return select_str
 
@@ -103,6 +107,7 @@ class SaleReportDeliverd(models.Model):
             sol.product_id as product_id,
             t.name as template_name,
             t.uom_id as product_uom,
+            cur.decimal_places,
             CASE
               WHEN (source_location.usage = 'internal' AND dest_location.usage = 'customer')
                         or dest_location.usage IS NULL
@@ -114,9 +119,10 @@ class SaleReportDeliverd(models.Model):
             (CASE WHEN t.type IN ('product', 'consu') THEN COALESCE(sm.product_uom_qty, 0.0)
                 ELSE sol.product_uom_qty END) / u.factor *
                 u2.factor as unsigned_product_uom_qty,
-            COALESCE(sm.product_uom_qty * sol.price_reduce, sol.price_subtotal) /
+            ROUND(COALESCE(sm.product_uom_qty * sol.price_reduce, sol.price_subtotal) /
                 CASE COALESCE(s.currency_rate, 0)
-                    WHEN 0 THEN 1.0 ELSE s.currency_rate END as unsigned_price_subtotal,
+                    WHEN 0 THEN 1.0 ELSE s.currency_rate END, cur.decimal_places)
+                     as unsigned_price_subtotal,
             s.name as order_name,
             COALESCE(sm.date, s.effective_date, s.date_order) as date,
             s.state as state,
@@ -139,7 +145,7 @@ class SaleReportDeliverd(models.Model):
             s.id as order_id,
             sp.id as picking_id,
             sol.purchase_price AS unsigned_purchase_price,
-            svl.value AS amount_cost
+            ROUND(svl.value, cur.decimal_places) AS amount_cost
         """
         return sub_select_str
 
@@ -160,6 +166,7 @@ class SaleReportDeliverd(models.Model):
             stock_location source_location ON sm.location_id = source_location.id
         LEFT JOIN stock_valuation_layer svl ON svl.stock_move_id = sm.id
         LEFT JOIN stock_picking sp ON sp.id = sm.picking_id
+        LEFT JOIN res_currency as cur ON cur.id = sol.currency_id
         """
         return from_str
 
@@ -212,3 +219,24 @@ class SaleReportDeliverd(models.Model):
                 AsIs(self._group_by()),
             ),
         )
+
+    @api.model
+    def read_group(
+        self, domain, fields, groupby, offset=0, limit=None, orderby=False, lazy=True
+    ):
+        res = super().read_group(
+            domain,
+            fields,
+            groupby,
+            offset=offset,
+            limit=limit,
+            orderby=orderby,
+            lazy=lazy,
+        )
+        if "margin_percent:sum" not in fields:
+            return res
+        full_fields = all(x in fields for x in {"price_subtotal:sum", "margin:sum"})
+        for line in res:
+            if full_fields and line["price_subtotal"]:
+                line["margin_percent"] = (line["margin"] / line["price_subtotal"]) * 100
+        return res
