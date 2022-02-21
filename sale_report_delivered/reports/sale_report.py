@@ -164,8 +164,15 @@ class SaleReportDeliverd(models.Model):
         return from_str
 
     def _where(self):
+        """Take into account only stock moves from internal locations to other
+        locations and moves from customer with the field 'to_refund' True
+        """
         return """
-            WHERE sm.state = 'done' OR sm.state IS NULL
+            WHERE (sm.state = 'done' OR sm.state IS NULL) AND (
+                (source_location.usage = 'internal' AND dest_location.usage = 'customer') OR
+                (source_location.usage = 'customer' AND dest_location.usage = 'internal'
+                    AND sm.to_refund)
+            )
         """
 
     def _group_by(self):
