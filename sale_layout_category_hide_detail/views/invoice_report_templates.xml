@@ -52,6 +52,7 @@
             <span t-field="current_section.name" class="font-weight-bold" />
             <span class="float-right">
               <span
+                                t-if="current_section.show_section_subtotal"
                                 class="float-right"
                                 t-esc="current_subtotal"
                                 t-options='{"widget": "monetary", "display_currency": o.currency_id}'
