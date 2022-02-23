@@ -8,6 +8,10 @@ class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
     show_details = fields.Boolean(string="Show details", default=True)
+    show_section_subtotal = fields.Boolean(
+        default=True,
+        help="Uncheck this if you want to hide the subtotal on section part",
+    )
     show_subtotal = fields.Boolean(string="Show subtotal", default=True)
     show_line_amount = fields.Boolean(string="Show line amount", default=True)
 
@@ -17,5 +21,6 @@ class SaleOrderLine(models.Model):
             show_details=self.show_details,
             show_subtotal=self.show_subtotal,
             show_line_amount=self.show_line_amount,
+            show_section_subtotal=self.show_section_subtotal,
         )
         return res
