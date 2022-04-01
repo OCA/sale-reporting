@@ -25,7 +25,7 @@ addon | version | maintainers | summary
 [sale_order_report_product_image](sale_order_report_product_image/) | 14.0.1.0.0 |  | Show product images on Sale documents
 [sale_order_weight](sale_order_weight/) | 14.0.1.0.0 |  | Add products weight in report for sale order
 [sale_outgoing_product](sale_outgoing_product/) | 14.0.1.0.0 |  | Module that generates a view for outgoing product
-[sale_report_crossed_out_original_price](sale_report_crossed_out_original_price/) | 14.0.1.0.0 |  | Sale report crossed out original price when a discount exists
+[sale_report_crossed_out_original_price](sale_report_crossed_out_original_price/) | 14.0.1.1.0 |  | Sale report crossed out original price when a discount exists
 
 [//]: # (end addons)
 
