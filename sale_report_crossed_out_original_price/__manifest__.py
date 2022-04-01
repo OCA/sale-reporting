@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 {
     "name": "Sale Report Crossed Out Original Price",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.1.0",
     "author": "Sygel, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/sale-reporting",
     "license": "AGPL-3",
