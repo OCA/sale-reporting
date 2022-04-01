@@ -28,7 +28,7 @@ Sale Report Crossed Out Original Price
 When there is a discount and the discount policy is "Show public price & discount to the customer" this module allows you to generate sales reports crossing out the original price of each sale line and with the price with the discount applied below it.
 
 An example of a sales report is shown below:
-.. image:: https://raw.githubusercontent.com/OCA/sale-reporting/14.0/sale_report_crossed_out_original_price/static/img/example.png
+  .. image:: https://raw.githubusercontent.com/OCA/sale-reporting/14.0/sale_report_crossed_out_original_price/static/img/example.png
 
 **Table of contents**
 
@@ -44,23 +44,25 @@ Configuration
 =============
 
 You just need to configure your discount policy to be "Show public price & discount to the customer". To do this:
-1. Go to Sales module.
-2. Select Products in the menu bar.
-3. Select PriceList from the drop down menu.
-4. Select your pricelist.
-5. Select the configuration tab.
-6. Select "Show public price & discount to the customer".
+
+#. Go to Sales module.
+#. Select Products in the menu bar.
+#. Select PriceList from the drop down menu.
+#. Select your pricelist.
+#. Select the configuration tab.
+#. Select "Show public price & discount to the customer".
 
 Usage
 =====
 
 To use the module:
-1. Go to the sales module.
-2. Create a new quotation.
-3. Fill in the required fields.
-4. Select a pricelist with a discount policy "Show public price & discount to the customer".
-5. Add the products you want.
-6. Print the report.
+
+#. Go to the sales module.
+#. Create a new quotation.
+#. Fill in the required fields.
+#. Select a pricelist with a discount policy "Show public price & discount to the customer".
+#. Add the products you want.
+#. Print the report.
 
 Bug Tracker
 ===========
