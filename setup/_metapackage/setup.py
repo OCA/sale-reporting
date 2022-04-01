@@ -13,6 +13,7 @@ setuptools.setup(
         'odoo14-addon-sale_order_report_product_image',
         'odoo14-addon-sale_order_weight',
         'odoo14-addon-sale_outgoing_product',
+        'odoo14-addon-sale_report_crossed_out_original_price',
     ],
     classifiers=[
         'Programming Language :: Python',
