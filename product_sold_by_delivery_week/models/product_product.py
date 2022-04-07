@@ -72,8 +72,8 @@ class ProductProduct(models.Model):
 
     def _weekly_sold_delivered(self):
         params = self.env["ir.config_parameter"].sudo()
-        weeks_to_consider = params.get_param(
-            "product_sold_by_delivery_week.weeks_to_consider", 6
+        weeks_to_consider = int(
+            params.get_param("product_sold_by_delivery_week.weeks_to_consider", 6)
         )
         delta_one_week = date_utils.get_timedelta(1, "week")
         start_of_this_week = date_utils.start_of(fields.Datetime.today(), "week")
