@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//div[@name='quotation_order_setting_container']"
+                position="inside"
+            >
+                <div class="col-12 col-lg-6 o_setting_box" id="amount_option_setting">
+                    <div class="o_setting_left_pane">
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="amount_option" />
+                        <span
+                            class="fa fa-lg fa-building-o"
+                            title="Values set here are company-specific."
+                            aria-label="Values set here are company-specific."
+                            groups="base.group_multi_company"
+                        />
+                        <div class="text-muted">
+                            Set amount to be used for multicompany reporting currency
+                        </div>
+                        <div class="mt8">
+                            <field
+                                name="amount_option"
+                                class="o_light_label"
+                                widget="radio"
+                                options="{'horizontal': true}"
+                                required="True"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
