@@ -63,8 +63,8 @@ class TestAccountInvoiceReport(TransactionCase):
             ._get_report_from_name("sale.report_saleorder")
             ._render_qweb_html(self.sale_order.ids)
         )
-        self.assertRegexpMatches(str(res[0]), self.sale_before_comment.text)
-        self.assertRegexpMatches(str(res[0]), self.sale_after_comment.text)
+        self.assertRegex(str(res[0]), self.sale_before_comment.text)
+        self.assertRegex(str(res[0]), self.sale_after_comment.text)
 
     def test_comments_in_generated_invoice(self):
         invoice = self.sale_order._create_invoices()[0]
@@ -77,8 +77,8 @@ class TestAccountInvoiceReport(TransactionCase):
             ._get_report_from_name("account.report_invoice")
             ._render_qweb_html(invoice.ids)
         )
-        self.assertRegexpMatches(str(res[0]), self.move_before_comment.text)
-        self.assertRegexpMatches(str(res[0]), self.move_after_comment.text)
+        self.assertRegex(str(res[0]), self.move_before_comment.text)
+        self.assertRegex(str(res[0]), self.move_after_comment.text)
 
     def test_comments_in_sale_order(self):
         self.assertTrue(self.sale_after_comment in self.sale_order.comment_template_ids)
