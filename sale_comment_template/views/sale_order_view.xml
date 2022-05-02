@@ -29,6 +29,9 @@
                   <field name="formatted_note" colspan="4"/>
               </group>
         </xpath>
+        <xpath expr="//field[@name='order_line']/tree" position="attributes">
+            <attribute name="editable"/>
+        </xpath>
       </field>
     </record>
 
