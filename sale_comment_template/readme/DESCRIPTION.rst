@@ -11,5 +11,3 @@ Adds comments on
 
    - above sale order lines
    - below sale order lines
-
-   Comments are copied on the invoice when you will create invoice from sale order.
