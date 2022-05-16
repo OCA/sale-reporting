@@ -64,6 +64,14 @@ class TestSaleOrderLinePosition(TransactionCase):
         self.assertEqual(len(self.order.order_line), 2)
         self.assertEqual(self.order.order_line[1].position, 1)
 
+    def test_unlink_no_recompute_line(self):
+        """Check that when  parameter disable_sale_position_recompute is True
+        and line are being removed position are not recomputed."""
+        self.order.company_id.disable_sale_position_recompute = True
+        self.order.order_line[0].unlink()
+        self.assertEqual(len(self.order.order_line), 2)
+        self.assertEqual(self.order.order_line[1].position, 2)
+
     def test_locked_positions(self):
         """Check that when order is sent, position are not recomputed."""
         new_line = self.env["sale.order.line"].create(
