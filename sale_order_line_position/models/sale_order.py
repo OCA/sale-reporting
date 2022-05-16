@@ -24,7 +24,9 @@ class SaleOrder(models.Model):
 
     def recompute_positions(self):
         for sale in self:
-            if sale.locked_positions:
+            if sale.locked_positions or self.env[
+                "ir.config_parameter"
+            ].sudo().get_param("sale.disable_position_recompute"):
                 continue
             lines = sale.order_line.filtered(lambda l: not l.display_type)
             lines.sorted(key=lambda x: (x.sequence, x.id))
