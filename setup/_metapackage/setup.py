@@ -8,6 +8,7 @@ setuptools.setup(
     description="Meta package for oca-sale-reporting Odoo addons",
     version=version,
     install_requires=[
+        'odoo-addon-base_multicompany_reporting_currency>=15.0dev,<15.1dev',
         'odoo-addon-sale_order_line_position>=15.0dev,<15.1dev',
     ],
     classifiers=[
