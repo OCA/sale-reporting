@@ -13,22 +13,27 @@ Base Multicompany Reporting Currency
 .. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
-.. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
+.. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fsale--reporting-lightgray.png?logo=github
     :target: https://github.com/OCA/sale-reporting/tree/15.0/base_multicompany_reporting_currency
     :alt: OCA/sale-reporting
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
     :target: https://translation.odoo-community.org/projects/sale-reporting-15-0/sale-reporting-15-0-base_multicompany_reporting_currency
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
-    :target: https://runbot.odoo-community.org/runbot/134/15.0
+    :target: https://runbot.odoo-community.org/runbot/148/15.0
     :alt: Try me on Runbot
 
 |badge1| |badge2| |badge3| |badge4| |badge5| 
 
+In Odoo standard, when it comes to reporting in a multicompany and multicurrency environment, it should be done on the invoices. (Cf Fabien Pinckaers tweet: https://twitter.com/fpodoo/status/1511831215673913344)
+Nonetheless, some companies do not use the Invoicing or Accounting app in Odoo. For example, when using only CRM and Sales.
+With this module, we introduce the concept of currency for reporting to be set in General Settings.
+This way we can reuse the idea behind https://github.com/OCA/sale-workflow/tree/10.0/sale_company_currency, but with a predefined currency.
+
 This Module adds a setting in General Settings to set multicompany reporting currency which be applied to all companies.
 Multicompany reporting currency field will be used in other dependent modules to compare amounts in different companies and documents.
 NB: This module does not provide any feature itself.
-You should install `sale_multicompany_reporting_currency` from https://github.com/OCA/sale-reporting or `crm_multicompany_reporting_currency` from https://github.com/OCA/crm to have additional Total (Multicompany Reporting Currency) field. 
+You should install `sale_multicompany_reporting_currency` from https://github.com/OCA/sale-reporting or `crm_multicompany_reporting_currency` from https://github.com/OCA/crm to have additional Total (Multicompany Reporting Currency) field.
 
 **Table of contents**
 
