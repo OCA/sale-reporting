@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="base.res_config_settings_view_form" />
         <field name="arch" type="xml">
             <div id="connectors_setting_container" position="after">
-                <h2>Sale Order Line Positioning</h2>
+                <h2>Sale Order Line Positions</h2>
                 <div
                     class="row mt16 o_settings_container"
                     name="line_positioning_setting_container"
@@ -16,10 +16,10 @@
                         id="line_positioning_options"
                     >
                         <div class="o_setting_left_pane">
-                            <field name="disable_position_recompute" />
+                            <field name="disable_sale_position_recompute" />
                         </div>
                         <div class="o_setting_right_pane">
-                                <label for="disable_position_recompute" />
+                                <label for="disable_sale_position_recompute" />
                                 <div class="text-muted">
                                     Do not recompute positions when line is removed
                                 </div>
