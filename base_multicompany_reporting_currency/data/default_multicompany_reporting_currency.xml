@@ -1,0 +1,8 @@
+<odoo>
+    <record id="multicompany_reporting_currency" model="ir.config_parameter">
+        <field
+            name="key"
+        >base_multicompany_reporting_currency.multicompany_reporting_currency</field>
+        <field name="value" ref="base.EUR" />
+    </record>
+</odoo>
