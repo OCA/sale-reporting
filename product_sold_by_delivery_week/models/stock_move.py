@@ -16,7 +16,7 @@ class StockMove(models.Model):
                 lambda x: x.sale_line_id and x.picking_code == "outgoing"
             )
             .mapped("product_id")
-            .with_context(force_company=self.company_id.id)
+            .with_company(self.company_id)
         )
         for product in products.filtered(
             lambda x: x.weekly_sold_delivered and x.weekly_sold_delivered[-1:] == "0"

@@ -14,21 +14,21 @@ Product weekly sales hint
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fsale--reporting-lightgray.png?logo=github
-    :target: https://github.com/OCA/sale-reporting/tree/13.0/product_sold_by_delivery_week
+    :target: https://github.com/OCA/sale-reporting/tree/15.0/product_sold_by_delivery_week
     :alt: OCA/sale-reporting
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/sale-reporting-13-0/sale-reporting-13-0-product_sold_by_delivery_week
+    :target: https://translation.odoo-community.org/projects/sale-reporting-15-0/sale-reporting-15-0-product_sold_by_delivery_week
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
-    :target: https://runbot.odoo-community.org/runbot/148/13.0
+    :target: https://runbot.odoo-community.org/runbot/148/15.0
     :alt: Try me on Runbot
 
 |badge1| |badge2| |badge3| |badge4| |badge5| 
 
-This module allows to compute a graphical hint stored in the product itself to display
-whether or not that product was sold and delivered in the past weeks.
+This module allows to compute a graphical hint, stored in the product itself,
+to display whether that product was sold and delivered in recent weeks.
 
-.. image:: https://raw.githubusercontent.com/OCA/sale-reporting/13.0/product_sold_by_delivery_week/static/description/sold_by_week_hint.png
+.. image:: https://raw.githubusercontent.com/OCA/sale-reporting/15.0/product_sold_by_delivery_week/static/description/sold_by_week_hint.png
 
 **Table of contents**
 
@@ -38,38 +38,40 @@ whether or not that product was sold and delivered in the past weeks.
 Configuration
 =============
 
-We can configure some variables with config parameter keys:
+Some variables can be configured using config parameter keys:
 
-- For the hint characters:
+- For hint characters:
 
-  - For the sold char: `product_sold_by_delivery_week.sold_char`
-  - For the not sold: `product_sold_by_delivery_week.not_sold_char`
-- For weeks length: `product_sold_by_delivery_week.weeks_to_consider`
+ - For the sold char: `product_sold_by_delivery_week.sold_char`
+ - For the not sold: `product_sold_by_delivery_week.not_sold_char`
+ - For weeks length: `product_sold_by_delivery_week.weeks_to_consider`
 
 Assign the security group 'Weekly selling info in order lines' and/or
 'Weekly selling info in product list' to users that should see weekly
-selling info in order lines or product list. (Is is not necessary if
-you want view the info in other views as product recommendation)
+sales info in product lists or in order lines. (If you want to see the
+info in other views like product recommendations, this is not needed.)
 
 Usage
 =====
 
-Once configured, you can view the hints as an optional column in sale order lines or
-in the tree of the products.
+Once configured, hints will apperar as an optional column in sale order
+lines or in products tree.
 
-In the general products view, the general sales info is shown while in the sale lines
-field we can see the field in context filtering only the partner sales.
+In the general products view, general sales info is shown. Meanwhile, in the
+sale lines field we can see this field in context by simply filtering partner
+sales.
 
-Only salesmen can access to this information.
+Only salespeople can access this information.
 
 Known issues / Roadmap
 ======================
 
-* Services aren't taken into consideration.
-* A widget could be done on top of the main field to have nicer icons or even colors.
-* For the future, maybe a configurable granularity could be made, so we could
-  change the behaviour to months, days, years as the period of choice. To simplify
-  the module, for the moment only the week will be considered.
+* Services are not taken into consideration.
+* A widget could be created on top of the main field to have nicer icons and
+  probably colors.
+* For the near future, a configurable granularity would be desirable, so
+  behaviour could be changed to years, months or days as the period of choice.
+  To simplify this module, only weekly periods will be considered for now.
 
 Bug Tracker
 ===========
@@ -77,7 +79,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/sale-reporting/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/sale-reporting/issues/new?body=module:%20product_sold_by_delivery_week%0Aversion:%2013.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/sale-reporting/issues/new?body=module:%20product_sold_by_delivery_week%0Aversion:%2015.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -96,6 +98,8 @@ Contributors
 
   * David Vidal
   * Carlos Dauden
+  * César A. Sánchez
+  * Luis D. Lafaurie
 
 Maintainers
 ~~~~~~~~~~~
@@ -118,6 +122,6 @@ Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
 |maintainer-chienandalu| 
 
-This module is part of the `OCA/sale-reporting <https://github.com/OCA/sale-reporting/tree/13.0/product_sold_by_delivery_week>`_ project on GitHub.
+This module is part of the `OCA/sale-reporting <https://github.com/OCA/sale-reporting/tree/15.0/product_sold_by_delivery_week>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
