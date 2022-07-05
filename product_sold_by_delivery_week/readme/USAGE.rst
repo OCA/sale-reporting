@@ -1,7 +1,8 @@
-Once configured, you can view the hints as an optional column in sale order lines or
-in the tree of the products.
+Once configured, hints will apperar as an optional column in sale order
+lines or in products tree.
 
-In the general products view, the general sales info is shown while in the sale lines
-field we can see the field in context filtering only the partner sales.
+In the general products view, general sales info is shown. Meanwhile, in the
+sale lines field we can see this field in context by simply filtering partner
+sales.
 
-Only salesmen can access to this information.
+Only salespeople can access this information.
