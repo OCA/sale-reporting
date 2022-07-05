@@ -7,7 +7,8 @@ class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
     weekly_sold_delivered_shown = fields.Char(
-        string="Weekly Sold", compute="_compute_weekly_sold_delivered_shown",
+        string="Weekly Sold",
+        compute="_compute_weekly_sold_delivered_shown",
     )
 
     @api.depends("order_id.partner_id", "order_id.warehouse_id", "product_id")

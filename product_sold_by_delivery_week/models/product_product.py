@@ -11,7 +11,8 @@ class ProductProduct(models.Model):
     _inherit = "product.product"
 
     weekly_sold_delivered = fields.Char(
-        company_dependent=True, groups="sales_team.group_sale_salesman",
+        company_dependent=True,
+        groups="sales_team.group_sale_salesman",
     )
     weekly_sold_delivered_shown = fields.Char(
         string="Weekly Sold",
