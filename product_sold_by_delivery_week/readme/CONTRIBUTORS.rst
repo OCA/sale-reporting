@@ -2,3 +2,5 @@
 
   * David Vidal
   * Carlos Dauden
+  * César A. Sánchez
+  * Luis D. Lafaurie

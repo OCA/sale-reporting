@@ -4,6 +4,5 @@ from odoo import SUPERUSER_ID, api
 
 
 def post_init_hook(cr, registry):
-    with api.Environment.manage():
-        env = api.Environment(cr, SUPERUSER_ID, {})
-        env["product.product"]._action_recalculate_all_weekly_sold_delivered()
+    env = api.Environment(cr, SUPERUSER_ID, {})
+    env["product.product"]._action_recalculate_all_weekly_sold_delivered()
