@@ -40,7 +40,7 @@ class ProductTemplate(models.Model):
                 )
             )
 
-    @api.depends_context("force_company")
+    @api.depends_context("company")
     @api.depends("product_variant_ids.weekly_sold_delivered")
     def _compute_weekly_sold_delivered(self):
         """Perform a bitwise operation over the variant values to easily check

@@ -44,12 +44,11 @@ class ProductProduct(models.Model):
             )
 
     def _weekly_sold_delivered_domain(self, date_start, date_end):
-        company_id = self.env.context.get("force_company", self.env.user.company_id.id)
         warehouse_id = self.env.context.get("weekly_warehouse_id")
         partner_id = self.env.context.get("weekly_partner_id")
         # Previous search to improve performance instead of using the ORM huge ids sql
         picking_type_domain = [
-            ("company_id", "=", company_id),
+            ("company_id", "=", self.env.company.id),
             ("code", "=", "outgoing"),
         ]
         if warehouse_id:
@@ -132,7 +131,6 @@ class ProductProduct(models.Model):
     def _recalculate_weekly_sold_delivered(self):
         """Over this recordset recalculate the whole strings. We end up with something
         like '010111'. Later we can transform it into something nicer for the user."""
-        company_id = self.env.context.get("force_company", self.env.user.company_id.id)
         products_weekly = self._weekly_sold_delivered()
         # But we want to group by string result so we can minimize the final records
         # writes. The number of writes will depends on the variety of the weekly sales
@@ -145,7 +143,7 @@ class ProductProduct(models.Model):
         for weekly_string, product_recordset in weekly_result_dict.items():
             if not product_recordset:
                 continue
-            product_recordset.with_context(force_company=company_id).write(
+            product_recordset.with_company(self.env.company).write(
                 {"weekly_sold_delivered": weekly_string}
             )
 
@@ -164,7 +162,7 @@ class ProductProduct(models.Model):
                         ("company_id", "=", False),
                     ]
                 )
-                .with_context(force_company=company.id)
+                .with_company(company)
             )
             if not products:
                 continue
