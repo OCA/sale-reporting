@@ -17,25 +17,25 @@ msgstr ""
 "X-Generator: Weblate 4.3.2\n"
 
 #. module: sale_order_line_position
-#: model:ir.model.fields,field_description:sale_order_line_position.field_ir_actions_report__display_name
-#: model:ir.model.fields,field_description:sale_order_line_position.field_sale_order__display_name
-#: model:ir.model.fields,field_description:sale_order_line_position.field_sale_order_line__display_name
-msgid "Display Name"
-msgstr "Anzeigename"
+#: model:ir.model,name:sale_order_line_position.model_res_company
+msgid "Companies"
+msgstr ""
 
 #. module: sale_order_line_position
-#: model:ir.model.fields,field_description:sale_order_line_position.field_ir_actions_report__id
-#: model:ir.model.fields,field_description:sale_order_line_position.field_sale_order__id
-#: model:ir.model.fields,field_description:sale_order_line_position.field_sale_order_line__id
-msgid "ID"
-msgstr "ID"
+#: model:ir.model,name:sale_order_line_position.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
 
 #. module: sale_order_line_position
-#: model:ir.model.fields,field_description:sale_order_line_position.field_ir_actions_report____last_update
-#: model:ir.model.fields,field_description:sale_order_line_position.field_sale_order____last_update
-#: model:ir.model.fields,field_description:sale_order_line_position.field_sale_order_line____last_update
-msgid "Last Modified on"
-msgstr "Zuletzt geändert am"
+#: model:ir.model.fields,field_description:sale_order_line_position.field_res_company__disable_sale_position_recompute
+#: model:ir.model.fields,field_description:sale_order_line_position.field_res_config_settings__disable_sale_position_recompute
+msgid "Do not recompute positions on sale orders"
+msgstr ""
+
+#. module: sale_order_line_position
+#: model_terms:ir.ui.view,arch_db:sale_order_line_position.res_config_settings_view_form
+msgid "Do not recompute positions when line is removed"
+msgstr ""
 
 #. module: sale_order_line_position
 #: model:ir.model.fields,field_description:sale_order_line_position.field_sale_order__locked_positions
@@ -69,6 +69,11 @@ msgid "Report Action"
 msgstr ""
 
 #. module: sale_order_line_position
+#: model_terms:ir.ui.view,arch_db:sale_order_line_position.res_config_settings_view_form
+msgid "Sale Order Line Positions"
+msgstr ""
+
+#. module: sale_order_line_position
 #: model:ir.model,name:sale_order_line_position.model_sale_order
 msgid "Sales Order"
 msgstr "Verkaufsauftrag"
@@ -77,3 +82,12 @@ msgstr "Verkaufsauftrag"
 #: model:ir.model,name:sale_order_line_position.model_sale_order_line
 msgid "Sales Order Line"
 msgstr "Auftragsposition"
+
+#~ msgid "Display Name"
+#~ msgstr "Anzeigename"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Zuletzt geändert am"
