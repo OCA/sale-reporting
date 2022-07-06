@@ -14,6 +14,27 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: sale_order_line_position
+#: model:ir.model,name:sale_order_line_position.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: sale_order_line_position
+#: model:ir.model,name:sale_order_line_position.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: sale_order_line_position
+#: model:ir.model.fields,field_description:sale_order_line_position.field_res_company__disable_sale_position_recompute
+#: model:ir.model.fields,field_description:sale_order_line_position.field_res_config_settings__disable_sale_position_recompute
+msgid "Do not recompute positions on sale orders"
+msgstr ""
+
+#. module: sale_order_line_position
+#: model_terms:ir.ui.view,arch_db:sale_order_line_position.res_config_settings_view_form
+msgid "Do not recompute positions when line is removed"
+msgstr ""
+
+#. module: sale_order_line_position
 #: model:ir.model.fields,field_description:sale_order_line_position.field_sale_order__locked_positions
 msgid "Locked Positions"
 msgstr ""
@@ -42,6 +63,11 @@ msgstr ""
 #. module: sale_order_line_position
 #: model:ir.model,name:sale_order_line_position.model_ir_actions_report
 msgid "Report Action"
+msgstr ""
+
+#. module: sale_order_line_position
+#: model_terms:ir.ui.view,arch_db:sale_order_line_position.res_config_settings_view_form
+msgid "Sale Order Line Positions"
 msgstr ""
 
 #. module: sale_order_line_position
