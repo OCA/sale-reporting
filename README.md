@@ -23,6 +23,7 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [base_multicompany_reporting_currency](base_multicompany_reporting_currency/) | 15.0.1.0.1 |  | Adds the possibility to specify Multicompany Reporting Currency
 [sale_order_line_position](sale_order_line_position/) | 15.0.1.1.0 |  | Adds position number on sale order line.
+[sale_report_delivered_subtotal](sale_report_delivered_subtotal/) | 15.0.1.0.0 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) | Sale Report Delivered subtotal
 
 [//]: # (end addons)
 
