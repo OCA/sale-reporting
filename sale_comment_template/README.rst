@@ -23,7 +23,7 @@ Sale Comments
     :target: https://runbot.odoo-community.org/runbot/148/14.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| |badge5| 
+|badge1| |badge2| |badge3| |badge4| |badge5|
 
 Adds comments on sales orders.
 The comments can be loaded from templates.
@@ -88,6 +88,9 @@ Contributors
 * `ForgeFlow <https://www.forgeflow.com>`_:
 * Miquel Raïch <miquel.raich@forgeflow.com>
 * Pierre Verkest <pierreverkest84@gmail.com>
+
+* `Ingenieriacloud.com <www.ingenieriacloud.com>`_:
+* Pedro Guirao <pedro@serincloud.com>
 
 Maintainers
 ~~~~~~~~~~~

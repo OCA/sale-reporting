@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template
+        id="report_saleorder_portal_content_comments"
+        inherit_id="sale.sale_order_portal_content"
+    >
+        <xpath expr="//table[hasclass('table-sm')]" position="before">
+            <t
+                t-foreach="sale_order.comment_template_ids.filtered(lambda x: x.position == 'before_lines')"
+                t-as="comment_template_top"
+            >
+                <div t-raw="comment_template_top.text" />
+            </t>
+        </xpath>
+        <xpath expr="//section[@t-if='sale_order.payment_term_id']" position="after">
+            <t
+                t-foreach="sale_order.comment_template_ids.filtered(lambda x: x.position == 'after_lines')"
+                t-as="comment_template_bottom"
+            >
+                <div t-raw="comment_template_bottom.text" />
+            </t>
+        </xpath>
+    </template>
+
+</odoo>
