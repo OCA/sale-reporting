@@ -18,7 +18,7 @@
             <td>
                 <span
                     t-field="line.product_id.image_128"
-                    t-options="{'widget': 'image', 'class': 'img-rounded'}"
+                    t-options="{'widget': 'image', 'max_width': '64', 'class': 'rounded'}"
                 />
             </td>
         </xpath>
