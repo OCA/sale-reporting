@@ -4,9 +4,9 @@
     <template id="so_backorder_report">
         <t t-call="web.html_container">
             <t t-call="web.external_layout">
-                <br />
                 <div class="page">
-                    <h2>PO Backorder Report</h2>
+                    <br />
+                    <h2>SO Backorder Report</h2>
                     <table class="table table-sm table-condensed">
                         <thead>
                             <tr>
@@ -31,10 +31,10 @@
                                         t-field="line.bo_value"
                                     /></td>
                                 <td class="text-right"><span
-                                        t-field="line.uigd_qty"
+                                        t-field="line.uninvoiced_goods_delivered_qty"
                                     /></td>
                                 <td class="text-right"><span
-                                        t-field="line.uigd_value"
+                                        t-field="line.uninvoiced_goods_delivered_value"
                                     /></td>
                                 <td><span t-field="line.last_date_delivered" /></td>
                                 <td><span t-field="line.last_bill_date" /></td>

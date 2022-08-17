@@ -13,7 +13,8 @@ class TestSaleBackorderCommon(TransactionCase):
         super(TestSaleBackorderCommon, self).setUp()
         self.SaleOrder = self.env["sale.order"]
         self.sobackorder_wiz = self.env["sobackorder.report.wizard"]
-        self.fsm_per_order_1 = self.env["product.product"].create(
+        self.product_obj = self.env["product.product"]
+        self.fsm_per_order_1 = self.product_obj.create(
             {
                 "name": "FSM Order per Sale Order #1",
                 "categ_id": self.env.ref("product.product_category_3").id,
@@ -25,7 +26,7 @@ class TestSaleBackorderCommon(TransactionCase):
                 "invoice_policy": "order",
             }
         )
-        self.fsm_per_order_2 = self.env["product.product"].create(
+        self.fsm_per_order_2 = self.product_obj.create(
             {
                 "name": "FSM Order per Sale Order #1",
                 "categ_id": self.env.ref("product.product_category_3").id,
@@ -78,7 +79,7 @@ class TestSaleBackorderCommon(TransactionCase):
                             "product_uom": self.fsm_per_order_1.uom_id.id,
                             "price_unit": self.fsm_per_order_1.list_price,
                             "tax_id": False,
-                            "uigd_value": 1.0,
+                            "uninvoiced_goods_delivered_value": 1.0,
                             "bo_value": 1.0,
                             "bo_qty": 1.0,
                         },
@@ -93,7 +94,7 @@ class TestSaleBackorderCommon(TransactionCase):
                             "product_uom": self.fsm_per_order_2.uom_id.id,
                             "price_unit": self.fsm_per_order_2.list_price,
                             "tax_id": False,
-                            "uigd_value": 1.0,
+                            "uninvoiced_goods_delivered_value": 1.0,
                             "bo_value": 1.0,
                             "bo_qty": 1.0,
                             "last_date_delivered": datetime.now() + rdelta(days=15),
@@ -117,16 +118,14 @@ class TestSaleBackorderCommon(TransactionCase):
 
     def test_sale_order_order_line(self):
         self.sale_order_1.action_confirm()
-        self.context = {
-            "active_model": "sale.order",
-            "active_ids": [self.sale_order_1.id],
-            "active_id": self.sale_order_1.id,
-            "default_journal_id": self.default_journal_sale.id,
-        }
-
         downpayment = (
             self.env["sale.advance.payment.inv"]
-            .with_context(self.context)
+            .with_context(
+                active_model="sale.order",
+                active_ids=self.sale_order_1.ids,
+                active_id=self.sale_order_1.id,
+                default_journal_id=self.default_journal_sale.id,
+            )
             .create(
                 {
                     "advance_payment_method": "fixed",
@@ -156,7 +155,11 @@ class TestSaleBackorderCommon(TransactionCase):
         self.invoice.action_reverse()
         move_reversal = (
             self.env["account.move.reversal"]
-            .with_context(active_model="account.move", active_ids=self.invoice.ids)
+            .with_context(
+                active_model="account.move",
+                active_ids=self.invoice.ids,
+                default_journal_id=self.default_journal_sale.id,
+            )
             .create(
                 {
                     "date": datetime.today(),

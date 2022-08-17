@@ -15,9 +15,9 @@ class SOBackorderWizard(models.TransientModel):
                 ("product_type", "=", "product"),
                 "|",
                 ("bo_value", "!=", 0),
-                ("uigd_value", "!=", 0),
+                ("uninvoiced_goods_delivered_value", "!=", 0),
             ]
         )
-        return self.env.ref("sale_backorder.action_so_backorder_report").report_action(
-            data
-        )
+        return self.env.ref(
+            "sale_backorder.action_so_backorder_report", raise_if_not_found=False
+        ).report_action(data)
