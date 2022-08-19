@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 ACSONE SA/NV
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template
+        id="report_saleorder_document"
+        inherit_id="sale.report_saleorder_document"
+    >
+
+        <!-- Improve visibility -->
+        <xpath
+            expr="//div[@t-field='doc.partner_shipping_id']/parent::t/parent::t/parent::t"
+            position="attributes"
+        >
+            <attribute name="t-if">False == True</attribute>
+        </xpath>
+
+
+        <xpath expr="//t[@t-set='address']" position="after">
+            <t t-set="information_block">
+                <t t-foreach="doc.get_partner_addresses().items()" t-as="partner">
+                    <strong>
+                        <div t-esc="partner[1]" />
+                    </strong>
+                    <div
+                        t-esc="partner[0]"
+                        t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'
+                    />
+                </t>
+            </t>
+        </xpath>
+    </template>
+</odoo>
