@@ -55,6 +55,11 @@ odoo.define(
                 });
                 return section_fields_count;
             },
+            _getColumnWidth: function (column) {
+                var res = this._super.apply(this, arguments);
+                if (column.attrs.widget === "boolean_fa_icon") res = "15px";
+                return res;
+            },
             _renderHeaderCell: function (node) {
                 var $th = this._super.apply(this, arguments);
                 var options;
