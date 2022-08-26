@@ -4,7 +4,7 @@
 // _t(opt_terms.hover_true) or _t(opt_terms.hover_true) which will only work
 // if the terms are already present in the translation map.
 // This code does nothing but marks the strings as translatable
-var _t = function(x) {
+var _t = function (x) {
     return x;
 };
 

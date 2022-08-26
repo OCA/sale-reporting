@@ -4,13 +4,13 @@
  */
 odoo.define(
     "sale_layout_category_hide_detail.sale_layout_category_hide_detail",
-    function(require) {
+    function (require) {
         "use strict";
 
         var sectionAndNoteListRenderer = require("account.section_and_note_backend");
 
         var SectionAndNoteListRenderer = {
-            _renderBodyCell: function(record, node, index, options) {
+            _renderBodyCell: function (record, node, index, options) {
                 var $cell = this._super.apply(this, arguments);
 
                 var options;
@@ -42,10 +42,10 @@ odoo.define(
                 }
                 return $cell;
             },
-            _getNumberOfLineSectionFields: function() {
+            _getNumberOfLineSectionFields: function () {
                 var section_fields_count = 0;
                 var self = this;
-                this.columns.forEach(function(elem) {
+                this.columns.forEach(function (elem) {
                     var options;
 
                     if (elem.attrs.name in self.state.fieldsInfo.list) {
@@ -55,7 +55,7 @@ odoo.define(
                 });
                 return section_fields_count;
             },
-            _renderHeaderCell: function(node) {
+            _renderHeaderCell: function (node) {
                 var $th = this._super.apply(this, arguments);
                 var options;
                 var show_in_line_section;
