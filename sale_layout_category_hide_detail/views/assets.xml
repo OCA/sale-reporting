@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019 Tecnativa - Ernesto Tejeda
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template
+        id="assets_backend"
+        name="sale section hide detail assets"
+        inherit_id="web.assets_backend"
+    >
+        <xpath expr="." position="inside">
+            <script
+                type="text/javascript"
+                src="/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js"
+            />
+            <script
+                type="text/javascript"
+                src="/sale_layout_category_hide_detail/static/src/js/sale_layout_category_hide_detail.js"
+            />
+        </xpath>
+    </template>
+</odoo>
