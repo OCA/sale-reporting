@@ -86,7 +86,6 @@ odoo.define("sale_layout_category_hide_detail.boolean_fa_icon_widget", function 
          * @param {MouseEvent} event
          */
         _toggleValue: function (event) {
-            this._allowEdit();
             event.preventDefault();
             event.stopPropagation();
             if (this._allowEdit()) this._setValue(!this.value);
