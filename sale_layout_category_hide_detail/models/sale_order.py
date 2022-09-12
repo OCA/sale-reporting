@@ -7,13 +7,13 @@ from odoo import fields, models
 class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
-    show_details = fields.Boolean(string="Show details", default=True)
+    show_details = fields.Boolean(default=True)
     show_section_subtotal = fields.Boolean(
         default=True,
         help="Uncheck this if you want to hide the subtotal on section part",
     )
-    show_subtotal = fields.Boolean(string="Show subtotal", default=True)
-    show_line_amount = fields.Boolean(string="Show line amount", default=True)
+    show_subtotal = fields.Boolean(default=True)
+    show_line_amount = fields.Boolean(default=True)
 
     def _prepare_invoice_line(self, **optional_values):
         res = super()._prepare_invoice_line(**optional_values)
