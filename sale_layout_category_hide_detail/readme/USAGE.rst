@@ -1,30 +1,15 @@
-To use this module, you need to:
+The flags on the right hand side of the sale order line allow you to show or
+hide details, subtotal, line amount and section subtotal.
 
-#. Go to *Sales -> Orders -> Quotations* and create a new *Quotation*.
-#. In *Order lines* tab add a section line.
-#. Add some product lines.
-#. Add another section line, but this time, click on the *plus-circle*
-   icon |plus-circle-icon| on your right. That icon will be replaced by
-   *minus-circle* icon |minus-circle-icon|. That mean *Show subtotal* field is
-   set to False.
-#. Add some product lines.
-#. Add another section line and click on the *eye* icon |eye-icon| on your
-   right. That icon will be replaced by *eye-slash* icon |eye-slash-icon|.
-   That mean *Show details* field is set to False.
-#. Add some product lines.
-#. Print a *Quotation / Order* report for this quotation.
+These are the possible combinations:
 
-After following the steps described above, in the report you will see the
-following:
+.. image:: ../static/description/readme-icons/order.png
+  :alt: Possible combinations
 
-  * The first 'line section' and its product order lines will be shown in
-    a normal way.
-  * The second 'line section' and its product order lines will be shown in
-    a normal way, but the subtotal won't be shown. That is because in this
-    section line *Show subtotal* field was set to False.
-  * The third 'line section' will show the name on the left and the
-    subtotal on the right. Besides, its product order lines won't be shown.
-    That is because in this line *Show details* field was set to False.
+And these are the results in report:
+
+.. image:: ../static/description/readme-icons/report.png
+  :alt: Possible combination results in report
 
 The behavior described before is the same for Quotations and Invoices.
 
