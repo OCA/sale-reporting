@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo14-addon-sale_comment_template',
         'odoo14-addon-sale_layout_category_hide_detail',
+        'odoo14-addon-sale_order_invoice_date',
         'odoo14-addon-sale_order_line_position',
         'odoo14-addon-sale_order_report_product_image',
         'odoo14-addon-sale_order_weight',
