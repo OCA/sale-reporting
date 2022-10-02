@@ -16,6 +16,7 @@ setuptools.setup(
         'odoo13-addon-sale_order_report_product_image',
         'odoo13-addon-sale_report_country_state',
         'odoo13-addon-sale_report_delivered',
+        'odoo13-addon-sale_report_delivered_brand',
         'odoo13-addon-sale_report_delivered_elaboration',
         'odoo13-addon-sale_report_delivered_subtotal',
     ],
