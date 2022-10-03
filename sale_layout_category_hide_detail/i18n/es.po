@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-12 14:31+0000\n"
-"PO-Revision-Date: 2021-03-16 18:45+0000\n"
-"Last-Translator: Ana Suárez <ana.suarez@qubiq.es>\n"
+"PO-Revision-Date: 2022-10-03 13:36+0000\n"
+"Last-Translator: Víctor Martínez <victor.martinez@tecnativa.com>\n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -51,7 +51,7 @@ msgstr "Mostrar detalles"
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_line_amount
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_line_amount
 msgid "Show line amount"
-msgstr ""
+msgstr "Mostrar el importe de la línea"
 
 #. module: sale_layout_category_hide_detail
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_subtotal
