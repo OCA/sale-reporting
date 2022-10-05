@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+
+    <record model="ir.ui.view" id="view_base_comment_template_form_sale_ext">
+        <field name="name">base.comment.template.form.ext</field>
+        <field name="model">base.comment.template</field>
+        <field
+            name="inherit_id"
+            ref="base_comment_template.view_base_comment_template_form"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[@name='text']" position="after">
+                <page
+                    string="Dynamic Placeholder Generator"
+                    name="dynamic_placeholder_generator"
+                >
+                    <group>
+                        <field
+                            name="model_object_field"
+                            domain="[('model_id','in',model_ids),('ttype','!=','one2many'),('ttype','!=','many2many')]"
+                        />
+                        <field name="sub_object" readonly="1" />
+                        <field
+                            name="sub_model_object_field"
+                            domain="[('model_id','=',sub_object),('ttype','!=','one2many'),('ttype','!=','many2many')]"
+                            attrs="{'readonly':[('sub_object','=',False)],'required':[('sub_object','!=',False)]}"
+                        />
+                        <field name="null_value" />
+                        <field name="copyvalue" />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="action_sale_order_comment_template">
         <field name="name">Sale Orders Comments</field>
         <field name="type">ir.actions.act_window</field>
