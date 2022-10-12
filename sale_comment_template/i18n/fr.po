@@ -27,6 +27,17 @@ msgid "Comments"
 msgstr "Commentaires"
 
 #. module: sale_comment_template
+#: model:ir.model,name:sale_comment_template.model_base_comment_template
+msgid "Comments Template"
+msgstr ""
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_base_comment_template__null_value
+msgid "Default Value"
+msgstr ""
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_base_comment_template__display_name
 #: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__display_name
 msgid "Display Name"
 msgstr ""
@@ -37,13 +48,56 @@ msgid "Document Comments"
 msgstr "Commentaires de documents"
 
 #. module: sale_comment_template
+#: model_terms:ir.ui.view,arch_db:sale_comment_template.view_base_comment_template_form_sale_ext
+msgid "Dynamic Placeholder Generator"
+msgstr ""
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_base_comment_template__model_object_field
+msgid "Field"
+msgstr ""
+
+#. module: sale_comment_template
+#: model:ir.model.fields,help:sale_comment_template.field_base_comment_template__copyvalue
+msgid ""
+"Final placeholder expression, to be copy-pasted in the desired template "
+"field."
+msgstr ""
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_base_comment_template__id
 #: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__id
 msgid "ID"
 msgstr ""
 
 #. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_base_comment_template__lang
+msgid "Language"
+msgstr ""
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_base_comment_template____last_update
 #: model:ir.model.fields,field_description:sale_comment_template.field_sale_order____last_update
 msgid "Last Modified on"
+msgstr ""
+
+#. module: sale_comment_template
+#: model:ir.model.fields,help:sale_comment_template.field_base_comment_template__lang
+msgid ""
+"Optional translation language (ISO code) to select when sending out an "
+"email. If not set, the english version will be used. This should usually be "
+"a placeholder expression that provides the appropriate language, e.g. "
+"${object.partner_id.lang}."
+msgstr ""
+
+#. module: sale_comment_template
+#: model:ir.model.fields,help:sale_comment_template.field_base_comment_template__null_value
+msgid "Optional value to use if the target field is empty"
+msgstr ""
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_base_comment_template__copyvalue
+msgid "Placeholder Expression"
 msgstr ""
 
 #. module: sale_comment_template
@@ -54,6 +108,38 @@ msgstr ""
 #. module: sale_comment_template
 #: model:ir.model,name:sale_comment_template.model_sale_order
 msgid "Sales Order"
+msgstr ""
+
+#. module: sale_comment_template
+#: model:ir.model.fields,help:sale_comment_template.field_base_comment_template__model_object_field
+msgid ""
+"Select target field from the related document model.\n"
+"If it is a relationship field you will be able to select a target field at "
+"the destination of the relationship."
+msgstr ""
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_base_comment_template__sub_model_object_field
+msgid "Sub-field"
+msgstr ""
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_base_comment_template__sub_object
+msgid "Sub-model"
+msgstr ""
+
+#. module: sale_comment_template
+#: model:ir.model.fields,help:sale_comment_template.field_base_comment_template__sub_model_object_field
+msgid ""
+"When a relationship field is selected as first field, this field lets you "
+"select the target field within the destination document model (sub-model)."
+msgstr ""
+
+#. module: sale_comment_template
+#: model:ir.model.fields,help:sale_comment_template.field_base_comment_template__sub_object
+msgid ""
+"When a relationship field is selected as first field, this field shows the "
+"document model the relationship goes to."
 msgstr ""
 
 #~ msgid "Bottom Comment"
