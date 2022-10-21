@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_sale_reports_config_tree" model="ir.ui.view">
+        <field name="name">sale.reports.config.tree.view</field>
+        <field name="model">sale.reports.config</field>
+        <field name="arch" type="xml">
+            <tree string="Sales Reports Configuration" editable="bottom">
+                <field name="name" />
+                <field name="view_mode" />
+                <field name="view" />
+                <field name="search_view" />
+                <field name="domain" />
+                <field name="limit" />
+            </tree>
+        </field>
+    </record>
+    <record id="action_sale_report_config" model="ir.actions.act_window">
+        <field name="name">Sale Report Configuration</field>
+        <field name="res_model">sale.reports.config</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="sequence">1</field>
+    </record>
+    <menuitem
+        id="menu_sale_report_config"
+        name="Sale Report Wizard Configuration"
+        parent="sale.menu_sale_config"
+        action="action_sale_report_config"
+    />
+</odoo>

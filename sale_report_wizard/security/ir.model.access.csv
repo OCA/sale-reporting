@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sale_reports_config,access_sale_reports_config,model_sale_reports_config,base.group_user,1,1,1,1
