@@ -7,7 +7,7 @@
                "reports and customer portal",
     "version": "12.0.1.1.1",
     "category": "Sales Management",
-    "website": "http://github.com/OCA/sale-reporting",
+    "website": "https://github.com/OCA/sale-reporting",
     "author": "Tecnativa, "
               "Odoo Community Association (OCA)",
     "license": "AGPL-3",

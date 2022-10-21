@@ -8,6 +8,7 @@
     "summary": "Comments texts templates on Sale documents",
     "version": "12.0.1.2.0",
     "category": "Sale",
+    'website': 'https://github.com/OCA/sale-reporting',
     "author": "Camptocamp,"
               "Tecnativa,"
               "Odoo Community Association (OCA)",
