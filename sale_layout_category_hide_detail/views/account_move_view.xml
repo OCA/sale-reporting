@@ -114,7 +114,12 @@
               </div>
           </t>
       </xpath>
-
+      <xpath expr="//field[@name='line_ids']/tree" position="inside">
+        <field name="show_details" invisible="1" />
+        <field name="show_section_subtotal" invisible="1" />
+        <field name="show_subtotal" invisible="1" />
+        <field name="show_line_amount" invisible="1" />
+      </xpath>
       <xpath
                 expr="//field[@name='invoice_line_ids']/form/sheet/field[@name='name']"
                 position="after"
