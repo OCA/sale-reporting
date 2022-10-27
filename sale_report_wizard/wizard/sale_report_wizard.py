@@ -39,8 +39,6 @@ class SaleReportWizard(models.TransientModel):
                 (self.filter_date_type, "<=", self.end_date),
             ]
 
-        # FIX : the return does not delete the data from the transient model.
-        # It is supposed to no ?
         return {
             "name": "Sale Report",
             "type": "ir.actions.act_window",
