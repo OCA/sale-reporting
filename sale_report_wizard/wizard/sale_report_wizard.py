@@ -12,7 +12,7 @@ class SaleReportWizard(models.TransientModel):
 
     filter_date_type = fields.Selection(
         [("confirmation_date", "Confirmation_date (keep only confirmed orders)"), 
-        ("date", "Order Date")],
+        ("date_order", "Order Date")],
         default="confirmation_date",
         string="Filter by",
     )
@@ -29,6 +29,15 @@ class SaleReportWizard(models.TransientModel):
             search_view_id = self.env.ref(self.report.search_view).id
 
         domain = []
+
+        # sale.report name date_order as date,
+        # while report.all.channel.sale and sale.order 
+        # name it as date_order
+        filter_date_type = self.filter_date_type
+        if (filter_date_type == "date_order" and 
+            self.report.model == "sale.report"):
+            filter_date_type = "date"
+
         # convert string representation of domain to domain
         # in place conversion of self.report.domain is impossible,
         # so we create a new obect domain
@@ -36,8 +45,8 @@ class SaleReportWizard(models.TransientModel):
             domain = ast.literal_eval(self.report.domain)
         if self.filter_date_type and self.start_date and self.end_date:
             domain += [
-                (self.filter_date_type, ">=", self.start_date),
-                (self.filter_date_type, "<=", self.end_date),
+                (filter_date_type, ">=", self.start_date),
+                (filter_date_type, "<=", self.end_date),
             ]
 
         return {
