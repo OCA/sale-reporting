@@ -8,7 +8,9 @@ class PosSaleReport(models.Model):
     _inherit = "report.all.channels.sales"
 
     top_categ_id = fields.Many2one('product.category', 'Product Category', readonly=True)
-    
+    date = fields.Datetime(string='Date Order', readonly=True)
+    confirmation_date = fields.Datetime(string='Confirmation Date', readonly=True)  
+
     def _so(self):
         so_str = """
                 SELECT sol.id AS id,
@@ -17,6 +19,8 @@ class PosSaleReport(models.Model):
                     sol.product_id AS product_id,
                     pro.product_tmpl_id AS product_tmpl_id,
                     so.date_order AS date_order,
+                    so.date_order AS date,
+                    so.confirmation_date as confirmation_date,
                     so.user_id AS user_id,
                     pt.categ_id AS categ_id,
                     pt.top_categ_id AS top_categ_id,
@@ -41,9 +45,6 @@ class PosSaleReport(models.Model):
         """
         return so_str
 
-    def _from(self):
-        return """(%s)""" % (self._so())
-
     def get_main_request(self):
         request = """
             CREATE or REPLACE VIEW %s AS
@@ -53,6 +54,8 @@ class PosSaleReport(models.Model):
                     product_id,
                     product_tmpl_id,
                     date_order,
+                    date,
+                    confirmation_date,
                     user_id,
                     categ_id,
                     top_categ_id,
@@ -67,8 +70,3 @@ class PosSaleReport(models.Model):
                 FROM %s
                 AS foo""" % (self._table, self._from())
         return request
-
-    @api.model_cr
-    def init(self):
-        tools.drop_view_if_exists(self.env.cr, self._table)
-        self.env.cr.execute(self.get_main_request())
