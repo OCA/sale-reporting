@@ -11,7 +11,8 @@ class SaleReportWizard(models.TransientModel):
     end_date = fields.Date(string="End Date")
 
     filter_date_type = fields.Selection(
-        [("confirmation_date", "Confirmation_date"), ("date_order", "Order Date")],
+        [("confirmation_date", "Confirmation_date (keep only confirmed orders)"), 
+        ("date", "Order Date")],
         default="confirmation_date",
         string="Filter by",
     )
