@@ -33,19 +33,10 @@ class SaleReportWizard(models.TransientModel):
         # so we create a new obect domain
         if self.report.domain:
             domain = ast.literal_eval(self.report.domain)
-        
-        # sale.report and report.all.channels.sales have different name for
-        # date_order. It is less costly to account for this here rather than 
-        # overwrite the whole report query
-        filter_date_type = self.filter_date_type
-        if (filter_date_type == "date_order" and 
-            self.report.model == "sale.report"):
-            filter_date_type = "date"
-
         if self.filter_date_type and self.start_date and self.end_date:
             domain += [
-                (filter_date_type, ">=", self.start_date),
-                (filter_date_type, "<=", self.end_date),
+                (self.filter_date_type, ">=", self.start_date),
+                (self.filter_date_type, "<=", self.end_date),
             ]
 
         return {
