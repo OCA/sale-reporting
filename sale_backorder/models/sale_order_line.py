@@ -51,7 +51,8 @@ class SaleOrderLine(models.Model):
         for line in self:
             moves = line.move_ids.filtered(
                 lambda move: move.state != "done" or move.location_dest_id.usage != "customer" or not move.to_refund)
-            line.last_date_delivered = first(moves).date
+            if moves:
+                line.last_date_delivered = moves[0].date
 
     @api.depends("qty_delivered", "qty_invoiced")
     def _compute_last_bill_date(self):
