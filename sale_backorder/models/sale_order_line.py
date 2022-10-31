@@ -4,6 +4,7 @@
 from odoo import api, fields, models
 from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT
 
+
 class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
@@ -13,8 +14,12 @@ class SaleOrderLine(models.Model):
     last_bill_date = fields.Datetime(
         string="Last Bill Date", compute="_compute_last_bill_date", store=True
     )
-    uigd_qty = fields.Float(string="Uninvoiced Goods Delivered Qty", compute="_compute_uigd_qty", store=True,
-        help="Display a Uninvoiced Goods Delivered Qty on Order Lines.")
+    uigd_qty = fields.Float(
+        string="Uninvoiced Goods Delivered Qty",
+        compute="_compute_uigd_qty",
+        store=True,
+        help="Display a Uninvoiced Goods Delivered Qty on Order Lines.",
+    )
     bo_qty = fields.Float(string="Backorder Qty", compute="_compute_bo_qty", store=True)
     uigd_value = fields.Monetary(
         string="UIGD Value", compute="_compute_uigd_value", store=True
@@ -50,7 +55,10 @@ class SaleOrderLine(models.Model):
     def _compute_last_date_delivered(self):
         for line in self:
             moves = line.move_ids.filtered(
-                lambda move: move.state != "done" or move.location_dest_id.usage != "customer" or not move.to_refund)
+                lambda move: move.state != "done"
+                or move.location_dest_id.usage != "customer"
+                or not move.to_refund
+            )
             if moves:
                 line.last_date_delivered = moves[0].date
 
