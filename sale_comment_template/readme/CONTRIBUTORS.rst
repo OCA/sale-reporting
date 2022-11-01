@@ -13,7 +13,3 @@
 * `ForgeFlow <https://www.forgeflow.com>`_:
 * Miquel Raïch <miquel.raich@forgeflow.com>
 * Pierre Verkest <pierreverkest84@gmail.com>
-
-* `Ooops <https://www.ooops404.com>`_:
-
-  * Ashish Hirpara <ashish.hirapara1995@gmail.com>
