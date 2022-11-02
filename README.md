@@ -30,6 +30,7 @@ addon | version | maintainers | summary
 [sale_outgoing_product](sale_outgoing_product/) | 14.0.1.0.0 |  | Module that generates a view for outgoing product
 [sale_report_commitment_date](sale_report_commitment_date/) | 14.0.1.0.0 | [![ivantodorovich](https://github.com/ivantodorovich.png?size=30px)](https://github.com/ivantodorovich) | Display the commitment date on Sales Order analysis reports
 [sale_report_crossed_out_original_price](sale_report_crossed_out_original_price/) | 14.0.1.1.0 |  | Sale report crossed out original price when a discount exists
+[sale_report_delivered](sale_report_delivered/) | 14.0.1.0.0 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) | Sale Report Delivered
 [sale_report_delivered_subtotal](sale_report_delivered_subtotal/) | 14.0.1.0.0 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) | Sale Report Delivered subtotal
 [sale_report_delivery_date](sale_report_delivery_date/) | 14.0.1.0.0 | [![ivantodorovich](https://github.com/ivantodorovich.png?size=30px)](https://github.com/ivantodorovich) | Display the delivery date on Sales Order analysis reports
 
