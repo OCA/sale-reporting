@@ -21,7 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[sale_comment_template](sale_comment_template/) | 14.0.2.1.1 |  | Comments texts templates on Sale documents
+[sale_comment_template](sale_comment_template/) | 14.0.2.1.2 |  | Comments texts templates on Sale documents
 [sale_layout_category_hide_detail](sale_layout_category_hide_detail/) | 14.0.1.0.2 |  | Hide details for sections in sale orders and invoices for reports and customer portal
 [sale_order_invoice_date](sale_order_invoice_date/) | 14.0.1.0.0 | [![ivantodorovich](https://github.com/ivantodorovich.png?size=30px)](https://github.com/ivantodorovich) | Display the invoice date on Sales Order analysis reports
 [sale_order_line_position](sale_order_line_position/) | 14.0.1.1.0 |  | Adds position number on sale order line.
