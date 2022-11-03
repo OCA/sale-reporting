@@ -5,7 +5,7 @@ from odoo.tests import Form, common, new_test_user
 from odoo.tests.common import users
 
 
-class TestSaleReportDelivered(common.SavepointCase):
+class TestSaleReportDeliveredBase(common.SavepointCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -57,6 +57,8 @@ class TestSaleReportDelivered(common.SavepointCase):
             line_form.product_uom_qty = 1
         return order_form.save()
 
+
+class TestSaleReportDelivered(TestSaleReportDeliveredBase):
     @users("admin", "test_user-sale_report_delivered")
     def test_sale_report_delivered_misc(self):
         items = self.env["sale.report.delivered"].search(
