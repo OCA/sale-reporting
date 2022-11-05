@@ -18,6 +18,7 @@ setuptools.setup(
         'odoo13-addon-sale_report_delivered',
         'odoo13-addon-sale_report_delivered_brand',
         'odoo13-addon-sale_report_delivered_elaboration',
+        'odoo13-addon-sale_report_delivered_partner_priority',
         'odoo13-addon-sale_report_delivered_subtotal',
     ],
     classifiers=[
