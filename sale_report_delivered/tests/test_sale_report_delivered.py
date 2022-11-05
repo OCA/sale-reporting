@@ -5,7 +5,7 @@ from odoo.tests import Form, common, new_test_user
 from odoo.tests.common import users
 
 
-class TestSaleReportDeliveredBase(common.SavepointCase):
+class TestSaleReportDeliveredBase(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -42,8 +42,8 @@ class TestSaleReportDeliveredBase(common.SavepointCase):
     def _create_stock_quant(self, product):
         res = product.action_update_quantity_on_hand()
         quant_form = Form(
-            self.env["stock.quant"].with_context(res["context"]),
-            view="stock.view_stock_quant_tree_editable",
+            self.env["stock.quant"].with_context(**res["context"]),
+            view="stock.view_stock_quant_tree_inventory_editable",
         )
         quant_form.inventory_quantity = 1
         quant_form.location_id = self.env.ref("stock.stock_location_stock")

@@ -14,7 +14,7 @@ class SaleReportDeliverd(models.Model):
     _order = "date desc"
 
     name = fields.Char("Order Reference", readonly=True)
-    date = fields.Datetime("Date", readonly=True)
+    date = fields.Datetime(readonly=True)
     product_id = fields.Many2one("product.product", "Product Variant", readonly=True)
     product_uom = fields.Many2one("uom.uom", "Unit of Measure", readonly=True)
     product_uom_qty = fields.Float("Qty", readonly=True)
@@ -49,7 +49,7 @@ class SaleReportDeliverd(models.Model):
         readonly=True,
     )
     weight = fields.Float("Gross Weight", readonly=True)
-    volume = fields.Float("Volume", readonly=True)
+    volume = fields.Float(readonly=True)
     campaign_id = fields.Many2one("utm.campaign", "Campaign")
     medium_id = fields.Many2one("utm.medium", "Medium")
     source_id = fields.Many2one("utm.source", "Source")
