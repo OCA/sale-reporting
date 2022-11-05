@@ -18,6 +18,7 @@ setuptools.setup(
         'odoo14-addon-sale_report_commitment_date',
         'odoo14-addon-sale_report_crossed_out_original_price',
         'odoo14-addon-sale_report_delivered',
+        'odoo14-addon-sale_report_delivered_brand',
         'odoo14-addon-sale_report_delivered_subtotal',
         'odoo14-addon-sale_report_delivery_date',
     ],
