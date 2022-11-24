@@ -40,5 +40,5 @@ class SaleOrderLine(models.Model):
         for line in to_process_lines:
             partner = line.get_partner_for_reporting()
             line.weekly_sold_delivered_shown = _format_weekly_string(
-                partner_products_weekly[partner][line.product_id]
+                partner_products_weekly[partner].get(line.product_id)
             )
