@@ -14,7 +14,7 @@ class SaleOrderLine(models.Model):
     )
 
     def get_partner_for_reporting(self):
-        """ get partner from line taking into account context parameters """
+        """get partner from line taking into account context parameters"""
         if self.env.context.get("use_delivery_address", False):
             return self.order_id.partner_shipping_id
         return self.order_id.partner_id.commercial_partner_id
@@ -41,5 +41,5 @@ class SaleOrderLine(models.Model):
         for line in to_process_lines:
             partner = line.get_partner_for_reporting()
             line.weekly_sold_delivered_shown = _format_weekly_string(
-                partner_products_weekly[partner][line.product_id]
+                partner_products_weekly[partner].get(line.product_id)
             )
