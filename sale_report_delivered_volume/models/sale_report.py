@@ -9,15 +9,14 @@ class SaleReport(models.Model):
 
     volume_delivered = fields.Float(digits="Volume")
 
-    def _query(self, with_clause="", fields=None, groupby="", from_clause=""):
-        if fields is None:
-            fields = {}
-        fields[
-            "volume_delivered"
-        ] = ", sum(p.volume * l.qty_delivered / u.factor * u2.factor) as volume_delivered"
-        return super()._query(
-            with_clause=with_clause,
-            fields=fields,
-            groupby=groupby,
-            from_clause=from_clause,
-        )
+    def _select_sale(self, fields=None):
+        select_str = super()._select_sale(fields=fields)
+        select_str += """
+        , CASE
+            WHEN l.product_id IS NOT NULL THEN sum(
+                p.volume * l.qty_delivered / u.factor * u2.factor
+            )
+            ELSE 0
+            END as volume_delivered
+        """
+        return select_str
