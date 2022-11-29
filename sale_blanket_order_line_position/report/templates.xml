@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="report_blanketorder_document_inherit"
+        inherit_id="sale_blanket_order.report_blanketorder_document"
+    >
+        <xpath expr="//table/thead/tr/th[1]" position="before">
+            <th class="text-left">Pos</th>
+        </xpath>
+        <xpath
+            expr="//table/tbody[hasclass('sale_tbody')]/t/tr/t/td[1]"
+            position="before"
+        >
+            <td>
+                <span t-field="l.position" />
+            </td>
+        </xpath>
+    </template>
+</odoo>

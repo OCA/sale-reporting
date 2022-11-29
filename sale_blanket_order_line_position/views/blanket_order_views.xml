@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_blanket_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.blanket.order.form.inherit</field>
+        <field name="model">sale.blanket.order</field>
+        <field name="inherit_id" ref="sale_blanket_order.view_blanket_order_form" />
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+
+            <xpath
+                expr="//field[@name='line_ids']//tree//field[@name='sequence']"
+                position="after"
+            >
+              <field name="position" string="Pos" force_save="1" optional="hide" />
+            </xpath>
+        </field>
+    </record>
+    <record id="view_blanket_order_line_tree_inherit" model="ir.ui.view">
+        <field name="name">sale.blanket.order.line.tree.inherit</field>
+        <field name="model">sale.blanket.order.line</field>
+        <field
+            name="inherit_id"
+            ref="sale_blanket_order.sale_blanket_order_line_tree"
+        />
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sequence']" position="after">
+              <field name="position" force_save="1" />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
