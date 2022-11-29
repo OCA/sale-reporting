@@ -73,8 +73,7 @@ class SaleOrderLine(models.Model):
                     and inv_line.move_id.date
                 ):
                     max_date = inv_line.move_id.date
-                elif inv_line.move_id.move_type == "out_refund":
-                    continue
+
             line.last_bill_date = (
                 max_date and max_date.strftime(DEFAULT_SERVER_DATETIME_FORMAT) or False
             )
