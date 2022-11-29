@@ -1,26 +1,12 @@
-# Copyright 2021 Camptocamp SA
+# Copyright 2021-2022 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
-from odoo import api, fields, models
+from odoo import models
 
 
 class SaleOrder(models.Model):
-    _inherit = "sale.order"
-
-    locked_positions = fields.Boolean(compute="_compute_locked_positions")
-
-    @api.depends("state")
-    def _compute_locked_positions(self):
-        for record in self:
-            record.locked_positions = record.state != "draft"
-
-    def action_confirm(self):
-        self.recompute_positions()
-        return super().action_confirm()
-
-    def action_quotation_send(self):
-        self.recompute_positions()
-        return super().action_quotation_send()
+    _name = "sale.order"
+    _inherit = ["sale.order", "order.position.mixin"]
 
     def recompute_positions(self):
         for sale in self:

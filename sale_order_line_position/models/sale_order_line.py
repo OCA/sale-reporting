@@ -1,33 +1,15 @@
 # Copyright 2021 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
-from odoo import api, fields, models
+from odoo import models
 
 
 class SaleOrderLine(models.Model):
-    _inherit = "sale.order.line"
-
-    position = fields.Integer(readonly=True, index=True, default=False)
-    position_formatted = fields.Char(compute="_compute_position_formatted")
-
-    @api.depends("position")
-    def _compute_position_formatted(self):
-        for record in self:
-            record.position_formatted = record._format_position(record.position)
-
-    @api.model_create_multi
-    def create(self, vals_list):
-        vals_list = self._add_next_position_on_new_line(vals_list)
-        return super().create(vals_list)
-
-    def unlink(self):
-        sales = self.mapped("order_id")
-        res = super().unlink()
-        for sale in sales:
-            sale.recompute_positions()
-        return res
+    _name = "sale.order.line"
+    _inherit = ["sale.order.line", "order.line.position.mixin"]
 
     def _add_next_position_on_new_line(self, vals_list):
+        """Compute the nex position for the line"""
         sale_ids = [
             line["order_id"]
             for line in vals_list
@@ -51,9 +33,3 @@ class SaleOrderLine(models.Model):
                     line["position"] = sale_pos[line["order_id"]]
                     sale_pos[line["order_id"]] += 1
         return vals_list
-
-    @api.model
-    def _format_position(self, position):
-        if not position:
-            return ""
-        return str(position).zfill(3)
