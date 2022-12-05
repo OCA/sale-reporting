@@ -12,13 +12,11 @@ class TestAccountInvoiceReport(TransactionCase):
         self.company = self.env.ref("base.main_company")
         self.base_comment_model = self.env["base.comment.template"]
         # Create comment related to sale model
-        self.sale_obj = self.env.ref("sale.model_sale_order")
-        self.sale_before_comment = self._create_comment(self.sale_obj, "before_lines")
-        self.sale_after_comment = self._create_comment(self.sale_obj, "after_lines")
+        self.sale_before_comment = self._create_comment("sale.order", "before_lines")
+        self.sale_after_comment = self._create_comment("sale.order", "after_lines")
         # Create comment related to move model
-        self.move_obj = self.env.ref("account.model_account_move")
-        self.move_before_comment = self._create_comment(self.move_obj, "before_lines")
-        self.move_after_comment = self._create_comment(self.move_obj, "after_lines")
+        self.move_before_comment = self._create_comment("account.move", "before_lines")
+        self.move_after_comment = self._create_comment("account.move", "after_lines")
         # Create partner
         self.partner = self.env["res.partner"].create({"name": "Partner Test"})
         self.partner.base_comment_template_ids = [
@@ -46,14 +44,14 @@ class TestAccountInvoiceReport(TransactionCase):
             line_form.product_id = self.product
         return sale_form.save()
 
-    def _create_comment(self, model, position):
+    def _create_comment(self, models, position):
         return self.base_comment_model.create(
             {
                 "name": "Comment " + position,
                 "company_id": self.company.id,
                 "position": position,
                 "text": "Text " + position,
-                "model_ids": [(6, 0, model.ids)],
+                "models": models,
             }
         )
 
