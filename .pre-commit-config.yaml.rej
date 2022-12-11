@@ -1,0 +1,6 @@
+diff a/.pre-commit-config.yaml b/.pre-commit-config.yaml	(rejected hunks)
+@@ -116,3 +115,3 @@ repos:
+           - "# generated from manifests external_dependencies"
+-  - repo: https://gitlab.com/PyCQA/flake8
++  - repo: https://github.com/PyCQA/flake8
+     rev: 3.8.3
