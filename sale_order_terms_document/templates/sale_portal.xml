@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="sale_order_portal_tc_template"
+        name="Sales Order Portal Template Terms and Conditions"
+        inherit_id="sale.sale_order_portal_template"
+    >
+        <xpath expr="//main[@id='sign-dialog']/p/ul" position="inside">
+            <t t-if="sale_order.tc_id">
+                <li><a
+                        t-attf-href="/my/orders/tcs/#{sale_order.tc_id.id}"
+                        target="_blank"
+                    >Terms and Conditions</a></li>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>
