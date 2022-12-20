@@ -11,8 +11,8 @@ msgstr ""
 "POT-Creation-Date: 2016-12-23 01:48+0000\n"
 "PO-Revision-Date: 2022-02-01 19:33+0000\n"
 "Last-Translator: Rodrigo Macedo <rmsolucoeseminformatica@protonmail.com>\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
-"23907/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
+"teams/23907/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,16 +21,42 @@ msgstr ""
 "X-Generator: Weblate 4.3.2\n"
 
 #. module: sale_order_weight
+#: model_terms:ir.ui.view,arch_db:sale_order_weight.report_saleorder_document
+msgid "<span><b>Total Weight:</b></span>"
+msgstr ""
+
+#. module: sale_order_weight
+#: model:ir.model.fields,field_description:sale_order_weight.field_sale_order__display_name
+#: model:ir.model.fields,field_description:sale_order_weight.field_sale_order_line__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: sale_order_weight
+#: model:ir.model.fields,field_description:sale_order_weight.field_sale_order__id
+#: model:ir.model.fields,field_description:sale_order_weight.field_sale_order_line__id
+msgid "ID"
+msgstr ""
+
+#. module: sale_order_weight
+#: model:ir.model.fields,field_description:sale_order_weight.field_sale_order____last_update
+#: model:ir.model.fields,field_description:sale_order_weight.field_sale_order_line____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: sale_order_weight
 #: model:ir.model,name:sale_order_weight.model_sale_order
 msgid "Sales Order"
 msgstr "Pedido de Venda"
 
 #. module: sale_order_weight
-#: view:website:sale.report_saleorder_document
-msgid "Total Weight:"
-msgstr "Peso total:"
+#: model:ir.model,name:sale_order_weight.model_sale_order_line
+msgid "Sales Order Line"
+msgstr ""
 
 #. module: sale_order_weight
-#: view:website:sale.report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:sale_order_weight.report_saleorder_document
 msgid "Weight"
 msgstr "Peso"
+
+#~ msgid "Total Weight:"
+#~ msgstr "Peso total:"
