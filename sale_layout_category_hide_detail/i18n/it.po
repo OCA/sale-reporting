@@ -31,32 +31,26 @@ msgid "Click to uncheck"
 msgstr "Click per disabilitare"
 
 #. module: sale_layout_category_hide_detail
-#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__display_name
-#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__display_name
-msgid "Display Name"
-msgstr "Nome visualizzato"
-
-#. module: sale_layout_category_hide_detail
-#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__id
-#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__id
-msgid "ID"
-msgstr "ID"
-
-#. module: sale_layout_category_hide_detail
 #: model:ir.model,name:sale_layout_category_hide_detail.model_account_move_line
 msgid "Journal Item"
 msgstr "Movimento contabile"
 
 #. module: sale_layout_category_hide_detail
-#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line____last_update
-#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line____last_update
-msgid "Last Modified on"
-msgstr "Ultima modifica il"
-
-#. module: sale_layout_category_hide_detail
 #: model:ir.model,name:sale_layout_category_hide_detail.model_sale_order_line
 msgid "Sales Order Line"
 msgstr "Riga ordine di vendita"
+
+#. module: sale_layout_category_hide_detail
+#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_details
+#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_details
+msgid "Show Details"
+msgstr ""
+
+#. module: sale_layout_category_hide_detail
+#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_line_amount
+#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_line_amount
+msgid "Show Line Amount"
+msgstr ""
 
 #. module: sale_layout_category_hide_detail
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_section_subtotal
@@ -65,22 +59,10 @@ msgid "Show Section Subtotal"
 msgstr "Mostra subtotale sezione"
 
 #. module: sale_layout_category_hide_detail
-#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_details
-#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_details
-msgid "Show details"
-msgstr "Mostra dettagli"
-
-#. module: sale_layout_category_hide_detail
-#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_line_amount
-#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_line_amount
-msgid "Show line amount"
-msgstr "Mostra importo riga"
-
-#. module: sale_layout_category_hide_detail
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_subtotal
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_subtotal
-msgid "Show subtotal"
-msgstr "Mostra subtotale"
+msgid "Show Subtotal"
+msgstr ""
 
 #. module: sale_layout_category_hide_detail
 #: model_terms:ir.ui.view,arch_db:sale_layout_category_hide_detail.report_saleorder_document_hide_detail
@@ -121,3 +103,21 @@ msgstr "Passa a: mostra subtotale"
 #: model:ir.model.fields,help:sale_layout_category_hide_detail.field_sale_order_line__show_section_subtotal
 msgid "Uncheck this if you want to hide the subtotal on section part"
 msgstr "Disabilita se vuoi nascondere il subtotale della sezione"
+
+#~ msgid "Display Name"
+#~ msgstr "Nome visualizzato"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"
+
+#~ msgid "Show details"
+#~ msgstr "Mostra dettagli"
+
+#~ msgid "Show line amount"
+#~ msgstr "Mostra importo riga"
+
+#~ msgid "Show subtotal"
+#~ msgstr "Mostra subtotale"

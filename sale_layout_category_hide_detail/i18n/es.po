@@ -44,20 +44,26 @@ msgstr "Línea de pedido de venta"
 #. module: sale_layout_category_hide_detail
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_details
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_details
-msgid "Show details"
-msgstr "Mostrar detalles"
+msgid "Show Details"
+msgstr ""
 
 #. module: sale_layout_category_hide_detail
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_line_amount
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_line_amount
-msgid "Show line amount"
+msgid "Show Line Amount"
+msgstr ""
+
+#. module: sale_layout_category_hide_detail
+#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_section_subtotal
+#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_section_subtotal
+msgid "Show Section Subtotal"
 msgstr ""
 
 #. module: sale_layout_category_hide_detail
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_subtotal
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_subtotal
-msgid "Show subtotal"
-msgstr "Mostrar subtotal"
+msgid "Show Subtotal"
+msgstr ""
 
 #. module: sale_layout_category_hide_detail
 #: model_terms:ir.ui.view,arch_db:sale_layout_category_hide_detail.report_saleorder_document_hide_detail
@@ -92,6 +98,18 @@ msgstr "Cambiar a: subtotal oculto"
 #, python-format
 msgid "Switch to: subtotal shown"
 msgstr "Cambiar a: subtotal mostrado"
+
+#. module: sale_layout_category_hide_detail
+#: model:ir.model.fields,help:sale_layout_category_hide_detail.field_account_move_line__show_section_subtotal
+#: model:ir.model.fields,help:sale_layout_category_hide_detail.field_sale_order_line__show_section_subtotal
+msgid "Uncheck this if you want to hide the subtotal on section part"
+msgstr ""
+
+#~ msgid "Show details"
+#~ msgstr "Mostrar detalles"
+
+#~ msgid "Show subtotal"
+#~ msgstr "Mostrar subtotal"
 
 #~ msgid "Invoice Line"
 #~ msgstr "Linea de factura"
