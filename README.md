@@ -24,6 +24,7 @@ addon | version | maintainers | summary
 [base_multicompany_reporting_currency](base_multicompany_reporting_currency/) | 15.0.1.0.1 |  | Adds the possibility to specify Multicompany Reporting Currency
 [product_sold_by_delivery_week](product_sold_by_delivery_week/) | 15.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Adds a field that graphically hints the weekly product sales
 [sale_comment_template](sale_comment_template/) | 15.0.1.0.1 |  | Comments texts templates on Sale documents
+[sale_layout_category_hide_detail](sale_layout_category_hide_detail/) | 15.0.1.0.0 |  | Hide details for sections in sale orders and invoices for reports and customer portal
 [sale_multicompany_reporting_currency](sale_multicompany_reporting_currency/) | 15.0.1.0.1 |  | Adds Amount in multicompany reporting currency to Sale Order
 [sale_order_line_position](sale_order_line_position/) | 15.0.1.1.0 |  | Adds position number on sale order line.
 [sale_order_report_product_image](sale_order_report_product_image/) | 15.0.1.0.0 |  | Show product images on Sale documents
