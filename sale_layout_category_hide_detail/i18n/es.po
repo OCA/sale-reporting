@@ -1,0 +1,97 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_layout_category_hide_detail
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-12 14:31+0000\n"
+"PO-Revision-Date: 2021-03-16 18:45+0000\n"
+"Last-Translator: Ana Suárez <ana.suarez@qubiq.es>\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3.2\n"
+
+#. module: sale_layout_category_hide_detail
+#. openerp-web
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
+#, python-format
+msgid "Click to check"
+msgstr "Click para marcar"
+
+#. module: sale_layout_category_hide_detail
+#. openerp-web
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
+#, python-format
+msgid "Click to uncheck"
+msgstr "Click para desmarcar"
+
+#. module: sale_layout_category_hide_detail
+#: model:ir.model,name:sale_layout_category_hide_detail.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: sale_layout_category_hide_detail
+#: model:ir.model,name:sale_layout_category_hide_detail.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de pedido de venta"
+
+#. module: sale_layout_category_hide_detail
+#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_details
+#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_details
+msgid "Show details"
+msgstr "Mostrar detalles"
+
+#. module: sale_layout_category_hide_detail
+#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_line_amount
+#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_line_amount
+msgid "Show line amount"
+msgstr ""
+
+#. module: sale_layout_category_hide_detail
+#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_subtotal
+#: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_subtotal
+msgid "Show subtotal"
+msgstr "Mostrar subtotal"
+
+#. module: sale_layout_category_hide_detail
+#: model_terms:ir.ui.view,arch_db:sale_layout_category_hide_detail.report_saleorder_document_hide_detail
+#: model_terms:ir.ui.view,arch_db:sale_layout_category_hide_detail.sale_order_portal_content_hide_detail
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#. module: sale_layout_category_hide_detail
+#. openerp-web
+#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:0
+#, python-format
+msgid "Switch to: details hidden"
+msgstr "Cambiar a: detalles ocultos"
+
+#. module: sale_layout_category_hide_detail
+#. openerp-web
+#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:0
+#, python-format
+msgid "Switch to: details shown"
+msgstr "Cambiar a: detalles mostrados"
+
+#. module: sale_layout_category_hide_detail
+#. openerp-web
+#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:0
+#, python-format
+msgid "Switch to: subtotal hidden"
+msgstr "Cambiar a: subtotal oculto"
+
+#. module: sale_layout_category_hide_detail
+#. openerp-web
+#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:0
+#, python-format
+msgid "Switch to: subtotal shown"
+msgstr "Cambiar a: subtotal mostrado"
+
+#~ msgid "Invoice Line"
+#~ msgstr "Linea de factura"
