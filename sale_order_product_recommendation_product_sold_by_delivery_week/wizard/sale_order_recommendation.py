@@ -7,7 +7,8 @@ class SaleOrderRecommendationLine(models.TransientModel):
     _inherit = "sale.order.recommendation.line"
 
     weekly_sold_delivered_shown = fields.Char(
-        string="Weekly Sold", compute="_compute_weekly_sold_delivered_shown",
+        string="Weekly Sold",
+        compute="_compute_weekly_sold_delivered_shown",
     )
 
     @api.depends("product_id")
