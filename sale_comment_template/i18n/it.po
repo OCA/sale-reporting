@@ -6,20 +6,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2020-11-16 20:36+0000\n"
-"Last-Translator: Mario Riva <mario.riva@agilebg.com>\n"
+"PO-Revision-Date: 2022-12-28 21:44+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. module: sale_comment_template
 #: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__comment_template_ids
 msgid "Comment Template"
-msgstr ""
+msgstr "Modello commento"
 
 #. module: sale_comment_template
 #: model_terms:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
@@ -29,7 +29,7 @@ msgstr "Commenti"
 #. module: sale_comment_template
 #: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #. module: sale_comment_template
 #: model:ir.ui.menu,name:sale_comment_template.menu_base_comment_template_sale
@@ -39,22 +39,22 @@ msgstr "Commenti del documento"
 #. module: sale_comment_template
 #: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: sale_comment_template
 #: model:ir.model.fields,field_description:sale_comment_template.field_sale_order____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima modifica il"
 
 #. module: sale_comment_template
 #: model:ir.actions.act_window,name:sale_comment_template.action_sale_order_comment_template
 msgid "Sale Orders Comments"
-msgstr ""
+msgstr "Commenti ordini vendita"
 
 #. module: sale_comment_template
 #: model:ir.model,name:sale_comment_template.model_sale_order
 msgid "Sales Order"
-msgstr ""
+msgstr "Ordine vendita"
 
 #~ msgid "Bottom Comment"
 #~ msgstr "Commento in basso"
