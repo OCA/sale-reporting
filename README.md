@@ -27,6 +27,7 @@ addon | version | maintainers | summary
 [sale_layout_category_hide_detail](sale_layout_category_hide_detail/) | 15.0.1.0.0 |  | Hide details for sections in sale orders and invoices for reports and customer portal
 [sale_multicompany_reporting_currency](sale_multicompany_reporting_currency/) | 15.0.1.0.1 |  | Adds Amount in multicompany reporting currency to Sale Order
 [sale_order_line_position](sale_order_line_position/) | 15.0.1.1.0 |  | Adds position number on sale order line.
+[sale_order_product_recommendation_product_sold_by_delivery_week](sale_order_product_recommendation_product_sold_by_delivery_week/) | 15.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Adds the weekly sales field to the recommendation wizard
 [sale_order_report_product_image](sale_order_report_product_image/) | 15.0.1.0.0 |  | Show product images on Sale documents
 [sale_report_delivered](sale_report_delivered/) | 15.0.1.0.0 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) | Sale Report Delivered
 [sale_report_delivered_brand](sale_report_delivered_brand/) | 15.0.1.0.0 | [![CarlosRoca13](https://github.com/CarlosRoca13.png?size=30px)](https://github.com/CarlosRoca13) | Sale Report Delivered Brand
