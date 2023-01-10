@@ -14,4 +14,5 @@
         "views/sale_order_views.xml",
     ],
     "installable": True,
+    "maintainers": ["yankinmax"],
 }

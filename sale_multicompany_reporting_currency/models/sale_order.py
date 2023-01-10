@@ -54,17 +54,22 @@ class SaleOrder(models.Model):
         "pricelist_id", "date_order", "company_id", "multicompany_reporting_currency_id"
     )
     def _compute_multicompany_reporting_currency_rate(self):
-        # we don't use standard currency_rate field to avoid
-        # nested if-else conditions in _compute_currency_rate override
         for record in self:
-            if (
-                record.multicompany_reporting_currency_id and record.currency_id
+            if not record.company_id:
+                record.multicompany_reporting_currency_rate = (
+                    record.multicompany_reporting_currency_id.with_context(
+                        date=record.date_order
+                    ).rate
+                    or 1.0
+                )
+            elif (
+                record.currency_id and record.multicompany_reporting_currency_id
             ):  # the following crashes if any one is undefined
                 record.multicompany_reporting_currency_rate = self.env[
                     "res.currency"
                 ]._get_conversion_rate(
-                    record.multicompany_reporting_currency_id,
                     record.currency_id,
+                    record.multicompany_reporting_currency_id,
                     record.company_id,
                     record.date_order,
                 )
@@ -94,6 +99,6 @@ class SaleOrder(models.Model):
                 to_amount = reporting_amount
             else:
                 to_amount = (
-                    reporting_amount / record.multicompany_reporting_currency_rate
+                    reporting_amount * record.multicompany_reporting_currency_rate
                 )
             record.amount_multicompany_reporting_currency = to_amount
