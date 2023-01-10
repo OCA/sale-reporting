@@ -28,7 +28,7 @@ class TestAmountMulticompanyReportingCurrency(TestSaleCommon):
         cls.env["res.currency.rate"].create(
             {
                 "name": fields.Date.today(),
-                "rate": 1.01,
+                "rate": 1.0038,
                 "currency_id": cls.currency_swiss_id,
                 "company_id": cls.env.company.id,
             }
@@ -65,7 +65,9 @@ class TestAmountMulticompanyReportingCurrency(TestSaleCommon):
                 "tax_id": False,
             }
         )
-        self.assertEqual(self.sale_order.amount_multicompany_reporting_currency, 1010)
+        self.assertAlmostEqual(
+            self.sale_order.amount_multicompany_reporting_currency, 1003.8
+        )
         # Order currency is in EUR, Amount Multicompany Reporting Currency is EUR
         self.env["res.config.settings"].create(
             {
@@ -85,10 +87,12 @@ class TestAmountMulticompanyReportingCurrency(TestSaleCommon):
             }
         )
         # amount_multicompany_reporting_currency is computed with amount_untaxed
-        self.assertEqual(self.sale_order.amount_multicompany_reporting_currency, 1750)
+        self.assertAlmostEqual(
+            self.sale_order.amount_multicompany_reporting_currency, 1750
+        )
         # check to be sure amount_multicompany_reporting_currency
         # would have another value if amount_option is total
-        self.assertEqual(
+        self.assertAlmostEqual(
             self.sale_order.amount_total
             / self.sale_order.multicompany_reporting_currency_rate,
             1825,
@@ -98,4 +102,6 @@ class TestAmountMulticompanyReportingCurrency(TestSaleCommon):
         self.sale_order.currency_id = False
         self.sol_product_order.price_unit = 250
         self.sol_serv_deliver.price_unit = 100
-        self.assertEqual(self.sale_order.amount_multicompany_reporting_currency, 600)
+        self.assertAlmostEqual(
+            self.sale_order.amount_multicompany_reporting_currency, 600
+        )
