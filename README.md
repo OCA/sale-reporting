@@ -31,6 +31,7 @@ addon | version | maintainers | summary
 [sale_order_report_product_image](sale_order_report_product_image/) | 15.0.1.0.0 |  | Show product images on Sale documents
 [sale_report_delivered](sale_report_delivered/) | 15.0.1.0.0 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) | Sale Report Delivered
 [sale_report_delivered_brand](sale_report_delivered_brand/) | 15.0.1.0.0 | [![CarlosRoca13](https://github.com/CarlosRoca13.png?size=30px)](https://github.com/CarlosRoca13) | Sale Report Delivered Brand
+[sale_report_delivered_elaboration](sale_report_delivered_elaboration/) | 15.0.1.0.0 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) | Sale Report Delivered Elaboration
 [sale_report_delivered_partner_priority](sale_report_delivered_partner_priority/) | 15.0.1.0.1 | [![CarlosRoca13](https://github.com/CarlosRoca13.png?size=30px)](https://github.com/CarlosRoca13) | Sale Report Delivered Partner Priority
 [sale_report_delivered_subtotal](sale_report_delivered_subtotal/) | 15.0.1.0.0 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) | Sale Report Delivered subtotal
 [sale_report_delivered_volume](sale_report_delivered_volume/) | 15.0.1.0.0 |  | Sale Report Delivered Volume
