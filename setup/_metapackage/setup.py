@@ -15,6 +15,7 @@ setuptools.setup(
         'odoo-addon-sale_multicompany_reporting_currency>=15.0dev,<15.1dev',
         'odoo-addon-sale_order_line_position>=15.0dev,<15.1dev',
         'odoo-addon-sale_order_product_recommendation_product_sold_by_delivery_week>=15.0dev,<15.1dev',
+        'odoo-addon-sale_order_report_customer_lead>=15.0dev,<15.1dev',
         'odoo-addon-sale_order_report_product_image>=15.0dev,<15.1dev',
         'odoo-addon-sale_report_delivered>=15.0dev,<15.1dev',
         'odoo-addon-sale_report_delivered_brand>=15.0dev,<15.1dev',
