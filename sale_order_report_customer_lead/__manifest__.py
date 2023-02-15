@@ -5,7 +5,7 @@
 {
     "name": "Sale Order Report Customer Lead",
     "summary": "Show the lead time on sale documents",
-    "version": "15.0.1.0.0",
+    "version": "15.0.1.0.1",
     "category": "Sale",
     "website": "https://github.com/OCA/sale-reporting",
     "author": "Camptocamp SA, Odoo Community Association (OCA)",
