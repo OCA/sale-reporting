@@ -5,11 +5,8 @@
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">base.comment.template</field>
         <field name="view_mode">tree,form</field>
-        <field name="domain">[('model_ids.model', '=', 'sale.order')]</field>
-        <field
-            name="context"
-            eval="{'default_model_ids': [(4, ref('sale.model_sale_order'))]}"
-        />
+        <field name="domain">[('models', 'like', 'sale.order')]</field>
+        <field name="context" eval="{'default_model': 'sale.order'}" />
         <field
             name="view_id"
             ref="base_comment_template.view_base_comment_template_tree"
