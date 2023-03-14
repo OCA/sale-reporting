@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template
+        id="report_saleorder_document_image"
+        inherit_id="sale.report_saleorder_document"
+    >
+        <th name="th_description" position="before">
+            <th name="th_image">Image</th>
+        </th>
+        <td name="td_name" position="before">
+            <td name="td_image">
+                <span
+                    t-field="line.product_id.image_128"
+                    t-options="{'widget': 'image', 'max_width': '64', 'class': 'rounded'}"
+                />
+            </td>
+        </td>
+    </template>
+
+</odoo>
