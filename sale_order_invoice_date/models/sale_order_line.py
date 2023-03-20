@@ -17,6 +17,6 @@ class SaleOrderLine(models.Model):
         not_invoiced.invoice_date = False
         for rec in invoiced:
             rec.invoice_date = max(
-                [d for d in rec.invoice_lines.move_id.mapped("invoice_date") if d],
+                (d for d in rec.invoice_lines.move_id.mapped("invoice_date") if d),
                 default=False,
             )
