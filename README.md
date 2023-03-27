@@ -25,7 +25,7 @@ addon | version | maintainers | summary
 [sale_comment_template](sale_comment_template/) | 13.0.1.0.0 |  | Comments texts templates on Sale documents
 [sale_layout_category_hide_detail](sale_layout_category_hide_detail/) | 13.0.1.1.0 |  | Hide details for sections in sale orders and invoices for reports and customer portal
 [sale_order_line_position](sale_order_line_position/) | 13.0.1.0.0 |  | Adds position number on sale order line.
-[sale_order_product_recommendation_product_sold_by_delivery_week](sale_order_product_recommendation_product_sold_by_delivery_week/) | 13.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Adds the weekly sales field to the recommendation wizard
+[sale_order_product_recommendation_product_sold_by_delivery_week](sale_order_product_recommendation_product_sold_by_delivery_week/) | 13.0.1.0.1 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Adds the weekly sales field to the recommendation wizard
 [sale_order_report_product_image](sale_order_report_product_image/) | 13.0.1.0.0 |  | Show product images on Sale documents
 [sale_report_country_state](sale_report_country_state/) | 13.0.1.0.0 |  | Sale Report Filter by State
 [sale_report_delivered](sale_report_delivered/) | 13.0.1.0.4 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) | Sale Report Delivered
