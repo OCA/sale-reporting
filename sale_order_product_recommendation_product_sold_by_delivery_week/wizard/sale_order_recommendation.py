@@ -16,7 +16,11 @@ class SaleOrderRecommendationLine(models.TransientModel):
         _format_weekly_string = self.env["product.product"]._format_weekly_string
         self.weekly_sold_delivered_shown = False
         products = self.mapped("product_id").filtered(lambda x: x.type != "service")
-        common_partner = self.wizard_id.order_id.partner_id.commercial_partner_id
+        recommend_wiz = self.wizard_id
+        if recommend_wiz.use_delivery_address:
+            common_partner = recommend_wiz.order_id.partner_shipping_id
+        else:
+            common_partner = recommend_wiz.order_id.partner_id.commercial_partner_id
         products_weekly = products.with_context(
             weekly_partner_id=common_partner.id,
         )._weekly_sold_delivered()
