@@ -10,6 +10,7 @@ class TestSaleReportDeliveredBase(common.TransactionCase):
     def setUpClass(cls):
         super().setUpClass()
         cls.company = cls.env.company
+        cls.admin = cls.env.ref("base.user_admin")
         cls.pricelist = cls.env["product.pricelist"].create(
             {
                 "name": "Test pricelist",
@@ -22,8 +23,12 @@ class TestSaleReportDeliveredBase(common.TransactionCase):
         cls.user = new_test_user(
             cls.env,
             login="test_user-sale_report_delivered",
+            name="test_user-one",
             groups="sales_team.group_sale_manager",
         )
+        group_sale_manager = cls.env.ref("sales_team.group_sale_manager")
+        group_sale_manager.write({"users": [(4, cls.admin.id)]})
+
         cls.product = cls.env["product.product"].create(
             {"name": "Test product", "type": "product", "list_price": 10}
         )
@@ -36,7 +41,7 @@ class TestSaleReportDeliveredBase(common.TransactionCase):
         cls.orders = cls.order_1 + cls.order_2
         cls.orders.action_confirm()
         cls.orders.picking_ids.action_confirm()
-        cls.orders.picking_ids.move_lines.write({"quantity_done": 1.0})
+        cls.orders.picking_ids.move_ids.write({"quantity_done": 1.0})
         cls.orders.picking_ids.button_validate()
 
     def _create_stock_quant(self, product):
@@ -70,8 +75,7 @@ class TestSaleReportDelivered(TestSaleReportDeliveredBase):
         self.assertIn(self.product, items.mapped("product_id"))
         self.assertNotIn(self.service, items.mapped("product_id"))
 
-    @users("admin", "test_user-sale_report_delivered")
-    def test_sale_report_delivered_read_group(self):
+    def _test_sale_report_delivered_read_group(self):
         self.product.stock_valuation_layer_ids.value = 1
         res = self.env["sale.report.delivered"].read_group(
             domain=[("order_id", "in", self.orders.ids)],
@@ -83,4 +87,12 @@ class TestSaleReportDelivered(TestSaleReportDeliveredBase):
             ],
             groupby=["order_id"],
         )
-        self.assertEqual(res[0]["margin_percent"], 100)
+        self.assertAlmostEqual(res[0]["margin_percent"], 100.00)
+
+    @users("admin")
+    def test_sale_report_delivered_read_group_admin(self):
+        self._test_sale_report_delivered_read_group()
+
+    @users("test_user-sale_report_delivered")
+    def test_sale_report_delivered_read_group(self):
+        self._test_sale_report_delivered_read_group()
