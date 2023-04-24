@@ -85,8 +85,8 @@ class TestProductSoldByDeliveryWeek(TransactionCase):
             'Sale Stock: no picking created for "invoice on delivery" storable products',
         )
         pick = self.order.picking_ids
-        pick.move_lines.write({"quantity_done": 3})
+        pick.move_ids.write({"quantity_done": 3})
         pick.button_validate()
-        for line in pick.move_lines:
+        for line in pick.move_ids:
             line._action_done()
             self.assertEqual(line.product_id.weekly_sold_delivered, "Sold delivered")
