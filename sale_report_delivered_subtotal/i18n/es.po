@@ -29,5 +29,5 @@ msgstr "Informe Análisis de Ventas"
 
 #. module: sale_report_delivered_subtotal
 #: model:ir.model.fields,field_description:sale_report_delivered_subtotal.field_sale_report__price_subtotal_delivered
-msgid "Subtotal Delivered"
+msgid "Untaxed Total Delivered"
 msgstr "Base imponible entregada"
