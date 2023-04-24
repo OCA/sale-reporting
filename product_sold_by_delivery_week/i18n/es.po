@@ -18,19 +18,18 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 
 #. module: product_sold_by_delivery_week
-#: model:ir.model,name:product_sold_by_delivery_week.model_product_product
+#: model:ir.model,name:product_sold_by_delivery_week.model_product_template
 msgid "Product"
 msgstr "Producto"
 
 #. module: product_sold_by_delivery_week
-#: model:ir.model,name:product_sold_by_delivery_week.model_product_template
-msgid "Product Template"
-msgstr "Plantilla de producto"
+#: model:ir.model,name:product_sold_by_delivery_week.model_product_product
+msgid "Product Variant"
+msgstr ""
 
 #. module: product_sold_by_delivery_week
 #: model:ir.actions.server,name:product_sold_by_delivery_week.ir_cron_recalculate_all_weekly_sold_delivered_ir_actions_server
 #: model:ir.cron,cron_name:product_sold_by_delivery_week.ir_cron_recalculate_all_weekly_sold_delivered
-#: model:ir.cron,name:product_sold_by_delivery_week.ir_cron_recalculate_all_weekly_sold_delivered
 msgid "Recalculate Weekly Delivered Products"
 msgstr "Recalcular productos entregados semanalmente"
 
@@ -66,3 +65,6 @@ msgstr "Información de venta semanal en líneas de pedido"
 #: model:res.groups,name:product_sold_by_delivery_week.group_weekly_selling_product_list
 msgid "Weekly selling info in product list"
 msgstr "Información de venta semanal en lista de productos"
+
+#~ msgid "Product Template"
+#~ msgstr "Plantilla de producto"
