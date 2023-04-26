@@ -20,7 +20,7 @@ Sale Multicompany Reporting Currency
     :target: https://translation.odoo-community.org/projects/sale-reporting-15-0/sale-reporting-15-0-sale_multicompany_reporting_currency
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
-    :target: https://runbot.odoo-community.org/runbot/148/15.0
+    :target: https://runbot.odoo-community.org/runbot/148/16.0
     :alt: Try me on Runbot
 
 |badge1| |badge2| |badge3| |badge4| |badge5| 
@@ -56,6 +56,7 @@ Contributors
 ~~~~~~~~~~~~
 
 * Maksym Yankin <maksym.yankin@camptocamp.com>
+* Dhara Solanki <dhara.solanki@initos.com>
 
 Maintainers
 ~~~~~~~~~~~
@@ -78,6 +79,6 @@ Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
 |maintainer-yankinmax| 
 
-This module is part of the `OCA/sale-reporting <https://github.com/OCA/sale-reporting/tree/15.0/sale_multicompany_reporting_currency>`_ project on GitHub.
+This module is part of the `OCA/sale-reporting <https://github.com/OCA/sale-reporting/tree/16.0/sale_multicompany_reporting_currency>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
