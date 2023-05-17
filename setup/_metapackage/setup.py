@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo-addon-sale_order_line_position>=16.0dev,<16.1dev',
         'odoo-addon-sale_order_report_product_image>=16.0dev,<16.1dev',
+        'odoo-addon-sale_report_delivered>=16.0dev,<16.1dev',
     ],
     classifiers=[
         'Programming Language :: Python',
