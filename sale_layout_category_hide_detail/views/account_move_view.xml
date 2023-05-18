@@ -100,7 +100,7 @@
             >
           <t t-if="record.display_type.raw_value === 'line_section'">
               <div class="col-4">
-                  <span class="float-right text-right">
+                  <span class="float-end text-end">
                       <span
                                 t-attf-class="ml-3 fa #{record.show_details.raw_value ? 'fa-eye' : 'fa-eye-slash'}"
                                 t-att-aria-label="record.show_details.raw_value ? 'Details shown' : 'Details hidden'"
