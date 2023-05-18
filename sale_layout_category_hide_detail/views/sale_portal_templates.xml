@@ -34,7 +34,7 @@
             />
     </xpath>
     <xpath
-            expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-right')]"
+            expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-end')]"
             position="attributes"
         >
       <attribute
@@ -44,30 +44,32 @@
             />
     </xpath>
     <xpath
-            expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-right')]/td/strong"
+            expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-end')]/td/strong"
             position="attributes"
         >
       <attribute name="class" add="d-none" separator=" " />
     </xpath>
     <xpath
-            expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-right')]/td/strong"
+            expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-end')]/td/strong"
             position="after"
         >
       <strong class="mr16">Subtotal <span t-field="current_section.name" /></strong>
     </xpath>
     <xpath
-            expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-right')]"
+            expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-end')]"
             position="after"
         >
-      <t t-if="not current_section.show_details">
+      <t
+                t-if="current_section and not current_section.show_details and (line_last or lines_to_report[line_index+1].display_type == 'line_section')"
+            >
         <tr class="bg-200 o_line_section">
           <td colspan="99">
-            <span t-field="current_section.name" class="font-weight-bold" />
-            <span class="float-right">
+            <span t-field="current_section.name" class="fw-bold" />
+            <span class="float-end">
               <span
                                 t-if="current_section.show_section_subtotal"
-                                class="float-right"
-                                t-esc="current_subtotal"
+                                class="text-end"
+                                t-out="current_subtotal"
                                 t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}'
                             />
             </span>
@@ -99,7 +101,7 @@
             />
       </xpath>
       <xpath
-            expr="//t[@t-foreach='sale_order.order_line']//span[contains(@t-esc, 'line.tax_id')]"
+            expr="//t[@t-foreach='lines_to_report']//span[contains(@t-out, 'line.tax_id')]"
             position="attributes"
         >
         <attribute

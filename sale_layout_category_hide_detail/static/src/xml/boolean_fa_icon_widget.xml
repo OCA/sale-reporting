@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="sale_layout_category.BooleanFaIconWidget" owl="1">
+        <div t-on-click="onClickButton">
+            <span
+                t-attf-class="fa #{state.fa_class}"
+                t-attf-data-tooltip="{{state.text_tooltip}}"
+            />
+        </div>
+    </t>
+
+</templates>
