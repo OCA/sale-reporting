@@ -73,31 +73,67 @@ msgstr "Subtotal"
 
 #. module: sale_layout_category_hide_detail
 #. openerp-web
-#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:0
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
+#: code:addons/sale_layout_category_hide_detail/static/src/xml/boolean_fa_icon_widget.xml:0
 #, python-format
 msgid "Switch to: details hidden"
 msgstr "Cambiar a: detalles ocultos"
 
 #. module: sale_layout_category_hide_detail
 #. openerp-web
-#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:0
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
+#: code:addons/sale_layout_category_hide_detail/static/src/xml/boolean_fa_icon_widget.xml:0
 #, python-format
 msgid "Switch to: details shown"
 msgstr "Cambiar a: detalles mostrados"
 
 #. module: sale_layout_category_hide_detail
 #. openerp-web
-#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:0
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
+#: code:addons/sale_layout_category_hide_detail/static/src/xml/boolean_fa_icon_widget.xml:0
 #, python-format
 msgid "Switch to: subtotal hidden"
 msgstr "Cambiar a: subtotal oculto"
 
 #. module: sale_layout_category_hide_detail
 #. openerp-web
-#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:0
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
+#: code:addons/sale_layout_category_hide_detail/static/src/xml/boolean_fa_icon_widget.xml:0
 #, python-format
 msgid "Switch to: subtotal shown"
 msgstr "Cambiar a: subtotal mostrado"
+
+#. module: sale_layout_category_hide_detail
+#. openerp-web
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
+#: code:addons/sale_layout_category_hide_detail/static/src/xml/boolean_fa_icon_widget.xml:0
+#, python-format
+msgid "Switch to: line amount hidden"
+msgstr "Cambiar a: cantidad de línea oculta"
+
+#. module: sale_layout_category_hide_detail
+#. openerp-web
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
+#: code:addons/sale_layout_category_hide_detail/static/src/xml/boolean_fa_icon_widget.xml:0
+#, python-format
+msgid "Switch to: line amount shown"
+msgstr "Cambiar a: cantidad de linea mostrado"
+
+#. module: sale_layout_category_hide_detail
+#. openerp-web
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
+#: code:addons/sale_layout_category_hide_detail/static/src/xml/boolean_fa_icon_widget.xml:0
+#, python-format
+msgid "Switch to: section subtotal hidden"
+msgstr "Cambiar a: seccion subtotal oculto"
+
+#. module: sale_layout_category_hide_detail
+#. openerp-web
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
+#: code:addons/sale_layout_category_hide_detail/static/src/xml/boolean_fa_icon_widget.xml:0
+#, python-format
+msgid "Switch to: section subtotal shown"
+msgstr "Cambiar a: se muestra el subtotal de la sección"
 
 #. module: sale_layout_category_hide_detail
 #: model:ir.model.fields,help:sale_layout_category_hide_detail.field_account_move_line__show_section_subtotal

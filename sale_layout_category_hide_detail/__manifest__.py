@@ -5,7 +5,7 @@
     "name": "Sale layout category hide detail",
     "summary": "Hide details for sections in sale orders and invoices for "
     "reports and customer portal",
-    "version": "15.0.1.0.0",
+    "version": "16.0.1.0.0",
     "category": "Sales Management",
     "website": "https://github.com/OCA/sale-reporting",
     "author": "Tecnativa, " "Odoo Community Association (OCA)",
@@ -20,10 +20,8 @@
     ],
     "assets": {
         "web.assets_backend": [
-            "/sale_layout_category_hide_detail/static/src/js/"
-            "boolean_fa_icon_widget.js",
-            "/sale_layout_category_hide_detail/static/src/js/"
-            "sale_layout_category_hide_detail.js",
+            "sale_layout_category_hide_detail/static/src/js/**",
+            "sale_layout_category_hide_detail/static/src/xml/*.xml",
         ],
     },
     "application": False,

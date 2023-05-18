@@ -1,10 +1,13 @@
 # Copyright 2019 Tecnativa - Ernesto Tejeda
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo.tests import common
+from odoo.tests import tagged
+
+from odoo.addons.sale.tests.common import SaleCommon
 
 
-class TestSaleLayoutCategoryHideDetail(common.SavepointCase):
+@tagged("post_install", "-at_install")
+class TestSaleLayoutCategoryHideDetail(SaleCommon):
     @classmethod
     def setUpClass(cls):
         super(TestSaleLayoutCategoryHideDetail, cls).setUpClass()
@@ -20,7 +23,6 @@ class TestSaleLayoutCategoryHideDetail(common.SavepointCase):
                 "product_uom_qty": 10,
             }
         )
-        cls.so_line.product_id_change()
         cls.sale_order.action_confirm()
 
     def test_prepare_invoice_line(self):

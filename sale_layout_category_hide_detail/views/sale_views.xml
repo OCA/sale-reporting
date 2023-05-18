@@ -61,7 +61,7 @@
                                 'hover_false': 'Switch to: section subtotal shown',
                             },
                        }"
-                    attrs="{'invisible': ['|', ('display_type', '!=', 'line_section'), ('display_type', '=', 'line_section'), ('show_details', '=', True)]}"
+                    attrs="{'invisible': ['|', ('display_type', '!=', 'line_section'), ('show_details', '=', True)]}"
                 />
                 <field
                     name="show_subtotal"
@@ -104,7 +104,7 @@
                 <field name="show_subtotal" />
             </xpath>
             <xpath
-                expr="//field[@name='order_line']/kanban[hasclass('o_kanban_mobile')]//t[@t-esc='record.name.value']/../.."
+                expr="//field[@name='order_line']/kanban[hasclass('o_kanban_mobile')]//t[@t-out='record.name.value']/../.."
                 position="attributes"
             >
                 <attribute name="class" />
@@ -113,12 +113,12 @@
                 >col-#{record.display_type.raw_value === 'line_section' ? '10' : 12}</attribute>
             </xpath>
             <xpath
-                expr="//field[@name='order_line']/kanban[hasclass('o_kanban_mobile')]//t[@t-esc='record.name.value']/../.."
+                expr="//field[@name='order_line']/kanban[hasclass('o_kanban_mobile')]//t[@t-out='record.name.value']/../.."
                 position="after"
             >
                 <t t-if="record.display_type.raw_value === 'line_section'">
                     <div class="col-2">
-                        <span class="float-right text-right">
+                        <span class="float-end text-end">
                             <span
                                 t-attf-class="ml-3 fa #{record.show_details.raw_value ? 'fa-eye' : 'fa-eye-slash'}"
                                 t-att-aria-label="record.show_details.raw_value ? 'Details shown' : 'Details hidden'"

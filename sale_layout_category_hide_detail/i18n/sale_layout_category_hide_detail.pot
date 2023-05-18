@@ -69,30 +69,58 @@ msgstr ""
 
 #. module: sale_layout_category_hide_detail
 #. openerp-web
-#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:0
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
 #, python-format
 msgid "Switch to: details hidden"
 msgstr ""
 
 #. module: sale_layout_category_hide_detail
 #. openerp-web
-#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:0
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
 #, python-format
 msgid "Switch to: details shown"
 msgstr ""
 
 #. module: sale_layout_category_hide_detail
 #. openerp-web
-#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:0
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
 #, python-format
 msgid "Switch to: subtotal hidden"
 msgstr ""
 
 #. module: sale_layout_category_hide_detail
 #. openerp-web
-#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:0
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
 #, python-format
 msgid "Switch to: subtotal shown"
+msgstr ""
+
+#. module: sale_layout_category_hide_detail
+#. openerp-web
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
+#, python-format
+msgid "Switch to: line amount hidden"
+msgstr ""
+
+#. module: sale_layout_category_hide_detail
+#. openerp-web
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
+#, python-format
+msgid "Switch to: line amount shown"
+msgstr ""
+
+#. module: sale_layout_category_hide_detail
+#. openerp-web
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
+#, python-format
+msgid "Switch to: section subtotal hidden"
+msgstr ""
+
+#. module: sale_layout_category_hide_detail
+#. openerp-web
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
+#, python-format
+msgid "Switch to: section subtotal shown"
 msgstr ""
 
 #. module: sale_layout_category_hide_detail
