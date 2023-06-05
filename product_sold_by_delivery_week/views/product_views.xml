@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 Tecnativa - David Vidal
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="product_template_tree_view" model="ir.ui.view">
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <!-- The BS badge class provides some styles that will avoid that
+                     the string gets truncated by an ellipsis and uses less column
+                     width as well -->
+                <field
+                    groups="product_sold_by_delivery_week.group_weekly_selling_product_list"
+                    name="weekly_sold_delivered_shown"
+                    optional="hide"
+                    class="badge"
+                />
+            </field>
+        </field>
+    </record>
+    <record id="product_product_tree_view" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_product_tree_view" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <!-- The BS badge class provides some styles that will avoid that
+                     the string gets truncated by an ellipsis and uses less column
+                     width as well -->
+                <field
+                    groups="product_sold_by_delivery_week.group_weekly_selling_product_list"
+                    name="weekly_sold_delivered_shown"
+                    optional="hide"
+                    class="badge"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>
