@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo-addon-product_sold_by_delivery_week>=16.0dev,<16.1dev',
         'odoo-addon-sale_order_line_position>=16.0dev,<16.1dev',
+        'odoo-addon-sale_order_product_recommendation_product_sold_by_delivery_week>=16.0dev,<16.1dev',
         'odoo-addon-sale_order_report_product_image>=16.0dev,<16.1dev',
         'odoo-addon-sale_report_delivered>=16.0dev,<16.1dev',
         'odoo-addon-sale_report_delivered_subtotal>=16.0dev,<16.1dev',
