@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2018-2019 Tecnativa - Ernesto Tejeda
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+  <template
+        id="report_invoice_document_hide_detail"
+        inherit_id="account.report_invoice_document"
+    >
+    <xpath
+            expr="//tbody[hasclass('invoice_tbody')]//t[@name='account_invoice_line_accountable']"
+            position="attributes"
+        >
+      <attribute
+                name="t-if"
+                add="(not current_section or current_section.show_details)"
+                separator=" and "
+            />
+    </xpath>
+    <xpath
+            expr='//tbody[hasclass("invoice_tbody")]//t[@t-if="line.display_type == &apos;line_section&apos;"]//td'
+            position="attributes"
+        >
+      <attribute name="t-if" add="line.show_details" separator=" and " />
+    </xpath>
+    <xpath
+            expr='//tbody[hasclass("invoice_tbody")]//t[@t-if="line.display_type == &apos;line_note&apos;"]//td'
+            position="attributes"
+        >
+      <attribute
+                name="t-if"
+                add="(not current_section or current_section.show_details)"
+                separator=" and "
+            />
+    </xpath>
+    <xpath
+            expr="//tbody[hasclass('invoice_tbody')]//tr[hasclass('is-subtotal', 'text-end')]"
+            position="attributes"
+        >
+      <attribute
+                name="t-if"
+                add="current_section.show_details and current_section.show_subtotal"
+                separator=" and "
+            />
+    </xpath>
+    <xpath
+            expr="//tbody[hasclass('invoice_tbody')]//tr[hasclass('is-subtotal', 'text-end')]"
+            position="after"
+        >
+      <t t-if="not current_section.show_details">
+        <tr class="bg-200 o_line_section">
+          <td colspan="99">
+            <span t-field="current_section.name" class="font-weight-bold" />
+            <span class="float-end">
+              <span
+                                t-if="current_section.show_section_subtotal"
+                                class="text-end"
+                                t-esc="current_subtotal"
+                                t-options='{"widget": "monetary", "display_currency": o.currency_id}'
+                            />
+            </span>
+          </td>
+        </tr>
+      </t>
+    </xpath>
+    <!-- Prices -->
+    <xpath expr="//span[@t-field='line.price_unit']" position="attributes">
+        <attribute
+                name="t-if"
+                add="not current_section or current_section.show_line_amount"
+                separator=" and "
+            />
+      </xpath>
+      <xpath expr="//span[@t-field='line.price_subtotal']" position="attributes">
+        <attribute
+                name="t-if"
+                add="not current_section or current_section.show_line_amount"
+                separator=" and "
+            />
+      </xpath>
+      <xpath expr="//span[@t-field='line.price_total']" position="attributes">
+        <attribute
+                name="t-if"
+                add="not current_section or current_section.show_line_amount"
+                separator=" and "
+            />
+      </xpath>
+      <xpath
+            expr="//t[@t-foreach='lines']//span[contains(@t-esc, 'line.tax_ids')]"
+            position="attributes"
+        >
+        <attribute
+                name="t-if"
+                add="not current_section or current_section.show_line_amount"
+                separator=" and "
+            />
+      </xpath>
+
+  </template>
+</odoo>
