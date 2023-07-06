@@ -14,13 +14,13 @@ Sale layout category hide detail
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fsale--reporting-lightgray.png?logo=github
-    :target: https://github.com/OCA/sale-reporting/tree/15.0/sale_layout_category_hide_detail
+    :target: https://github.com/OCA/sale-reporting/tree/16.0/sale_layout_category_hide_detail
     :alt: OCA/sale-reporting
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/sale-reporting-15-0/sale-reporting-15-0-sale_layout_category_hide_detail
+    :target: https://translation.odoo-community.org/projects/sale-reporting-16-0/sale-reporting-16-0-sale_layout_category_hide_detail
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
-    :target: https://runbot.odoo-community.org/runbot/148/15.0
+    :target: https://runbot.odoo-community.org/runbot/148/16.0
     :alt: Try me on Runbot
 
 |badge1| |badge2| |badge3| |badge4| |badge5| 
@@ -46,29 +46,29 @@ hide details, subtotal, line amount and section subtotal.
 
 These are the possible combinations:
 
-.. image:: https://raw.githubusercontent.com/OCA/sale-reporting/15.0/sale_layout_category_hide_detail/static/description/readme-icons/order.png
+.. image:: https://raw.githubusercontent.com/OCA/sale-reporting/16.0/sale_layout_category_hide_detail/static/description/readme-icons/order.png
   :alt: Possible combinations
 
 And these are the results in report:
 
-.. image:: https://raw.githubusercontent.com/OCA/sale-reporting/15.0/sale_layout_category_hide_detail/static/description/readme-icons/report.png
+.. image:: https://raw.githubusercontent.com/OCA/sale-reporting/16.0/sale_layout_category_hide_detail/static/description/readme-icons/report.png
   :alt: Possible combination results in report
 
 The behavior described before is the same for Quotations and Invoices.
 
-.. |eye-icon| image:: https://raw.githubusercontent.com/OCA/sale-reporting/15.0/sale_layout_category_hide_detail/static/description/readme-icons/eye.png
+.. |eye-icon| image:: https://raw.githubusercontent.com/OCA/sale-reporting/16.0/sale_layout_category_hide_detail/static/description/readme-icons/eye.png
    :alt: plus-circle icon
    :width: 12 px
 
-.. |eye-slash-icon| image:: https://raw.githubusercontent.com/OCA/sale-reporting/15.0/sale_layout_category_hide_detail/static/description/readme-icons/eye-slash.png
+.. |eye-slash-icon| image:: https://raw.githubusercontent.com/OCA/sale-reporting/16.0/sale_layout_category_hide_detail/static/description/readme-icons/eye-slash.png
    :alt: minus-circle icon
    :width: 12 px
 
-.. |plus-circle-icon| image:: https://raw.githubusercontent.com/OCA/sale-reporting/15.0/sale_layout_category_hide_detail/static/description/readme-icons/plus-circle.png
+.. |plus-circle-icon| image:: https://raw.githubusercontent.com/OCA/sale-reporting/16.0/sale_layout_category_hide_detail/static/description/readme-icons/plus-circle.png
    :alt: plus-circle icon
    :width: 12 px
 
-.. |minus-circle-icon| image:: https://raw.githubusercontent.com/OCA/sale-reporting/15.0/sale_layout_category_hide_detail/static/description/readme-icons/minus-circle.png
+.. |minus-circle-icon| image:: https://raw.githubusercontent.com/OCA/sale-reporting/16.0/sale_layout_category_hide_detail/static/description/readme-icons/minus-circle.png
    :alt: minus-circle icon
    :width: 12 px
 
@@ -85,7 +85,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/sale-reporting/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/sale-reporting/issues/new?body=module:%20sale_layout_category_hide_detail%0Aversion:%2015.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/sale-reporting/issues/new?body=module:%20sale_layout_category_hide_detail%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -105,6 +105,7 @@ Contributors
   * Ernesto Tejeda
   * Pedro M. Baeza
   * Víctor Martínez
+  * Yadier Quesada
 
 * Denis Roussel <denis.roussel@acsone.eu>
 
@@ -121,6 +122,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/sale-reporting <https://github.com/OCA/sale-reporting/tree/15.0/sale_layout_category_hide_detail>`_ project on GitHub.
+This module is part of the `OCA/sale-reporting <https://github.com/OCA/sale-reporting/tree/16.0/sale_layout_category_hide_detail>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
