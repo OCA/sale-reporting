@@ -1,0 +1,96 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_comment_template
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-01-18 12:06+0000\n"
+"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.1\n"
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__comment_template_ids
+msgid "Comment Template"
+msgstr "Modello commento"
+
+#. module: sale_comment_template
+#: model_terms:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
+msgid "Comments"
+msgstr "Commenti"
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: sale_comment_template
+#: model:ir.ui.menu,name:sale_comment_template.menu_base_comment_template_sale
+msgid "Document Comments"
+msgstr "Commenti del documento"
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__id
+msgid "ID"
+msgstr "ID"
+
+#. module: sale_comment_template
+#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: sale_comment_template
+#: model:ir.actions.act_window,name:sale_comment_template.action_sale_order_comment_template
+msgid "Sale Orders Comments"
+msgstr "Commenti ordini vendita"
+
+#. module: sale_comment_template
+#: model:ir.model,name:sale_comment_template.model_sale_order
+msgid "Sales Order"
+msgstr "Ordine di vendita"
+
+#~ msgid "Bottom Comment"
+#~ msgstr "Commento in basso"
+
+#~ msgid "Bottom Comment Template"
+#~ msgstr "Modello commento in basso"
+
+#~ msgid "Bottom Comments"
+#~ msgstr "Commenti in basso"
+
+#~ msgid "Formatted Note"
+#~ msgstr "Nota formattata"
+
+#~ msgid "Load a template"
+#~ msgstr "Carica un modello"
+
+#~ msgid "Sale Order"
+#~ msgstr "Ordine di vendita"
+
+#~ msgid "Sales Order Line"
+#~ msgstr "Riga ordine di vendita"
+
+#~ msgid ""
+#~ "The comments will be displayed on the printed document. You can load a "
+#~ "predefined template, write your own text or load a template and then "
+#~ "modify it only for this document."
+#~ msgstr ""
+#~ "I commenti saranno mostrati sul documento stampato. Puoi caricare un "
+#~ "modello predefinito, scrivi il tuo testo o carica un modello e poi "
+#~ "modificalo solo per questo documento."
+
+#~ msgid "Top Comment"
+#~ msgstr "Commento in alto"
+
+#~ msgid "Top Comment Template"
+#~ msgstr "Modello commento in alto"
+
+#~ msgid "Top Comments"
+#~ msgstr "Commenti in alto"
