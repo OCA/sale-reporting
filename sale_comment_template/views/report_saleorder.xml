@@ -10,7 +10,7 @@
                 t-foreach="doc.comment_template_ids.filtered(lambda x: x.position == 'before_lines')"
                 t-as="comment_template_top"
             >
-                <div t-esc="comment_template_top.text" />
+                <div t-out="doc.render_comment(comment_template_top)" />
             </t>
         </xpath>
         <xpath expr="//p[@id='fiscal_position_remark']" position="after">
@@ -18,7 +18,7 @@
                 t-foreach="doc.comment_template_ids.filtered(lambda x: x.position == 'after_lines')"
                 t-as="comment_template_bottom"
             >
-                <div t-esc="comment_template_bottom.text" />
+                <div t-out="doc.render_comment(comment_template_bottom)" />
             </t>
         </xpath>
     </template>
