@@ -10,12 +10,12 @@ class SaleReport(models.Model):
 
     commitment_date = fields.Datetime(readonly=True)
 
-    def _select_sale(self, fields=None):
-        res = super()._select_sale(fields=fields)
+    def _select_sale(self):
+        res = super()._select_sale()
         res += ", s.commitment_date"
         return res
 
-    def _group_by_sale(self, groupby=""):
-        res = super()._group_by_sale(groupby=groupby)
+    def _group_by_sale(self):
+        res = super()._group_by_sale()
         res += ", s.commitment_date"
         return res
