@@ -1,9 +1,10 @@
 # Copyright 2022 Tecnativa - Carlos Roca
+# Copyright 2023 Tecnativa - Carolina Fernandez
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
     "name": "Sale Report Delivered Volume",
-    "version": "15.0.1.0.0",
+    "version": "16.0.1.0.0",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "category": "Sales",
     "development_status": "Production/Stable",
