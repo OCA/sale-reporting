@@ -9,14 +9,19 @@ class SaleReport(models.Model):
 
     volume_delivered = fields.Float(digits="Volume")
 
-    def _select_sale(self, fields=None):
-        select_str = super()._select_sale(fields=fields)
-        select_str += """
-        , CASE
+    def _select_additional_fields(self):
+        res = super()._select_additional_fields()
+        select_str_volume_delivered = """
+           CASE
             WHEN l.product_id IS NOT NULL THEN sum(
                 p.volume * l.qty_delivered / u.factor * u2.factor
             )
             ELSE 0
-            END as volume_delivered
+            END
         """
-        return select_str
+        res.update(
+            {
+                "volume_delivered": select_str_volume_delivered,
+            }
+        )
+        return res
