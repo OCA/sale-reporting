@@ -30,6 +30,7 @@ addon | version | maintainers | summary
 [sale_packaging_report](sale_packaging_report/) | 16.0.1.0.1 | [![yajo](https://github.com/yajo.png?size=30px)](https://github.com/yajo) | Packaging data in sale reports
 [sale_report_delivered](sale_report_delivered/) | 16.0.1.0.0 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) | Sale Report Delivered
 [sale_report_delivered_subtotal](sale_report_delivered_subtotal/) | 16.0.1.0.0 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) | Sale Report Delivered subtotal
+[sale_report_delivered_volume](sale_report_delivered_volume/) | 16.0.1.0.0 |  | Sale Report Delivered Volume
 
 [//]: # (end addons)
 
