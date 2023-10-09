@@ -17,20 +17,6 @@ msgstr ""
 "X-Generator: Weblate 4.3.2\n"
 
 #. module: sale_layout_category_hide_detail
-#. openerp-web
-#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
-#, python-format
-msgid "Click to check"
-msgstr "Click per abilitare"
-
-#. module: sale_layout_category_hide_detail
-#. openerp-web
-#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.js:0
-#, python-format
-msgid "Click to uncheck"
-msgstr "Click per disabilitare"
-
-#. module: sale_layout_category_hide_detail
 #: model:ir.model,name:sale_layout_category_hide_detail.model_account_move_line
 msgid "Journal Item"
 msgstr "Movimento contabile"
@@ -71,38 +57,47 @@ msgid "Subtotal"
 msgstr "Subtotale"
 
 #. module: sale_layout_category_hide_detail
-#. openerp-web
-#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:0
+#. odoo-javascript
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.esm.js:0
 #, python-format
 msgid "Switch to: details hidden"
 msgstr "Passa a: nascondi dettagli"
 
 #. module: sale_layout_category_hide_detail
-#. openerp-web
-#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:0
+#. odoo-javascript
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.esm.js:0
 #, python-format
 msgid "Switch to: details shown"
 msgstr "Passa a: mostra dettagli"
 
 #. module: sale_layout_category_hide_detail
-#. openerp-web
-#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:0
+#. odoo-javascript
+#: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.esm.js:0
 #, python-format
-msgid "Switch to: subtotal hidden"
-msgstr "Passa a: nascondi subtotale"
-
-#. module: sale_layout_category_hide_detail
-#. openerp-web
-#: code:addons/sale_layout_category_hide_detail/static/src/js/hide_details_translations.js:0
-#, python-format
-msgid "Switch to: subtotal shown"
-msgstr "Passa a: mostra subtotale"
+msgid "Toggle"
+msgstr ""
 
 #. module: sale_layout_category_hide_detail
 #: model:ir.model.fields,help:sale_layout_category_hide_detail.field_account_move_line__show_section_subtotal
 #: model:ir.model.fields,help:sale_layout_category_hide_detail.field_sale_order_line__show_section_subtotal
 msgid "Uncheck this if you want to hide the subtotal on section part"
 msgstr "Disabilita se vuoi nascondere il subtotale della sezione"
+
+#, python-format
+#~ msgid "Click to check"
+#~ msgstr "Click per abilitare"
+
+#, python-format
+#~ msgid "Click to uncheck"
+#~ msgstr "Click per disabilitare"
+
+#, python-format
+#~ msgid "Switch to: subtotal hidden"
+#~ msgstr "Passa a: nascondi subtotale"
+
+#, python-format
+#~ msgid "Switch to: subtotal shown"
+#~ msgstr "Passa a: mostra subtotale"
 
 #~ msgid "Display Name"
 #~ msgstr "Nome visualizzato"
