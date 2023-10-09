@@ -17,21 +17,6 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: sale_comment_template
-#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__note2
-msgid "Bottom Comment"
-msgstr "Comentario inferior"
-
-#. module: sale_comment_template
-#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__comment_template2_id
-msgid "Bottom Comment Template"
-msgstr "Plantilla del comentario inferior"
-
-#. module: sale_comment_template
-#: model_terms:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
-msgid "Bottom Comments"
-msgstr "Comentarios de la parte inferior"
-
-#. module: sale_comment_template
 #: model_terms:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
 msgid "Comments"
 msgstr "Comentarios"
@@ -42,50 +27,44 @@ msgid "Document Comments"
 msgstr "Comentarios del documentos"
 
 #. module: sale_comment_template
-#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order_line__formatted_note
-msgid "Formatted Note"
+#: model:ir.actions.act_window,name:sale_comment_template.action_sale_order_comment_template
+msgid "Sale Orders Comments"
 msgstr ""
-
-#. module: sale_comment_template
-#: model_terms:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
-msgid "Load a template"
-msgstr "Cargar una plantialla"
 
 #. module: sale_comment_template
 #: model:ir.model,name:sale_comment_template.model_sale_order
-msgid "Sale Order"
+msgid "Sales Order"
 msgstr ""
 
-#. module: sale_comment_template
-#: model:ir.model,name:sale_comment_template.model_sale_order_line
-msgid "Sales Order Line"
-msgstr ""
+#~ msgid "Bottom Comment"
+#~ msgstr "Comentario inferior"
 
-#. module: sale_comment_template
-#: model_terms:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
-msgid ""
-"The comments will be displayed on the printed document. You can load a "
-"predefined template, write your own text or load a template and then modify "
-"it only for this document."
-msgstr ""
-"Los comentarios se mostrarán en los documentos impresos. Puede cargar una "
-"plantilla pedefinida, escribir su propio texto o cargar una plantilla y "
-"modificarla para este documento."
+#~ msgid "Bottom Comment Template"
+#~ msgstr "Plantilla del comentario inferior"
 
-#. module: sale_comment_template
-#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__note1
-msgid "Top Comment"
-msgstr "Comentario superior"
+#~ msgid "Bottom Comments"
+#~ msgstr "Comentarios de la parte inferior"
 
-#. module: sale_comment_template
-#: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__comment_template1_id
-msgid "Top Comment Template"
-msgstr "Plantilla del comentario superior"
+#~ msgid "Load a template"
+#~ msgstr "Cargar una plantialla"
 
-#. module: sale_comment_template
-#: model_terms:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
-msgid "Top Comments"
-msgstr "Comentarios de la parte superior"
+#~ msgid ""
+#~ "The comments will be displayed on the printed document. You can load a "
+#~ "predefined template, write your own text or load a template and then "
+#~ "modify it only for this document."
+#~ msgstr ""
+#~ "Los comentarios se mostrarán en los documentos impresos. Puede cargar una "
+#~ "plantilla pedefinida, escribir su propio texto o cargar una plantilla y "
+#~ "modificarla para este documento."
+
+#~ msgid "Top Comment"
+#~ msgstr "Comentario superior"
+
+#~ msgid "Top Comment Template"
+#~ msgstr "Plantilla del comentario superior"
+
+#~ msgid "Top Comments"
+#~ msgstr "Comentarios de la parte superior"
 
 #~ msgid "Quotation"
 #~ msgstr "Presupuesto"
