@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* sale_report_delivered_subtotal
+# 	* sale_report_delivered_subtotal
 #
 msgid ""
 msgstr ""
