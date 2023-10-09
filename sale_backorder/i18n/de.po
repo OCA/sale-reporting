@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* sale_backorder
+# 	* sale_backorder
 #
 msgid ""
 msgstr ""
@@ -15,8 +15,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. module: sale_backorder
+#: model:ir.actions.report,print_report_name:sale_backorder.action_so_backorder_report
+msgid "\"SO Backorder Report\""
+msgstr ""
+
+#. module: sale_backorder
 #: model:ir.model.fields,help:sale_backorder.field_sale_order_line__product_type
-msgid "A storable product is a product for which you manage stock. The Inventory app has to be installed.\n"
+msgid ""
+"A storable product is a product for which you manage stock. The Inventory "
+"app has to be installed.\n"
 "A consumable product is a product for which stock is not managed.\n"
 "A service is a non-material product you provide."
 msgstr ""
@@ -55,8 +62,15 @@ msgid "Description"
 msgstr ""
 
 #. module: sale_backorder
+#: model:ir.model.fields,field_description:sale_backorder.field_sale_order__display_name
+#: model:ir.model.fields,field_description:sale_backorder.field_sale_order_line__display_name
 #: model:ir.model.fields,field_description:sale_backorder.field_sobackorder_report_wizard__display_name
 msgid "Display Name"
+msgstr ""
+
+#. module: sale_backorder
+#: model:ir.model.fields,help:sale_backorder.field_sale_order_line__uigd_qty
+msgid "Display a Uninvoiced Goods Delivered Qty on Order Lines."
 msgstr ""
 
 #. module: sale_backorder
@@ -66,6 +80,8 @@ msgid "Generate SO Backorder Report"
 msgstr ""
 
 #. module: sale_backorder
+#: model:ir.model.fields,field_description:sale_backorder.field_sale_order__id
+#: model:ir.model.fields,field_description:sale_backorder.field_sale_order_line__id
 #: model:ir.model.fields,field_description:sale_backorder.field_sobackorder_report_wizard__id
 msgid "ID"
 msgstr ""
@@ -85,6 +101,8 @@ msgid "Last Date Delivered"
 msgstr ""
 
 #. module: sale_backorder
+#: model:ir.model.fields,field_description:sale_backorder.field_sale_order____last_update
+#: model:ir.model.fields,field_description:sale_backorder.field_sale_order_line____last_update
 #: model:ir.model.fields,field_description:sale_backorder.field_sobackorder_report_wizard____last_update
 msgid "Last Modified on"
 msgstr ""
@@ -138,7 +156,7 @@ msgstr ""
 
 #. module: sale_backorder
 #: model:ir.model,name:sale_backorder.model_sale_order
-msgid "Sale Order"
+msgid "Sales Order"
 msgstr ""
 
 #. module: sale_backorder
@@ -147,7 +165,6 @@ msgid "Sales Order Line"
 msgstr ""
 
 #. module: sale_backorder
-#: model:ir.model.fields,field_description:sale_backorder.field_sale_order_line__uigd_qty
 #: model_terms:ir.ui.view,arch_db:sale_backorder.so_backorder_report
 msgid "UIGD Qty"
 msgstr ""
@@ -157,4 +174,9 @@ msgstr ""
 #: model:ir.model.fields,field_description:sale_backorder.field_sale_order_line__uigd_value
 #: model_terms:ir.ui.view,arch_db:sale_backorder.so_backorder_report
 msgid "UIGD Value"
+msgstr ""
+
+#. module: sale_backorder
+#: model:ir.model.fields,field_description:sale_backorder.field_sale_order_line__uigd_qty
+msgid "Uninvoiced Goods Delivered Qty"
 msgstr ""
