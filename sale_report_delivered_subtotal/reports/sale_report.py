@@ -13,8 +13,12 @@ class SaleReport(models.Model):
     def _select_additional_fields(self):
         res = super()._select_additional_fields()
         select_str_price = """
-            sum((l.price_subtotal / coalesce(nullif(l.product_uom_qty, 0), 1))
-                    * l.qty_delivered)
+            sum(
+                CASE WHEN l.price_subtotal <> 0
+                    THEN (l.price_subtotal / l.product_uom_qty)
+                    ELSE l.price_reduce
+                END
+                * l.qty_delivered)
         """
         select_str_weight = """
             sum(p.weight * l.qty_delivered / u.factor * u2.factor)
