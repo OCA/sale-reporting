@@ -14,10 +14,12 @@ class SaleReport(models.Model):
         if fields is None:
             fields = {}
         select_str_price = """ ,
-            sum((l.price_subtotal /
-                 coalesce(nullif(l.product_uom_qty, 0), 1)
-                ) * l.qty_delivered)
-            as price_subtotal_delivered
+        sum(
+            CASE WHEN l.price_subtotal <> 0
+                THEN (l.price_subtotal / l.product_uom_qty)
+                ELSE l.price_reduce
+            END
+            * l.qty_delivered) as price_subtotal_delivered
         """
         select_str_weight = """ ,
             sum(p.weight * l.qty_delivered /
