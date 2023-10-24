@@ -22,7 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [base_multicompany_reporting_currency](base_multicompany_reporting_currency/) | 15.0.1.0.1 |  | Adds the possibility to specify Multicompany Reporting Currency
-[product_sold_by_delivery_week](product_sold_by_delivery_week/) | 15.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Adds a field that graphically hints the weekly product sales
+[product_sold_by_delivery_week](product_sold_by_delivery_week/) | 15.0.1.0.1 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Adds a field that graphically hints the weekly product sales
 [sale_comment_template](sale_comment_template/) | 15.0.1.0.1 |  | Comments texts templates on Sale documents
 [sale_layout_category_hide_detail](sale_layout_category_hide_detail/) | 15.0.1.0.0 |  | Hide details for sections in sale orders and invoices for reports and customer portal
 [sale_multicompany_reporting_currency](sale_multicompany_reporting_currency/) | 15.0.1.0.2 | [![yankinmax](https://github.com/yankinmax.png?size=30px)](https://github.com/yankinmax) | Adds Amount in multicompany reporting currency to Sale Order
@@ -30,8 +30,8 @@ addon | version | maintainers | summary
 [sale_order_product_recommendation_product_sold_by_delivery_week](sale_order_product_recommendation_product_sold_by_delivery_week/) | 15.0.1.0.0 | [![chienandalu](https://github.com/chienandalu.png?size=30px)](https://github.com/chienandalu) | Adds the weekly sales field to the recommendation wizard
 [sale_order_report_customer_lead](sale_order_report_customer_lead/) | 15.0.1.0.1 | [![ivantodorovich](https://github.com/ivantodorovich.png?size=30px)](https://github.com/ivantodorovich) | Show the lead time on sale documents
 [sale_order_report_product_image](sale_order_report_product_image/) | 15.0.1.0.0 |  | Show product images on Sale documents
-[sale_report_delivered](sale_report_delivered/) | 15.0.1.0.0 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) | Sale Report Delivered
-[sale_report_delivered_brand](sale_report_delivered_brand/) | 15.0.1.0.0 | [![CarlosRoca13](https://github.com/CarlosRoca13.png?size=30px)](https://github.com/CarlosRoca13) | Sale Report Delivered Brand
+[sale_report_delivered](sale_report_delivered/) | 15.0.1.0.1 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) | Sale Report Delivered
+[sale_report_delivered_brand](sale_report_delivered_brand/) | 15.0.1.0.1 | [![CarlosRoca13](https://github.com/CarlosRoca13.png?size=30px)](https://github.com/CarlosRoca13) | Sale Report Delivered Brand
 [sale_report_delivered_elaboration](sale_report_delivered_elaboration/) | 15.0.1.0.0 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) | Sale Report Delivered Elaboration
 [sale_report_delivered_partner_priority](sale_report_delivered_partner_priority/) | 15.0.1.0.1 | [![CarlosRoca13](https://github.com/CarlosRoca13.png?size=30px)](https://github.com/CarlosRoca13) | Sale Report Delivered Partner Priority
 [sale_report_delivered_subtotal](sale_report_delivered_subtotal/) | 15.0.1.0.1 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) | Sale Report Delivered subtotal
