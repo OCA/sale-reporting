@@ -6,25 +6,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2023-12-06 17:34+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: sale_order_product_recommendation_product_sold_by_delivery_week
 #: model_terms:ir.ui.view,arch_db:sale_order_product_recommendation_product_sold_by_delivery_week.sale_order_recommendation_view_form
 msgid "<small>Weekly sales: </small>"
-msgstr ""
+msgstr "<small>Vendite settimanali: </small>"
 
 #. module: sale_order_product_recommendation_product_sold_by_delivery_week
 #: model:ir.model,name:sale_order_product_recommendation_product_sold_by_delivery_week.model_sale_order_recommendation_line
 msgid "Recommended product for current sale order"
-msgstr ""
+msgstr "Prodotto consigliato per questo ordine di vendita"
 
 #. module: sale_order_product_recommendation_product_sold_by_delivery_week
 #: model:ir.model.fields,field_description:sale_order_product_recommendation_product_sold_by_delivery_week.field_sale_order_recommendation_line__weekly_sold_delivered_shown
 msgid "Weekly Sold"
-msgstr ""
+msgstr "Venduto settimanale"
