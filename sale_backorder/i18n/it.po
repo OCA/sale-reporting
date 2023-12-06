@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-10-29 17:37+0000\n"
+"PO-Revision-Date: 2023-12-06 15:36+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -110,7 +110,7 @@ msgstr "Ultimo aggiornamento il"
 #. module: sale_backorder
 #: model_terms:ir.ui.view,arch_db:sale_backorder.so_backorder_report
 msgid "Order Reference"
-msgstr "Riferimento Ordine"
+msgstr "Riferimento ordine"
 
 #. module: sale_backorder
 #: model_terms:ir.ui.view,arch_db:sale_backorder.so_backorder_report
