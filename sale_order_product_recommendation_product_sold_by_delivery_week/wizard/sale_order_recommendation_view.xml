@@ -18,22 +18,27 @@
                     optional="show"
                     class="badge"
                 />
-            </xpath>
-            <xpath
-                expr="//field[@name='line_ids']/kanban//field[@name='units_included']"
-                position="after"
-            >
-                <field name="weekly_sold_delivered_shown" />
+                <field name="qty_available" optional="show" />
             </xpath>
             <xpath
                 expr="//field[@name='line_ids']/kanban//t[@t-name='kanban-box']//field[@name='sale_uom_id']/.."
                 position="after"
             >
                 <div>
+                    <small>Available: </small>
+                    <field name="qty_available" />
+                </div>
+                <div>
                     <small>Weekly sales: </small><field
                         name="weekly_sold_delivered_shown"
                     />
                 </div>
+            </xpath>
+            <xpath
+                expr="//field[@name='line_ids']/form//field[@name='product_id']"
+                position="after"
+            >
+                <field name="qty_available" optional="show" />
             </xpath>
         </field>
     </record>
