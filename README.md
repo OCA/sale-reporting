@@ -9,7 +9,7 @@
 
 # sale-reporting
 
-TODO: add repo description.
+Sales reports and dashboards
 
 <!-- /!\ do not modify below this line -->
 
