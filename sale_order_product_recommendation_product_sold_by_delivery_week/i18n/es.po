@@ -6,21 +6,52 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-19 12:19+0000\n"
-"PO-Revision-Date: 2023-09-03 13:40+0000\n"
-"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
+"POT-Creation-Date: 2023-12-15 09:23+0000\n"
+"PO-Revision-Date: 2023-12-15 09:23+0000\n"
+"Last-Translator: Jairo Llopis <jairo@moduon.team>\n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Poedit 3.4\n"
+
+#. module: sale_order_product_recommendation_product_sold_by_delivery_week
+#: model_terms:ir.ui.view,arch_db:sale_order_product_recommendation_product_sold_by_delivery_week.sale_order_recommendation_view_form
+msgid "<small>Available: </small>"
+msgstr "<small>Ventas semanales: </small>"
 
 #. module: sale_order_product_recommendation_product_sold_by_delivery_week
 #: model_terms:ir.ui.view,arch_db:sale_order_product_recommendation_product_sold_by_delivery_week.sale_order_recommendation_view_form
 msgid "<small>Weekly sales: </small>"
 msgstr "<small>Ventas semanales: </small>"
+
+#. module: sale_order_product_recommendation_product_sold_by_delivery_week
+#: model:ir.model.fields,help:sale_order_product_recommendation_product_sold_by_delivery_week.field_sale_order_recommendation_line__qty_available
+msgid ""
+"Current quantity of products.\n"
+"In a context with a single Stock Location, this includes goods stored at "
+"this Location, or any of its children.\n"
+"In a context with a single Warehouse, this includes goods stored in the "
+"Stock Location of this Warehouse, or any of its children.\n"
+"stored in the Stock Location of the Warehouse of this Shop, or any of its "
+"children.\n"
+"Otherwise, this includes goods stored in any Stock Location with 'internal' "
+"type."
+msgstr ""
+"Cantidad actual de los productos.\n"
+"En un contexto de una sola ubicación de Stock, esto incluye los bienes "
+"almacenados en esta ubicación, o cualquiera de sus hijas.\n"
+"En un contexto de un solo almacén, esto incluye los bienes almacenados en la "
+"ubicación de Stock de ese almacén, o cualquiera de sus hijas.\n"
+"En cualquier otro caso, esto incluye los bienes almacenados en cualquier "
+"ubicación de Stock de tipo 'Interna'."
+
+#. module: sale_order_product_recommendation_product_sold_by_delivery_week
+#: model:ir.model.fields,field_description:sale_order_product_recommendation_product_sold_by_delivery_week.field_sale_order_recommendation_line__qty_available
+msgid "Qty. On Hand"
+msgstr "A mano"
 
 #. module: sale_order_product_recommendation_product_sold_by_delivery_week
 #: model:ir.model,name:sale_order_product_recommendation_product_sold_by_delivery_week.model_sale_order_recommendation_line

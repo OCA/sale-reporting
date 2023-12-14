@@ -6,6 +6,9 @@ from odoo import api, fields, models
 class SaleOrderRecommendationLine(models.TransientModel):
     _inherit = "sale.order.recommendation.line"
 
+    qty_available = fields.Float(
+        "Qty. On Hand", related="product_id.qty_available", readonly=True
+    )
     weekly_sold_delivered_shown = fields.Char(
         string="Weekly Sold",
         compute="_compute_weekly_sold_delivered_shown",
