@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-12-06 17:34+0000\n"
+"PO-Revision-Date: 2023-12-19 15:33+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -19,7 +19,7 @@ msgstr ""
 #. module: sale_order_product_recommendation_product_sold_by_delivery_week
 #: model_terms:ir.ui.view,arch_db:sale_order_product_recommendation_product_sold_by_delivery_week.sale_order_recommendation_view_form
 msgid "<small>Available: </small>"
-msgstr ""
+msgstr "<small>Disponibile: </small>"
 
 #. module: sale_order_product_recommendation_product_sold_by_delivery_week
 #: model_terms:ir.ui.view,arch_db:sale_order_product_recommendation_product_sold_by_delivery_week.sale_order_recommendation_view_form
@@ -39,11 +39,18 @@ msgid ""
 "Otherwise, this includes goods stored in any Stock Location with 'internal' "
 "type."
 msgstr ""
+"Quantità attuale di prodotti.\n"
+"In un contesto con una sola ubicazione di magazzino, include beni stoccati "
+"in questa ubicazione o qualsiasi delle sue figlie.\n"
+"In un contesto con un solo magazzino, include beni stoccati nell'ubicazione "
+"di questo magazzino o una qualsiasi delle figlie.\n"
+"Stoccate nell'ubicazione di questo negozio, o qualsiasi delle sue figlie.\n"
+"Altrimenti, include beni stoccati in qualsiasi ubicazione di tipo 'interno'."
 
 #. module: sale_order_product_recommendation_product_sold_by_delivery_week
 #: model:ir.model.fields,field_description:sale_order_product_recommendation_product_sold_by_delivery_week.field_sale_order_recommendation_line__qty_available
 msgid "Qty. On Hand"
-msgstr ""
+msgstr "Q.tà disponibile"
 
 #. module: sale_order_product_recommendation_product_sold_by_delivery_week
 #: model:ir.model,name:sale_order_product_recommendation_product_sold_by_delivery_week.model_sale_order_recommendation_line
