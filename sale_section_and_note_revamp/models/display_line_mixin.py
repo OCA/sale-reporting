@@ -94,6 +94,29 @@ of sections and notes to any model in relation with a sale order line"""
             notes = result.filtered(lambda r: r.is_note())
             return result if with_notes else result - notes
 
+    def add_line(self, line, before=False):
+        """Add a line after or before the current line"""
+        self.ensure_one()
+        # Tie together previous line and next line of the line given in argument
+        if line.previous_line_id:
+            line.previous_line_id.next_line_id = line.next_line_id
+        if line.next_line_id:
+            line.next_line_id.previous_line_id = line.previous_line_id
+
+        # Insersion of the line given inbetween current line and previous/next line
+        if before:
+            if self.previous_line_id:
+                self.previous_line_id.next_line_id = line
+                line.previous_line_id = self.previous_line_id
+            self.previous_line_id = line
+            line.next_line_id = self
+        else:
+            if self.next_line_id:
+                self.next_line_id.previous_line_id = line
+                line.next_line_id = self.next_line_id
+            self.next_line_id = line
+            line.previous_line_id = self
+
     def prepare_section_or_note_values(self, order_line):
         """This method is intended to be used to `convert` a display line to
         the current model
@@ -109,7 +132,7 @@ of sections and notes to any model in relation with a sale order line"""
         """This method inject all related display lines to the right position
         for the inheriting model
 
-        See sale.order::compute_order_lines_dependency for further explanations
+        See sale.order::calc_order_lines_dependencies for further explanations
         """
         model_name = self._name
 
