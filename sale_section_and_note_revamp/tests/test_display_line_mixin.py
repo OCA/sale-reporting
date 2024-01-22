@@ -20,6 +20,11 @@ class TestDisplayLineMixin(TestDisplayLineMixinCommon):
         section = self.sol_product_order.get_section()
         self.assertEqual(section, self.sol_section_1)
 
+        # Taking the third line to ensure we execute twice the while loop
+        # We are expecting the first SOL to be a section
+        third_line = self.sale_order.order_line[2]
+        self.assertEqual(third_line.get_section(), self.sol_section_1)
+
     def test_04_get_note(self):
         note = self.sol_serv_deliver.get_note()
         self.assertEqual(note, self.sol_note_1)
@@ -105,3 +110,6 @@ class TestDisplayLineMixin(TestDisplayLineMixinCommon):
         self.assertEqual(penultimate_line.next_line_id, second_line)
         self.assertEqual(second_line.next_line_id, last_line)
         self.assertEqual(second_line.previous_line_id, penultimate_line)
+
+    def test_12_has_section(self):
+        self.assertTrue(self.sol_serv_deliver.has_section())
