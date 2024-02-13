@@ -36,7 +36,7 @@ addon | version | maintainers | summary
 [sale_report_delivered_partner_priority](sale_report_delivered_partner_priority/) | 15.0.1.0.1 | [![CarlosRoca13](https://github.com/CarlosRoca13.png?size=30px)](https://github.com/CarlosRoca13) | Sale Report Delivered Partner Priority
 [sale_report_delivered_subtotal](sale_report_delivered_subtotal/) | 15.0.1.0.1 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) | Sale Report Delivered subtotal
 [sale_report_delivered_volume](sale_report_delivered_volume/) | 15.0.1.0.0 |  | Sale Report Delivered Volume
-[sale_report_salesman](sale_report_salesman/) | 15.0.1.0.0 | [![carolina.fernandez](https://github.com/carolina.fernandez.png?size=30px)](https://github.com/carolina.fernandez) | Sale Report Salesman
+[sale_report_salesman](sale_report_salesman/) | 15.0.1.0.1 | [![carolina-fernandez](https://github.com/carolina-fernandez.png?size=30px)](https://github.com/carolina-fernandez) | Sale Report Salesman
 
 [//]: # (end addons)
 
