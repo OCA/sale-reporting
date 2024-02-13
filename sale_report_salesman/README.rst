@@ -73,13 +73,13 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-.. |maintainer-carolina.fernandez| image:: https://github.com/carolina.fernandez.png?size=40px
-    :target: https://github.com/carolina.fernandez
-    :alt: carolina.fernandez
+.. |maintainer-carolina-fernandez| image:: https://github.com/carolina-fernandez.png?size=40px
+    :target: https://github.com/carolina-fernandez
+    :alt: carolina-fernandez
 
 Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
-|maintainer-carolina.fernandez| 
+|maintainer-carolina-fernandez| 
 
 This module is part of the `OCA/sale-reporting <https://github.com/OCA/sale-reporting/tree/15.0/sale_report_salesman>`_ project on GitHub.
 
