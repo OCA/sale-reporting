@@ -10,7 +10,7 @@
     "data": ["views/menu_views.xml"],
     "depends": ["sale", "sales_team"],
     "installable": True,
-    "maintainers": ["carolina.fernandez"],
+    "maintainers": ["carolina-fernandez"],
     "auto_install": True,
     "uninstall_hook": "uninstall_hook",
 }
