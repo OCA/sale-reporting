@@ -7,20 +7,20 @@ msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-15 09:23+0000\n"
-"PO-Revision-Date: 2023-12-15 09:23+0000\n"
-"Last-Translator: Jairo Llopis <jairo@moduon.team>\n"
+"PO-Revision-Date: 2024-02-15 14:41+0000\n"
+"Last-Translator: Jairo Llopis <yajo.sk8@gmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: sale_order_product_recommendation_product_sold_by_delivery_week
 #: model_terms:ir.ui.view,arch_db:sale_order_product_recommendation_product_sold_by_delivery_week.sale_order_recommendation_view_form
 msgid "<small>Available: </small>"
-msgstr "<small>Ventas semanales: </small>"
+msgstr "<small>A mano: </small>"
 
 #. module: sale_order_product_recommendation_product_sold_by_delivery_week
 #: model_terms:ir.ui.view,arch_db:sale_order_product_recommendation_product_sold_by_delivery_week.sale_order_recommendation_view_form
