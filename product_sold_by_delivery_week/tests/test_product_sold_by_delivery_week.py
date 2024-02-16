@@ -1,6 +1,6 @@
 # Copyright 2021 Camptocamp SA
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl)
-from odoo.tests import TransactionCase
+from odoo.tests import TransactionCase, new_test_user
 
 
 class TestProductSoldByDeliveryWeek(TransactionCase):
@@ -25,8 +25,16 @@ class TestProductSoldByDeliveryWeek(TransactionCase):
                 "detailed_type": "service",
             }
         )
-        cls.product.weekly_sold_delivered = "Sold delivered"
-        cls.product_expense_product.weekly_sold_delivered = "Sold delivered service"
+        cls.product.weekly_sold_delivered = "000000"
+        cls.product_expense_product.weekly_sold_delivered = "000000"
+        # Tests should pass with basic sale and stock access rights
+        cls.env = cls.env(
+            user=new_test_user(
+                cls.env,
+                login="test_user",
+                groups="stock.group_stock_user,sales_team.group_sale_salesman",
+            )
+        )
         cls.order = cls.env["sale.order"].create(
             {
                 "partner_id": cls.partner.id,
@@ -55,30 +63,30 @@ class TestProductSoldByDeliveryWeek(TransactionCase):
         )
 
     def test_01_check_delivered_message_without_parameters(self):
-        """Test the return message deppending on the type of the product."""
+        """Test the return message depending on the type of the product."""
         self.assertEqual(self.order.order_line[0].weekly_sold_delivered_shown, "◌◌◌◌◌◌")
         self.assertEqual(self.order.order_line[1].weekly_sold_delivered_shown, False)
 
     def test_02_check_delivered_message_with_parameters(self):
         """Test the definition of config parameters."""
-        self.env["ir.config_parameter"].create(
-            {
-                "key": "product_sold_by_delivery_week.sold_char",
-                "value": "R",
-            }
-        )
-        self.env["ir.config_parameter"].create(
-            {
-                "key": "product_sold_by_delivery_week.not_sold_char",
-                "value": "M",
-            }
+        self.env["ir.config_parameter"].sudo().create(
+            [
+                {
+                    "key": "product_sold_by_delivery_week.sold_char",
+                    "value": "R",
+                },
+                {
+                    "key": "product_sold_by_delivery_week.not_sold_char",
+                    "value": "M",
+                },
+            ]
         )
         self.assertEqual(self.order.order_line[0].weekly_sold_delivered_shown, "MMMMMM")
         self.assertEqual(self.order.order_line[1].weekly_sold_delivered_shown, False)
 
     def test_03_sale_stock_delivery_partial(self):
         """Test a SO with a product on delivery."""
-        # intial order
+        # initial order
         self.order.action_confirm()
         self.assertTrue(
             self.order.picking_ids,
@@ -89,4 +97,5 @@ class TestProductSoldByDeliveryWeek(TransactionCase):
         pick.button_validate()
         for line in pick.move_ids:
             line._action_done()
-            self.assertEqual(line.product_id.weekly_sold_delivered, "Sold delivered")
+            self.assertEqual(line.product_id.weekly_sold_delivered, "000001")
+            self.assertEqual(line.product_id.weekly_sold_delivered_shown, "◌◌◌◌◌●")
