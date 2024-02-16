@@ -1,4 +1,4 @@
-Once configured, hints will apperar as an optional column in sale order
+Once configured, hints will appear as an optional column in sale order
 lines or in products tree.
 
 In the general products view, general sales info is shown. Meanwhile, in the

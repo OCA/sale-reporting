@@ -21,5 +21,7 @@ class StockMove(models.Model):
         for product in products.filtered(
             lambda x: x.weekly_sold_delivered and x.weekly_sold_delivered[-1:] == "0"
         ):
-            product.weekly_sold_delivered = product.weekly_sold_delivered[:-1] + "1"
+            product.sudo().weekly_sold_delivered = (
+                product.weekly_sold_delivered[:-1] + "1"
+            )
         return moves_todo
