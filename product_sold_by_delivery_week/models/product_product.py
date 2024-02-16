@@ -36,9 +36,9 @@ class ProductProduct(models.Model):
         """This field is meant to be used only for display purposes so we can use custom
         characters show the sales stream. We want to keep the stored one as base 2
         string so we can perform bitwise operations easily"""
-        not_service_products = self.filtered(lambda x: x.type != "service")
-        (self - not_service_products).weekly_sold_delivered_shown = False
-        for product in self.filtered(lambda x: x.type != "service"):
+        services = self.filtered(lambda x: x.type == "service")
+        services.weekly_sold_delivered_shown = False
+        for product in self - services:
             product.weekly_sold_delivered_shown = self._format_weekly_string(
                 product.weekly_sold_delivered
             )

@@ -4,3 +4,5 @@
   * Carlos Dauden
   * César A. Sánchez
   * Luis D. Lafaurie
+
+* Jairo Llopis ([Moduon](https://www.moduon.team/))
