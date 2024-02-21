@@ -10,7 +10,7 @@ from odoo.addons.sale.tests.common import SaleCommon
 class TestSaleLayoutCategoryHideDetail(SaleCommon):
     @classmethod
     def setUpClass(cls):
-        super(TestSaleLayoutCategoryHideDetail, cls).setUpClass()
+        super().setUpClass()
         cls.product = cls.env["product.product"].create(
             {"name": "Producto test", "type": "consu", "invoice_policy": "order"}
         )

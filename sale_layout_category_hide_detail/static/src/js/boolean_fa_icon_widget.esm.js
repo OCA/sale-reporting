@@ -6,7 +6,7 @@
 
 const {useState} = owl;
 import {BooleanField} from "@web/views/fields/boolean/boolean_field";
-import {_lt} from "@web/core/l10n/translation";
+import {_lt, _t} from "@web/core/l10n/translation";
 import {registry} from "@web/core/registry";
 
 const iconTrue = "fa-check-square-o";
@@ -17,9 +17,11 @@ const tooltipFalse = "Switch to show";
 export class BooleanFaIconWidget extends BooleanField {
     setup() {
         super.setup();
+        const value = this.props.record.data[this.props.name];
         this.state = useState({
-            fa_class: this.faIconClass(this.props.value),
-            text_tooltip: this.textTooltip(this.props.value),
+            value: value,
+            fa_class: this.faIconClass(value),
+            text_tooltip: this.textTooltip(value),
         });
     }
     // --------------------------------------------------------------------------
@@ -66,7 +68,7 @@ export class BooleanFaIconWidget extends BooleanField {
      * and allow to edit inline without the need of focus
      */
     get isReadonly() {
-        return this.props.record.isReadonly(this.props.name);
+        return this.props.record._isReadonly(this.props.name);
     }
     /**
      * @returns {Boolean} allow
@@ -95,16 +97,14 @@ export class BooleanFaIconWidget extends BooleanField {
         if (this.isReadonly || !this.isAllowEdit()) {
             return;
         }
-        const newValue = !this.props.value;
-        this.props.update(newValue);
+        const newValue = !this.state.value;
+        this.state.value = newValue;
+        this.props.record.update({[this.props.name]: newValue});
         this.state.fa_class = this.faIconClass(newValue);
         this.state.text_tooltip = this.textTooltip(newValue);
     }
 }
-
-BooleanFaIconWidget.template = "sale_layout_category.BooleanFaIconWidget";
-BooleanFaIconWidget.displayName = _lt("Toggle");
-
+BooleanFaIconWidget.template = "sale_layout_category_hide_detail.BooleanFaIconWidget";
 BooleanFaIconWidget.defaultProps = {
     fa_icons: {
         icon_true: "fa-check-square-o",
@@ -124,12 +124,16 @@ BooleanFaIconWidget.props = {
     allow: {type: Boolean, optional: true},
 };
 
-// Extract props from the attributes
-BooleanFaIconWidget.extractProps = ({attrs}) => {
-    return {
-        fa_icons: attrs.options.fa_icons,
-        terminology: attrs.options.terminology,
-    };
+export const booleanFaIconWidget = {
+    component: BooleanFaIconWidget,
+    displayName: _t("Toggle"),
+    supportedTypes: ["boolean"],
+    extractProps: ({attrs}) => {
+        return {
+            fa_icons: JSON.parse(attrs.fa_icons),
+            terminology: JSON.parse(attrs.terminology),
+        };
+    },
 };
 
-registry.category("fields").add("boolean_fa_icon", BooleanFaIconWidget);
+registry.category("fields").add("boolean_fa_icon", booleanFaIconWidget);
