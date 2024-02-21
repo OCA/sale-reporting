@@ -4,3 +4,4 @@
   - Víctor Martínez
   - Yadier Quesada
 - Denis Roussel \<<denis.roussel@acsone.eu>\>
+- Jeroen Evens \<<jeroen.evens@dynapps.be>\>

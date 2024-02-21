@@ -7,9 +7,9 @@
 import {SectionAndNoteListRenderer} from "@account/components/section_and_note_fields_backend/section_and_note_fields_backend";
 import {patch} from "@web/core/utils/patch";
 
-patch(SectionAndNoteListRenderer.prototype, "new_widgets_buttons_patch", {
+patch(SectionAndNoteListRenderer.prototype, {
     getSectionColumns(columns) {
-        var sectionCols = this._super.apply(this, arguments);
+        var sectionCols = super.getSectionColumns(columns);
         const widgetCols = columns.filter((col) => col.widget === "boolean_fa_icon");
         const sectionWidget = widgetCols.map((col) => {
             return {...col, colspan: 1};
@@ -22,8 +22,8 @@ patch(SectionAndNoteListRenderer.prototype, "new_widgets_buttons_patch", {
         return sectionCols.concat(sectionWidget);
     },
 
-    getCellClass(column) {
-        var classNames = this._super.apply(this, arguments);
+    getCellClass(column, record) {
+        let classNames = super.getCellClass(column, record);
         if (column.widget === "boolean_fa_icon") {
             classNames = classNames.replace("o_hidden", "");
         }
@@ -34,7 +34,7 @@ patch(SectionAndNoteListRenderer.prototype, "new_widgets_buttons_patch", {
         if (column.widget === "boolean_fa_icon") {
             column.hasLabel = false;
         }
-        return this._super.apply(this, arguments);
+        return super.getColumnClass(column);
     },
     /**
      * @override method from ListRenderer.isSortable
@@ -44,7 +44,7 @@ patch(SectionAndNoteListRenderer.prototype, "new_widgets_buttons_patch", {
         if (column.widget === "boolean_fa_icon") {
             return false;
         }
-        return this._super.apply(this, arguments);
+        return super.isSortable(column);
     },
     /**
      * @override method from ListRenderer.calculateColumnWidth
@@ -54,6 +54,6 @@ patch(SectionAndNoteListRenderer.prototype, "new_widgets_buttons_patch", {
         if (column.widget === "boolean_fa_icon") {
             return {type: "absolute", value: "20px"};
         }
-        return this._super.apply(this, arguments);
+        return super.calculateColumnWidth(column);
     },
 });
