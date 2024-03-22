@@ -28,10 +28,10 @@ Sale layout category hide detail
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module allows you to check/uncheck the new 'Show details' and
-'Show subtotal' flags in *Sale order section lines* and
-*Customer invoice section lines* if you want to show or hide their
-lines or their subtotals in the PDF report and in the website.
+This module allows you to check/uncheck the new 'Show details' and 'Show
+subtotal' flags in *Sale order section lines* and *Customer invoice
+section lines* if you want to show or hide their lines or their
+subtotals in the PDF report and in the website.
 
 **Table of contents**
 
@@ -43,56 +43,47 @@ Usage
 
 To use this module, you need to:
 
-#. Go to *Sales -> Orders -> Quotations* and create a new *Quotation*.
-#. In *Order lines* tab add a section line.
-#. Add some product lines.
-#. Add another section line, but this time, click on the *plus-circle*
-   icon |plus-circle-icon| on your right. That icon will be replaced by
-   *minus-circle* icon |minus-circle-icon|. That mean *Show subtotal* field is
-   set to False.
-#. Add some product lines.
-#. Add another section line and click on the *eye* icon |eye-icon| on your
-   right. That icon will be replaced by *eye-slash* icon |eye-slash-icon|.
-   That mean *Show details* field is set to False.
-#. Add some product lines.
-#. Print a *Quotation / Order* report for this quotation.
+1. Go to *Sales -> Orders -> Quotations* and create a new *Quotation*.
+2. In *Order lines* tab add a section line.
+3. Add some product lines.
+4. Add another section line, but this time, click on the *plus-circle*
+   icon |plus-circle icon| on your right. That icon will be replaced by
+   *minus-circle* icon |minus-circle icon|. That mean *Show subtotal*
+   field is set to False.
+5. Add some product lines.
+6. Add another section line and click on the *eye* icon |image1| on your
+   right. That icon will be replaced by *eye-slash* icon |image2|. That
+   mean *Show details* field is set to False.
+7. Add some product lines.
+8. Print a *Quotation / Order* report for this quotation.
 
-After following the steps described above, in the report you will see the
-following:
+After following the steps described above, in the report you will see
+the following:
 
-  * The first 'line section' and its product order lines will be shown in
-    a normal way.
-  * The second 'line section' and its product order lines will be shown in
-    a normal way, but the subtotal won't be shown. That is because in this
-    section line *Show subtotal* field was set to False.
-  * The third 'line section' will show the name on the left and the
-    subtotal on the right. Besides, its product order lines won't be shown.
-    That is because in this line *Show details* field was set to False.
+   -  The first 'line section' and its product order lines will be shown
+      in a normal way.
+   -  The second 'line section' and its product order lines will be
+      shown in a normal way, but the subtotal won't be shown. That is
+      because in this section line *Show subtotal* field was set to
+      False.
+   -  The third 'line section' will show the name on the left and the
+      subtotal on the right. Besides, its product order lines won't be
+      shown. That is because in this line *Show details* field was set
+      to False.
 
 The behavior described before is the same for Quotations and Invoices.
 
-.. |eye-icon| image:: https://raw.githubusercontent.com/OCA/sale-reporting/14.0/sale_layout_category_hide_detail/static/description/readme-icons/eye.png
-   :alt: plus-circle icon
-   :width: 12 px
-
-.. |eye-slash-icon| image:: https://raw.githubusercontent.com/OCA/sale-reporting/14.0/sale_layout_category_hide_detail/static/description/readme-icons/eye-slash.png
-   :alt: minus-circle icon
-   :width: 12 px
-
-.. |plus-circle-icon| image:: https://raw.githubusercontent.com/OCA/sale-reporting/14.0/sale_layout_category_hide_detail/static/description/readme-icons/plus-circle.png
-   :alt: plus-circle icon
-   :width: 12 px
-
-.. |minus-circle-icon| image:: https://raw.githubusercontent.com/OCA/sale-reporting/14.0/sale_layout_category_hide_detail/static/description/readme-icons/minus-circle.png
-   :alt: minus-circle icon
-   :width: 12 px
+.. |plus-circle icon| image:: https://raw.githubusercontent.com/OCA/sale-reporting/14.0/sale_layout_category_hide_detail/static/description/readme-icons/plus-circle.png
+.. |minus-circle icon| image:: https://raw.githubusercontent.com/OCA/sale-reporting/14.0/sale_layout_category_hide_detail/static/description/readme-icons/minus-circle.png
+.. |image1| image:: https://raw.githubusercontent.com/OCA/sale-reporting/14.0/sale_layout_category_hide_detail/static/description/readme-icons/eye.png
+.. |image2| image:: https://raw.githubusercontent.com/OCA/sale-reporting/14.0/sale_layout_category_hide_detail/static/description/readme-icons/eye-slash.png
 
 Known issues / Roadmap
 ======================
 
-* The `boolean_fa_icon` widget has not been extracted to a module into OCA/web
-  because until now this widget has not been needed for anything else, but it's
-  good that in the future that would be done.
+-  The boolean_fa_icon widget has not been extracted to a module into
+   OCA/web because until now this widget has not been needed for
+   anything else, but it's good that in the future that would be done.
 
 Bug Tracker
 ===========
@@ -108,23 +99,23 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Tecnativa
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* `Tecnativa <https://www.tecnativa.com>`_:
+-  `Tecnativa <https://www.tecnativa.com>`__:
 
-  * Ernesto Tejeda
-  * Pedro M. Baeza
-  * Víctor Martínez
+   -  Ernesto Tejeda
+   -  Pedro M. Baeza
+   -  Víctor Martínez
 
-* Denis Roussel <denis.roussel@acsone.eu>
+-  Denis Roussel <denis.roussel@acsone.eu>
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 

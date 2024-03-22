@@ -39,8 +39,8 @@ Adds subtotal price based on the delivered quantities field to the
 Usage
 =====
 
-Go to *Sales > Reporting > Sales from deliveries* and you'll find the new *Total Price
-Delivered* measure.
+Go to *Sales > Reporting > Sales from deliveries* and you'll find the
+new *Total Price Delivered* measure.
 
 Bug Tracker
 ===========
@@ -56,20 +56,20 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Tecnativa
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* `Tecnativa <https://www.tecnativa.com>`_:
+-  `Tecnativa <https://www.tecnativa.com>`__:
 
-    * Sergio Teruel
-    * Carlos Dauden
+      -  Sergio Teruel
+      -  Carlos Dauden
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 

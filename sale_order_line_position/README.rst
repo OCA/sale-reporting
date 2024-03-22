@@ -28,18 +28,20 @@ Sale 0rder Line Position
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module adds an auto computed position on sale order line.
-This position number is also printed on the report.
+This module adds an auto computed position on sale order line. This
+position number is also printed on the report.
 
-The position can be used to keep track of each line during
-the delivery and invoicing of the order with the customer.
-This is why there are related modules on `account-invoice-reporting`
-and `stock-logisics-reporting`.
+The position can be used to keep track of each line during the delivery
+and invoicing of the order with the customer. This is why there are
+related modules on account-invoice-reporting and
+stock-logisics-reporting.
 
-The positions are recomputed when the sale order is printed, sent and set to confirm.
+The positions are recomputed when the sale order is printed, sent and
+set to confirm.
 
-The positions are not changed on the line after the order has been confirmed, but if
-new line are added they will receive a position number.
+The positions are not changed on the line after the order has been
+confirmed, but if new line are added they will receive a position
+number.
 
 An action is also availabled to manually recompute the positions.
 
@@ -51,20 +53,20 @@ An action is also availabled to manually recompute the positions.
 Known issues / Roadmap
 ======================
 
-The way the positions are computed on the create of `sale.order.line`
+The way the positions are computed on the create of sale.order.line
 record could lead to a performance issue. There is a few improvements
 that have been suggested:
 
-Remove it and handle the computation on the write and/or create
-method of the `sale.order`.
+Remove it and handle the computation on the write and/or create method
+of the sale.order.
 
 Have a context key to enable/disable the recomputation.
 
 Do not set any value in the position fields before the sale order lines
-are locked (in the current implementation, before sending).
-And add a recompute button in the UI.
+are locked (in the current implementation, before sending). And add a
+recompute button in the UI.
 
-Set the position values with an SQL query using a `TRIGGER`.
+Set the position values with an SQL query using a TRIGGER.
 
 Bug Tracker
 ===========
@@ -80,24 +82,25 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Camptocamp
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Thierry Ducrest <thierry.ducrest@camptocamp.com>
-* `Trobz <https://trobz.com>`_:
-* Nguyen Hoang Hiep <hiepnh@trobz.com>
+-  Thierry Ducrest <thierry.ducrest@camptocamp.com>
+-  `Trobz <https://trobz.com>`__:
+-  Nguyen Hoang Hiep <hiepnh@trobz.com>
 
 Other credits
-~~~~~~~~~~~~~
+-------------
 
-The migration of this module from 13.0 to 14.0 was financially supported by Camptocamp
+The migration of this module from 13.0 to 14.0 was financially supported
+by Camptocamp
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 

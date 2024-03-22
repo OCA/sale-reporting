@@ -49,19 +49,19 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Camptocamp
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* `Camptocamp <https://www.camptocamp.com>`_
+-  `Camptocamp <https://www.camptocamp.com>`__
 
-  * Iván Todorovich <ivan.todorovich@camptocamp.com>
+   -  Iván Todorovich <ivan.todorovich@camptocamp.com>
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 

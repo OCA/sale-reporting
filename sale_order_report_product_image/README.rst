@@ -28,8 +28,8 @@ Sale Order Report Product Image
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module allows to show product images in sales order report. If product
-does not have its image, a generic icon will be displayed.
+This module allows to show product images in sales order report. If
+product does not have its image, a generic icon will be displayed.
 
 **Table of contents**
 
@@ -39,13 +39,14 @@ does not have its image, a generic icon will be displayed.
 Installation
 ============
 
-You need to install *sale_management* module for accessing the needed menus.
+You need to install *sale_management* module for accessing the needed
+menus.
 
 Usage
 =====
 
-* Go to **Sales > Orders** and print a quotation or sales order. You must see
-  the product images in report now.
+-  Go to **Sales > Orders** and print a quotation or sales order. You
+   must see the product images in report now.
 
 Bug Tracker
 ===========
@@ -61,27 +62,27 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Tecnativa
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* `Tecnativa <https://www.tecnativa.com>`_:
+-  `Tecnativa <https://www.tecnativa.com>`__:
 
-  * Vicent Cubells <vicent.cubells@tecnativa.com>
+   -  Vicent Cubells <vicent.cubells@tecnativa.com>
 
-* `DynApps <https://www.dynapps.be>`_:
+-  `DynApps <https://www.dynapps.be>`__:
 
-  * Raf Ven <raf.ven@dynapps.be>
+   -  Raf Ven <raf.ven@dynapps.be>
 
-* `Dinamiche Aziendali srl <https://www.dinamicheaziendali.it>`_:
+-  `Dinamiche Aziendali srl <https://www.dinamicheaziendali.it>`__:
 
-  * Giuseppe Borruso <gborruso@dinamicheaziendali.it>
+   -  Giuseppe Borruso <gborruso@dinamicheaziendali.it>
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
