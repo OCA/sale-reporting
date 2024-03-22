@@ -30,8 +30,8 @@ Sale Order Invoice Date
 
 Display the invoice date on Sales Order analysis reports.
 
-The invoice date is considered to be the latest invoice date linked to
-fully invoiced sales.
+The invoice date is considered to be the latest invoice date linked to fully
+invoiced sales.
 
 **Table of contents**
 
@@ -52,19 +52,19 @@ Credits
 =======
 
 Authors
--------
+~~~~~~~
 
 * Camptocamp
 
 Contributors
-------------
+~~~~~~~~~~~~
 
--  `Camptocamp <https://www.camptocamp.com>`__
+* `Camptocamp <https://www.camptocamp.com>`_
 
-   -  Iván Todorovich <ivan.todorovich@camptocamp.com>
+  * Iván Todorovich <ivan.todorovich@camptocamp.com>
 
 Maintainers
------------
+~~~~~~~~~~~
 
 This module is maintained by the OCA.
 

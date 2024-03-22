@@ -38,8 +38,8 @@ Adds product brand on the sale report delivered.
 Usage
 =====
 
-Go to *Sales > Reporting > Sale from deliveries* and you'll be able to
-search by product brand.
+Go to *Sales > Reporting > Sale from deliveries* and you'll be able to search by
+product brand.
 
 Bug Tracker
 ===========
@@ -55,20 +55,20 @@ Credits
 =======
 
 Authors
--------
+~~~~~~~
 
 * Tecnativa
 
 Contributors
-------------
+~~~~~~~~~~~~
 
--  `Tecnativa <https://www.tecnativa.com>`__:
+* `Tecnativa <https://www.tecnativa.com>`_:
 
-      -  Carlos Roca
-      -  Víctor Martínez
+    * Carlos Roca
+    * Víctor Martínez
 
 Maintainers
------------
+~~~~~~~~~~~
 
 This module is maintained by the OCA.
 

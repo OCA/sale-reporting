@@ -28,19 +28,19 @@ Sale Comments
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-Adds comments on sales orders. The comments can be loaded from
-templates.
+Adds comments on sales orders.
+The comments can be loaded from templates.
 
 Adds comments on
 
-1. sales orders:
+#. sales orders:
 
    The comments can be loaded from templates.
 
    Two positions are available for the comments:
 
-   -  above sale order lines
-   -  below sale order lines
+   - above sale order lines
+   - below sale order lines
 
 **Table of contents**
 
@@ -51,8 +51,8 @@ Installation
 ============
 
 To install this module, you need to have the module
-account_invoice_comment_template, available in
-`OCA/account-invoice-reporting <https://github.com/OCA/account-invoice-reporting>`__.
+`account_invoice_comment_template`, available in `OCA/account-invoice-reporting
+<https://github.com/OCA/account-invoice-reporting>`_.
 
 Bug Tracker
 ===========
@@ -68,34 +68,32 @@ Credits
 =======
 
 Authors
--------
+~~~~~~~
 
 * Camptocamp
 * Tecnativa
 
 Contributors
-------------
+~~~~~~~~~~~~
 
--  Nicolas Bessi <nicolas.bessi@camptocamp.com>
--  Yannick Vaucher <yannick.vaucher@camptocamp.com>
--  Simone Rubino <simone.rubino@agilebg.com>
--  Xavier Jimenez <xavier.jimenez@qubiq.es>
--  `Tecnativa <https://www.tecnativa.com>`__:
+* Nicolas Bessi <nicolas.bessi@camptocamp.com>
+* Yannick Vaucher <yannick.vaucher@camptocamp.com>
+* Simone Rubino <simone.rubino@agilebg.com>
+* Xavier Jimenez <xavier.jimenez@qubiq.es>
+* `Tecnativa <https://www.tecnativa.com>`_:
 
-   -  Pedro M. Baeza
-   -  Vicent Cubells
-   -  Vicent Martínez
+  * Pedro M. Baeza
+  * Vicent Cubells
+  * Vicent Martínez
+* `DynApps <https://www.dynapps.be>`_:
 
--  `DynApps <https://www.dynapps.be>`__:
-
-   -  Raf Ven <raf.ven@dynapps.be>
-
--  `ForgeFlow <https://www.forgeflow.com>`__:
--  Miquel Raïch <miquel.raich@forgeflow.com>
--  Pierre Verkest <pierreverkest84@gmail.com>
+  * Raf Ven <raf.ven@dynapps.be>
+* `ForgeFlow <https://www.forgeflow.com>`_:
+* Miquel Raïch <miquel.raich@forgeflow.com>
+* Pierre Verkest <pierreverkest84@gmail.com>
 
 Maintainers
------------
+~~~~~~~~~~~
 
 This module is maintained by the OCA.
 

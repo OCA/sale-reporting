@@ -54,19 +54,19 @@ Credits
 =======
 
 Authors
--------
+~~~~~~~
 
 * Apulia Software
 * Agile Business Group
 
 Contributors
-------------
+~~~~~~~~~~~~
 
--  Andrea Cometa <a.cometa@apuliasoftware.it>
--  Simone Rubino <simone.rubino@agilebg.com>
+* Andrea Cometa <a.cometa@apuliasoftware.it>
+* Simone Rubino <simone.rubino@agilebg.com>
 
 Maintainers
------------
+~~~~~~~~~~~
 
 This module is maintained by the OCA.
 

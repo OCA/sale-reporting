@@ -28,10 +28,9 @@ Sale Backorder Report
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module adds the ability to view UIGD and Backordered products on
-Sales Oders. The quantity and the value of both UIGD and Backordered
-products is computed for sales order lines and then aggregated for
-display on the parent sales order.
+This module adds the ability to view UIGD and Backordered products on Sales Oders.
+The quantity and the value of both UIGD and Backordered products is computed for
+sales order lines and then aggregated for display on the parent sales order.
 
 **Table of contents**
 
@@ -41,11 +40,10 @@ display on the parent sales order.
 Usage
 =====
 
--  Go to Sales > Orders > SO Backorders. This will display a tree view
-   of all sale order lines with their Un-Invoiced Goods Delivered (UIGD)
-   and Backorder information as well as the last date delivered and the
-   last date billed.
--  Use the Backorders report menu to print a report.
+* Go to Sales > Orders > SO Backorders. This will display a tree view
+  of all sale order lines with their Un-Invoiced Goods Delivered (UIGD) and
+  Backorder information as well as the last date delivered and the last date billed.
+* Use the Backorders report menu to print a report.
 
 Bug Tracker
 ===========
@@ -61,25 +59,25 @@ Credits
 =======
 
 Authors
--------
+~~~~~~~
 
 * Open Source Integrators
 
 Contributors
-------------
+~~~~~~~~~~~~
 
--  Balaji Kannan <bkannan@opensourceintegrators.com>
--  Sandip Mangukiya <smangukiya@opensourceintegrators.com>
--  Serpent Consulting Services Pvt. Ltd. <support@serpentcs.com>
--  Freni Patel <fpatel@opensourceintegrators.com>
+* Balaji Kannan <bkannan@opensourceintegrators.com>
+* Sandip Mangukiya <smangukiya@opensourceintegrators.com>
+* Serpent Consulting Services Pvt. Ltd. <support@serpentcs.com>
+* Freni Patel <fpatel@opensourceintegrators.com>
 
 Other credits
--------------
+~~~~~~~~~~~~~
 
--  Open Source Integrators <https://www.opensourceintegrators.com>
+* Open Source Integrators <https://www.opensourceintegrators.com>
 
 Maintainers
------------
+~~~~~~~~~~~
 
 This module is maintained by the OCA.
 

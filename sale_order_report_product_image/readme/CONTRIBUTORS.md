@@ -1,6 +1,0 @@
-- [Tecnativa](https://www.tecnativa.com):
-  - Vicent Cubells \<<vicent.cubells@tecnativa.com>\>
-- [DynApps](https://www.dynapps.be):
-  - Raf Ven \<<raf.ven@dynapps.be>\>
-- [Dinamiche Aziendali srl](https://www.dinamicheaziendali.it):
-  - Giuseppe Borruso \<<gborruso@dinamicheaziendali.it>\>

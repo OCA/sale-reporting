@@ -28,8 +28,7 @@ Outgoing Product In Sales
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module adds a menu item to generate a view showing all products to
-deliver.
+This module adds a menu item to generate a view showing all products to deliver.
 
 **Table of contents**
 
@@ -39,8 +38,7 @@ deliver.
 Usage
 =====
 
-Go to Sale/ Reporting / Outgoing Products press on the button and the
-report will be generated.
+Go to Sale/ Reporting / Outgoing Products press on the button and the report will be generated.
 
 Bug Tracker
 ===========
@@ -56,19 +54,19 @@ Credits
 =======
 
 Authors
--------
+~~~~~~~
 
 * Jarsa
 
 Contributors
-------------
+~~~~~~~~~~~~
 
--  `Jarsa Sistemas, S.A. de C.V. <http://www.jarsa.com.mx>`__:
+* `Jarsa Sistemas, S.A. de C.V. <http://www.jarsa.com.mx>`_:
 
-   -  Alan Ramos <alan.ramos@jarsa.com.mx>
+  * Alan Ramos <alan.ramos@jarsa.com.mx>
 
 Maintainers
------------
+~~~~~~~~~~~
 
 This module is maintained by the OCA.
 

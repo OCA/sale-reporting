@@ -39,8 +39,8 @@ Adds subtotal price based on the delivered quantities field to the
 Usage
 =====
 
-Go to *Sales > Reporting > Sales* and you'll find *Subtotal Delivered*
-and *Gross Weight Delivered* measures.
+Go to *Sales > Reporting > Sales* and you'll find *Subtotal Delivered* and *Gross Weight
+Delivered* measures.
 
 Bug Tracker
 ===========
@@ -56,21 +56,21 @@ Credits
 =======
 
 Authors
--------
+~~~~~~~
 
 * Tecnativa
 
 Contributors
-------------
+~~~~~~~~~~~~
 
--  `Tecnativa <https://www.tecnativa.com>`__:
+* `Tecnativa <https://www.tecnativa.com>`_:
 
-      -  Sergio Teruel
-      -  David Vidal
-      -  Alexandre Díaz
+    * Sergio Teruel
+    * David Vidal
+    * Alexandre Díaz
 
 Maintainers
------------
+~~~~~~~~~~~
 
 This module is maintained by the OCA.
 

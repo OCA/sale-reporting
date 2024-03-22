@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -369,17 +370,15 @@ ul.auto-toc {
 !! source digest: sha256:848ff52a51a14011d396fa71e4f04ecfb6c2d62a81c04a985488f4e188c31885
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 <p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/licence-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/sale-reporting/tree/14.0/sale_order_line_position"><img alt="OCA/sale-reporting" src="https://img.shields.io/badge/github-OCA%2Fsale--reporting-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/sale-reporting-14-0/sale-reporting-14-0-sale_order_line_position"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/sale-reporting&amp;target_branch=14.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
-<p>This module adds an auto computed position on sale order line. This
-position number is also printed on the report.</p>
-<p>The position can be used to keep track of each line during the delivery
-and invoicing of the order with the customer. This is why there are
-related modules on account-invoice-reporting and
-stock-logisics-reporting.</p>
-<p>The positions are recomputed when the sale order is printed, sent and
-set to confirm.</p>
-<p>The positions are not changed on the line after the order has been
-confirmed, but if new line are added they will receive a position
-number.</p>
+<p>This module adds an auto computed position on sale order line.
+This position number is also printed on the report.</p>
+<p>The position can be used to keep track of each line during
+the delivery and invoicing of the order with the customer.
+This is why there are related modules on <cite>account-invoice-reporting</cite>
+and <cite>stock-logisics-reporting</cite>.</p>
+<p>The positions are recomputed when the sale order is printed, sent and set to confirm.</p>
+<p>The positions are not changed on the line after the order has been confirmed, but if
+new line are added they will receive a position number.</p>
 <p>An action is also availabled to manually recompute the positions.</p>
 <p><strong>Table of contents</strong></p>
 <div class="contents local topic" id="contents">
@@ -397,16 +396,16 @@ number.</p>
 </div>
 <div class="section" id="known-issues-roadmap">
 <h1><a class="toc-backref" href="#toc-entry-1">Known issues / Roadmap</a></h1>
-<p>The way the positions are computed on the create of sale.order.line
+<p>The way the positions are computed on the create of <cite>sale.order.line</cite>
 record could lead to a performance issue. There is a few improvements
 that have been suggested:</p>
-<p>Remove it and handle the computation on the write and/or create method
-of the sale.order.</p>
+<p>Remove it and handle the computation on the write and/or create
+method of the <cite>sale.order</cite>.</p>
 <p>Have a context key to enable/disable the recomputation.</p>
 <p>Do not set any value in the position fields before the sale order lines
-are locked (in the current implementation, before sending). And add a
-recompute button in the UI.</p>
-<p>Set the position values with an SQL query using a TRIGGER.</p>
+are locked (in the current implementation, before sending).
+And add a recompute button in the UI.</p>
+<p>Set the position values with an SQL query using a <cite>TRIGGER</cite>.</p>
 </div>
 <div class="section" id="bug-tracker">
 <h1><a class="toc-backref" href="#toc-entry-2">Bug Tracker</a></h1>
@@ -434,8 +433,7 @@ If you spotted it first, help us to smash it by providing a detailed and welcome
 </div>
 <div class="section" id="other-credits">
 <h2><a class="toc-backref" href="#toc-entry-6">Other credits</a></h2>
-<p>The migration of this module from 13.0 to 14.0 was financially supported
-by Camptocamp</p>
+<p>The migration of this module from 13.0 to 14.0 was financially supported by Camptocamp</p>
 </div>
 <div class="section" id="maintainers">
 <h2><a class="toc-backref" href="#toc-entry-7">Maintainers</a></h2>
