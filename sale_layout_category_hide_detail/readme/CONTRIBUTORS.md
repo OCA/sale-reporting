@@ -1,0 +1,7 @@
+- [Tecnativa](https://www.tecnativa.com):
+  - Ernesto Tejeda
+  - Pedro M. Baeza
+  - Víctor Martínez
+  - Yadier Quesada
+- Denis Roussel \<<denis.roussel@acsone.eu>\>
+- Jeroen Evens \<<jeroen.evens@dynapps.be>\>
