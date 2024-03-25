@@ -4,7 +4,7 @@
 {
     "name": "Product weekly sales hint",
     "summary": "Adds a field that graphically hints the weekly product sales",
-    "version": "15.0.1.0.1",
+    "version": "15.0.1.0.2",
     "development_status": "Beta",
     "category": "Sale",
     "website": "https://github.com/OCA/sale-reporting",
