@@ -85,7 +85,7 @@
             />
       </xpath>
       <xpath
-            expr="//t[@t-foreach='lines']//span[contains(@t-esc, 'line.tax_ids')]"
+            expr="//t[@t-foreach='lines']//span[@id='line_tax_ids']"
             position="attributes"
         >
         <attribute
