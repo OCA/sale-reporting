@@ -35,7 +35,7 @@ class SaleOrderLine(models.Model):
         ]
         if sale_ids:
             ids = tuple(set(sale_ids))
-            self.flush()
+            self.flush_model()
             query = """
             SELECT order_id, max(position) FROM sale_order_line
             WHERE order_id in %s GROUP BY order_id;
