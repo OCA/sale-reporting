@@ -1,0 +1,81 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_report_tax_display
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-26 14:43+0000\n"
+"PO-Revision-Date: 2024-03-26 14:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_report_tax_display
+#: model:ir.model.fields,help:sale_report_tax_display.field_res_partner__report_show_line_subtotals
+#: model:ir.model.fields,help:sale_report_tax_display.field_res_users__report_show_line_subtotals
+msgid ""
+"\n"
+"            Tax Excluded: Hides the tax lines on SO and invoice reports.\n"
+"            Tax Included: Shows the tax lines on SO and invoice reports.\n"
+"        "
+msgstr ""
+
+#. module: sale_report_tax_display
+#: model_terms:ir.ui.view,arch_db:sale_report_tax_display.report_account_move_inherit
+msgid "<span>Price Unit Tax Free</span>"
+msgstr ""
+
+#. module: sale_report_tax_display
+#: model:ir.model.fields,help:sale_report_tax_display.field_res_partner__show_tax_calculation
+#: model:ir.model.fields,help:sale_report_tax_display.field_res_users__show_tax_calculation
+msgid "Hide the tax calculation at the end of the SO and invoice reports."
+msgstr ""
+
+#. module: sale_report_tax_display
+#: model_terms:ir.ui.view,arch_db:sale_report_tax_display.report_sale_order_inherit
+msgid "Price Unit Tax Free"
+msgstr ""
+
+#. module: sale_report_tax_display
+#: model:ir.model,name:sale_report_tax_display.model_res_partner
+msgid "Res Partner"
+msgstr ""
+
+#. module: sale_report_tax_display
+#: model:ir.model.fields,field_description:sale_report_tax_display.field_res_partner__report_show_line_subtotals
+#: model:ir.model.fields,field_description:sale_report_tax_display.field_res_users__report_show_line_subtotals
+msgid "Show Line Subtotals"
+msgstr ""
+
+#. module: sale_report_tax_display
+#: model:ir.model.fields,field_description:sale_report_tax_display.field_res_partner__show_tax_calculation
+#: model:ir.model.fields,field_description:sale_report_tax_display.field_res_users__show_tax_calculation
+msgid "Show tax calculation ?"
+msgstr ""
+
+#. module: sale_report_tax_display
+#: model:ir.model.fields.selection,name:sale_report_tax_display.selection__res_partner__report_show_line_subtotals__tax_excluded
+msgid "Tax Excluded"
+msgstr ""
+
+#. module: sale_report_tax_display
+#: model:ir.model.fields.selection,name:sale_report_tax_display.selection__res_partner__report_show_line_subtotals__tax_included
+msgid "Tax Included"
+msgstr ""
+
+#. module: sale_report_tax_display
+#: model_terms:ir.ui.view,arch_db:sale_report_tax_display.report_account_move_inherit
+#: model_terms:ir.ui.view,arch_db:sale_report_tax_display.report_sale_order_inherit
+msgid "Total Price Tax Free"
+msgstr ""
+
+#. module: sale_report_tax_display
+#: model_terms:ir.ui.view,arch_db:sale_report_tax_display.report_account_move_inherit
+#: model_terms:ir.ui.view,arch_db:sale_report_tax_display.report_sale_order_inherit
+msgid "Total Price Tax Included"
+msgstr ""

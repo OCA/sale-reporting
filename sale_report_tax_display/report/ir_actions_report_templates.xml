@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="report_sale_order_inherit"
+        inherit_id="sale.report_saleorder_document"
+    >
+        <!-- This targets the span "Amount" to replace it with another conditional string, see below -->
+        <xpath expr="//th[@name='th_subtotal']/span[1]" position="attributes">
+            <attribute name="style">display:none;</attribute>
+            <attribute name="groups" />
+        </xpath>
+        <!-- This targets the span "Total Price" to replace it with another conditional string, see below -->
+        <xpath expr="//th[@name='th_subtotal']/span[2]" position="attributes">
+            <attribute name="style">display:none;</attribute>
+            <attribute name="groups" />
+        </xpath>
+
+        <!-- See above -->
+        <xpath expr="//th[@name='th_subtotal']/span[1]" position="after">
+            <span
+                t-if="(doc or o) and (doc or o).partner_id.report_show_line_subtotals == 'tax_excluded'"
+            >Total Price Tax Free</span>
+        </xpath>
+        <!-- See above -->
+        <xpath expr="//th[@name='th_subtotal']/span[2]" position="after">
+            <span
+                t-if="(doc or o) and (doc or o).partner_id.report_show_line_subtotals == 'tax_included'"
+            >Total Price Tax Included</span>
+        </xpath>
+
+        <xpath
+            expr="//t[@t-set='current_subtotal' and @groups='account.group_show_line_subtotals_tax_excluded']"
+            position="attributes"
+        >
+            <attribute
+                name="t-if"
+            >(doc or o) and (doc or o).partner_id.report_show_line_subtotals == 'tax_excluded'</attribute>
+            <attribute name="groups" />
+        </xpath>
+        <xpath
+            expr="//t[@t-set='current_subtotal'and @groups='account.group_show_line_subtotals_tax_included']"
+            position="attributes"
+        >
+            <attribute
+                name="t-if"
+            >(doc or o) and (doc or o).partner_id.report_show_line_subtotals == 'tax_included'</attribute>
+            <attribute name="groups" />
+        </xpath>
+
+        <xpath
+            expr="//tbody[@class='sale_tbody']//span[@t-field='line.price_subtotal']"
+            position="attributes"
+        >
+            <attribute
+                name="t-if"
+            >(doc or o) and (doc or o).partner_id.report_show_line_subtotals == 'tax_excluded'</attribute>
+            <attribute name="groups" />
+        </xpath>
+        <xpath
+            expr="//tbody[@class='sale_tbody']//span[@t-field='line.price_total']"
+            position="attributes"
+        >
+            <attribute
+                name="t-if"
+            >(doc or o) and (doc or o).partner_id.report_show_line_subtotals == 'tax_included'</attribute>
+            <attribute name="groups" />
+        </xpath>
+
+        <xpath expr="//th[@name='th_priceunit']" position="attributes">
+            <attribute name="style">display:none;</attribute>
+        </xpath>
+        <xpath expr="//th[@name='th_quantity']" position="after">
+            <th name="th_priceunit" class="text-end">Price Unit Tax Free</th>
+        </xpath>
+
+    </template>
+</odoo>
