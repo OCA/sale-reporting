@@ -3,7 +3,7 @@
 {
     "name": "Base Multicompany Reporting Currency",
     "summary": "Adds the possibility to specify Multicompany Reporting Currency",
-    "version": "15.0.1.0.1",
+    "version": "16.0.1.0.0",
     "category": "Sales",
     "author": "Camptocamp SA, Odoo Community Association (OCA)",
     "license": "AGPL-3",
