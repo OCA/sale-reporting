@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-12 10:34+0000\n"
+"PO-Revision-Date: 2024-04-08 14:34+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -33,14 +33,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:sale_backorder.field_sale_order_line__bo_qty
 #: model_terms:ir.ui.view,arch_db:sale_backorder.so_backorder_report
 msgid "Backorder Qty"
-msgstr "Q.tà Backorder"
+msgstr "Q.tà ordine residuo"
 
 #. module: sale_backorder
 #: model:ir.model.fields,field_description:sale_backorder.field_sale_order__bo_value
 #: model:ir.model.fields,field_description:sale_backorder.field_sale_order_line__bo_value
 #: model_terms:ir.ui.view,arch_db:sale_backorder.so_backorder_report
 msgid "Backorder Value"
-msgstr "Valore Backorder"
+msgstr "Valore ordine residuo"
 
 #. module: sale_backorder
 #: model_terms:ir.ui.view,arch_db:sale_backorder.so_backorder_report_view
@@ -71,7 +71,7 @@ msgstr "Nome visualizzato"
 #: model:ir.actions.act_window,name:sale_backorder.action_so_backorder_wizard
 #: model:ir.ui.menu,name:sale_backorder.menu_so_backorder_report
 msgid "Generate SO Backorder Report"
-msgstr "Genera Report Backorder Vendite"
+msgstr "Genera resoconto ordine residuio OV"
 
 #. module: sale_backorder
 #: model:ir.model.fields,field_description:sale_backorder.field_sobackorder_report_wizard__id
@@ -83,7 +83,7 @@ msgstr "ID"
 #: model:ir.model.fields,field_description:sale_backorder.field_sale_order_line__last_bill_date
 #: model_terms:ir.ui.view,arch_db:sale_backorder.so_backorder_report
 msgid "Last Bill Date"
-msgstr "Ultima Data Fattura"
+msgstr "Data ultima fattura"
 
 #. module: sale_backorder
 #: model:ir.model.fields,field_description:sale_backorder.field_sale_order__last_date_delivered
@@ -115,12 +115,12 @@ msgstr "Riferimento ordine"
 #. module: sale_backorder
 #: model_terms:ir.ui.view,arch_db:sale_backorder.so_backorder_report
 msgid "PO Backorder Report"
-msgstr "Report Backorder Acquisti"
+msgstr "Resoconto ordine residuo OA"
 
 #. module: sale_backorder
 #: model_terms:ir.ui.view,arch_db:sale_backorder.so_backorder_report_view
 msgid "Print Report"
-msgstr "Stampa Report"
+msgstr "Stampa resoconto"
 
 #. module: sale_backorder
 #: model:ir.model.fields,field_description:sale_backorder.field_sale_order_line__product_type
@@ -130,19 +130,19 @@ msgstr "Tipologia prodotto"
 #. module: sale_backorder
 #: model:ir.actions.report,name:sale_backorder.action_so_backorder_report
 msgid "SO Backorder Report"
-msgstr "Report Backorder Vendite"
+msgstr "Resoconto ordine residuo OV"
 
 #. module: sale_backorder
 #: model:ir.model,name:sale_backorder.model_sobackorder_report_wizard
 msgid "SO Backorder Report Wizard"
-msgstr "Procedura Report Backorder Vendite"
+msgstr "Procedura guidata resoconto ordine residuo OV"
 
 #. module: sale_backorder
 #: model:ir.actions.act_window,name:sale_backorder.action_so_backorder
 #: model:ir.ui.menu,name:sale_backorder.menu_so_backorder
 #: model_terms:ir.ui.view,arch_db:sale_backorder.so_backorder_tree_view
 msgid "SO Backorders"
-msgstr "Backorders Vendite"
+msgstr "Ordini residui OV"
 
 #. module: sale_backorder
 #: model:ir.model,name:sale_backorder.model_sale_order
