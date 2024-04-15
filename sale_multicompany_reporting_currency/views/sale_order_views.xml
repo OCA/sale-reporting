@@ -28,7 +28,7 @@
             <field name="currency_id" position="after">
                 <field name="multicompany_reporting_currency_rate" />
             </field>
-            <xpath expr="//field[@name='tax_totals_json']" position="after">
+            <xpath expr="//field[@name='tax_totals']" position="after">
                 <label for="amount_multicompany_reporting_currency" />
                 <div class="text-nowrap">
                     <field name="multicompany_reporting_currency_id" invisible="1" />
