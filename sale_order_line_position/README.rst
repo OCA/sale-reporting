@@ -17,29 +17,31 @@ Sale 0rder Line Position
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fsale--reporting-lightgray.png?logo=github
-    :target: https://github.com/OCA/sale-reporting/tree/16.0/sale_order_line_position
+    :target: https://github.com/OCA/sale-reporting/tree/17.0/sale_order_line_position
     :alt: OCA/sale-reporting
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/sale-reporting-16-0/sale-reporting-16-0-sale_order_line_position
+    :target: https://translation.odoo-community.org/projects/sale-reporting-17-0/sale-reporting-17-0-sale_order_line_position
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/sale-reporting&target_branch=16.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/sale-reporting&target_branch=17.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module adds an auto computed position on sale order line.
-This position number is also printed on the report.
+This module adds an auto computed position on sale order line. This
+position number is also printed on the report.
 
-The position can be used to keep track of each line during
-the delivery and invoicing of the order with the customer.
-This is why there are related modules on `account-invoice-reporting`
-and `stock-logisics-reporting`.
+The position can be used to keep track of each line during the delivery
+and invoicing of the order with the customer. This is why there are
+related modules on account-invoice-reporting and
+stock-logisics-reporting.
 
-The positions are recomputed when the sale order is printed, sent and set to confirm.
+The positions are recomputed when the sale order is printed, sent and
+set to confirm.
 
-The positions are not changed on the line after the order has been confirmed, but if
-new line are added they will receive a position number.
+The positions are not changed on the line after the order has been
+confirmed, but if new line are added they will receive a position
+number.
 
 An action is also availabled to manually recompute the positions.
 
@@ -51,20 +53,20 @@ An action is also availabled to manually recompute the positions.
 Known issues / Roadmap
 ======================
 
-The way the positions are computed on the create of `sale.order.line`
+The way the positions are computed on the create of sale.order.line
 record could lead to a performance issue. There is a few improvements
 that have been suggested:
 
-Remove it and handle the computation on the write and/or create
-method of the `sale.order`.
+Remove it and handle the computation on the write and/or create method
+of the sale.order.
 
 Have a context key to enable/disable the recomputation.
 
 Do not set any value in the position fields before the sale order lines
-are locked (in the current implementation, before sending).
-And add a recompute button in the UI.
+are locked (in the current implementation, before sending). And add a
+recompute button in the UI.
 
-Set the position values with an SQL query using a `TRIGGER`.
+Set the position values with an SQL query using a TRIGGER.
 
 Bug Tracker
 ===========
@@ -72,7 +74,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/sale-reporting/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/sale-reporting/issues/new?body=module:%20sale_order_line_position%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/sale-reporting/issues/new?body=module:%20sale_order_line_position%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -80,24 +82,25 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Camptocamp
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Thierry Ducrest <thierry.ducrest@camptocamp.com>
-* `Trobz <https://trobz.com>`_:
-* Nguyen Hoang Hiep <hiepnh@trobz.com>
+-  Thierry Ducrest <thierry.ducrest@camptocamp.com>
+-  `Trobz <https://trobz.com>`__:
+-  Nguyen Hoang Hiep <hiepnh@trobz.com>
 
 Other credits
-~~~~~~~~~~~~~
+-------------
 
-The migration of this module from 13.0 to 14.0 was financially supported by Camptocamp
+The migration of this module from 13.0 to 14.0 was financially supported
+by Camptocamp
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -109,6 +112,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/sale-reporting <https://github.com/OCA/sale-reporting/tree/16.0/sale_order_line_position>`_ project on GitHub.
+This module is part of the `OCA/sale-reporting <https://github.com/OCA/sale-reporting/tree/17.0/sale_order_line_position>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.

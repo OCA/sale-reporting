@@ -1,0 +1,3 @@
+- Thierry Ducrest \<<thierry.ducrest@camptocamp.com>\>
+- [Trobz](https://trobz.com):
+- Nguyen Hoang Hiep \<<hiepnh@trobz.com>\>
