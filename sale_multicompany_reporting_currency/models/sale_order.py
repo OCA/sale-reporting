@@ -40,7 +40,7 @@ class SaleOrder(models.Model):
         readonly=True,
     )
 
-    @api.depends("pricelist_id.currency_id")
+    @api.depends("company_id.amount_option", "pricelist_id.currency_id")
     def _compute_multicompany_reporting_currency_id(self):
         multicompany_reporting_currency_id = (
             self._get_multicompany_reporting_currency_id()

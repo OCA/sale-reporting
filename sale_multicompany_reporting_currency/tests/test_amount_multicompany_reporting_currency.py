@@ -97,6 +97,26 @@ class TestAmountMulticompanyReportingCurrency(TestSaleCommon):
             / self.sale_order.multicompany_reporting_currency_rate,
             1825,
         )
+        # check `amount_multicompany_reporting_currency` is recomputed on
+        # `amount_option` change
+        self.env["res.config.settings"].create(
+            {
+                "multicompany_reporting_currency": self.currency_euro_id,
+                "amount_option": "total",
+            }
+        ).execute()
+        self.assertAlmostEqual(
+            self.sale_order.amount_multicompany_reporting_currency, 1825
+        )
+        self.env["res.config.settings"].create(
+            {
+                "multicompany_reporting_currency": self.currency_euro_id,
+                "amount_option": "untaxed",
+            }
+        ).execute()
+        self.assertAlmostEqual(
+            self.sale_order.amount_multicompany_reporting_currency, 1750
+        )
         # if we remove Currency from Sale Order we expect
         # multicompany_reporting_currency_rate to be 1.0
         self.sale_order.currency_id = False
