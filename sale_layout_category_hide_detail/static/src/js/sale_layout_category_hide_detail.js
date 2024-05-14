@@ -33,9 +33,7 @@ odoo.define(
             },
             _renderBodyCell: function (record, node) {
                 var $cell = this._super.apply(this, arguments);
-                var isSection = record.data.display_type === "line_section";
-                var isNote = record.data.display_type === "line_note";
-                if (isSection || isNote) {
+                if (record.data.display_type === "line_section") {
                     if (this._allowRemoveClassHidden(node.attrs.name)) {
                         return $cell.removeClass("o_hidden");
                     } else if (node.attrs.name === "name") {
