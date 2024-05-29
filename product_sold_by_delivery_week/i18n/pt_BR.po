@@ -6,59 +6,62 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2024-05-29 16:37+0000\n"
+"Last-Translator: Rodrigo Macedo <sottomaiormacedotec@users.noreply."
+"translation.odoo-community.org>\n"
 "Language-Team: none\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: product_sold_by_delivery_week
 #: model:ir.model,name:product_sold_by_delivery_week.model_product_template
 msgid "Product"
-msgstr ""
+msgstr "Produto"
 
 #. module: product_sold_by_delivery_week
 #: model:ir.model,name:product_sold_by_delivery_week.model_product_product
 msgid "Product Variant"
-msgstr ""
+msgstr "Variante do Produto"
 
 #. module: product_sold_by_delivery_week
 #: model:ir.actions.server,name:product_sold_by_delivery_week.ir_cron_recalculate_all_weekly_sold_delivered_ir_actions_server
 #: model:ir.cron,cron_name:product_sold_by_delivery_week.ir_cron_recalculate_all_weekly_sold_delivered
 msgid "Recalculate Weekly Delivered Products"
-msgstr ""
+msgstr "Recalcular produtos entregues semanalmente"
 
 #. module: product_sold_by_delivery_week
 #: model:ir.model,name:product_sold_by_delivery_week.model_sale_order_line
 msgid "Sales Order Line"
-msgstr ""
+msgstr "Linha de ordem de venda"
 
 #. module: product_sold_by_delivery_week
 #: model:ir.model,name:product_sold_by_delivery_week.model_stock_move
 msgid "Stock Move"
-msgstr ""
+msgstr "Movimento de estoque"
 
 #. module: product_sold_by_delivery_week
 #: model:ir.model.fields,field_description:product_sold_by_delivery_week.field_product_product__weekly_sold_delivered_shown
 #: model:ir.model.fields,field_description:product_sold_by_delivery_week.field_product_template__weekly_sold_delivered_shown
 #: model:ir.model.fields,field_description:product_sold_by_delivery_week.field_sale_order_line__weekly_sold_delivered_shown
 msgid "Weekly Sold"
-msgstr ""
+msgstr "Vendido semanalmente"
 
 #. module: product_sold_by_delivery_week
 #: model:ir.model.fields,field_description:product_sold_by_delivery_week.field_product_product__weekly_sold_delivered
 #: model:ir.model.fields,field_description:product_sold_by_delivery_week.field_product_template__weekly_sold_delivered
 msgid "Weekly Sold Delivered"
-msgstr ""
+msgstr "Vendido semanalmente entregue"
 
 #. module: product_sold_by_delivery_week
 #: model:res.groups,name:product_sold_by_delivery_week.group_weekly_selling_order_line
 msgid "Weekly selling info in order lines"
-msgstr ""
+msgstr "Informações de vendas semanais em linhas de pedidos"
 
 #. module: product_sold_by_delivery_week
 #: model:res.groups,name:product_sold_by_delivery_week.group_weekly_selling_product_list
 msgid "Weekly selling info in product list"
-msgstr ""
+msgstr "Informações de vendas semanais na lista de produtos"
