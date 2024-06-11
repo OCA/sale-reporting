@@ -10,6 +10,7 @@
             <div
                 t-if="line.product_packaging_id"
                 class="text-secondary"
+                style="white-space: nowrap;"
                 groups="product.group_stock_packaging"
             >
                 <span t-field="line.product_packaging_id" />:
