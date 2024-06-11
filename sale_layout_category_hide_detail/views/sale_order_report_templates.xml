@@ -67,7 +67,7 @@
                                 t-if="current_section.show_section_subtotal"
                                 class="text-end"
                                 t-esc="current_subtotal"
-                                t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'
+                                t-options='{"widget": "monetary", "display_currency": doc.currency_id}'
                             />
             </span>
           </td>
