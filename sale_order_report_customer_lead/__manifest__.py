@@ -8,7 +8,7 @@
     "version": "15.0.1.0.1",
     "category": "Sale",
     "website": "https://github.com/OCA/sale-reporting",
-    "author": "Camptocamp SA, Odoo Community Association (OCA)",
+    "author": "Camptocamp, Odoo Community Association (OCA)",
     "maintainers": ["ivantodorovich"],
     "license": "AGPL-3",
     "depends": ["sale"],
