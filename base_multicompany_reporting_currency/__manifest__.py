@@ -5,7 +5,7 @@
     "summary": "Adds the possibility to specify Multicompany Reporting Currency",
     "version": "15.0.1.0.1",
     "category": "Sales",
-    "author": "Camptocamp SA, Odoo Community Association (OCA)",
+    "author": "Camptocamp, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "depends": ["base_setup"],
     "website": "https://github.com/OCA/sale-reporting",
