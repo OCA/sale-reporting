@@ -109,10 +109,15 @@ class SaleReportDeliverd(models.Model):
             t.uom_id as product_uom,
             cur.decimal_places,
             CASE
-              WHEN (source_location.usage = 'internal' AND dest_location.usage = 'customer')
-                        or dest_location.usage IS NULL
+              WHEN dest_location.usage IS NULL
                 THEN 1
-              WHEN dest_location.usage = 'internal' AND source_location.usage = 'customer'
+              WHEN source_location.usage = 'internal' AND dest_location.usage = 'customer'
+                THEN 1
+              WHEN source_location.usage = 'customer' AND dest_location.usage = 'internal'
+                THEN -1
+              WHEN source_location.usage = 'supplier' AND dest_location.usage = 'customer'
+                THEN 1
+              WHEN source_location.usage = 'customer' AND dest_location.usage = 'supplier'
                 THEN -1
               ELSE 0
             END AS signed_qty,
@@ -171,14 +176,22 @@ class SaleReportDeliverd(models.Model):
         return from_str
 
     def _where(self):
-        """Take into account only stock moves from internal locations to other
-        locations and moves from customer with the field 'to_refund' True
+        """Take into account only stock moves from:
+
+        Outgoing: Internal to Customer
+        Returns: Customer to Internal + to_refund
+        Dropship: Supplier to Customer
+        Dropship return: Customer to Supplier
         """
         return """
             WHERE (sm.state = 'done' OR sm.state IS NULL) AND (
                 (source_location.usage = 'internal' AND dest_location.usage = 'customer') OR
                 (source_location.usage = 'customer' AND dest_location.usage = 'internal'
-                    AND sm.to_refund)
+                    AND sm.to_refund) OR
+                (source_location.usage = 'supplier' AND dest_location.usage = 'customer'
+                    AND svl.quantity < 0) OR
+                (source_location.usage = 'customer' AND dest_location.usage = 'supplier'
+                    AND svl.quantity > 0)
             )
         """
 
