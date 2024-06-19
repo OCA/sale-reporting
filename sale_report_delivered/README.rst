@@ -31,6 +31,8 @@ Sale Report Delivered
 Adds subtotal price based on the delivered quantities field to the
 *Sales Report*.
 
+This module takes in consideration Outgoing, Returns and Dropship.
+
 **Table of contents**
 
 .. contents::
@@ -67,6 +69,8 @@ Contributors
 
     * Sergio Teruel
     * Carlos Dauden
+
+* Eduardo de Miguel (`Moduon <https://www.moduon.team/>`__)
 
 Maintainers
 ~~~~~~~~~~~
