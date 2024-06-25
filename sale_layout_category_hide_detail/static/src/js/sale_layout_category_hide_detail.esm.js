@@ -8,7 +8,16 @@ import {SectionAndNoteListRenderer} from "@account/components/section_and_note_f
 import {patch} from "@web/core/utils/patch";
 
 patch(SectionAndNoteListRenderer.prototype, "new_widgets_buttons_patch", {
+    getColumns(record) {
+        // Set record to use it in getSectionColumns()
+        this.record = record;
+        return this._super.apply(this, arguments);
+    },
     getSectionColumns(columns) {
+        // We do not want to display icons in notes, only in sections
+        if (this.record.data.display_type !== "line_section") {
+            return this._super.apply(this, arguments);
+        }
         var sectionCols = this._super.apply(this, arguments);
         const widgetCols = columns.filter((col) => col.widget === "boolean_fa_icon");
         const sectionWidget = widgetCols.map((col) => {
