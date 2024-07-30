@@ -7,25 +7,34 @@ from odoo.tests.common import Form, TransactionCase
 
 
 class TestAccountInvoiceReport(TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.company = self.env.ref("base.main_company")
-        self.base_comment_model = self.env["base.comment.template"]
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.company = cls.env.ref("base.main_company")
+        cls.base_comment_model = cls.env["base.comment.template"]
         # Create comment related to sale model
-        self.sale_before_comment = self._create_comment("sale.order", "before_lines")
-        self.sale_after_comment = self._create_comment("sale.order", "after_lines")
+        cls.sale_before_comment = cls._create_comment_sale_template(
+            cls, "sale.order", "before_lines"
+        )
+        cls.sale_after_comment = cls._create_comment_sale_template(
+            cls, "sale.order", "after_lines"
+        )
         # Create comment related to move model
-        self.move_before_comment = self._create_comment("account.move", "before_lines")
-        self.move_after_comment = self._create_comment("account.move", "after_lines")
+        cls.move_before_comment = cls._create_comment_sale_template(
+            cls, "account.move", "before_lines"
+        )
+        cls.move_after_comment = cls._create_comment_sale_template(
+            cls, "account.move", "after_lines"
+        )
         # Create partner
-        self.partner = self.env["res.partner"].create({"name": "Partner Test"})
-        self.partner.base_comment_template_ids = [
-            (4, self.sale_before_comment.id),
-            (4, self.sale_after_comment.id),
-            (4, self.move_before_comment.id),
-            (4, self.move_after_comment.id),
+        cls.partner = cls.env["res.partner"].create({"name": "Partner Test"})
+        cls.partner.base_comment_template_ids = [
+            (4, cls.sale_before_comment.id),
+            (4, cls.sale_after_comment.id),
+            (4, cls.move_before_comment.id),
+            (4, cls.move_after_comment.id),
         ]
-        self.product = self.env["product.product"].create(
+        cls.product = cls.env["product.product"].create(
             {
                 "name": "Test product",
                 "sale_ok": True,
@@ -34,8 +43,8 @@ class TestAccountInvoiceReport(TransactionCase):
                 "invoice_policy": "order",
             }
         )
-        self.sale_order = self._create_sale_order()
-        self.sale_order.action_confirm()
+        cls.sale_order = cls._create_sale_order(cls)
+        cls.sale_order.action_confirm()
 
     def _create_sale_order(self):
         sale_form = Form(self.env["sale.order"])
@@ -44,7 +53,7 @@ class TestAccountInvoiceReport(TransactionCase):
             line_form.product_id = self.product
         return sale_form.save()
 
-    def _create_comment(self, models, position):
+    def _create_comment_sale_template(self, models, position):
         return self.base_comment_model.create(
             {
                 "name": "Comment " + position,

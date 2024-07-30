@@ -13,3 +13,6 @@
 - Pierre Verkest \<<pierreverkest84@gmail.com>\>
 - [Jarsa](https://www.jarsa.com):
   - Alan Ramos \<<alan.ramos@jarsa.com>\>
+- [Sygel](https://www.sygel.es):
+  - Valentín Vinagre \<<valentin.vinagre@sygel.es>\>
+  - Roger Sans \<<roger.sans@sygel.es>\>
