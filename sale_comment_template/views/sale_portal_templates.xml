@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <template
+        id="sale_order_portal_content" inherit_id="sale.sale_order_portal_content"
+    >
+        <xpath expr="//t[@t-if=&quot;current_section and (line_last or sale_order.order_line[line_index+1].display_type == 'line_section')&quot;]" position="before">
+            <tr t-if="line.formatted_note != '&lt;p&gt;&lt;br&gt;&lt;/p&gt;'">
+                <td colspan="5">
+                    <span t-field="line.formatted_note"></span>
+                </td>
+            </tr>
+        </xpath>
+
+    </template>
+</odoo>
