@@ -100,6 +100,11 @@ Contributors
 
    -  Alan Ramos <alan.ramos@jarsa.com>
 
+-  `Sygel <https://www.sygel.es>`__:
+
+   -  Valentín Vinagre <valentin.vinagre@sygel.es>
+   -  Roger Sans <roger.sans@sygel.es>
+
 Maintainers
 -----------
 
