@@ -83,6 +83,13 @@ msgstr "Inverti"
 msgid "Uncheck this if you want to hide the subtotal on section part"
 msgstr "Disabilita se vuoi nascondere il subtotale della sezione"
 
+#. module: sale_layout_category_hide_detail
+#. odoo-javascript
+#: code:addons/sale_layout_category_hide_detail/static/src/xml/boolean_fa_icon_widget.xml:0
+#, python-format
+msgid "{{state.text_tooltip}}"
+msgstr ""
+
 #, python-format
 #~ msgid "Click to check"
 #~ msgstr "Click per abilitare"
