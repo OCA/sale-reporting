@@ -80,3 +80,10 @@ msgstr ""
 #: model:ir.model.fields,help:sale_layout_category_hide_detail.field_sale_order_line__show_section_subtotal
 msgid "Uncheck this if you want to hide the subtotal on section part"
 msgstr ""
+
+#. module: sale_layout_category_hide_detail
+#. odoo-javascript
+#: code:addons/sale_layout_category_hide_detail/static/src/xml/boolean_fa_icon_widget.xml:0
+#, python-format
+msgid "{{state.text_tooltip}}"
+msgstr ""
