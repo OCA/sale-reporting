@@ -16,7 +16,7 @@ class SaleReport(models.Model):
             sum(
                 CASE WHEN l.price_subtotal <> 0
                     THEN (l.price_subtotal / l.product_uom_qty)
-                    ELSE l.price_reduce
+                    ELSE l.price_reduce_taxexcl
                 END
                 * l.qty_delivered)
         """
