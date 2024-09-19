@@ -9,11 +9,17 @@
             <th name="th_image">Image</th>
         </th>
         <td name="td_name" position="before">
-            <td name="td_image">
+            <td name='td_image' style="height:20px !important;width:20px !important;">
                 <span
-                    t-field="line.product_id.image_128"
-                    t-options="{'widget': 'image', 'max_width': '64', 'class': 'rounded'}"
+                    t-field="line.product_id.image_1920"
+                    t-options='{"widget": "image"}'
                 />
+                <t t-if="line.product_id.image_128">
+                    <img
+                        t-att-src="'data:image/png;base64,%s' % line.product_id.image_128.decode('ascii')"
+                        t-att-alt="line.product_id.name"
+                    />
+                </t>
             </td>
         </td>
     </template>
