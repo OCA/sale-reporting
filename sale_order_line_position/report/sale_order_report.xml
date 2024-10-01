@@ -4,15 +4,12 @@
         id="report_saleorder_document"
         inherit_id="sale.report_saleorder_document"
     >
-        <xpath expr="//table/thead/tr/th[@name='th_description']" position="before">
+        <xpath expr="//table/thead/tr/th[1]" position="before">
             <th class="text-left">Pos</th>
         </xpath>
-        <xpath
-            expr="//table/tbody[hasclass('sale_tbody')]//td[@name='td_name']"
-            position="before"
-        >
+        <xpath expr="//table/tbody[hasclass('sale_tbody')]//td[1]" position="before">
             <td>
-                <span t-field="line.position" />
+                <span t-field="line.position_formatted" />
             </td>
         </xpath>
     </template>
