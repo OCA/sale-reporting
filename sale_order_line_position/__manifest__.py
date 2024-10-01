@@ -4,7 +4,7 @@
 {
     "name": "Sale 0rder Line Position",
     "summary": "Adds position number on sale order line.",
-    "version": "16.0.1.2.0",
+    "version": "16.0.1.3.0",
     "category": "Sales",
     "author": "Camptocamp, Odoo Community Association (OCA)",
     "license": "AGPL-3",
