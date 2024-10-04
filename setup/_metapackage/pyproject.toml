@@ -1,10 +1,11 @@
 [project]
 name = "odoo-addons-oca-sale-reporting"
-version = "17.0.20240808.0"
+version = "17.0.20241004.0"
 dependencies = [
     "odoo-addon-sale_comment_template>=17.0dev,<17.1dev",
     "odoo-addon-sale_layout_category_hide_detail>=17.0dev,<17.1dev",
     "odoo-addon-sale_order_line_position>=17.0dev,<17.1dev",
+    "odoo-addon-sale_order_report_product_image>=17.0dev,<17.1dev",
 ]
 classifiers=[
     "Programming Language :: Python",
