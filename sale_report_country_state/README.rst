@@ -72,6 +72,7 @@ Contributors
 
   * David Vidal
   * João Marques
+  * Carlos López
 
 Maintainers
 ~~~~~~~~~~~
