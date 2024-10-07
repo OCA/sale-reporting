@@ -2,3 +2,4 @@
 
   * David Vidal
   * João Marques
+  * Carlos López
