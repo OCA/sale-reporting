@@ -150,7 +150,7 @@ class SaleReportDeliverd(models.Model):
             s.id as order_id,
             sp.id as picking_id,
             sol.purchase_price AS unsigned_purchase_price,
-            ROUND(COALESCE(svl.value, 0.0), cur.decimal_places) AS amount_cost
+            ROUND(svl.value, cur.decimal_places) AS amount_cost
         """
         return sub_select_str
 
