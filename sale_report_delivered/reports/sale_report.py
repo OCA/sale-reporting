@@ -90,12 +90,32 @@ class SaleReportDeliverd(models.Model):
             sub.picking_id,
             sum(signed_qty * unsigned_product_uom_qty) AS product_uom_qty,
             sum(signed_qty * unsigned_price_subtotal) AS price_subtotal,
-            sum(COALESCE(-sub.amount_cost, signed_qty *
-                ROUND(sub.unsigned_purchase_price * unsigned_product_uom_qty,
-                      sub.decimal_places))) AS amount_cost,
-            sum(signed_qty * unsigned_price_subtotal - COALESCE(-sub.amount_cost, signed_qty *
-                ROUND(sub.unsigned_purchase_price * unsigned_product_uom_qty,
-                      sub.decimal_places))) AS margin,
+            CASE
+                WHEN BOOL_OR(sub.amount_cost is not NULL)
+                    THEN sum(-sub.amount_cost)
+                ELSE sum(
+                    signed_qty * ROUND(
+                        sub.unsigned_purchase_price * unsigned_product_uom_qty,
+                        sub.decimal_places
+                    )
+                )
+            END AS amount_cost,
+            CASE
+                WHEN BOOL_OR(sub.amount_cost is not NULL)
+                    THEN sum(
+                        signed_qty * unsigned_price_subtotal + COALESCE(
+                            sub.amount_cost, 0.0
+                        )
+                    )
+                ELSE sum(
+                    signed_qty * unsigned_price_subtotal - (
+                        signed_qty * ROUND(
+                            sub.unsigned_purchase_price * unsigned_product_uom_qty,
+                            sub.decimal_places
+                        )
+                    )
+                )
+            END AS margin,
             0 AS margin_percent
         """
         return select_str
