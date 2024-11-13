@@ -6,84 +6,86 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2024-11-13 18:06+0000\n"
+"Last-Translator: Grégory Moka Tourisme <gregory@mokatourisme.fr>\n"
 "Language-Team: none\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #. module: sale_layout_category_hide_detail
 #: model:ir.model,name:sale_layout_category_hide_detail.model_account_move_line
 msgid "Journal Item"
-msgstr ""
+msgstr "Entrée de journal"
 
 #. module: sale_layout_category_hide_detail
 #: model:ir.model,name:sale_layout_category_hide_detail.model_sale_order_line
 msgid "Sales Order Line"
-msgstr ""
+msgstr "Ligne de commande"
 
 #. module: sale_layout_category_hide_detail
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_details
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_details
 msgid "Show Details"
-msgstr ""
+msgstr "Afficher les détails"
 
 #. module: sale_layout_category_hide_detail
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_line_amount
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_line_amount
 msgid "Show Line Amount"
-msgstr ""
+msgstr "Afficher le montant des lignes"
 
 #. module: sale_layout_category_hide_detail
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_section_subtotal
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_section_subtotal
 msgid "Show Section Subtotal"
-msgstr ""
+msgstr "Afficher le sous total de la section"
 
 #. module: sale_layout_category_hide_detail
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_account_move_line__show_subtotal
 #: model:ir.model.fields,field_description:sale_layout_category_hide_detail.field_sale_order_line__show_subtotal
 msgid "Show Subtotal"
-msgstr ""
+msgstr "Afficher le sous total"
 
 #. module: sale_layout_category_hide_detail
 #: model_terms:ir.ui.view,arch_db:sale_layout_category_hide_detail.report_saleorder_document_hide_detail
 #: model_terms:ir.ui.view,arch_db:sale_layout_category_hide_detail.sale_order_portal_content_hide_detail
 msgid "Subtotal"
-msgstr ""
+msgstr "Sous total"
 
 #. module: sale_layout_category_hide_detail
 #. odoo-javascript
 #: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.esm.js:0
 #, python-format
 msgid "Switch to: details hidden"
-msgstr ""
+msgstr "Passer à : Détails masqués"
 
 #. module: sale_layout_category_hide_detail
 #. odoo-javascript
 #: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.esm.js:0
 #, python-format
 msgid "Switch to: details shown"
-msgstr ""
+msgstr "Passer à : Détails affichés"
 
 #. module: sale_layout_category_hide_detail
 #. odoo-javascript
 #: code:addons/sale_layout_category_hide_detail/static/src/js/boolean_fa_icon_widget.esm.js:0
 #, python-format
 msgid "Toggle"
-msgstr ""
+msgstr "Basculer"
 
 #. module: sale_layout_category_hide_detail
 #: model:ir.model.fields,help:sale_layout_category_hide_detail.field_account_move_line__show_section_subtotal
 #: model:ir.model.fields,help:sale_layout_category_hide_detail.field_sale_order_line__show_section_subtotal
 msgid "Uncheck this if you want to hide the subtotal on section part"
-msgstr ""
+msgstr "Décochez pour masquer le sous total des sections"
 
 #. module: sale_layout_category_hide_detail
 #. odoo-javascript
 #: code:addons/sale_layout_category_hide_detail/static/src/xml/boolean_fa_icon_widget.xml:0
 #, python-format
 msgid "{{state.text_tooltip}}"
-msgstr ""
+msgstr "{{state.text_tooltip}}"
