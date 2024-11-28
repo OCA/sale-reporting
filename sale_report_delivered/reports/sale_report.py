@@ -20,6 +20,9 @@ class SaleReportDeliverd(models.Model):
     product_uom_qty = fields.Float("Qty", readonly=True)
     partner_id = fields.Many2one("res.partner", "Customer", readonly=True)
     company_id = fields.Many2one("res.company", "Company", readonly=True)
+    user_from_partner_id = fields.Many2one(
+        "res.users", "Salesperson From Partner", readonly=True
+    )
     user_id = fields.Many2one("res.users", "Salesperson", readonly=True)
     price_subtotal = fields.Float("Untaxed total delivered", readonly=True)
     product_tmpl_id = fields.Many2one("product.template", "Product", readonly=True)
@@ -71,6 +74,7 @@ class SaleReportDeliverd(models.Model):
             sub.date,
             sub.state,
             sub.partner_id,
+            sub.user_from_partner_id,
             sub.user_id,
             sub.company_id,
             sub.campaign_id,
@@ -168,6 +172,7 @@ class SaleReportDeliverd(models.Model):
             s.analytic_account_id as analytic_account_id,
             s.team_id as team_id,
             p.product_tmpl_id,
+            partner.user_id as user_from_partner_id,
             partner.country_id as country_id,
             partner.industry_id as industry_id,
             partner.commercial_partner_id as commercial_partner_id,
@@ -253,6 +258,7 @@ class SaleReportDeliverd(models.Model):
             sub.order_name,
             sub.date,
             sub.partner_id,
+            sub.user_from_partner_id,
             sub.user_id,
             sub.state,
             sub.company_id,

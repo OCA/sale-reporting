@@ -52,6 +52,7 @@
                 />
                 <separator />
                 <field name="user_id" />
+                <field name="user_from_partner_id" />
                 <field name="team_id" />
                 <field name="product_id" />
                 <field name="categ_id" />
@@ -70,6 +71,11 @@
                         string="Salesperson"
                         name="User"
                         context="{'group_by':'user_id'}"
+                    />
+                    <filter
+                        string="Salesperson From Partner"
+                        name="user_from_partner_id"
+                        context="{'group_by':'user_from_partner_id'}"
                     />
                     <filter
                         string="Sales Team"

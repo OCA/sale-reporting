@@ -229,6 +229,12 @@ msgid "Salesperson"
 msgstr ""
 
 #. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__user_from_partner_id
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
+msgid "Salesperson From Partner"
+msgstr ""
+
+#. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__source_id
 msgid "Source"
 msgstr ""

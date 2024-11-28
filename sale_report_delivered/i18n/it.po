@@ -232,6 +232,12 @@ msgid "Salesperson"
 msgstr "Addetto vendite"
 
 #. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__user_from_partner_id
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
+msgid "Salesperson From Partner"
+msgstr ""
+
+#. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__source_id
 msgid "Source"
 msgstr "Origine"
@@ -245,11 +251,11 @@ msgstr "Stato"
 #. module: sale_report_delivered
 #: model_terms:ir.actions.act_window,help:sale_report_delivered.action_sale_report_delivered
 msgid ""
-"This report performs analysis on your sales orders from deliveries. Analysis"
-" check your sales revenues and sort it by different group criteria "
-"(salesman, partner, product, etc.) Use this report to perform analysis on "
-"sales not having invoiced yet. If you want to analyse your turnover, you "
-"should use the Invoice Analysis report in the Accounting application."
+"This report performs analysis on your sales orders from deliveries. Analysis "
+"check your sales revenues and sort it by different group criteria (salesman, "
+"partner, product, etc.) Use this report to perform analysis on sales not "
+"having invoiced yet. If you want to analyse your turnover, you should use "
+"the Invoice Analysis report in the Accounting application."
 msgstr ""
 "Questo resoconto effettua l'analisi sugli ordini di vendita dalle consegne. "
 "L'analisi controlla i ricavi delle vendite e li ordina per diversi gruppi di "
