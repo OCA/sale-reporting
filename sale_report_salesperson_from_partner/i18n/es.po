@@ -23,19 +23,13 @@ msgid "Sales Analysis Report"
 msgstr "Informe de análisis de ventas"
 
 #. module: sale_report_salesperson_from_partner
-#: model:ir.model,name:sale_report_salesperson_from_partner.model_sale_order
-msgid "Sales Order"
-msgstr "Pedido de venta"
-
-#. module: sale_report_salesperson_from_partner
-#: model:ir.model.fields,field_description:sale_report_salesperson_from_partner.field_sale_order__user_from_partner_id
 #: model:ir.model.fields,field_description:sale_report_salesperson_from_partner.field_sale_report__user_from_partner_id
 #: model_terms:ir.ui.view,arch_db:sale_report_salesperson_from_partner.view_order_product_search
-#: model_terms:ir.ui.view,arch_db:sale_report_salesperson_from_partner.view_sales_order_filter
 msgid "Salesperson From Partner"
 msgstr "Comercial del cliente"
 
-#. module: sale_report_salesperson_from_partner
-#: model:ir.model.fields,help:sale_report_salesperson_from_partner.field_sale_order__user_from_partner_id
-msgid "The internal user in charge of this contact."
-msgstr "El usuario interno a cargo de este contacto."
+#~ msgid "Sales Order"
+#~ msgstr "Pedido de venta"
+
+#~ msgid "The internal user in charge of this contact."
+#~ msgstr "El usuario interno a cargo de este contacto."

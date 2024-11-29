@@ -10,11 +10,12 @@ class SaleReport(models.Model):
         readonly=True,
     )
 
-    def _group_by_sale(self, groupby=""):
-        res = super()._group_by_sale(groupby)
+    def _group_by_sale(self):
+        res = super()._group_by_sale()
         res += """,partner.user_id"""
         return res
 
-    def _select_additional_fields(self, fields):
-        fields["user_from_partner_id"] = ", partner.user_id as user_from_partner_id"
-        return super()._select_additional_fields(fields)
+    def _select_additional_fields(self):
+        res = super()._select_additional_fields()
+        res["user_from_partner_id"] = "partner.user_id"
+        return res
