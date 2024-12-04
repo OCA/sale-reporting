@@ -7,9 +7,9 @@
     "website": "https://github.com/OCA/sale-reporting",
     "category": "Sales",
     "license": "AGPL-3",
-    "data": ["views/sale_order_views.xml", "views/sale_report_views.xml"],
+    "data": ["views/sale_report_views.xml"],
     "depends": ["sale"],
-    "maintainers": ["pilar-vargas"],
+    "maintainers": ["pilarvargas-tecnativa"],
     "installable": True,
     "application": False,
 }
