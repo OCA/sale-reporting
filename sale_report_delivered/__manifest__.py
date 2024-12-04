@@ -11,5 +11,9 @@
     "installable": True,
     "development_status": "Beta",
     "maintainers": ["sergio-teruel"],
-    "data": ["security/ir.model.access.csv", "views/sale_report_delivered_views.xml"],
+    "data": [
+        "security/ir.model.access.csv",
+        "security/sale_report_security.xml",
+        "views/sale_report_delivered_views.xml",
+    ],
 }
