@@ -26,24 +26,6 @@ msgid "<span><b>Total Weight:</b></span>"
 msgstr "<span><b>Peso Total:</b></span>"
 
 #. module: sale_order_weight
-#: model:ir.model.fields,field_description:sale_order_weight.field_sale_order__display_name
-#: model:ir.model.fields,field_description:sale_order_weight.field_sale_order_line__display_name
-msgid "Display Name"
-msgstr "Mostrar Nombre"
-
-#. module: sale_order_weight
-#: model:ir.model.fields,field_description:sale_order_weight.field_sale_order__id
-#: model:ir.model.fields,field_description:sale_order_weight.field_sale_order_line__id
-msgid "ID"
-msgstr "ID"
-
-#. module: sale_order_weight
-#: model:ir.model.fields,field_description:sale_order_weight.field_sale_order____last_update
-#: model:ir.model.fields,field_description:sale_order_weight.field_sale_order_line____last_update
-msgid "Last Modified on"
-msgstr "Última Modificación el"
-
-#. module: sale_order_weight
 #: model:ir.model,name:sale_order_weight.model_sale_order
 msgid "Sales Order"
 msgstr "Pedidos de venta"
@@ -57,3 +39,12 @@ msgstr "Línea de Orden de Ventas"
 #: model_terms:ir.ui.view,arch_db:sale_order_weight.report_saleorder_document
 msgid "Weight"
 msgstr "Peso"
+
+#~ msgid "Display Name"
+#~ msgstr "Mostrar Nombre"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última Modificación el"
