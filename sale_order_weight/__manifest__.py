@@ -4,7 +4,7 @@
 {
     "name": "Sale Order Weight",
     "summary": "Add products weight in report for sale order",
-    "version": "14.0.1.0.0",
+    "version": "16.0.1.0.0",
     "author": "Apulia Software, Agile Business Group,"
     "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/sale-reporting",
