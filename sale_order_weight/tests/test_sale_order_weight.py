@@ -6,7 +6,7 @@ import odoo.tests.common as common
 
 class TestSaleOrderWeight(common.TransactionCase):
     def setUp(self):
-        super(TestSaleOrderWeight, self).setUp()
+        super().setUp()
         self.sale_order_model = self.env["sale.order"]
         self.sale_order_line_model = self.env["sale.order.line"]
         self.partner = self.env.ref("base.res_partner_3")
