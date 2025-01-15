@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
     <template
         id="report_saleorder_document_image"
         inherit_id="sale.report_saleorder_document"
@@ -17,5 +16,4 @@
             </td>
         </td>
     </template>
-
 </odoo>
