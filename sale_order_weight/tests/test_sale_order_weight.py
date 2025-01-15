@@ -1,59 +1,56 @@
 # Copyright 2016 Andrea Cometa - Apulia Software
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/gpl.html).
 
-import odoo.tests.common as common
+from odoo import Command
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestSaleOrderWeight(common.TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.sale_order_model = self.env["sale.order"]
-        self.sale_order_line_model = self.env["sale.order.line"]
-        self.partner = self.env.ref("base.res_partner_3")
-        self.product_3 = self.env.ref("product.product_product_3")
-        self.product_4 = self.env.ref("product.product_product_4")
-        self.product_5 = self.env.ref("product.product_product_5")
+class TestSaleOrderWeight(BaseCommon):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.sale_order_model = cls.env["sale.order"]
+        cls.sale_order_line_model = cls.env["sale.order.line"]
+        cls.partner = cls.env.ref("base.res_partner_3")
+        cls.product_3 = cls.env.ref("product.product_product_3")
+        cls.product_4 = cls.env.ref("product.product_product_4")
+        cls.product_5 = cls.env.ref("product.product_product_5")
 
         order_vals = dict()
-        order_vals["partner_id"] = self.partner.id
+        order_vals["partner_id"] = cls.partner.id
 
         line_data = [
-            (
-                0,
-                0,
+            Command.create(
                 {
-                    "product_id": self.product_4.id,
+                    "product_id": cls.product_4.id,
                     "name": "product test 4",
                     "product_uom_qty": 1.0,
-                    "product_uom": self.product_4.uom_id.id,
-                    "price_unit": self.product_4.lst_price,
+                    "product_uom": cls.product_4.uom_id.id,
+                    "price_unit": cls.product_4.lst_price,
                 },
             ),
-            (
-                0,
-                0,
+            Command.create(
                 {
-                    "product_id": self.product_5.id,
+                    "product_id": cls.product_5.id,
                     "name": "product test 5",
                     "product_uom_qty": 2.0,
-                    "product_uom": self.product_5.uom_id.id,
-                    "price_unit": self.product_5.lst_price,
+                    "product_uom": cls.product_5.uom_id.id,
+                    "price_unit": cls.product_5.lst_price,
                 },
             ),
-            (
-                0,
-                0,
+            Command.create(
                 {
-                    "product_id": self.product_3.id,
+                    "product_id": cls.product_3.id,
                     "name": "product test 3",
                     "product_uom_qty": 3.0,
-                    "product_uom": self.product_3.uom_id.id,
-                    "price_unit": self.product_3.lst_price,
+                    "product_uom": cls.product_3.uom_id.id,
+                    "price_unit": cls.product_3.lst_price,
                 },
             ),
         ]
         order_vals["order_line"] = line_data
-        self.sale_order = self.sale_order_model.create(order_vals)
+        cls.sale_order = cls.sale_order_model.create(order_vals)
 
     def test_total_weight(self):
         # Change weight
