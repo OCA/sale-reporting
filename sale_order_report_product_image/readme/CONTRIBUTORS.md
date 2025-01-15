@@ -10,3 +10,4 @@
   - Jesús Valdez \<<jvaldez@vauxoo.com>\>
 - [Vauxoo](https://www.vauxoo.com)
   - José Ibarra \<<josei@vauxoo.com>\>
+- `Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>`_
