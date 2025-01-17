@@ -15,7 +15,7 @@ class SaleReport(models.Model):
 
     def _select_additional_fields(self):
         res = super()._select_additional_fields()
-        res["state_id"] = "partner.state_id"
+        res["partner_state_id"] = "partner.state_id"
         return res
 
     def _group_by_sale(self):

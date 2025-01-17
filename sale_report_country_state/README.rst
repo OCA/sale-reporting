@@ -73,6 +73,8 @@ Contributors
   - João Marques
   - Carlos López
 
+- [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
+
 Maintainers
 -----------
 
