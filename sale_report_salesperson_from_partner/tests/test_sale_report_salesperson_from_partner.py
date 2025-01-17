@@ -43,6 +43,6 @@ class SaleReportSalespersonFromPartner(BaseCommon):
             self.salesperson,
         )
         self.assertEqual(
-            sale_report.order_id,
+            sale_report.order_reference,
             self.order,
         )
