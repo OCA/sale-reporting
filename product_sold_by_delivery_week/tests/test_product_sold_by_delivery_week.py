@@ -90,7 +90,8 @@ class TestProductSoldByDeliveryWeek(TransactionCase):
         self.order.action_confirm()
         self.assertTrue(
             self.order.picking_ids,
-            'Sale Stock: no picking created for "invoice on delivery" storable products',
+            "Sale Stock: no picking created for "
+            '"invoice on delivery" storable products',
         )
         pick = self.order.picking_ids
         pick.move_ids.write({"quantity_done": 3})

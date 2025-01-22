@@ -8,10 +8,11 @@
 
 /*
 :Author: David Goodger (goodger@python.org)
-:Id: $Id: html4css1.css 8954 2022-01-20 10:10:25Z milde $
+:Id: $Id: html4css1.css 9511 2024-01-13 09:50:07Z milde $
 :Copyright: This stylesheet has been placed in the public domain.
 
 Default cascading style sheet for the HTML output of Docutils.
+Despite the name, some widely supported CSS2 features are used.
 
 See https://docutils.sourceforge.io/docs/howto/html-stylesheets.html for how to
 customize this style sheet.
@@ -274,7 +275,7 @@ pre.literal-block, pre.doctest-block, pre.math, pre.code {
   margin-left: 2em ;
   margin-right: 2em }
 
-pre.code .ln { color: grey; } /* line numbers */
+pre.code .ln { color: gray; } /* line numbers */
 pre.code, code { background-color: #eeeeee }
 pre.code .comment, code .comment { color: #5C6576 }
 pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
@@ -300,7 +301,7 @@ span.option {
 span.pre {
   white-space: pre }
 
-span.problematic {
+span.problematic, pre.problematic {
   color: red }
 
 span.section-subtitle {
@@ -368,10 +369,11 @@ ul.auto-toc {
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !! source digest: sha256:5c23b69bd0cac593b37140cf67786cb580904f8876975980260f9823ffa7712e
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/licence-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/sale-reporting/tree/16.0/product_sold_by_delivery_week"><img alt="OCA/sale-reporting" src="https://img.shields.io/badge/github-OCA%2Fsale--reporting-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/sale-reporting-16-0/sale-reporting-16-0-product_sold_by_delivery_week"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/sale-reporting&amp;target_branch=16.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
-<p>This module allows to compute a graphical hint, stored in the product itself,
-to display whether that product was sold and delivered in recent weeks.</p>
-<img alt="https://raw.githubusercontent.com/OCA/sale-reporting/16.0/product_sold_by_delivery_week/static/description/sold_by_week_hint.png" src="https://raw.githubusercontent.com/OCA/sale-reporting/16.0/product_sold_by_delivery_week/static/description/sold_by_week_hint.png" />
+<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/licence-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/sale-reporting/tree/18.0/product_sold_by_delivery_week"><img alt="OCA/sale-reporting" src="https://img.shields.io/badge/github-OCA%2Fsale--reporting-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/sale-reporting-18-0/sale-reporting-18-0-product_sold_by_delivery_week"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/sale-reporting&amp;target_branch=18.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
+<p>This module allows to compute a graphical hint, stored in the product
+itself, to display whether that product was sold and delivered in recent
+weeks.</p>
+<p><img alt="image" src="https://raw.githubusercontent.com/OCA/sale-reporting/18.0/product_sold_by_delivery_week/static/description/sold_by_week_hint.png" /></p>
 <p><strong>Table of contents</strong></p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -393,11 +395,12 @@ to display whether that product was sold and delivered in recent weeks.</p>
 <ul class="simple">
 <li>For hint characters:</li>
 </ul>
+<!--  -->
 <blockquote>
 <ul class="simple">
-<li>For the sold char: <cite>product_sold_by_delivery_week.sold_char</cite></li>
-<li>For the not sold: <cite>product_sold_by_delivery_week.not_sold_char</cite></li>
-<li>For weeks length: <cite>product_sold_by_delivery_week.weeks_to_consider</cite></li>
+<li>For the sold char: product_sold_by_delivery_week.sold_char</li>
+<li>For the not sold: product_sold_by_delivery_week.not_sold_char</li>
+<li>For weeks length: product_sold_by_delivery_week.weeks_to_consider</li>
 </ul>
 </blockquote>
 <p>Assign the security group ‘Weekly selling info in order lines’ and/or
@@ -409,20 +412,21 @@ info in other views like product recommendations, this is not needed.)</p>
 <h1><a class="toc-backref" href="#toc-entry-2">Usage</a></h1>
 <p>Once configured, hints will appear as an optional column in sale order
 lines or in products tree.</p>
-<p>In the general products view, general sales info is shown. Meanwhile, in the
-sale lines field we can see this field in context by simply filtering partner
-sales.</p>
+<p>In the general products view, general sales info is shown. Meanwhile, in
+the sale lines field we can see this field in context by simply
+filtering partner sales.</p>
 <p>Only salespeople can access this information.</p>
 </div>
 <div class="section" id="known-issues-roadmap">
 <h1><a class="toc-backref" href="#toc-entry-3">Known issues / Roadmap</a></h1>
 <ul class="simple">
 <li>Services are not taken into consideration.</li>
-<li>A widget could be created on top of the main field to have nicer icons and
-probably colors.</li>
+<li>A widget could be created on top of the main field to have nicer icons
+and probably colors.</li>
 <li>For the near future, a configurable granularity would be desirable, so
-behavior could be changed to years, months or days as the period of choice.
-To simplify this module, only weekly periods will be considered for now.</li>
+behavior could be changed to years, months or days as the period of
+choice. To simplify this module, only weekly periods will be
+considered for now.</li>
 </ul>
 </div>
 <div class="section" id="bug-tracker">
@@ -430,7 +434,7 @@ To simplify this module, only weekly periods will be considered for now.</li>
 <p>Bugs are tracked on <a class="reference external" href="https://github.com/OCA/sale-reporting/issues">GitHub Issues</a>.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-<a class="reference external" href="https://github.com/OCA/sale-reporting/issues/new?body=module:%20product_sold_by_delivery_week%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
+<a class="reference external" href="https://github.com/OCA/sale-reporting/issues/new?body=module:%20product_sold_by_delivery_week%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
 <p>Do not contact contributors directly about support or help with technical issues.</p>
 </div>
 <div class="section" id="credits">
@@ -457,13 +461,15 @@ If you spotted it first, help us to smash it by providing a detailed and welcome
 <div class="section" id="maintainers">
 <h2><a class="toc-backref" href="#toc-entry-8">Maintainers</a></h2>
 <p>This module is maintained by the OCA.</p>
-<a class="reference external image-reference" href="https://odoo-community.org"><img alt="Odoo Community Association" src="https://odoo-community.org/logo.png" /></a>
+<a class="reference external image-reference" href="https://odoo-community.org">
+<img alt="Odoo Community Association" src="https://odoo-community.org/logo.png" />
+</a>
 <p>OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.</p>
 <p>Current <a class="reference external" href="https://odoo-community.org/page/maintainer-role">maintainer</a>:</p>
 <p><a class="reference external image-reference" href="https://github.com/chienandalu"><img alt="chienandalu" src="https://github.com/chienandalu.png?size=40px" /></a></p>
-<p>This module is part of the <a class="reference external" href="https://github.com/OCA/sale-reporting/tree/16.0/product_sold_by_delivery_week">OCA/sale-reporting</a> project on GitHub.</p>
+<p>This module is part of the <a class="reference external" href="https://github.com/OCA/sale-reporting/tree/18.0/product_sold_by_delivery_week">OCA/sale-reporting</a> project on GitHub.</p>
 <p>You are welcome to contribute. To learn how please visit <a class="reference external" href="https://odoo-community.org/page/Contribute">https://odoo-community.org/page/Contribute</a>.</p>
 </div>
 </div>
