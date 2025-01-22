@@ -6,7 +6,7 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
-            <xpath expr="//tree//field[@name='name']" position="after">
+            <xpath expr="//list//field[@name='name']" position="after">
                 <!-- The BS badge class provides some styles that will avoid that
                      the string gets truncated by an ellipsis and uses less column
                      width as well -->

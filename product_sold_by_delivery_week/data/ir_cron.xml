@@ -8,8 +8,6 @@
         <field name="name">Recalculate Weekly Delivered Products</field>
         <field name="interval_number">1</field>
         <field name="interval_type">weeks</field>
-        <field name="numbercall">-1</field>
-        <field name="doall" eval="False" />
         <field name="model_id" ref="model_product_product" />
         <field name="code">model._action_recalculate_all_weekly_sold_delivered()</field>
         <field name="state">code</field>

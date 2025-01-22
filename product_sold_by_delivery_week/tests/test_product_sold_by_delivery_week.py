@@ -16,13 +16,13 @@ class TestProductSoldByDeliveryWeek(TransactionCase):
         cls.product = cls.env["product.product"].create(
             {
                 "name": "Test product",
-                "detailed_type": "consu",
+                "type": "consu",
             }
         )
         cls.product_expense_product = cls.env["product.product"].create(
             {
                 "name": "expense product for test",
-                "detailed_type": "service",
+                "type": "service",
             }
         )
         cls.product.weekly_sold_delivered = "000000"
@@ -94,7 +94,7 @@ class TestProductSoldByDeliveryWeek(TransactionCase):
             '"invoice on delivery" storable products',
         )
         pick = self.order.picking_ids
-        pick.move_ids.write({"quantity_done": 3})
+        pick.move_ids.write({"quantity": 3})
         pick.button_validate()
         for line in pick.move_ids:
             line._action_done()
