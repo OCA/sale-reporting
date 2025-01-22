@@ -1,9 +1,12 @@
 # Copyright 2021 Camptocamp SA
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl)
-from odoo.tests import TransactionCase, new_test_user
+from odoo import Command
+from odoo.tests import new_test_user
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestProductSoldByDeliveryWeek(TransactionCase):
+class TestProductSoldByDeliveryWeek(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -39,19 +42,15 @@ class TestProductSoldByDeliveryWeek(TransactionCase):
             {
                 "partner_id": cls.partner.id,
                 "order_line": [
-                    (
-                        0,
-                        0,
+                    Command.create(
                         {
                             "product_id": cls.product.id,
                             "product_uom": cls.product.uom_id.id,
                             "product_uom_qty": 3.0,
                         },
                     ),
-                    (0, 0, {"display_type": "line_section", "name": "Section"}),
-                    (
-                        0,
-                        0,
+                    Command.create({"display_type": "line_section", "name": "Section"}),
+                    Command.create(
                         {
                             "product_id": cls.product_expense_product.id,
                             "product_uom": cls.product_expense_product.uom_id.id,
@@ -90,11 +89,11 @@ class TestProductSoldByDeliveryWeek(TransactionCase):
         self.order.action_confirm()
         self.assertTrue(
             self.order.picking_ids,
-            'Sale Stock: no picking created for "invoice on delivery" '
-            "storable products",
+            "Sale Stock: no picking created for "
+            '"invoice on delivery" storable products',
         )
         pick = self.order.picking_ids
-        pick.move_ids.write({"quantity_done": 3})
+        pick.move_ids.write({"quantity": 3})
         pick.button_validate()
         for line in pick.move_ids:
             line._action_done()
