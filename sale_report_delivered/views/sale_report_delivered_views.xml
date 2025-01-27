@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
     <record id="view_sale_report_delivered_pivot" model="ir.ui.view">
-         <field name="name">sale.report.delivered.pivot</field>
-         <field name="model">sale.report.delivered</field>
-         <field name="arch" type="xml">
-             <pivot string="Sales Analysis" disable_linking="True">
-                 <field name="date" interval="month" type="row" />
-                 <field name="product_uom_qty" type="measure" />
-                 <field name="price_subtotal" type="measure" />
-                 <field name="amount_cost" type="measure" />
-                 <field name="margin" type="measure" />
-             </pivot>
-         </field>
+        <field name="name">sale.report.delivered.pivot</field>
+        <field name="model">sale.report.delivered</field>
+        <field name="arch" type="xml">
+            <pivot string="Sales Analysis" disable_linking="True">
+                <field name="date" interval="month" type="row" />
+                <field name="product_uom_qty" type="measure" />
+                <field name="price_subtotal" type="measure" />
+                <field name="amount_cost" type="measure" />
+                <field name="margin" type="measure" />
+            </pivot>
+        </field>
     </record>
 
     <record id="view_sale_report_delivered_graph" model="ir.ui.view">
-         <field name="name">sale.report.delivered.graph</field>
-         <field name="model">sale.report.delivered</field>
-         <field name="arch" type="xml">
-             <graph string="Sales analysis from deliveries" type="line">
-                 <field name="date" type="row" interval="day" />
-                 <field name="price_subtotal" type="measure" />
-             </graph>
-         </field>
+        <field name="name">sale.report.delivered.graph</field>
+        <field name="model">sale.report.delivered</field>
+        <field name="arch" type="xml">
+            <graph string="Sales analysis from deliveries" type="line">
+                <field name="date" type="row" interval="day" />
+                <field name="price_subtotal" type="measure" />
+            </graph>
+        </field>
     </record>
 
     <record id="view_sale_report_delivered_search" model="ir.ui.view">
@@ -129,7 +128,8 @@
         <field name="name">Sales Analysis From Deliveries</field>
         <field name="res_model">sale.report.delivered</field>
         <field name="view_mode">graph,pivot</field>
-        <field name="view_id" />  <!-- force empty -->
+        <field name="view_id" />
+        <!-- force empty -->
         <field name="search_view_id" ref="view_sale_report_delivered_search" />
         <field
             name="context"
@@ -146,5 +146,4 @@
         parent="sale.menu_sale_report"
         sequence="50"
     />
-
 </odoo>

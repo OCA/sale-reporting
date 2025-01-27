@@ -138,7 +138,7 @@ class SaleReportDeliverd(models.Model):
         """
 
     def _sub_select(self):
-        sub_select_str = """
+        sub_select_str = f"""
             SELECT
             sol.id AS id,
             sol.product_id as product_id,
@@ -148,7 +148,7 @@ class SaleReportDeliverd(models.Model):
             CASE
               WHEN dest_location.usage IS NULL
                 THEN 1
-              {sub_select_signed_qty}
+              {self._sub_select_signed_qty()}
               ELSE 0
             END AS signed_qty,
             (CASE WHEN t.type IN ('product', 'consu') THEN COALESCE(sm.product_uom_qty, 0.0)
@@ -182,9 +182,7 @@ class SaleReportDeliverd(models.Model):
             sp.id as picking_id,
             sol.purchase_price AS unsigned_purchase_price,
             ROUND(svl.value, cur.decimal_places) AS amount_cost
-        """.format(
-            sub_select_signed_qty=self._sub_select_signed_qty()
-        )
+        """
         return sub_select_str
 
     def _from(self):
@@ -241,11 +239,9 @@ class SaleReportDeliverd(models.Model):
 
     def _where(self):
         """Where clause with only done mvoes or without state"""
-        return """
-            WHERE (sm.state = 'done' OR sm.state IS NULL) AND ({sub_where})
-        """.format(
-            sub_where=self._sub_where()
-        )
+        return f"""
+            WHERE (sm.state = 'done' OR sm.state IS NULL) AND ({self._sub_where()})
+        """
 
     def _group_by(self):
         group_by_str = """
