@@ -29,9 +29,6 @@ class SaleReportDeliverd(models.Model):
     categ_id = fields.Many2one("product.category", "Product Category", readonly=True)
     nbr = fields.Integer("# of Lines", readonly=True)
     pricelist_id = fields.Many2one("product.pricelist", "Pricelist", readonly=True)
-    analytic_account_id = fields.Many2one(
-        "account.analytic.account", "Analytic Account", readonly=True
-    )
     team_id = fields.Many2one("crm.team", "Sales Team", readonly=True)
     country_id = fields.Many2one("res.country", "Customer Country", readonly=True)
     industry_id = fields.Many2one(
@@ -42,10 +39,9 @@ class SaleReportDeliverd(models.Model):
     )
     state = fields.Selection(
         [
-            ("draft", "Draft Quotation"),
+            ("draft", "Quotation"),
             ("sent", "Quotation Sent"),
             ("sale", "Sales Order"),
-            ("done", "Sales Done"),
             ("cancel", "Cancelled"),
         ],
         string="Status",
@@ -82,7 +78,6 @@ class SaleReportDeliverd(models.Model):
             sub.source_id,
             sub.categ_id,
             sub.pricelist_id,
-            sub.analytic_account_id ,
             sub.team_id,
             sub.product_tmpl_id,
             sub.country_id,
@@ -145,19 +140,27 @@ class SaleReportDeliverd(models.Model):
             t.name as template_name,
             t.uom_id as product_uom,
             cur.decimal_places,
+            sm.quantity as unsigned_product_uom_qty,
             CASE
               WHEN dest_location.usage IS NULL
                 THEN 1
               {self._sub_select_signed_qty()}
               ELSE 0
             END AS signed_qty,
-            (CASE WHEN t.type IN ('product', 'consu') THEN COALESCE(sm.product_uom_qty, 0.0)
-                ELSE sol.product_uom_qty END) / u.factor *
-                u2.factor as unsigned_product_uom_qty,
-            ROUND(COALESCE(sm.product_uom_qty * sol.price_reduce, sol.price_subtotal) /
-                CASE COALESCE(s.currency_rate, 0)
-                    WHEN 0 THEN 1.0 ELSE s.currency_rate END, cur.decimal_places)
-                     as unsigned_price_subtotal,
+            ROUND(
+                COALESCE(
+                    sm.quantity * (
+                        sol.price_unit * (1.0 - sol.discount / 100.0)
+                    ),
+                    sol.price_subtotal
+                ) /
+                CASE
+                    COALESCE(s.currency_rate, 0)
+                    WHEN 0 THEN 1.0
+                    ELSE s.currency_rate
+                END,
+                cur.decimal_places
+            ) as unsigned_price_subtotal,
             s.name as order_name,
             COALESCE(sm.date, s.effective_date, s.date_order) as date,
             s.state as state,
@@ -169,15 +172,14 @@ class SaleReportDeliverd(models.Model):
             s.source_id as source_id,
             t.categ_id as categ_id,
             s.pricelist_id as pricelist_id,
-            s.analytic_account_id as analytic_account_id,
             s.team_id as team_id,
             p.product_tmpl_id,
             partner.user_id as user_from_partner_id,
             partner.country_id as country_id,
             partner.industry_id as industry_id,
             partner.commercial_partner_id as commercial_partner_id,
-            p.weight * sm.product_uom_qty / u.factor * u2.factor as weight,
-            p.volume * sm.product_uom_qty / u.factor * u2.factor as volume,
+            p.weight * sm.quantity / u.factor * u2.factor as weight,
+            p.volume * sm.quantity / u.factor * u2.factor as volume,
             s.id as order_id,
             sp.id as picking_id,
             sol.purchase_price AS unsigned_purchase_price,
@@ -262,7 +264,6 @@ class SaleReportDeliverd(models.Model):
             sub.medium_id,
             sub.source_id,
             sub.pricelist_id,
-            sub.analytic_account_id,
             sub.team_id,
             sub.product_tmpl_id,
             sub.country_id,

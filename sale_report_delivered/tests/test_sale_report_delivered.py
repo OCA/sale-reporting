@@ -30,7 +30,12 @@ class TestSaleReportDeliveredBase(common.TransactionCase):
         group_sale_manager.write({"users": [(4, cls.admin.id)]})
 
         cls.product = cls.env["product.product"].create(
-            {"name": "Test product", "type": "product", "list_price": 10}
+            {
+                "name": "Test product",
+                "type": "consu",
+                "is_storable": True,
+                "list_price": 10,
+            }
         )
         cls._create_stock_quant(cls, cls.product)
         cls.service = cls.env["product.product"].create(
@@ -41,7 +46,7 @@ class TestSaleReportDeliveredBase(common.TransactionCase):
         cls.orders = cls.order_1 + cls.order_2
         cls.orders.action_confirm()
         cls.orders.picking_ids.action_confirm()
-        cls.orders.picking_ids.move_ids.write({"quantity_done": 1.0})
+        cls.orders.picking_ids.move_ids.write({"quantity": 1.0})
         cls.orders.picking_ids.button_validate()
 
     def _create_stock_quant(self, product):

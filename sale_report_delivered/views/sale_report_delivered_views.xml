@@ -36,7 +36,7 @@
                     name="year"
                     invisible="0"
                     date="date"
-                    default_period="this_year"
+                    default_period="year"
                 />
                 <separator />
                 <filter
