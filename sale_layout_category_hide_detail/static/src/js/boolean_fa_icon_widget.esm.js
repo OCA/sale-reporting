@@ -4,10 +4,10 @@
 /* Copyright 2023 Tecnativa - Yadier Quesada
 /* License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).*/
 
-const {useState} = owl;
 import {BooleanField} from "@web/views/fields/boolean/boolean_field";
-import {_lt, _t} from "@web/core/l10n/translation";
+import {_t} from "@web/core/l10n/translation";
 import {registry} from "@web/core/registry";
+const {useState} = owl;
 
 const iconTrue = "fa-check-square-o";
 const iconFalse = "fa-square-o";
@@ -40,7 +40,7 @@ export class BooleanFaIconWidget extends BooleanField {
         var show_tooltip = this.props.terminology;
         var tooltip_true = show_tooltip.hover_true || tooltipTrue;
         var tooltip_false = show_tooltip.hover_false || tooltipFalse;
-        return currentValue ? _lt(tooltip_true) : _lt(tooltip_false);
+        return currentValue ? _t(tooltip_true) : _t(tooltip_false);
     }
     /**
      * Check the 'draft' state in sale order or invoices
@@ -94,9 +94,6 @@ export class BooleanFaIconWidget extends BooleanField {
      */
     onClickButton(ev) {
         ev.stopPropagation();
-        if (this.isReadonly || !this.isAllowEdit()) {
-            return;
-        }
         const newValue = !this.state.value;
         this.state.value = newValue;
         this.props.record.update({[this.props.name]: newValue});
@@ -111,8 +108,8 @@ BooleanFaIconWidget.defaultProps = {
         icon_false: "fa-square-o",
     },
     terminology: {
-        hover_true: _lt("Switch to: details hidden"),
-        hover_false: _lt("Switch to: details shown"),
+        hover_true: _t("Switch to: details hidden"),
+        hover_false: _t("Switch to: details shown"),
     },
     allow: true,
 };

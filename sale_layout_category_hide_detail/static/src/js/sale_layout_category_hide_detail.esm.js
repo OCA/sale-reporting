@@ -6,29 +6,34 @@
 
 import {SectionAndNoteListRenderer} from "@account/components/section_and_note_fields_backend/section_and_note_fields_backend";
 import {patch} from "@web/core/utils/patch";
+import {ProductLabelSectionAndNoteListRender} from "@account/components/product_label_section_and_note_field/product_label_section_and_note_field";
+
+patch(ProductLabelSectionAndNoteListRender.prototype, {
+    getActiveColumns(list) {
+        const activeColumns = super.getActiveColumns(list);
+        // Remove widgets from list_renderer columns
+        return activeColumns.filter((col) => col.widget !== "boolean_fa_icon");
+    },
+});
 
 patch(SectionAndNoteListRenderer.prototype, {
-    getColumns(record) {
-        // Set record to use it in getSectionColumns()
-        this.record = record;
-        return super.getColumns(record);
-    },
     getSectionColumns(columns) {
-        // We do not want to display icons in notes, only in sections
-        if (this.record.data.display_type !== "line_section") {
-            return super.getSectionColumns(columns);
-        }
         var sectionCols = super.getSectionColumns(columns);
-        const widgetCols = columns.filter((col) => col.widget === "boolean_fa_icon");
-        const sectionWidget = widgetCols.map((col) => {
-            return {...col, colspan: 1};
-        });
+        if (this.record.data.display_type !== "line_section") {
+            // We do not want to display icons in notes, only in sections
+            return sectionCols;
+        }
+        const widgetCols = this.allColumns.filter(
+            (col) => col.widget === "boolean_fa_icon"
+        );
         sectionCols.forEach(function (item) {
+            // Adapt colspan of the name column, to make space for widget columns
             if (item.colspan > 1) {
                 item.colspan -= widgetCols.length;
             }
         });
-        return sectionCols.concat(sectionWidget);
+        // Add widget columns to section rows
+        return sectionCols.concat(widgetCols);
     },
 
     getCellClass(column, record) {

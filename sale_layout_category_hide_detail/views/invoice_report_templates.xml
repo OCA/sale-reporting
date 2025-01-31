@@ -47,9 +47,9 @@
             position="after"
         >
             <t t-if="not current_section.show_details">
-                <tr class="bg-200 o_line_section">
+                <tr class="o_line_section">
                     <td colspan="99">
-                        <span t-field="current_section.name" class="font-weight-bold" />
+                        <span t-field="current_section.name" class="fw-bold" />
                         <span class="float-end">
                             <span
                                 t-if="current_section.show_section_subtotal"

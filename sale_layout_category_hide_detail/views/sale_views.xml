@@ -30,7 +30,7 @@
                     />
                 </group>
             </xpath>
-            <xpath expr="//field[@name='order_line']/tree" position="inside">
+            <xpath expr="//field[@name='order_line']/list" position="inside">
                 <field
                     name="show_details"
                     widget="boolean_fa_icon"
@@ -68,7 +68,7 @@
                 <field name="show_subtotal" />
             </xpath>
             <xpath
-                expr="//field[@name='order_line']/kanban[hasclass('o_kanban_mobile')]//t[@t-out='record.name.value']/../.."
+                expr="//field[@name='order_line']/kanban[hasclass('o_kanban_mobile')]//field[@name='name']/.."
                 position="attributes"
             >
                 <attribute name="class" />
@@ -77,7 +77,7 @@
                 >col-#{record.display_type.raw_value === 'line_section' ? '10' : 12}</attribute>
             </xpath>
             <xpath
-                expr="//field[@name='order_line']/kanban[hasclass('o_kanban_mobile')]//t[@t-out='record.name.value']/../.."
+                expr="//field[@name='order_line']/kanban[hasclass('o_kanban_mobile')]//field[@name='name']/.."
                 position="after"
             >
                 <t t-if="record.display_type.raw_value === 'line_section'">

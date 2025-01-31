@@ -1,12 +1,10 @@
 # Copyright 2019 Tecnativa - Ernesto Tejeda
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo.tests import tagged
 
 from odoo.addons.sale.tests.common import SaleCommon
 
 
-@tagged("post_install", "-at_install")
 class TestSaleLayoutCategoryHideDetail(SaleCommon):
     @classmethod
     def setUpClass(cls):
