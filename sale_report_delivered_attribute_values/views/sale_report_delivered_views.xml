@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_sale_report_delivered_search" model="ir.ui.view">
+        <field name="name">sale.report.delivered.search</field>
+        <field name="model">sale.report.delivered</field>
+        <field
+            name="inherit_id"
+            ref="sale_report_delivered.view_sale_report_delivered_search"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//group[1]/field[@name='categ_id']" position="after">
+              <field
+                    string="Attribute"
+                    name="all_product_attribute_value_ids"
+                    filter_domain="[('all_product_attribute_value_ids.attribute_id', '=', self)]"
+                />
+              <field string="Attribue Value" name="all_product_attribute_value_ids" />
+            </xpath>
+            <xpath expr="//group/filter[@name='Category']" position="after">
+                <filter
+                    string="Attribute Values"
+                    name="grp_all_product_attribute_value_ids"
+                    context="{'group_by':'all_product_attribute_value_ids'}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
