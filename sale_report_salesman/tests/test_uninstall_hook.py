@@ -15,5 +15,5 @@ class TestUninstallHook(TransactionCase):
             "sale.menu_sale_report", raise_if_not_found=False
         )
         self.assertIn(self.group_sale_salesman, menu_sale_report.groups_id)
-        uninstall_hook(self.cr, self.registry)
+        uninstall_hook(self.env)
         self.assertNotIn(self.group_sale_salesman, menu_sale_report.groups_id)
