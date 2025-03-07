@@ -140,7 +140,11 @@ class SaleReportDeliverd(models.Model):
             t.name as template_name,
             t.uom_id as product_uom,
             cur.decimal_places,
-            sm.quantity as unsigned_product_uom_qty,
+            (CASE
+                WHEN t.type IN ('product', 'consu')
+                THEN COALESCE(-svl.quantity, sm.quantity, 0.0)
+                ELSE sol.product_uom_qty END
+            ) / u.factor * u2.factor as unsigned_product_uom_qty,
             CASE
               WHEN dest_location.usage IS NULL
                 THEN 1
@@ -149,14 +153,12 @@ class SaleReportDeliverd(models.Model):
             END AS signed_qty,
             ROUND(
                 COALESCE(
-                    sm.quantity * (
-                        sol.price_unit * (1.0 - sol.discount / 100.0)
-                    ),
+                    -svl.quantity * sol.price_reduce_taxexcl,
+                    sm.quantity * sol.price_reduce_taxexcl,
                     sol.price_subtotal
                 ) /
-                CASE
-                    COALESCE(s.currency_rate, 0)
-                    WHEN 0 THEN 1.0
+                CASE COALESCE(s.currency_rate, 0) WHEN 0
+                    THEN 1.0
                     ELSE s.currency_rate
                 END,
                 cur.decimal_places
