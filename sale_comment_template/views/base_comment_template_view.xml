@@ -4,7 +4,7 @@
         <field name="name">Sale Orders Comments</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">base.comment.template</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="domain">[("model_ids", "=", "sale.order")]</field>
         <field name="context" eval="{'default_models': 'sale.order'}" />
     </record>

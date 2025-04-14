@@ -4,7 +4,7 @@
         id="report_saleorder_document_comments"
         inherit_id="sale.report_saleorder_document"
     >
-        <xpath expr="//table[hasclass('table-sm')]" position="before">
+        <xpath expr="//table[hasclass('o_main_table')]" position="before">
             <t
                 t-foreach="doc.comment_template_ids.filtered(lambda x: x.position == 'before_lines')"
                 t-as="comment_template_top"
