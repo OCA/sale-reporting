@@ -5,42 +5,31 @@
   <template
         id="report_saleorder_document_hide_detail"
         inherit_id="sale.report_saleorder_document"
+        priority="99"
     >
     <xpath
             expr="//tbody[hasclass('sale_tbody')]//t[@t-if='not line.display_type']"
-            position="attributes"
+            position="replace"
         >
-      <attribute
-                name="t-if"
-                add="(not current_section or current_section.show_details)"
-                separator=" and "
-            />
+      <t t-if="not current_section or current_section.show_details">$0</t>
     </xpath>
     <xpath
             expr='//tbody[hasclass("sale_tbody")]//t[@t-elif="line.display_type == &apos;line_section&apos;"]//td'
-            position="attributes"
+            position="replace"
         >
-      <attribute name="t-if" add="line.show_details" separator=" and " />
+      <t t-if="line.show_details">$0</t>
     </xpath>
     <xpath
             expr='//tbody[hasclass("sale_tbody")]//t[@t-elif="line.display_type == &apos;line_note&apos;"]//td'
-            position="attributes"
+            position="replace"
         >
-      <attribute
-                name="t-if"
-                add="(not current_section or current_section.show_details)"
-                separator=" and "
-            />
+      <t t-if="not current_section or current_section.show_details">$0</t>
     </xpath>
     <xpath
             expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-end')]"
-            position="attributes"
+            position="replace"
         >
-      <attribute
-                name="t-if"
-                add="current_section.show_details and current_section.show_subtotal"
-                separator=" and "
-            />
+      <t t-if="current_section.show_details and current_section.show_subtotal">$0</t>
     </xpath>
     <xpath
             expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-end')]/td/strong"
@@ -75,33 +64,17 @@
       </t>
     </xpath>
 
-    <xpath expr="//td[@name='td_priceunit']/span" position="attributes">
-      <attribute
-                name="t-if"
-                add="not current_section or current_section.show_line_amount"
-                separator=" and "
-            />
+    <xpath expr="//td[@name='td_priceunit']/span" position="replace">
+      <t t-if="not current_section or current_section.show_line_amount">$0</t>
     </xpath>
-    <xpath expr="//td[@name='td_taxes']/span" position="attributes">
-      <attribute
-                name="t-if"
-                add="not current_section or current_section.show_line_amount"
-                separator=" and "
-            />
+    <xpath expr="//td[@name='td_taxes']/span" position="replace">
+      <t t-if="not current_section or current_section.show_line_amount">$0</t>
     </xpath>
-    <xpath expr="//td[@name='td_subtotal']/span" position="attributes">
-      <attribute
-                name="t-if"
-                add="not current_section or current_section.show_line_amount"
-                separator=" and "
-            />
+    <xpath expr="//td[@name='td_subtotal']/span" position="replace">
+      <t t-if="not current_section or current_section.show_line_amount">$0</t>
     </xpath>
-    <xpath expr="//td[@t-if='display_discount']/span" position="attributes">
-      <attribute
-                name="t-if"
-                add="not current_section or current_section.show_line_amount"
-                separator=" and "
-            />
+    <xpath expr="//td[@t-if='display_discount']/span" position="replace">
+      <t t-if="not current_section or current_section.show_line_amount">$0</t>
     </xpath>
 
   </template>
