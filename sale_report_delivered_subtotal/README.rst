@@ -68,6 +68,7 @@ Contributors
       -  Sergio Teruel
       -  David Vidal
       -  Alexandre Díaz
+      -  Pilar Vargas
 
 Maintainers
 -----------

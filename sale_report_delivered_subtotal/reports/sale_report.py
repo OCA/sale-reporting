@@ -16,17 +16,13 @@ class SaleReport(models.Model):
             sum(
                 CASE WHEN l.price_subtotal <> 0
                     THEN (l.price_subtotal / l.product_uom_qty)
-                    ELSE l.price_reduce
+                    ELSE l.price_reduce_taxexcl
                 END
                 * l.qty_delivered)
         """
         select_str_weight = """
             sum(p.weight * l.qty_delivered / u.factor * u2.factor)
         """
-        res.update(
-            {
-                "price_subtotal_delivered": select_str_price,
-                "weight_delivered": select_str_weight,
-            }
-        )
+        res["price_subtotal_delivered"] = select_str_price
+        res["weight_delivered"] = select_str_weight
         return res
