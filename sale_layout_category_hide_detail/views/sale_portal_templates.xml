@@ -44,13 +44,13 @@
             />
     </xpath>
     <xpath
-            expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-end')]/td/strong"
+            expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-end')]/td//strong"
             position="attributes"
         >
       <attribute name="class" add="d-none" separator=" " />
     </xpath>
     <xpath
-            expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-end')]/td/strong"
+            expr="//tbody[hasclass('sale_tbody')]//tr[hasclass('is-subtotal', 'text-end')]/td//strong"
             position="after"
         >
       <strong class="mr16">Subtotal <span t-field="current_section.name" /></strong>
