@@ -1,0 +1,46 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_report_without_tax_col
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-28 10:33+0000\n"
+"PO-Revision-Date: 2025-07-28 10:33+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_order_report_without_tax_col
+#: model_terms:ir.ui.view,arch_db:sale_order_report_without_tax_col.report_saleorder_document_without_taxation
+msgid "<strong>Total</strong>"
+msgstr ""
+
+#. module: sale_order_report_without_tax_col
+#: model:ir.model,name:sale_order_report_without_tax_col.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: sale_order_report_without_tax_col
+#: model:res.groups,name:sale_order_report_without_tax_col.group_taxes_on_report_saleorder_document
+msgid "Display Tax Summary in Sale Order Documents"
+msgstr "Mostrar resumen de impuestos en documentos de pedidos de venta"
+
+#. module: sale_order_report_without_tax_col
+#: model_terms:ir.ui.view,arch_db:sale_order_report_without_tax_col.report_saleorder_document_without_taxation
+msgid "No taxes included"
+msgstr "Precios sin IVA"
+
+#. module: sale_order_report_without_tax_col
+#: model_terms:ir.ui.view,arch_db:sale_order_report_without_tax_col.res_config_settings_view_form
+msgid "Show taxes on reports"
+msgstr "Mostrar resumen de impuestos en los informes"
+
+#. module: sale_order_report_without_tax_col
+#: model:ir.model.fields,field_description:sale_order_report_without_tax_col.field_res_config_settings__group_taxes_on_report_saleorder_document
+msgid "Taxes"
+msgstr "Resumen de impuestos en informes"

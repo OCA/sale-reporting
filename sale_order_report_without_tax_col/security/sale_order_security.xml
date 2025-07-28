@@ -1,0 +1,6 @@
+<odoo>
+    <record id="group_taxes_on_report_saleorder_document" model="res.groups">
+        <field name="name">Display Tax Summary in Sale Order Documents</field>
+        <field name="category_id" ref="base.module_category_hidden" />
+    </record>
+</odoo>

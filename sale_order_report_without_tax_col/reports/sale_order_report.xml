@@ -1,0 +1,40 @@
+<odoo>
+    <template
+        id="report_saleorder_document_without_taxation"
+        inherit_id="sale.report_saleorder_document"
+    >
+        <xpath expr="//th[@name='th_taxes']" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>
+        <xpath expr="//td[@name='td_taxes']" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>
+        <xpath expr="//t[@t-call='sale.document_tax_totals']" position="attributes">
+            <attribute
+                name="groups"
+            >sale_order_report_without_tax_col.group_taxes_on_report_saleorder_document</attribute>
+        </xpath>
+        <xpath expr="//t[@t-call='sale.document_tax_totals']" position="after">
+            <tr
+                groups="!sale_order_report_without_tax_col.group_taxes_on_report_saleorder_document"
+                class="border-black o_total"
+                style="font-size: 1.5em"
+            >
+                <td>
+                    <strong>Total</strong>
+                </td>
+                <td class="text-end">
+                    <span t-field="doc.amount_untaxed" />
+                </td>
+            </tr>
+            <tr
+                class="border-black"
+                groups="!sale_order_report_without_tax_col.group_taxes_on_report_saleorder_document"
+            >
+                <td class="text-end" colspan="2" style="font-size: 0.8em">
+                    No taxes included
+                </td>
+            </tr>
+        </xpath>
+    </template>
+</odoo>
