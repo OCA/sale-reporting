@@ -9,15 +9,15 @@
         </th>
         <td name="td_name" position="before">
             <td name="td_image">
-                <span 
-                    t-if="line.product_id.image_128" 
-                    t-esc="line.product_id.image_128" 
+                <span
+                    t-if="line.product_id.image_128"
+                    t-esc="line.product_id.image_128"
                     t-options="{'widget': 'image', 'max_width': '64', 'class': 'rounded'}"
                 />
                 <!-- if no image exists, a generic icon is expected -->
-                <span 
-                    t-if="not line.product_id.image_128" 
-                    t-field="line.product_id.image_128" 
+                <span
+                    t-if="not line.product_id.image_128"
+                    t-field="line.product_id.image_128"
                     t-options="{'widget': 'image', 'max_width': '64', 'class': 'rounded'}"
                 />
             </td>
