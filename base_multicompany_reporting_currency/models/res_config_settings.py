@@ -11,6 +11,7 @@ class ResConfigSettings(models.TransientModel):
         "res.currency",
         config_parameter="base_multicompany_reporting_currency.multicompany_reporting_currency",
     )
+    amount_option = fields.Selection(related="company_id.amount_option", readonly=False)
 
     def set_values(self):
         applied_currency = self.env[
