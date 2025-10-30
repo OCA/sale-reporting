@@ -7,7 +7,7 @@
     "category": "Sales",
     "author": "Camptocamp SA, Odoo Community Association (OCA)",
     "license": "AGPL-3",
-    "depends": ["sale", "base_multicompany_reporting_currency"],
+    "depends": ["sale", "account_multicompany_reporting_currency"],
     "website": "https://github.com/OCA/sale-reporting",
     "data": [
         "views/sale_order_views.xml",
