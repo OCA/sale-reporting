@@ -14,3 +14,12 @@ class ResCompany(models.Model):
         ],
         default="total",
     )
+
+    def _recompute_multicompany_reporting_currency(self):
+        # OVERRIDE to apply the change to sale.order(s)
+        res = super()._recompute_multicompany_reporting_currency()
+        reporting_currency = self._get_multicompany_reporting_currency()
+        domain = [("multicompany_reporting_currency_id", "!=", reporting_currency.id)]
+        records = self.env["sale.order"].sudo().search(domain)  # sudo for multi-company
+        records.multicompany_reporting_currency_id = reporting_currency
+        return res
