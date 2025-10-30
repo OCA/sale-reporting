@@ -72,7 +72,7 @@ class TestAmountMulticompanyReportingCurrency(TestSaleCommon):
         self.env["res.config.settings"].create(
             {
                 "multicompany_reporting_currency": self.currency_euro_id,
-                "amount_option": "untaxed",
+                "multicompany_reporting_amount": "untaxed",
             }
         ).execute()
         self.sol_serv_deliver = self.env["sale.order.line"].create(
@@ -91,18 +91,18 @@ class TestAmountMulticompanyReportingCurrency(TestSaleCommon):
             self.sale_order.amount_multicompany_reporting_currency, 1750
         )
         # check to be sure amount_multicompany_reporting_currency
-        # would have another value if amount_option is total
+        # would have another value if multicompany_reporting_amount is total
         self.assertAlmostEqual(
             self.sale_order.amount_total
             / self.sale_order.multicompany_reporting_currency_rate,
             1825,
         )
         # check `amount_multicompany_reporting_currency` is recomputed on
-        # `amount_option` change
+        # `multicompany_reporting_amount` change
         self.env["res.config.settings"].create(
             {
                 "multicompany_reporting_currency": self.currency_euro_id,
-                "amount_option": "total",
+                "multicompany_reporting_amount": "total",
             }
         ).execute()
         self.assertAlmostEqual(
@@ -111,7 +111,7 @@ class TestAmountMulticompanyReportingCurrency(TestSaleCommon):
         self.env["res.config.settings"].create(
             {
                 "multicompany_reporting_currency": self.currency_euro_id,
-                "amount_option": "untaxed",
+                "multicompany_reporting_amount": "untaxed",
             }
         ).execute()
         self.assertAlmostEqual(
