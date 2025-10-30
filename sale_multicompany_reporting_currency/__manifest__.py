@@ -12,6 +12,6 @@
     "data": [
         "views/sale_order_views.xml",
     ],
-    "installable": True,
     "maintainers": ["yankinmax"],
+    "auto_install": True,
 }
