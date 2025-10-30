@@ -7,7 +7,7 @@ from odoo import api, fields, models
 class ResCompany(models.Model):
     _inherit = "res.company"
 
-    amount_option = fields.Selection(
+    multicompany_reporting_amount = fields.Selection(
         [
             ("total", "Amount total"),
             ("untaxed", "Untaxed Amount"),

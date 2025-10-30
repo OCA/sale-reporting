@@ -28,7 +28,7 @@ class SaleOrder(models.Model):
         readonly=True,
     )
 
-    @api.depends("company_id.amount_option", "pricelist_id.currency_id")
+    @api.depends("company_id.multicompany_reporting_amount", "pricelist_id.currency_id")
     def _compute_multicompany_reporting_currency_id(self):
         multicompany_reporting_currency_id = (
             self.env.company._get_multicompany_reporting_currency()
@@ -73,7 +73,7 @@ class SaleOrder(models.Model):
         for record in self:
             reporting_amount = (
                 record.amount_total
-                if (record.company_id.amount_option == "total")
+                if (record.company_id.multicompany_reporting_amount == "total")
                 else record.amount_untaxed
             )
             if (

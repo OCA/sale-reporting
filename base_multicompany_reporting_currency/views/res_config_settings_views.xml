@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <br />
-                    <label for="amount_option" />
+                    <label for="multicompany_reporting_amount" />
                     <span
                         class="fa fa-lg fa-building-o"
                         title="Values set here are company-specific."
@@ -38,7 +38,7 @@
                     <div class="content-group">
                         <div class="mt16" groups="base.group_no_one">
                             <field
-                                name="amount_option"
+                                name="multicompany_reporting_amount"
                                 class="o_light_label"
                                 widget="radio"
                                 options="{'no_create': True}"
