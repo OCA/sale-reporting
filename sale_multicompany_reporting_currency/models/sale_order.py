@@ -8,24 +8,12 @@ from odoo.tools import float_is_zero
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
-    def _get_multicompany_reporting_currency_id(self):
-        multicompany_reporting_currency_parameter = (
-            self.env["ir.config_parameter"]
-            .sudo()
-            .get_param(
-                "base_multicompany_reporting_currency.multicompany_reporting_currency"
-            )
-        )
-        return self.env["res.currency"].browse(
-            int(multicompany_reporting_currency_parameter)
-        )
-
     multicompany_reporting_currency_id = fields.Many2one(
         "res.currency",
         compute="_compute_multicompany_reporting_currency_id",
         readonly=True,
         store=True,
-        default=_get_multicompany_reporting_currency_id,
+        default=lambda self: self.env.company._get_multicompany_reporting_currency(),
     )
     multicompany_reporting_currency_rate = fields.Float(
         compute="_compute_multicompany_reporting_currency_rate",
@@ -43,7 +31,7 @@ class SaleOrder(models.Model):
     @api.depends("company_id.amount_option", "pricelist_id.currency_id")
     def _compute_multicompany_reporting_currency_id(self):
         multicompany_reporting_currency_id = (
-            self._get_multicompany_reporting_currency_id()
+            self.env.company._get_multicompany_reporting_currency()
         )
         for record in self:
             record.multicompany_reporting_currency_id = (
