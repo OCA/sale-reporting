@@ -14,7 +14,10 @@
                     name="all_product_attribute_value_ids"
                     filter_domain="[('all_product_attribute_value_ids.attribute_id', '=', self)]"
                 />
-                <field string="Attribue Value" name="all_product_attribute_value_ids" />
+                <field
+                    string="Attribute Value"
+                    name="all_product_attribute_value_ids"
+                />
             </xpath>
             <xpath expr="//group/filter[@name='Category']" position="after">
                 <filter

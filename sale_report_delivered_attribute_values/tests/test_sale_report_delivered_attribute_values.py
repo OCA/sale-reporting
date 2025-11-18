@@ -15,7 +15,8 @@ class TestSaleReportDeliveredAttributeValues(common.TransactionCase):
         cls.product_template = cls.env["product.template"].create(
             {
                 "name": "Adidas Hoodie",
-                "type": "product",
+                "type": "consu",
+                "is_storable": True,
                 "sale_ok": True,
             }
         )
@@ -76,7 +77,7 @@ class TestSaleReportDeliveredAttributeValues(common.TransactionCase):
         order = order_form.save()
         order.action_confirm()
         order.picking_ids.action_confirm()
-        order.picking_ids.move_ids.write({"quantity_done": 1.0})
+        order.picking_ids.move_ids.write({"quantity": 1.0})
         order.picking_ids.button_validate()
         self.env.flush_all()
         return order
