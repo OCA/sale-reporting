@@ -38,6 +38,7 @@ addon | version | maintainers | summary
 [sale_report_delivered_deposit](sale_report_delivered_deposit/) | 16.0.2.0.0 | <a href='https://github.com/Shide'><img src='https://github.com/Shide.png' width='32' height='32' style='border-radius:50%;' alt='Shide'/></a> <a href='https://github.com/rafaelbn'><img src='https://github.com/rafaelbn.png' width='32' height='32' style='border-radius:50%;' alt='rafaelbn'/></a> | Allow to view Customer Deposits on Sale Report Delivered
 [sale_report_delivered_subtotal](sale_report_delivered_subtotal/) | 16.0.1.0.1 | <a href='https://github.com/sergio-teruel'><img src='https://github.com/sergio-teruel.png' width='32' height='32' style='border-radius:50%;' alt='sergio-teruel'/></a> | Sale Report Delivered subtotal
 [sale_report_delivered_volume](sale_report_delivered_volume/) | 16.0.1.0.0 |  | Sale Report Delivered Volume
+[sale_report_salesman](sale_report_salesman/) | 16.0.1.0.0 | <a href='https://github.com/carolina-fernandez'><img src='https://github.com/carolina-fernandez.png' width='32' height='32' style='border-radius:50%;' alt='carolina-fernandez'/></a> | Sale Report Salesman
 [sale_report_salesperson_from_partner](sale_report_salesperson_from_partner/) | 16.0.1.1.0 | <a href='https://github.com/pilarvargas-tecnativa'><img src='https://github.com/pilarvargas-tecnativa.png' width='32' height='32' style='border-radius:50%;' alt='pilarvargas-tecnativa'/></a> | Sale Report Salesperson From Partner
 
 [//]: # (end addons)
