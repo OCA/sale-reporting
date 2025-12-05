@@ -13,7 +13,12 @@ class TestSaleReportDeliveredDeposit(TestSaleReportDeliveredBase):
     def setUpClass(cls):
         super().setUpClass()
         cls.product_deposit = cls.env["product.product"].create(
-            {"name": "Test product Deposit", "type": "product", "list_price": 10}
+            {
+                "name": "Test product Deposit",
+                "type": "consu",
+                "is_storable": True,
+                "list_price": 10,
+            }
         )
         cls.deposit_wh = cls.env["stock.warehouse"].search(
             [("company_id", "=", cls.company.id)]
@@ -24,7 +29,7 @@ class TestSaleReportDeliveredDeposit(TestSaleReportDeliveredBase):
         cls.order_deposit.customer_deposit = True
         cls.order_deposit.action_confirm()
         cls.order_deposit.picking_ids.action_confirm()
-        cls.order_deposit.picking_ids.move_ids.write({"quantity_done": 1.0})
+        cls.order_deposit.picking_ids.move_ids.write({"quantity": 1.0})
         cls.order_deposit.picking_ids.button_validate()
 
     @users("admin", "test_user-sale_report_delivered")
