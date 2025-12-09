@@ -12,7 +12,7 @@
                 name="t-if"
             > line.order_id.pricelist_id.discount_policy!='without_discount' or line.discount==0 </attribute>
         </xpath>
-         <xpath expr="//span[@t-field='line.price_unit']" position="before">
+        <xpath expr="//span[@t-field='line.price_unit']" position="before">
             <div
                 t-if="line.order_id.pricelist_id.discount_policy=='without_discount' and line.discount!=0"
             >

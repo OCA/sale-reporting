@@ -17,21 +17,26 @@ Sale Report Crossed Out Original Price
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fsale--reporting-lightgray.png?logo=github
-    :target: https://github.com/OCA/sale-reporting/tree/14.0/sale_report_crossed_out_original_price
+    :target: https://github.com/OCA/sale-reporting/tree/18.0/sale_report_crossed_out_original_price
     :alt: OCA/sale-reporting
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/sale-reporting-14-0/sale-reporting-14-0-sale_report_crossed_out_original_price
+    :target: https://translation.odoo-community.org/projects/sale-reporting-18-0/sale-reporting-18-0-sale_report_crossed_out_original_price
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/sale-reporting&target_branch=14.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/sale-reporting&target_branch=18.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-When there is a discount and the discount policy is "Show public price & discount to the customer" this module allows you to generate sales reports crossing out the original price of each sale line and with the price with the discount applied below it.
+When there is a discount and the discount policy is "Show public price &
+discount to the customer" this module allows you to generate sales
+reports crossing out the original price of each sale line and with the
+price with the discount applied below it.
 
-An example of a sales report is shown below:
-  .. image:: https://raw.githubusercontent.com/OCA/sale-reporting/14.0/sale_report_crossed_out_original_price/static/img/example.png
+| An example of a sales report is shown below:
+| |image|
+
+.. |image| image:: https://raw.githubusercontent.com/OCA/sale-reporting/18.0/sale_report_crossed_out_original_price/static/img/example.png
 
 **Table of contents**
 
@@ -41,31 +46,34 @@ An example of a sales report is shown below:
 Installation
 ============
 
-This module depends on the sales module. So make sure to have it in your addons list.
+This module depends on the sales module. So make sure to have it in your
+addons list.
 
 Configuration
 =============
 
-You just need to configure your discount policy to be "Show public price & discount to the customer". To do this:
+You just need to configure your discount policy to be "Show public price
+& discount to the customer". To do this:
 
-#. Go to Sales module.
-#. Select Products in the menu bar.
-#. Select PriceList from the drop down menu.
-#. Select your pricelist.
-#. Select the configuration tab.
-#. Select "Show public price & discount to the customer".
+1. Go to Sales module.
+2. Select Products in the menu bar.
+3. Select PriceList from the drop down menu.
+4. Select your pricelist.
+5. Select the configuration tab.
+6. Select "Show public price & discount to the customer".
 
 Usage
 =====
 
 To use the module:
 
-#. Go to the sales module.
-#. Create a new quotation.
-#. Fill in the required fields.
-#. Select a pricelist with a discount policy "Show public price & discount to the customer".
-#. Add the products you want.
-#. Print the report.
+1. Go to the sales module.
+2. Create a new quotation.
+3. Fill in the required fields.
+4. Select a pricelist with a discount policy "Show public price &
+   discount to the customer".
+5. Add the products you want.
+6. Print the report.
 
 Bug Tracker
 ===========
@@ -73,7 +81,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/sale-reporting/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/sale-reporting/issues/new?body=module:%20sale_report_crossed_out_original_price%0Aversion:%2014.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/sale-reporting/issues/new?body=module:%20sale_report_crossed_out_original_price%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -81,17 +89,17 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Sygel
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Angel Garcia de la Chica Herrera <angel.garcia@sygel.es>
+- Angel Garcia de la Chica Herrera <angel.garcia@sygel.es>
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -103,6 +111,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/sale-reporting <https://github.com/OCA/sale-reporting/tree/14.0/sale_report_crossed_out_original_price>`_ project on GitHub.
+This module is part of the `OCA/sale-reporting <https://github.com/OCA/sale-reporting/tree/18.0/sale_report_crossed_out_original_price>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
