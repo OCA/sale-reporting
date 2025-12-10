@@ -1,1 +1,2 @@
 - Angel Garcia de la Chica Herrera \<<angel.garcia@sygel.es>\>
+- Denis Roussel \<<denis.roussel@acsone.eu>\>

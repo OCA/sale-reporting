@@ -8,23 +8,16 @@
         inherit_id="sale.report_saleorder_document"
     >
         <xpath expr="//span[@t-field='line.price_unit']" position="attributes">
-            <attribute
-                name="t-if"
-            > line.order_id.pricelist_id.discount_policy!='without_discount' or line.discount==0 </attribute>
+            <attribute name="t-if"> not line.has_discounted_price</attribute>
         </xpath>
         <xpath expr="//span[@t-field='line.price_unit']" position="before">
-            <div
-                t-if="line.order_id.pricelist_id.discount_policy=='without_discount' and line.discount!=0"
-            >
+            <div t-if="line.has_discounted_price">
                 <span
                     class="text-danger"
                     style="text-decoration: line-through"
-                    t-field="line.price_unit"
+                    t-field="line.base_price"
                 />
-                <t
-                    t-set="price_discount_applied"
-                    t-value="line.price_unit*(100-line.discount)/100"
-                />
+                <t t-set="price_discount_applied" t-value="line.price_unit" />
                 <p>
                     <t
                         t-esc="price_discount_applied"
