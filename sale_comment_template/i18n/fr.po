@@ -19,7 +19,7 @@ msgstr ""
 #. module: sale_comment_template
 #: model:ir.model.fields,field_description:sale_comment_template.field_sale_order__comment_template_ids
 msgid "Comment Template"
-msgstr ""
+msgstr "Modèle de commentaire"
 
 #. module: sale_comment_template
 #: model_terms:ir.ui.view,arch_db:sale_comment_template.sale_order_form_add_comment
@@ -34,12 +34,12 @@ msgstr "Commentaires de documents"
 #. module: sale_comment_template
 #: model:ir.actions.act_window,name:sale_comment_template.action_sale_order_comment_template
 msgid "Sale Orders Comments"
-msgstr ""
+msgstr "Commentaires des commandes"
 
 #. module: sale_comment_template
 #: model:ir.model,name:sale_comment_template.model_sale_order
 msgid "Sales Order"
-msgstr ""
+msgstr "Commande"
 
 #~ msgid "Bottom Comment"
 #~ msgstr "Commentaires du bas"
