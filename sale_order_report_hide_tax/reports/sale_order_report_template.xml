@@ -3,12 +3,21 @@
     <template
         id="report_saleorder_document"
         inherit_id="sale.report_saleorder_document"
+        priority="999"
     >
         <xpath expr="//th[@name='th_taxes']" position="attributes">
-            <attribute name="t-if">doc.show_tax_column_in_report</attribute>
+            <attribute
+                name="t-if"
+                add="doc.show_tax_column_in_report"
+                separator="and"
+            />
         </xpath>
         <xpath expr="//td[@name='td_taxes']" position="attributes">
-            <attribute name="t-if">doc.show_tax_column_in_report</attribute>
+            <attribute
+                name="t-if"
+                add="doc.show_tax_column_in_report"
+                separator="and"
+            />
         </xpath>
     </template>
 </odoo>

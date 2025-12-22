@@ -14,9 +14,8 @@ class SaleOrder(models.Model):
         self.show_tax_column_in_report = True
         for order in self.filtered("order_line"):
             order_lines = order.order_line.filtered(lambda x: not x.display_type)
-            # Can be a recordset if several taxes apply
             first_line_tax_group = fields.first(order_lines).tax_id.tax_group_id
             # Mixed group taxes, let's show them for clarity
-            order.show_tax_column_in_report = (
-                first_line_tax_group != order_lines.tax_id.tax_group_id
+            order.show_tax_column_in_report = any(
+                first_line_tax_group != line.tax_id.tax_group_id for line in order_lines
             )

@@ -3,7 +3,7 @@
 {
     "name": "Sale order line hide tax in report",
     "summary": "Hide taxes column when they don't add value",
-    "version": "16.0.1.0.1",
+    "version": "18.0.1.0.1",
     "development_status": "Alpha",
     "category": "Sales",
     "website": "https://github.com/OCA/sale-reporting",
