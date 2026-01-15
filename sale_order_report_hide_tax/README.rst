@@ -29,7 +29,9 @@ Sale order line hide tax in report
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
 Hide taxes column in the quotation document that is sent to the
-customer.
+customer. When all quotation lines have the same tax group, the Taxes
+column is automatically hidden to avoid displaying redundant information
+and to improve document clarity.
 
 .. IMPORTANT::
    This is an alpha version, the data model and design can change at any time without warning.
@@ -56,6 +58,14 @@ Usage
 
 Whenever the taxes are in the same group for the whole order the column
 won't be displayed.
+
+The module performs the following validation: - It checks that all order
+lines have the same tax group. - It does not validate if the taxes
+within the same line are different.
+
+**Result:** - If all tax groups are the same, the Taxes column is hidden
+in the printed or sent quotation. - If at least one line has a different
+tax group, the Taxes column is displayed as usual.
 
 Bug Tracker
 ===========
