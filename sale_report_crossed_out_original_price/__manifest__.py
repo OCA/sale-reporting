@@ -9,6 +9,6 @@
     "category": "Sales",
     "summary": "Sale report crossed out original price when a discount exists",
     "depends": ["sale", "sale_order_line_base_price_and_has_discount"],
-    "data": ["reports/report_saleorder_document.xml"],
+    "data": ["reports/report_saleorder_document.xml", "views/res_config_settings.xml"],
     "installable": True,
 }

@@ -7,24 +7,33 @@
         name="report saleorder document crossed original price"
         inherit_id="sale.report_saleorder_document"
     >
-        <xpath expr="//span[@t-field='line.price_unit']" position="attributes">
-            <attribute name="t-if"> not line.has_discount_price</attribute>
+        <xpath expr="//span[@t-field='line.price_unit']/parent::td" position="before">
+            <td t-if="doc.display_base_price_discount_report" class="text-end">
+                <span
+                    t-if="line.base_price_discount"
+                    t-field="line.base_price_discount"
+                />
+            </td>
         </xpath>
-        <xpath expr="//span[@t-field='line.price_unit']" position="before">
-            <div t-if="line.has_discount_price">
+
+        <xpath expr="//span[@t-field='line.price_unit']" position="after">
+            <p t-if="doc.display_crossed_base_price_report and line.has_discount_price">
                 <span
                     class="text-danger"
                     style="text-decoration: line-through"
                     t-field="line.base_price"
                 />
-                <t t-set="price_discount_applied" t-value="line.price_unit" />
-                <p>
-                    <t
-                        t-esc="price_discount_applied"
-                        t-options='{"widget": "float", "decimal_precision": "Product Price"}'
-                    />
-                </p>
-            </div>
+            </p>
         </xpath>
+
+        <th name="th_priceunit" position="before">
+            <th
+                t-if="doc.display_base_price_discount_report"
+                name="th_base_discount"
+                class="text-end"
+            >
+                <span>Base Disc.%</span>
+            </th>
+        </th>
     </template>
 </odoo>

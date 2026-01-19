@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2025 ACSONE SA/NV
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.sale</field>
+        <field name="model">res.config.settings</field>
+        <field
+            name="inherit_id"
+            ref="sale_order_line_base_price_and_has_discount.res_config_settings_view_form"
+        />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//field[@name='display_base_price_method']/parent::setting"
+                position="after"
+            >
+                <setting
+                    id="display_base_price_discount_report_setting"
+                    string="Base Price Discount on Reports"
+                >
+                    <field
+                        name="display_base_price_discount_report"
+                        class="o_light_label"
+                    />
+                    <div class="text-muted">
+                        Check this if you want to display this on reports.
+                    </div>
+                </setting>
+                <setting
+                    id="display_crossed_base_price_report_setting"
+                    string="Crossed Base Price on Reports"
+                >
+                    <field
+                        name="display_crossed_base_price_report"
+                        class="o_light_label"
+                    />
+                    <div class="text-muted">
+                        Check this if you want to display crossed base price on reports.
+                    </div>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>
