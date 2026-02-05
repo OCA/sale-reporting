@@ -6,7 +6,7 @@
 
 import {SectionAndNoteListRenderer} from "@account/components/section_and_note_fields_backend/section_and_note_fields_backend";
 import {patch} from "@web/core/utils/patch";
-import {ProductLabelSectionAndNoteListRender} from "@account/components/product_label_section_and_note_field/product_label_section_and_note_field";
+import {ProductLabelSectionAndNoteListRender} from "@account/components/product_label_section_and_note_field/product_label_section_and_note_field_o2m";
 
 patch(ProductLabelSectionAndNoteListRender.prototype, {
     getActiveColumns(list) {

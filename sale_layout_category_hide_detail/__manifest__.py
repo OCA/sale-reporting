@@ -5,10 +5,10 @@
     "name": "Sale layout category hide detail",
     "summary": "Hide details for sections in sale orders and invoices for "
     "reports and customer portal",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "category": "Sales Management",
     "website": "https://github.com/OCA/sale-reporting",
-    "author": "Tecnativa, " "Odoo Community Association (OCA)",
+    "author": "Tecnativa, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "depends": ["sale_management"],
     "data": [
