@@ -1,2 +1,1 @@
-Add User: All Documents and User: Own Documents Only access to
-Sales/Reporting
+Allow all sales groups access to reporting sales
