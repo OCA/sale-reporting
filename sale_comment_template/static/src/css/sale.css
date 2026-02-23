@@ -1,4 +1,4 @@
-caption.formatted_note {
+div.formatted_note {
     text-align:left;
     border-right:thin solid #EEEEEE;
     border-left:thin solid #EEEEEE;
@@ -7,6 +7,6 @@ caption.formatted_note {
     font-size:11;
 }
 
-caption.formatted_note p {
+div.formatted_note p {
     margin: 0;
 }

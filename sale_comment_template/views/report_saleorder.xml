@@ -21,11 +21,9 @@
         <t t-if="line.formatted_note != '&lt;p&gt;&lt;br&gt;&lt;/p&gt;'">
             <tr style="padding:0;">
                 <td colspan="7" style="padding:0;">
-                    <table style="width:100%;border:0;padding:0;">
-                        <caption class="formatted_note">
-                            <span t-field="line.formatted_note"/>
-                        </caption>
-                    </table>
+                    <div class="formatted_note">
+                        <span t-field="line.formatted_note"/>
+                    </div>
                 </td>
             </tr>
         </t>
