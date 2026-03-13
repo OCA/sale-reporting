@@ -4,7 +4,7 @@
 {
     "name": "Sale Report Delivered - Price Compliance",
     "summary": "Allow to view Price Compliance Tiers on Sale Report Delivered",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.0.1",
     "development_status": "Alpha",
     "category": "Sales",
     "website": "https://github.com/OCA/sale-reporting",
