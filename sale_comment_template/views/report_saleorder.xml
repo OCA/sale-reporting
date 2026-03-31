@@ -21,8 +21,9 @@
         <t t-if="line.formatted_note != '&lt;p&gt;&lt;br&gt;&lt;/p&gt;'">
             <tr style="padding:0;">
                 <td colspan="7" style="padding:0;">
-                    <div class="formatted_note">
-                        <span t-field="line.formatted_note"/>
+                    <div class="formatted_note"
+                         style="white-space: pre-line;">
+                        <t t-raw="line.formatted_note"/>
                     </div>
                 </td>
             </tr>
