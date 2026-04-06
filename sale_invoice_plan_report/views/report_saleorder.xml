@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright 2026 - TODAY, Kaynnan Lemes <kaynnan.lemes@escodoo.com.br>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html)
+-->
+<odoo>
+    <template
+        id="report_saleorder_document_invoice_plan"
+        inherit_id="sale.report_saleorder_document"
+    >
+        <!-- Add invoice plan section after the main order table -->
+        <xpath
+            expr="//div[@class='clearfix' and @name='so_total_summary']"
+            position="before"
+        >
+            <t t-if="doc.use_invoice_plan and doc.invoice_plan_ids">
+                <div class="mt-4 mb-3 invoice_plan_section" name="invoice_plan_section">
+                    <!-- Section Header -->
+                    <div class="row mb-3">
+                        <div class="col-12 d-flex align-items-center">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="me-2 invoice_plan_header_icon"
+                            ><rect
+                                    x="3"
+                                    y="4"
+                                    width="18"
+                                    height="18"
+                                    rx="2"
+                                    ry="2"
+                                /><line x1="16" y1="2" x2="16" y2="6" /><line
+                                    x1="8"
+                                    y1="2"
+                                    x2="8"
+                                    y2="6"
+                                /><line x1="3" y1="10" x2="21" y2="10" /></svg>
+                            <h4 class="mb-0 invoice_plan_header_title">Invoice Plan</h4>
+                        </div>
+                    </div>
+
+                    <!-- Summary Cards -->
+                    <div class="row mb-3">
+                        <!-- Total Planned -->
+                        <div class="col-sm-4 mb-2">
+                            <div class="invoice_plan_card invoice_plan_card_planned">
+                                <div class="d-flex align-items-center">
+                                    <div
+                                        class="invoice_plan_card_icon invoice_plan_card_icon_planned"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="white"
+                                            stroke-width="2"
+                                        ><line x1="12" y1="1" x2="12" y2="23" /><path
+                                                d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                                            /></svg>
+                                    </div>
+                                    <div>
+                                        <div
+                                            class="invoice_plan_card_label invoice_plan_card_label_planned"
+                                        >Total Planned</div>
+                                        <div class="invoice_plan_card_value">
+                                            <t
+                                                t-esc="'{:.0f}%'.format(doc.invoice_plan_total_percent)"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Amount Invoiced -->
+                        <div class="col-sm-4 mb-2">
+                            <div class="invoice_plan_card invoice_plan_card_invoiced">
+                                <div class="d-flex align-items-center">
+                                    <div
+                                        class="invoice_plan_card_icon invoice_plan_card_icon_invoiced"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="white"
+                                            stroke-width="2"
+                                        ><polyline points="20 6 9 17 4 12" /></svg>
+                                    </div>
+                                    <div>
+                                        <div
+                                            class="invoice_plan_card_label invoice_plan_card_label_invoiced"
+                                        >Invoiced</div>
+                                        <div class="invoice_plan_card_value">
+                                            <t
+                                                t-set="invoiced_amount"
+                                                t-value="sum(line.amount_invoiced if line.invoiced else 0 for line in doc.invoice_plan_ids)"
+                                            />
+                                            <span
+                                                t-out="invoiced_amount"
+                                                t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Amount Pending -->
+                        <div class="col-sm-4 mb-2">
+                            <div class="invoice_plan_card invoice_plan_card_pending">
+                                <div class="d-flex align-items-center">
+                                    <div
+                                        class="invoice_plan_card_icon invoice_plan_card_icon_pending"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="white"
+                                            stroke-width="2"
+                                        ><circle cx="12" cy="12" r="10" /><polyline
+                                                points="12 6 12 12 16 14"
+                                            /></svg>
+                                    </div>
+                                    <div>
+                                        <div
+                                            class="invoice_plan_card_label invoice_plan_card_label_pending"
+                                        >Pending</div>
+                                        <div class="invoice_plan_card_value">
+                                            <t
+                                                t-set="pending_amount"
+                                                t-value="sum(line.amount if not line.invoiced else 0 for line in doc.invoice_plan_ids if line.installment)"
+                                            />
+                                            <span
+                                                t-out="pending_amount"
+                                                t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <div class="d-flex align-items-center mb-1">
+                                <span
+                                    class="invoice_plan_progress_label"
+                                >Billing Progress</span>
+                                <span
+                                    t-if="doc.invoice_plan_total_percent > 0"
+                                    class="ms-2 invoice_plan_progress_percent"
+                                >
+                                    <t
+                                        t-esc="'{:.0f}'.format(doc.invoice_plan_total_percent)"
+                                    />
+                                    <t t-esc="'%'" />
+                                </span>
+                            </div>
+                            <div class="invoice_plan_progress_track">
+                                <t t-if="doc.invoice_plan_total_percent > 0">
+                                    <t
+                                        t-set="invoiced_pct"
+                                        t-value="sum(line.amount_invoiced if line.invoiced else 0 for line in doc.invoice_plan_ids) / doc.invoice_plan_total_amount * 100 if doc.invoice_plan_total_amount else 0"
+                                    />
+                                    <div class="invoice_plan_progress_track_inner">
+                                        <div
+                                            class="invoice_plan_progress_bar"
+                                            t-att-style="'width: {:.0f}%;'.format(invoiced_pct)"
+                                        />
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Invoice Plan Table -->
+                    <div class="invoice_plan_table_wrapper">
+                        <table class="table table-sm o_main_table mb-0">
+                            <thead class="invoice_plan_thead">
+                                <tr>
+                                    <th
+                                        name="th_installment"
+                                        class="text-center invoice_plan_th"
+                                    >#</th>
+                                    <th
+                                        name="th_type"
+                                        class="text-center invoice_plan_th"
+                                    >Type</th>
+                                    <th
+                                        name="th_date"
+                                        class="text-start invoice_plan_th"
+                                    >Due Date</th>
+                                    <th
+                                        name="th_percentage"
+                                        class="text-end invoice_plan_th"
+                                    >Percent</th>
+                                    <th
+                                        name="th_amount"
+                                        class="text-end invoice_plan_th"
+                                    >Amount</th>
+                                    <th
+                                        name="th_invoiced"
+                                        class="text-center invoice_plan_th"
+                                    >Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.invoice_plan_ids" t-as="plan_line">
+                                    <tr class="invoice_plan_row">
+                                        <!-- Installment Number -->
+                                        <td class="text-center" name="td_installment">
+                                            <span
+                                                t-esc="plan_line.installment"
+                                                class="invoice_plan_badge_number"
+                                            />
+                                        </td>
+                                        <!-- Type Badge -->
+                                        <td class="text-center" name="td_type">
+                                            <t
+                                                t-if="plan_line.invoice_type == 'advance'"
+                                            >
+                                                <span
+                                                    class="invoice_plan_badge invoice_plan_badge_advance"
+                                                >
+                                                    Advance
+                                                </span>
+                                            </t>
+                                            <t t-else="">
+                                                <span
+                                                    class="invoice_plan_badge invoice_plan_badge_installment"
+                                                >
+                                                    Installment
+                                                </span>
+                                            </t>
+                                        </td>
+                                        <!-- Date -->
+                                        <td class="text-start" name="td_date">
+                                            <span
+                                                t-field="plan_line.plan_date"
+                                                t-options='{"widget": "date"}'
+                                                class="invoice_plan_date"
+                                            />
+                                        </td>
+                                        <!-- Percentage -->
+                                        <td class="text-end" name="td_percentage">
+                                            <span
+                                                t-esc="'{:.1f}%'.format(plan_line.percent)"
+                                                class="invoice_plan_percent"
+                                            />
+                                        </td>
+                                        <!-- Amount -->
+                                        <td class="text-end" name="td_amount">
+                                            <span
+                                                t-field="plan_line.amount"
+                                                t-options='{"widget": "monetary", "display_currency": doc.currency_id}'
+                                                class="invoice_plan_amount"
+                                            />
+                                        </td>
+                                        <!-- Status -->
+                                        <td class="text-center" name="td_status">
+                                            <t t-if="plan_line.invoiced">
+                                                <span
+                                                    class="invoice_plan_status invoice_plan_status_invoiced"
+                                                >
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="12"
+                                                        height="12"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="3"
+                                                        class="invoice_plan_status_icon"
+                                                    ><polyline
+                                                            points="20 6 9 17 4 12"
+                                                        /></svg>
+                                                    Invoiced
+                                                </span>
+                                            </t>
+                                            <t t-elif="plan_line.to_invoice">
+                                                <span
+                                                    class="invoice_plan_status invoice_plan_status_to_invoice"
+                                                >
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="12"
+                                                        height="12"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="3"
+                                                        class="invoice_plan_status_icon"
+                                                    ><circle
+                                                            cx="12"
+                                                            cy="12"
+                                                            r="10"
+                                                        /><line
+                                                            x1="12"
+                                                            y1="8"
+                                                            x2="12"
+                                                            y2="12"
+                                                        /><line
+                                                            x1="12"
+                                                            y1="16"
+                                                            x2="12.01"
+                                                            y2="16"
+                                                        /></svg>
+                                                    To Invoice
+                                                </span>
+                                            </t>
+                                            <t t-else="">
+                                                <span
+                                                    class="invoice_plan_status invoice_plan_status_pending"
+                                                >
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="12"
+                                                        height="12"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="3"
+                                                        class="invoice_plan_status_icon"
+                                                    ><circle
+                                                            cx="12"
+                                                            cy="12"
+                                                            r="10"
+                                                        /></svg>
+                                                    Pending
+                                                </span>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                </t>
+                                <!-- Totals Row -->
+                                <t t-if="doc.invoice_plan_total_amount > 0">
+                                    <tr class="invoice_plan_totals_row">
+                                        <td
+                                            colspan="3"
+                                            class="text-end invoice_plan_totals_label"
+                                        >
+                                            Total
+                                        </td>
+                                        <td
+                                            class="text-end invoice_plan_totals_value"
+                                            name="td_total_percent"
+                                        >
+                                            <span
+                                                t-esc="'{:.1f}%'.format(doc.invoice_plan_total_percent)"
+                                            />
+                                        </td>
+                                        <td
+                                            class="text-end invoice_plan_totals_value"
+                                            name="td_total_amount"
+                                        >
+                                            <span
+                                                t-field="doc.invoice_plan_total_amount"
+                                                t-options='{"widget": "monetary", "display_currency": doc.currency_id}'
+                                            />
+                                        </td>
+                                        <td class="invoice_plan_totals_spacer" />
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

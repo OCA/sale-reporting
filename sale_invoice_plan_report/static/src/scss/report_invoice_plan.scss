@@ -1,0 +1,202 @@
+// Copyright 2026 - TODAY, Kaynnan Lemes <kaynnan.lemes@escodoo.com.br>
+// License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html)
+
+.invoice_plan_section {
+    .invoice_plan_header_icon {
+        color: #714b67;
+    }
+    .invoice_plan_header_title {
+        color: #714b67;
+    }
+
+    // Summary cards
+    .invoice_plan_card {
+        border-radius: 6px;
+        padding: 10px 14px;
+        border: 1px solid transparent;
+    }
+    .invoice_plan_card_planned {
+        background: #f8f0f5;
+        border-color: #e5d5de;
+    }
+    .invoice_plan_card_invoiced {
+        background: #e8f5e9;
+        border-color: #c8e6c9;
+    }
+    .invoice_plan_card_pending {
+        background: #fff3e0;
+        border-color: #ffe0b2;
+    }
+
+    .invoice_plan_card_icon {
+        border-radius: 4px;
+        padding: 6px 8px;
+        margin-right: 10px;
+    }
+    .invoice_plan_card_icon_planned {
+        background: #714b67;
+    }
+    .invoice_plan_card_icon_invoiced {
+        background: #4caf50;
+    }
+    .invoice_plan_card_icon_pending {
+        background: #ff9800;
+    }
+
+    .invoice_plan_card_label {
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+    .invoice_plan_card_label_planned {
+        color: #714b67;
+    }
+    .invoice_plan_card_label_invoiced {
+        color: #2e7d32;
+    }
+    .invoice_plan_card_label_pending {
+        color: #e65100;
+    }
+    .invoice_plan_card_value {
+        font-size: 16px;
+        font-weight: 700;
+        color: #28282b;
+    }
+
+    // Progress bar
+    .invoice_plan_progress_label {
+        font-size: 11px;
+        color: #714b67;
+        font-weight: 500;
+    }
+    .invoice_plan_progress_percent {
+        font-size: 11px;
+        font-weight: 700;
+        color: #28282b;
+    }
+    .invoice_plan_progress_track {
+        background: #e9ecef;
+        border-radius: 8px;
+        height: 8px;
+        overflow: hidden;
+    }
+    .invoice_plan_progress_track_inner {
+        width: 100%;
+        height: 8px;
+    }
+    .invoice_plan_progress_bar {
+        height: 100%;
+        background: linear-gradient(90deg, #714b67 0%, #9c27b0 100%);
+        border-radius: 8px;
+    }
+
+    // Table
+    .invoice_plan_table_wrapper {
+        border: 1px solid #e5d5de;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+    .invoice_plan_thead {
+        display: table-row-group;
+        background: #f8f0f5;
+    }
+    .invoice_plan_th {
+        color: #714b67;
+        font-weight: 600;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border: none;
+        padding: 10px 12px;
+    }
+    .invoice_plan_row {
+        border-bottom: 1px solid #f0e5ed;
+
+        td {
+            padding: 10px 12px;
+        }
+    }
+    .invoice_plan_badge_number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        background: #f8f0f5;
+        color: #714b67;
+        font-weight: 700;
+        border-radius: 50%;
+        font-size: 12px;
+    }
+    .invoice_plan_badge {
+        display: inline-block;
+        border-radius: 4px;
+        padding: 3px 8px;
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+    }
+    .invoice_plan_badge_advance {
+        background: #e3f2fd;
+        color: #1565c0;
+    }
+    .invoice_plan_badge_installment {
+        background: #f3e5f5;
+        color: #7b1fa2;
+    }
+    .invoice_plan_date {
+        font-weight: 500;
+    }
+    .invoice_plan_percent {
+        font-weight: 600;
+        color: #28282b;
+    }
+    .invoice_plan_amount {
+        font-weight: 600;
+    }
+
+    .invoice_plan_status {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 12px;
+        padding: 3px 10px;
+        font-size: 10px;
+        font-weight: 600;
+    }
+    .invoice_plan_status_icon {
+        margin-right: 4px;
+    }
+    .invoice_plan_status_invoiced {
+        background: #e8f5e9;
+        color: #2e7d32;
+    }
+    .invoice_plan_status_to_invoice {
+        background: #e3f2fd;
+        color: #1565c0;
+    }
+    .invoice_plan_status_pending {
+        background: #f5f5f5;
+        color: #757575;
+    }
+
+    .invoice_plan_totals_row {
+        background: #f8f0f5;
+
+        td {
+            padding: 10px 12px;
+            border-top: 2px solid #714b67;
+        }
+    }
+    .invoice_plan_totals_label {
+        font-weight: 700;
+        color: #714b67;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+    .invoice_plan_totals_value {
+        font-weight: 700;
+        font-size: 13px;
+    }
+}
