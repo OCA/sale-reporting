@@ -3,15 +3,14 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import fields
-from odoo.tests import SavepointCase
+from odoo.tests import TransactionCase
 
 
-class TestSaleInvoiceDate(SavepointCase):
+class TestSaleInvoiceDate(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
-        cls.partner = cls.env.ref("base.res_partner_1")
+        cls.partner = cls.env["res.partner"].create([{"name": "Partner 1"}])
         cls.product = cls.env["product.product"].create(
             {
                 "name": "Test Product",
@@ -30,7 +29,7 @@ class TestSaleInvoiceDate(SavepointCase):
                             "name": cls.product.name,
                             "product_id": cls.product.id,
                             "product_uom_qty": 5.0,
-                            "product_uom": cls.product.uom_id.id,
+                            "product_uom_id": cls.product.uom_id.id,
                             "price_unit": cls.product.list_price,
                         },
                     )
@@ -73,11 +72,9 @@ class TestSaleInvoiceDate(SavepointCase):
 
     def test_sale_report(self):
         self._create_invoice(self.order, quantity=5.0, invoice_date="2022-01-03")
-        self.env["base"].flush()
-        res = self.env["sale.report"].read_group(
-            [("order_id", "in", self.order.ids)],
-            fields=["invoice_date"],
-            groupby=["invoice_date"],
-            lazy=False,
+        self.env.cr.flush()
+        res = self.env["sale.report"]._read_group(
+            [("name", "=", self.order.name)],
+            groupby=["invoice_date:month"],
         )
-        self.assertEqual(res[0]["invoice_date"], "January 2022")
+        self.assertEqual(res[0][0], fields.Date.to_date("2022-01-01"))

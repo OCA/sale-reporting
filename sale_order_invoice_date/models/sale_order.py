@@ -15,11 +15,11 @@ class SaleOrder(models.Model):
         data = {}
         invoiced = self.filtered(lambda rec: rec.invoice_status == "invoiced")
         if invoiced.ids:
-            groups = self.env["sale.order.line"].read_group(
+            groups = self.env["sale.order.line"]._read_group(
                 domain=[("order_id", "in", invoiced.ids)],
-                fields=["order_id", "invoice_date:max"],
+                aggregates=["invoice_date:max"],
                 groupby=["order_id"],
             )
-            data = {g["order_id"][0]: g["invoice_date"] for g in groups}
+            data = {order.id: invoice_date for order, invoice_date in groups}
         for rec in self:
             rec.invoice_date = data.get(rec.id, False)

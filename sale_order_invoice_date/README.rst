@@ -67,6 +67,10 @@ Contributors
 
   - Iván Todorovich <ivan.todorovich@camptocamp.com>
 
+- `ArcheTI <https://www.archeti.com>`__
+
+  - Alexei Rivera <arivera@archeti.com> (Migration to 19.0)
+
 Maintainers
 -----------
 

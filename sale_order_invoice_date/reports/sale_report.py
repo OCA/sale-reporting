@@ -10,10 +10,13 @@ class SaleReport(models.Model):
 
     invoice_date = fields.Date(readonly=True)
 
-    def _select_additional_fields(self, fields):
-        fields["invoice_date"] = ", l.invoice_date as invoice_date"
-        return super()._select_additional_fields(fields)
+    def _select_additional_fields(self):
+        res = super()._select_additional_fields()
+        res["invoice_date"] = "l.invoice_date"
+        return res
 
-    def _group_by_sale(self, groupby=""):
-        res = super()._group_by_sale(groupby=groupby)
-        return f"{res}, l.invoice_date"
+    def _group_by_sale(self):
+        res = super()._group_by_sale()
+        res += """,
+            l.invoice_date"""
+        return res

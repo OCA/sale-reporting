@@ -14,13 +14,13 @@
                 <filter
                     name="filter_invoice_date"
                     date="invoice_date"
-                    default_period="this_month"
+                    default_period="month"
                 />
             </filter>
-            <filter name="date" position="after">
+            <filter name="group_by_date" position="after">
                 <filter
                     string="Invoice Date"
-                    name="invoice_date"
+                    name="group_by_invoice_date"
                     context="{'group_by': 'invoice_date'}"
                 />
             </filter>

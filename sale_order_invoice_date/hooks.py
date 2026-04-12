@@ -4,18 +4,18 @@
 
 import logging
 
-from odoo.tools import column_exists, create_column
+from odoo.tools.sql import column_exists, create_column
 
 _logger = logging.getLogger(__name__)
 
 
-def pre_init_hook(cr):
-    if not column_exists(cr, "sale_order_line", "invoice_date"):
-        create_column(cr, "sale_order_line", "invoice_date", "date")
-    if not column_exists(cr, "sale_order", "invoice_date"):
-        create_column(cr, "sale_order", "invoice_date", "date")
+def pre_init_hook(env):
+    if not column_exists(env.cr, "sale_order_line", "invoice_date"):
+        create_column(env.cr, "sale_order_line", "invoice_date", "date")
+    if not column_exists(env.cr, "sale_order", "invoice_date"):
+        create_column(env.cr, "sale_order", "invoice_date", "date")
     _logger.info("Initializing computed values for sale_order_line.invoice_date")
-    cr.execute(
+    env.cr.execute(
         """
         WITH sol AS (
             SELECT sol.id AS id, max(move.invoice_date) AS invoice_date
@@ -32,7 +32,7 @@ def pre_init_hook(cr):
         """
     )
     _logger.info("Initializing computed values for sale_order.invoice_date")
-    cr.execute(
+    env.cr.execute(
         """
         WITH so AS (
             SELECT so.id AS id, max(sol.invoice_date) AS invoice_date
