@@ -5,7 +5,6 @@
     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 -->
 <odoo>
-
     <record id="view_order_product_search" model="ir.ui.view">
         <field name="model">sale.report</field>
         <field name="inherit_id" ref="sale.view_order_product_search" />
@@ -27,5 +26,4 @@
             </filter>
         </field>
     </record>
-
 </odoo>
