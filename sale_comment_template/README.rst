@@ -21,13 +21,13 @@ Sale Comments
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fsale--reporting-lightgray.png?logo=github
-    :target: https://github.com/OCA/sale-reporting/tree/18.0/sale_comment_template
+    :target: https://github.com/OCA/sale-reporting/tree/19.0/sale_comment_template
     :alt: OCA/sale-reporting
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/sale-reporting-18-0/sale-reporting-18-0-sale_comment_template
+    :target: https://translation.odoo-community.org/projects/sale-reporting-19-0/sale-reporting-19-0-sale_comment_template
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/sale-reporting&target_branch=18.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/sale-reporting&target_branch=19.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
@@ -43,8 +43,8 @@ Adds comments on
 
    Two positions are available for the comments:
 
-   - above sale order lines
-   - below sale order lines
+   -  above sale order lines
+   -  below sale order lines
 
    Comments are copied on the invoice when you will create invoice from
    sale order.
@@ -67,7 +67,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/sale-reporting/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/sale-reporting/issues/new?body=module:%20sale_comment_template%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/sale-reporting/issues/new?body=module:%20sale_comment_template%0Aversion:%2019.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -83,31 +83,31 @@ Authors
 Contributors
 ------------
 
-- Nicolas Bessi <nicolas.bessi@camptocamp.com>
-- Yannick Vaucher <yannick.vaucher@camptocamp.com>
-- Simone Rubino <simone.rubino@agilebg.com>
-- Xavier Jimenez <xavier.jimenez@qubiq.es>
-- `Tecnativa <https://www.tecnativa.com>`__:
+-  Nicolas Bessi <nicolas.bessi@camptocamp.com>
+-  Yannick Vaucher <yannick.vaucher@camptocamp.com>
+-  Simone Rubino <simone.rubino@agilebg.com>
+-  Xavier Jimenez <xavier.jimenez@qubiq.es>
+-  `Tecnativa <https://www.tecnativa.com>`__:
 
-  - Pedro M. Baeza
-  - Vicent Cubells
-  - Vicent Martínez
+   -  Pedro M. Baeza
+   -  Vicent Cubells
+   -  Vicent Martínez
 
-- `DynApps <https://www.dynapps.be>`__:
+-  `DynApps <https://www.dynapps.be>`__:
 
-  - Raf Ven <raf.ven@dynapps.be>
+   -  Raf Ven <raf.ven@dynapps.be>
 
-- `ForgeFlow <https://www.forgeflow.com>`__:
-- Miquel Raïch <miquel.raich@forgeflow.com>
-- Pierre Verkest <pierreverkest84@gmail.com>
-- `Jarsa <https://www.jarsa.com>`__:
+-  `ForgeFlow <https://www.forgeflow.com>`__:
+-  Miquel Raïch <miquel.raich@forgeflow.com>
+-  Pierre Verkest <pierreverkest84@gmail.com>
+-  `Jarsa <https://www.jarsa.com>`__:
 
-  - Alan Ramos <alan.ramos@jarsa.com>
+   -  Alan Ramos <alan.ramos@jarsa.com>
 
-- `Sygel <https://www.sygel.es>`__:
+-  `Sygel <https://www.sygel.es>`__:
 
-  - Valentín Vinagre <valentin.vinagre@sygel.es>
-  - Roger Sans <roger.sans@sygel.es>
+   -  Valentín Vinagre <valentin.vinagre@sygel.es>
+   -  Roger Sans <roger.sans@sygel.es>
 
 Maintainers
 -----------
@@ -122,6 +122,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/sale-reporting <https://github.com/OCA/sale-reporting/tree/18.0/sale_comment_template>`_ project on GitHub.
+This module is part of the `OCA/sale-reporting <https://github.com/OCA/sale-reporting/tree/19.0/sale_comment_template>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
