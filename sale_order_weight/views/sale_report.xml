@@ -23,7 +23,7 @@
             <th class="text-right">Weight</th>
         </xpath>
         <xpath
-            expr="//table[hasclass('o_main_table')]/tbody//tr//td[@name='td_priceunit']"
+            expr="//table[hasclass('o_main_table')]/tbody//tr//td[@name='td_product_priceunit']"
             position="after"
         >
             <td class="text-right">

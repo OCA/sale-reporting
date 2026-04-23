@@ -12,10 +12,27 @@ class TestSaleOrderWeight(BaseCommon):
         super().setUpClass()
         cls.sale_order_model = cls.env["sale.order"]
         cls.sale_order_line_model = cls.env["sale.order.line"]
-        cls.partner = cls.env.ref("base.res_partner_3")
-        cls.product_3 = cls.env.ref("product.product_product_3")
-        cls.product_4 = cls.env.ref("product.product_product_4")
-        cls.product_5 = cls.env.ref("product.product_product_5")
+        cls.product_1 = cls.env["product.product"].create(
+            {
+                "name": "Test Product 1",
+                "type": "consu",
+                "lst_price": 100.0,
+            }
+        )
+        cls.product_2 = cls.env["product.product"].create(
+            {
+                "name": "Test Product 2",
+                "type": "consu",
+                "lst_price": 150.0,
+            }
+        )
+        cls.product_3 = cls.env["product.product"].create(
+            {
+                "name": "Test Product 3",
+                "type": "consu",
+                "lst_price": 200.0,
+            }
+        )
 
         order_vals = dict()
         order_vals["partner_id"] = cls.partner.id
@@ -23,29 +40,29 @@ class TestSaleOrderWeight(BaseCommon):
         line_data = [
             Command.create(
                 {
-                    "product_id": cls.product_4.id,
-                    "name": "product test 4",
+                    "product_id": cls.product_2.id,
+                    "name": "product test 2",
                     "product_uom_qty": 1.0,
-                    "product_uom": cls.product_4.uom_id.id,
-                    "price_unit": cls.product_4.lst_price,
-                },
-            ),
-            Command.create(
-                {
-                    "product_id": cls.product_5.id,
-                    "name": "product test 5",
-                    "product_uom_qty": 2.0,
-                    "product_uom": cls.product_5.uom_id.id,
-                    "price_unit": cls.product_5.lst_price,
+                    "product_uom_id": cls.product_2.uom_id.id,
+                    "price_unit": cls.product_2.lst_price,
                 },
             ),
             Command.create(
                 {
                     "product_id": cls.product_3.id,
                     "name": "product test 3",
-                    "product_uom_qty": 3.0,
-                    "product_uom": cls.product_3.uom_id.id,
+                    "product_uom_qty": 2.0,
+                    "product_uom_id": cls.product_3.uom_id.id,
                     "price_unit": cls.product_3.lst_price,
+                },
+            ),
+            Command.create(
+                {
+                    "product_id": cls.product_1.id,
+                    "name": "product test 1",
+                    "product_uom_qty": 3.0,
+                    "product_uom_id": cls.product_1.uom_id.id,
+                    "price_unit": cls.product_1.lst_price,
                 },
             ),
         ]
@@ -54,8 +71,8 @@ class TestSaleOrderWeight(BaseCommon):
 
     def test_total_weight(self):
         # Change weight
-        self.product_3.weight = 2.0  # 3.0
-        self.product_4.weight = 10.0  # 1.0
-        self.product_5.weight = 1.0  # 2.0
+        self.product_1.weight = 2.0  # 3.0
+        self.product_2.weight = 10.0  # 1.0
+        self.product_3.weight = 1.0  # 2.0
         # check total weight
         self.assertEqual(self.sale_order.total_weight(), 18.0)
