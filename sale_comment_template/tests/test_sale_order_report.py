@@ -65,6 +65,7 @@ class TestAccountInvoiceReport(TransactionCase):
         )
 
     def test_comments_in_sale_order_report(self):
+        self.sale_order._compute_comment_template_ids()
         res = self.env["ir.actions.report"]._render_qweb_html(
             "sale.report_saleorder", self.sale_order.ids
         )
@@ -84,6 +85,7 @@ class TestAccountInvoiceReport(TransactionCase):
         self.assertRegex(str(res[0]), self.move_after_comment.text)
 
     def test_comments_in_sale_order(self):
+        self.sale_order._compute_comment_template_ids()
         self.assertTrue(self.sale_after_comment in self.sale_order.comment_template_ids)
         self.assertTrue(
             self.sale_before_comment in self.sale_order.comment_template_ids
