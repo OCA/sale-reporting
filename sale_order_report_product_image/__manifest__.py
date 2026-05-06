@@ -4,7 +4,7 @@
 {
     "name": "Sale Order Report Product Image",
     "summary": "Show product images on Sale documents",
-    "version": "18.0.1.0.2",
+    "version": "19.0.1.0.0",
     "category": "Sale",
     "website": "https://github.com/OCA/sale-reporting",
     "author": "Tecnativa, Odoo Community Association (OCA)",
