@@ -12,10 +12,27 @@ class TestSaleOrderWeight(BaseCommon):
         super().setUpClass()
         cls.sale_order_model = cls.env["sale.order"]
         cls.sale_order_line_model = cls.env["sale.order.line"]
-        cls.partner = cls.env.ref("base.res_partner_3")
-        cls.product_3 = cls.env.ref("product.product_product_3")
-        cls.product_4 = cls.env.ref("product.product_product_4")
-        cls.product_5 = cls.env.ref("product.product_product_5")
+        cls.product_3 = cls.env["product.product"].create(
+            {
+                "name": "Desk Combination",
+                "type": "consu",
+                "weight": 0.01,
+            }
+        )
+        cls.product_4 = cls.env["product.product"].create(
+            {
+                "name": "Customizable Desk",
+                "type": "consu",
+                "weight": 0.01,
+            }
+        )
+        cls.product_5 = cls.env["product.product"].create(
+            {
+                "name": "Corner Desk Right Sit",
+                "type": "consu",
+                "weight": 0.01,
+            }
+        )
 
         order_vals = dict()
         order_vals["partner_id"] = cls.partner.id
@@ -26,7 +43,7 @@ class TestSaleOrderWeight(BaseCommon):
                     "product_id": cls.product_4.id,
                     "name": "product test 4",
                     "product_uom_qty": 1.0,
-                    "product_uom": cls.product_4.uom_id.id,
+                    "product_uom_id": cls.product_4.uom_id.id,
                     "price_unit": cls.product_4.lst_price,
                 },
             ),
@@ -35,7 +52,7 @@ class TestSaleOrderWeight(BaseCommon):
                     "product_id": cls.product_5.id,
                     "name": "product test 5",
                     "product_uom_qty": 2.0,
-                    "product_uom": cls.product_5.uom_id.id,
+                    "product_uom_id": cls.product_5.uom_id.id,
                     "price_unit": cls.product_5.lst_price,
                 },
             ),
@@ -44,7 +61,7 @@ class TestSaleOrderWeight(BaseCommon):
                     "product_id": cls.product_3.id,
                     "name": "product test 3",
                     "product_uom_qty": 3.0,
-                    "product_uom": cls.product_3.uom_id.id,
+                    "product_uom_id": cls.product_3.uom_id.id,
                     "price_unit": cls.product_3.lst_price,
                 },
             ),
