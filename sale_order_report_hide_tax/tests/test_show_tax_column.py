@@ -19,19 +19,27 @@ class TestShowTaxColumnInReport(BaseCommon):
                 "name": "Test Product",
             }
         )
+        cls.country = cls.quick_ref("base.be")
+        cls.env.company.country_id = cls.country
         cls.tax_group_1 = cls.env["account.tax.group"].create(
             {
                 "name": "VAT Group 1",
+                "company_id": cls.env.company.id,
+                "country_id": cls.country.id,
             }
         )
         cls.tax_group_2 = cls.env["account.tax.group"].create(
             {
                 "name": "VAT Group 2",
+                "company_id": cls.env.company.id,
+                "country_id": cls.country.id,
             }
         )
         cls.tax_group_3 = cls.env["account.tax.group"].create(
             {
                 "name": "VAT Group 3",
+                "company_id": cls.env.company.id,
+                "country_id": cls.country.id,
             }
         )
         cls.tax_1 = cls.env["account.tax"].create(
@@ -40,6 +48,8 @@ class TestShowTaxColumnInReport(BaseCommon):
                 "amount": 10,
                 "amount_type": "percent",
                 "tax_group_id": cls.tax_group_1.id,
+                "company_id": cls.env.company.id,
+                "country_id": cls.country.id,
             }
         )
         cls.tax_2 = cls.env["account.tax"].create(
@@ -48,6 +58,8 @@ class TestShowTaxColumnInReport(BaseCommon):
                 "amount": 5,
                 "amount_type": "percent",
                 "tax_group_id": cls.tax_group_2.id,
+                "company_id": cls.env.company.id,
+                "country_id": cls.country.id,
             }
         )
         cls.tax_3 = cls.env["account.tax"].create(
@@ -56,6 +68,8 @@ class TestShowTaxColumnInReport(BaseCommon):
                 "amount": 5,
                 "amount_type": "percent",
                 "tax_group_id": cls.tax_group_2.id,
+                "company_id": cls.env.company.id,
+                "country_id": cls.country.id,
             }
         )
         cls.order = cls.env["sale.order"].create(
@@ -76,7 +90,7 @@ class TestShowTaxColumnInReport(BaseCommon):
                     "name": "Line 1",
                     "product_uom_qty": 1,
                     "price_unit": 100,
-                    "tax_id": [(6, 0, [self.tax_1.id])],
+                    "tax_ids": [Command.set([self.tax_1.id])],
                 }
             ),
             Command.create(
@@ -85,7 +99,7 @@ class TestShowTaxColumnInReport(BaseCommon):
                     "name": "Line 2",
                     "product_uom_qty": 1,
                     "price_unit": 50,
-                    "tax_id": [(6, 0, [self.tax_1.id])],
+                    "tax_ids": [Command.set([self.tax_1.id])],
                 }
             ),
         ]
@@ -107,7 +121,7 @@ class TestShowTaxColumnInReport(BaseCommon):
                     "name": "Line 1",
                     "product_uom_qty": 1,
                     "price_unit": 100,
-                    "tax_id": [(6, 0, [self.tax_1.id])],
+                    "tax_ids": [Command.set([self.tax_1.id])],
                 }
             ),
             Command.create(
@@ -116,7 +130,7 @@ class TestShowTaxColumnInReport(BaseCommon):
                     "name": "Line 2",
                     "product_uom_qty": 1,
                     "price_unit": 50,
-                    "tax_id": [(6, 0, [self.tax_2.id])],
+                    "tax_ids": [Command.set([self.tax_2.id])],
                 }
             ),
         ]
@@ -138,7 +152,7 @@ class TestShowTaxColumnInReport(BaseCommon):
                     "name": "Line 1",
                     "product_uom_qty": 1,
                     "price_unit": 100,
-                    "tax_id": [(6, 0, [self.tax_1.id, self.tax_2.id])],
+                    "tax_ids": [Command.set([self.tax_1.id, self.tax_2.id])],
                 }
             ),
             Command.create(
@@ -147,7 +161,7 @@ class TestShowTaxColumnInReport(BaseCommon):
                     "name": "Line 1",
                     "product_uom_qty": 1,
                     "price_unit": 100,
-                    "tax_id": [(6, 0, [self.tax_3.id])],
+                    "tax_ids": [Command.set([self.tax_3.id])],
                 }
             ),
         ]

@@ -12,7 +12,7 @@
                 separator="and"
             />
         </xpath>
-        <xpath expr="//td[@name='td_taxes']" position="attributes">
+        <xpath expr="//td[@name='td_product_taxes']" position="attributes">
             <attribute
                 name="t-if"
                 add="doc.show_tax_column_in_report"

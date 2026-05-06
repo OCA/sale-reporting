@@ -11,11 +11,13 @@ class SaleOrder(models.Model):
     )
 
     def _compute_show_tax_column_in_report(self):
-        self.show_tax_column_in_report = True
-        for order in self.filtered("order_line"):
+        for order in self:
             order_lines = order.order_line.filtered(lambda x: not x.display_type)
-            first_line_tax_group = fields.first(order_lines).tax_id.tax_group_id
+            first_line_tax_group = next(
+                iter(order_lines), order_lines
+            ).tax_ids.tax_group_id
             # Mixed group taxes, let's show them for clarity
             order.show_tax_column_in_report = any(
-                first_line_tax_group != line.tax_id.tax_group_id for line in order_lines
+                first_line_tax_group != line.tax_ids.tax_group_id
+                for line in order_lines
             )
