@@ -96,3 +96,19 @@ class TestSaleReportDelivered(TestSaleReportDeliveredBase):
     @users("test_user-sale_report_delivered")
     def test_sale_report_delivered_read_group(self):
         self._test_sale_report_delivered_read_group()
+
+    def test_sale_report_delivered_uses_net_svl_quantity(self):
+        move = self.order_1.order_line.move_ids
+        item = self.env["sale.report.delivered"].search(
+            [("product_id", "=", self.product.id), ("order_id", "=", self.order_1.id)]
+        )
+        self.assertAlmostEqual(item.product_uom_qty, 1)
+        self.assertEqual(len(move.stock_valuation_layer_ids), 1)
+        move.move_line_ids.qty_done = 0.5
+        # The user modifies the done ml and an adjustment layer is made
+        self.assertEqual(len(move.stock_valuation_layer_ids), 2)
+        self.env.invalidate_all()
+        item = self.env["sale.report.delivered"].search(
+            [("product_id", "=", self.product.id), ("order_id", "=", self.order_1.id)]
+        )
+        self.assertAlmostEqual(item.product_uom_qty, 0.5)

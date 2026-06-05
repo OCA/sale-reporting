@@ -207,7 +207,14 @@ class SaleReportDeliverd(models.Model):
             stock_location dest_location ON sm.location_dest_id = dest_location.id
         LEFT JOIN
             stock_location source_location ON sm.location_id = source_location.id
-        LEFT JOIN stock_valuation_layer svl ON svl.stock_move_id = sm.id
+        LEFT JOIN (
+            SELECT
+                stock_move_id,
+                SUM(quantity) AS quantity,
+                SUM(value) AS value
+            FROM stock_valuation_layer
+            GROUP BY stock_move_id
+        ) svl ON svl.stock_move_id = sm.id
         LEFT JOIN stock_picking sp ON sp.id = sm.picking_id
         LEFT JOIN res_currency as cur ON cur.id = sol.currency_id
         """

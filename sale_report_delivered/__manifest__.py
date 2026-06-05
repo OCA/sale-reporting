@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name": "Sale Report Delivered",
-    "version": "16.0.2.2.2",
+    "version": "16.0.2.2.3",
     "author": "Tecnativa," "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/sale-reporting",
     "category": "Sales",
