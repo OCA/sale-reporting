@@ -213,6 +213,23 @@ class SaleReportDeliverd(models.Model):
                 SUM(quantity) AS quantity,
                 SUM(value) AS value
             FROM stock_valuation_layer
+            LEFT JOIN stock_move svl_sm ON stock_valuation_layer.stock_move_id = svl_sm.id
+            LEFT JOIN stock_location svl_sl ON svl_sm.location_id = svl_sl.id
+            LEFT JOIN stock_location svl_dl ON svl_sm.location_dest_id = svl_dl.id
+            WHERE
+                -- Manage Dropshipping (Bug described on ROADMAP.rst)
+                -- Also declared in _sub_where
+                NOT (
+                    (
+                        svl_sl.usage = 'supplier'
+                        AND svl_dl.usage = 'customer'
+                        AND stock_valuation_layer.quantity > 0
+                    ) OR (
+                        svl_sl.usage = 'customer'
+                        AND svl_dl.usage = 'supplier'
+                        AND stock_valuation_layer.quantity < 0
+                    )
+                )
             GROUP BY stock_move_id
         ) svl ON svl.stock_move_id = sm.id
         LEFT JOIN stock_picking sp ON sp.id = sm.picking_id
@@ -239,6 +256,7 @@ class SaleReportDeliverd(models.Model):
             dest_location.usage = 'internal' AND
             sm.to_refund
         ) OR
+        -- Manage Dropshipping
         (
             source_location.usage = 'supplier' AND
             dest_location.usage = 'customer' AND

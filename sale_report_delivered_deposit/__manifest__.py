@@ -4,7 +4,7 @@
 {
     "name": "Sale Report Delivered - Deposit",
     "summary": "Allow to view Customer Deposits on Sale Report Delivered",
-    "version": "16.0.2.0.0",
+    "version": "16.0.2.0.1",
     "development_status": "Alpha",
     "category": "Sales",
     "website": "https://github.com/OCA/sale-reporting",
