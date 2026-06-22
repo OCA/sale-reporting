@@ -6,7 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2026-06-22 16:47+0000\n"
+"Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: none\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -14,11 +15,12 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: sale_report_delivered_attribute_values
 #: model:ir.model.fields,field_description:sale_report_delivered_attribute_values.field_sale_report_delivered__all_product_attribute_value_ids
 msgid "All Product Attribute Value"
-msgstr ""
+msgstr "Vse vrednosti atributov proizvodov"
 
 #. module: sale_report_delivered_attribute_values
 #: model:ir.model.fields,help:sale_report_delivered_attribute_values.field_sale_report_delivered__all_product_attribute_value_ids
@@ -26,28 +28,31 @@ msgid ""
 "All Product Attribute Values used directly or indirectly for this line.\n"
 "Contains information about increased price, html color, etc."
 msgstr ""
+"Vse vrednosti atributov proizvodov, ki se neposredno ali posredno "
+"uporabljajo za to vrstico.\n"
+"Vsebuje informacije o povišani ceni, barvi HTML itd."
 
 #. module: sale_report_delivered_attribute_values
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered_attribute_values.view_sale_report_delivered_search
 msgid "Attribute"
-msgstr ""
+msgstr "Atribut"
 
 #. module: sale_report_delivered_attribute_values
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered_attribute_values.view_sale_report_delivered_search
 msgid "Attribute Value"
-msgstr ""
+msgstr "Vrednost atributa"
 
 #. module: sale_report_delivered_attribute_values
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered_attribute_values.view_sale_report_delivered_search
 msgid "Attribute Values"
-msgstr ""
+msgstr "Vrednosti atributov"
 
 #. module: sale_report_delivered_attribute_values
 #: model:ir.model.fields,field_description:sale_report_delivered_attribute_values.field_sale_report_delivered__sale_line_id
 msgid "Sale Line"
-msgstr ""
+msgstr "Prodajna postavka"
 
 #. module: sale_report_delivered_attribute_values
 #: model:ir.model,name:sale_report_delivered_attribute_values.model_sale_report_delivered
 msgid "Sales Delivered Analysis Report"
-msgstr ""
+msgstr "Poročilo - analiza dobavljenih prodaj"
