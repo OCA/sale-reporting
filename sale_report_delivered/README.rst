@@ -98,10 +98,13 @@ promote its widespread use.
 .. |maintainer-sergio-teruel| image:: https://github.com/sergio-teruel.png?size=40px
     :target: https://github.com/sergio-teruel
     :alt: sergio-teruel
+.. |maintainer-Shide| image:: https://github.com/Shide.png?size=40px
+    :target: https://github.com/Shide
+    :alt: Shide
 
-Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
+Current `maintainers <https://odoo-community.org/page/maintainer-role>`__:
 
-|maintainer-sergio-teruel| 
+|maintainer-sergio-teruel| |maintainer-Shide| 
 
 This module is part of the `OCA/sale-reporting <https://github.com/OCA/sale-reporting/tree/18.0/sale_report_delivered>`_ project on GitHub.
 

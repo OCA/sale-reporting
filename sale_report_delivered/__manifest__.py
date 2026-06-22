@@ -10,7 +10,7 @@
     "depends": ["sale_stock", "sale_margin"],
     "installable": True,
     "development_status": "Beta",
-    "maintainers": ["sergio-teruel"],
+    "maintainers": ["sergio-teruel", "Shide"],
     "data": [
         "security/ir.model.access.csv",
         "security/sale_report_security.xml",
