@@ -15,12 +15,19 @@ class TestSaleReportDeliveredBrand(
         super().setUpClass()
         cls.env = cls.env(context=dict(cls.env.context, **DISABLED_MAIL_CONTEXT))
         cls.brand = cls.env["product.brand"].create({"name": "Test brand"})
-        cls.product.product_brand_id = cls.brand
-        cls.service.product_brand_id = cls.brand
 
     @users("admin", "test_user-sale_report_delivered")
     def test_sale_report_delivered_misc(self):
+        product = self._create_product("Test product", "consu", stock_qty=1)
+        service = self._create_product("Test service", "service")
+        product.product_brand_id = self.brand
+        service.product_brand_id = self.brand
+        order_1 = self._create_order(product, confirm=True)
+        order_2 = self._create_order(service, confirm=True)
+        orders = order_1 + order_2
+        self._validate_pickings(orders.picking_ids, 1.0)
+        self.env.invalidate_all()
         items = self.env["sale.report.delivered"].search(
-            [("order_id", "in", self.orders.ids)]
+            [("order_id", "in", orders.ids)]
         )
         self.assertIn(self.brand, items.mapped("product_brand_id"))
