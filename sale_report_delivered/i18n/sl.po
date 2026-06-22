@@ -6,7 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2026-06-22 19:46+0000\n"
+"Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: none\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -14,223 +15,224 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__nbr
 msgid "# of Lines"
-msgstr ""
+msgstr "# postavk"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__amount_cost
 msgid "Amount cost"
-msgstr ""
+msgstr "Znesek stroška"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__campaign_id
 msgid "Campaign"
-msgstr ""
+msgstr "Kampanja"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields.selection,name:sale_report_delivered.selection__sale_report_delivered__state__cancel
 msgid "Cancelled"
-msgstr ""
+msgstr "Preklicano"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__company_id
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
 msgid "Company"
-msgstr ""
+msgstr "Družba"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__partner_id
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
 msgid "Customer"
-msgstr ""
+msgstr "Kupec"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__country_id
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
 msgid "Customer Country"
-msgstr ""
+msgstr "Država kupca"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__commercial_partner_id
 msgid "Customer Entity"
-msgstr ""
+msgstr "Stranka – pravna oseba"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__industry_id
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
 msgid "Customer Industry"
-msgstr ""
+msgstr "Sektor kupca"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__date
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Prikazani naziv"
 
 #. module: sale_report_delivered
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
 msgid "Extended Filters"
-msgstr ""
+msgstr "Razširjeni filtri"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__weight
 msgid "Gross Weight"
-msgstr ""
+msgstr "Bruto masa"
 
 #. module: sale_report_delivered
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
 msgid "Group By"
-msgstr ""
+msgstr "Združi po"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__margin
 msgid "Margin delivered"
-msgstr ""
+msgstr "Marža dobavljeno"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__margin_percent
 msgid "Margin delivered(%)"
-msgstr ""
+msgstr "Marža dobavljeno(%)"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__medium_id
 msgid "Medium"
-msgstr ""
+msgstr "Medij"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__order_id
 msgid "Order"
-msgstr ""
+msgstr "Nalog"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__name
 msgid "Order Reference"
-msgstr ""
+msgstr "Sklic naloga"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__picking_id
 msgid "Picking"
-msgstr ""
+msgstr "Dobavnica"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__pricelist_id
 msgid "Pricelist"
-msgstr ""
+msgstr "Cenik"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__product_tmpl_id
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
 msgid "Product"
-msgstr ""
+msgstr "Proizvod"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__categ_id
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
 msgid "Product Category"
-msgstr ""
+msgstr "Kategorija proizvoda"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__product_id
 msgid "Product Variant"
-msgstr ""
+msgstr "Različica proizvoda"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__product_uom_qty
 msgid "Qty"
-msgstr ""
+msgstr "Kol"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields.selection,name:sale_report_delivered.selection__sale_report_delivered__state__draft
 msgid "Quotation"
-msgstr ""
+msgstr "Predračun"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields.selection,name:sale_report_delivered.selection__sale_report_delivered__state__sent
 msgid "Quotation Sent"
-msgstr ""
+msgstr "Predračun poslan"
 
 #. module: sale_report_delivered
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
 msgid "Quotations"
-msgstr ""
+msgstr "Predračuni"
 
 #. module: sale_report_delivered
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_pivot
 msgid "Sales Analysis"
-msgstr ""
+msgstr "Prodajna analiza"
 
 #. module: sale_report_delivered
 #: model:ir.actions.act_window,name:sale_report_delivered.action_sale_report_delivered
 msgid "Sales Analysis From Deliveries"
-msgstr ""
+msgstr "Prodajna analiza iz dobav"
 
 #. module: sale_report_delivered
 #: model:ir.model,name:sale_report_delivered.model_sale_report_delivered
 msgid "Sales Delivered Analysis Report"
-msgstr ""
+msgstr "Poročilo - analiza dobavljenih prodaj"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields.selection,name:sale_report_delivered.selection__sale_report_delivered__state__sale
 msgid "Sales Order"
-msgstr ""
+msgstr "Prodajni nalog"
 
 #. module: sale_report_delivered
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
 msgid "Sales Orders"
-msgstr ""
+msgstr "Prodajni nalogi"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__team_id
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
 msgid "Sales Team"
-msgstr ""
+msgstr "Prodajna ekipa"
 
 #. module: sale_report_delivered
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_graph
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
 msgid "Sales analysis from deliveries"
-msgstr ""
+msgstr "Prodajna analiza iz dobav"
 
 #. module: sale_report_delivered
 #: model:ir.ui.menu,name:sale_report_delivered.menu_report_sale_stock_delivery
 msgid "Sales from deliveries"
-msgstr ""
+msgstr "Prodaje iz dobav"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__user_id
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
 msgid "Salesperson"
-msgstr ""
+msgstr "Prodajalec"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__user_from_partner_id
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
 msgid "Salesperson From Partner"
-msgstr ""
+msgstr "Partnerjev prodajalec"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__source_id
 msgid "Source"
-msgstr ""
+msgstr "Izvor"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__state
 #: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #. module: sale_report_delivered
 #: model_terms:ir.actions.act_window,help:sale_report_delivered.action_sale_report_delivered
@@ -241,18 +243,23 @@ msgid ""
 "sales not having invoiced yet. If you want to analyse your turnover, you "
 "should use the Invoice Analysis report in the Accounting application."
 msgstr ""
+"To poročilo izvaja analizo vaših prodajnih nalogov iz dobav. Analiza preveri "
+"vaše prodajne prihodke in jih razvrsti po različnih merilih (prodajalec, "
+"partner, izdelek itd.). To poročilo uporabite za analizo prodaje, ki še ni "
+"bila zaračunana. Če želite analizirati svoj promet, uporabite poročilo "
+"'Analiza računov' v aplikaciji Računovodstvo."
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__product_uom
 msgid "Unit of Measure"
-msgstr ""
+msgstr "Enota mere"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__price_subtotal
 msgid "Untaxed total delivered"
-msgstr ""
+msgstr "Dobavljeno skupaj brez davka"
 
 #. module: sale_report_delivered
 #: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__volume
 msgid "Volume"
-msgstr ""
+msgstr "Prostornina"
