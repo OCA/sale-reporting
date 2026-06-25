@@ -93,7 +93,7 @@ Contributors
 
   - Bhavesh Heliconia
 
-- Sudhir Arya<sudhir@erpharbor.com>
+- Sudhir Arya <sudhir@erpharbor.com>
 
 Maintainers
 -----------
