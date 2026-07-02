@@ -210,8 +210,8 @@ class SaleReportDeliverd(models.Model):
         LEFT JOIN (
             SELECT
                 stock_move_id,
-                SUM(quantity) AS quantity,
-                SUM(value) AS value
+                SUM(stock_valuation_layer.quantity) AS quantity,
+                SUM(stock_valuation_layer.value) AS value
             FROM stock_valuation_layer
             LEFT JOIN stock_move svl_sm ON stock_valuation_layer.stock_move_id = svl_sm.id
             LEFT JOIN stock_location svl_sl ON svl_sm.location_id = svl_sl.id
