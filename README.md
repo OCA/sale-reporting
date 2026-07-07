@@ -22,10 +22,12 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[base_multicompany_reporting_currency](base_multicompany_reporting_currency/) | 16.0.1.0.0 |  | Adds the possibility to specify Multicompany Reporting Currency
+[account_multicompany_reporting_currency](account_multicompany_reporting_currency/) | 16.0.1.0.0 | <a href='https://github.com/yankinmax'><img src='https://github.com/yankinmax.png' width='32' height='32' style='border-radius:50%;' alt='yankinmax'/></a> <a href='https://github.com/ivantodorovich'><img src='https://github.com/ivantodorovich.png' width='32' height='32' style='border-radius:50%;' alt='ivantodorovich'/></a> | Adds Amount in multicompany reporting currency to Account Moves
+[base_multicompany_reporting_currency](base_multicompany_reporting_currency/) | 16.0.2.0.0 |  | Adds the possibility to specify Multicompany Reporting Currency
 [product_sold_by_delivery_week](product_sold_by_delivery_week/) | 16.0.1.0.1 | <a href='https://github.com/chienandalu'><img src='https://github.com/chienandalu.png' width='32' height='32' style='border-radius:50%;' alt='chienandalu'/></a> | Adds a field that graphically hints the weekly product sales
 [sale_comment_template](sale_comment_template/) | 16.0.1.0.1 |  | Comments texts templates on Sale documents
 [sale_layout_category_hide_detail](sale_layout_category_hide_detail/) | 16.0.1.1.2 |  | Hide details for sections in sale orders and invoices for reports and customer portal
+[sale_multicompany_reporting_currency](sale_multicompany_reporting_currency/) | 16.0.1.0.0 | <a href='https://github.com/yankinmax'><img src='https://github.com/yankinmax.png' width='32' height='32' style='border-radius:50%;' alt='yankinmax'/></a> | Adds Amount in multicompany reporting currency to Sale Order
 [sale_order_line_position](sale_order_line_position/) | 16.0.1.3.0 |  | Adds position number on sale order line.
 [sale_order_product_recommendation_product_sold_by_delivery_week](sale_order_product_recommendation_product_sold_by_delivery_week/) | 16.0.1.1.0 | <a href='https://github.com/chienandalu'><img src='https://github.com/chienandalu.png' width='32' height='32' style='border-radius:50%;' alt='chienandalu'/></a> | Adds the weekly sales field to the recommendation wizard
 [sale_order_report_hide_tax](sale_order_report_hide_tax/) | 16.0.1.0.1 | <a href='https://github.com/chienandalu'><img src='https://github.com/chienandalu.png' width='32' height='32' style='border-radius:50%;' alt='chienandalu'/></a> <a href='https://github.com/rafaelbn'><img src='https://github.com/rafaelbn.png' width='32' height='32' style='border-radius:50%;' alt='rafaelbn'/></a> | Hide taxes column when they don't add value
