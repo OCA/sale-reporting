@@ -11,3 +11,17 @@ class ResConfigSettings(models.TransientModel):
         "res.currency",
         config_parameter="base_multicompany_reporting_currency.multicompany_reporting_currency",
     )
+    multicompany_reporting_amount = fields.Selection(
+        related="company_id.multicompany_reporting_amount",
+        readonly=False,
+    )
+
+    def set_values(self):
+        applied_currency = self.env[
+            "res.company"
+        ]._get_multicompany_reporting_currency()
+        super().set_values()
+        to_apply_currency = self.multicompany_reporting_currency
+        if applied_currency != to_apply_currency:
+            self.env["res.company"]._recompute_multicompany_reporting_currency()
+        return True
