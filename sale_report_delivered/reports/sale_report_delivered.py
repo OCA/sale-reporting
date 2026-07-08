@@ -142,7 +142,7 @@ class SaleReportDeliverd(models.Model):
             cur.decimal_places,
             (CASE
                 WHEN t.type IN ('product', 'consu')
-                THEN ABS(COALESCE(-svl.quantity, sm.quantity, 0.0))
+                THEN COALESCE(sm.quantity, 0.0)
                 ELSE sol.product_uom_qty END
             ) / u.factor * u2.factor as unsigned_product_uom_qty,
             CASE
@@ -153,7 +153,6 @@ class SaleReportDeliverd(models.Model):
             END AS signed_qty,
             ROUND(
                 ABS(COALESCE(
-                    -svl.quantity * sol.price_reduce_taxexcl,
                     sm.quantity * sol.price_reduce_taxexcl,
                     sol.price_subtotal
                 )) /
@@ -185,7 +184,12 @@ class SaleReportDeliverd(models.Model):
             s.id as order_id,
             sp.id as picking_id,
             sol.purchase_price AS unsigned_purchase_price,
-            ROUND(svl.value, cur.decimal_places) AS amount_cost
+            ROUND(-sm.value * (
+                CASE
+                    {self._sub_select_signed_qty()}
+                    ELSE 0
+                END
+            ), cur.decimal_places) AS amount_cost
         """
         return sub_select_str
 
@@ -197,40 +201,14 @@ class SaleReportDeliverd(models.Model):
         join res_partner partner on s.partner_id = partner.id
         left join product_product p on (sol.product_id=p.id)
         left join product_template t on (p.product_tmpl_id=t.id)
-        left join uom_uom u on (u.id=sol.product_uom)
+        left join uom_uom u on (u.id=sol.product_uom_id)
         left join uom_uom u2 on (u2.id=t.uom_id)
         left join product_pricelist pp on (s.pricelist_id = pp.id)
         LEFT JOIN
             stock_location dest_location ON sm.location_dest_id = dest_location.id
         LEFT JOIN
             stock_location source_location ON sm.location_id = source_location.id
-        LEFT JOIN (
-            SELECT
-                stock_move_id,
-                SUM(stock_valuation_layer.quantity) AS quantity,
-                SUM(stock_valuation_layer.value) AS value
-            FROM stock_valuation_layer
-            LEFT JOIN stock_move svl_sm ON (
-                stock_valuation_layer.stock_move_id = svl_sm.id
-            )
-            LEFT JOIN stock_location svl_sl ON svl_sm.location_id = svl_sl.id
-            LEFT JOIN stock_location svl_dl ON svl_sm.location_dest_id = svl_dl.id
-            WHERE
-                -- Manage Dropshipping (Bug described on ROADMAP.rst)
-                -- Also declared in _sub_where
-                NOT (
-                    (
-                        svl_sl.usage = 'supplier'
-                        AND svl_dl.usage = 'customer'
-                        AND stock_valuation_layer.quantity > 0
-                    ) OR (
-                        svl_sl.usage = 'customer'
-                        AND svl_dl.usage = 'supplier'
-                        AND stock_valuation_layer.quantity < 0
-                    )
-                )
-            GROUP BY stock_move_id
-        ) svl ON svl.stock_move_id = sm.id
+
         LEFT JOIN stock_picking sp ON sp.id = sm.picking_id
         LEFT JOIN res_currency as cur ON cur.id = sol.currency_id
         """
@@ -258,13 +236,11 @@ class SaleReportDeliverd(models.Model):
         -- Manage Dropshipping
         (
             source_location.usage = 'supplier' AND
-            dest_location.usage = 'customer' AND
-            svl.quantity < 0
+            dest_location.usage = 'customer'
         ) OR
         (
             source_location.usage = 'customer' AND
-            dest_location.usage = 'supplier' AND
-            svl.quantity > 0
+            dest_location.usage = 'supplier'
         )
         """
 
@@ -323,22 +299,16 @@ class SaleReportDeliverd(models.Model):
         )
 
     @api.model
-    def read_group(
-        self, domain, fields, groupby, offset=0, limit=None, orderby=False, lazy=True
-    ):
-        res = super().read_group(
-            domain,
-            fields,
-            groupby,
-            offset=offset,
-            limit=limit,
-            orderby=orderby,
-            lazy=lazy,
-        )
-        if "margin_percent:sum" not in fields:
-            return res
-        full_fields = all(x in fields for x in {"price_subtotal:sum", "margin:sum"})
-        for line in res:
-            if full_fields and line["price_subtotal"]:
-                line["margin_percent"] = (line["margin"] / line["price_subtotal"]) * 100
-        return res
+    def _read_group_select(self, aggregate_spec, query):
+        if aggregate_spec == "margin_percent:sum":
+            from odoo.tools import SQL
+
+            price_subtotal = self._field_to_sql(self._table, "price_subtotal", query)
+            margin = self._field_to_sql(self._table, "margin", query)
+            return SQL(
+                "CASE WHEN SUM(%s) != 0 THEN (SUM(%s) / SUM(%s)) * 100 ELSE 0 END",
+                price_subtotal,
+                margin,
+                price_subtotal,
+            )
+        return super()._read_group_select(aggregate_spec, query)

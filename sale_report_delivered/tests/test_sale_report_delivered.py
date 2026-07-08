@@ -27,7 +27,7 @@ class TestSaleReportDeliveredBase(common.TransactionCase):
             groups="sales_team.group_sale_manager",
         )
         group_sale_manager = cls.env.ref("sales_team.group_sale_manager")
-        group_sale_manager.write({"users": [(4, cls.admin.id)]})
+        cls.admin.write({"group_ids": [(4, group_sale_manager.id)]})
 
     @classmethod
     def _create_product(
@@ -51,14 +51,19 @@ class TestSaleReportDeliveredBase(common.TransactionCase):
     @classmethod
     def _create_stock_quant(cls, product, qty=1):
         """Add stock for a storable product in the default Stock location."""
-        res = product.action_update_quantity_on_hand()
-        quant_form = Form(
-            cls.env["stock.quant"].with_context(**res["context"]),
-            view="stock.view_stock_quant_tree_inventory_editable",
+        quant = (
+            cls.env["stock.quant"]
+            .with_context(inventory_mode=True)
+            .create(
+                {
+                    "product_id": product.id,
+                    "inventory_quantity": qty,
+                    "location_id": cls.env.ref("stock.stock_location_stock").id,
+                }
+            )
         )
-        quant_form.inventory_quantity = qty
-        quant_form.location_id = cls.env.ref("stock.stock_location_stock")
-        return quant_form.save()
+        quant.action_apply_inventory()
+        return quant
 
     @classmethod
     def _create_order(cls, product, qty=1, price=None, confirm=False):
@@ -80,11 +85,7 @@ class TestSaleReportDeliveredBase(common.TransactionCase):
         """Confirm and validate a pickings with the given done qty."""
         pickings.action_confirm()
         pickings.move_ids.write({"quantity": qty_done})
-        res = pickings.button_validate()
-        if isinstance(res, dict) and res.get("res_model") == "stock.immediate.transfer":
-            wizard_form = Form(cls.env[res["res_model"]].with_context(**res["context"]))
-            wizard = wizard_form.save()
-            wizard.process()
+        pickings.button_validate()
 
     @classmethod
     def _create_return(cls, picking, qty, to_refund=True):
@@ -112,11 +113,7 @@ class TestSaleReportDeliveredBase(common.TransactionCase):
         return_picking_id = return_wizard.action_create_returns()["res_id"]
         return_picking = cls.env["stock.picking"].browse(return_picking_id)
         return_picking.move_ids.write({"quantity": qty})
-        res = return_picking.button_validate()
-        if isinstance(res, dict) and res.get("res_model") == "stock.immediate.transfer":
-            wizard_form = Form(cls.env[res["res_model"]].with_context(**res["context"]))
-            wizard = wizard_form.save()
-            wizard.process()
+        return_picking.button_validate()
         return return_picking
 
     @classmethod
@@ -152,45 +149,24 @@ class TestSaleReportDeliveredBase(common.TransactionCase):
         # Create a stock move linked to the sale line
         cls.env.cr.execute(
             "INSERT INTO stock_move "
-            "(name, product_id, product_uom_qty, product_uom, "
+            "(product_id, product_uom_qty, product_uom, "
             " quantity, location_id, location_dest_id, "
             " picking_id, sale_line_id, state, company_id, "
             " procure_method, date, "
             " create_date, write_date) "
-            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, 'done', %s, "
+            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, 'done', %s, "
             "'make_to_stock', NOW(), "
             "NOW(), NOW()) RETURNING id",
             (
-                "Dropship delivery",
                 order.order_line.product_id.id,
                 qty,
-                order.order_line.product_uom.id,
+                order.order_line.product_uom_id.id,
                 qty,
                 supplier_loc.id,
                 customer_loc.id,
                 picking_id,
                 order.order_line.id,
                 cls.company.id,
-            ),
-        )
-        move_id = cls.env.cr.fetchone()[0]
-        # Insert SVL with negative quantity — required by the view
-        # (svl.quantity < 0 in the _sub_where filter)
-        cls.env.cr.execute(
-            "INSERT INTO stock_valuation_layer "
-            "(company_id, product_id, quantity, "
-            " unit_cost, value, remaining_qty, stock_move_id, description, "
-            " create_date, write_date) "
-            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, NOW(), NOW())",
-            (
-                cls.company.id,
-                order.order_line.product_id.id,
-                -qty,
-                0.0,
-                0.0,
-                -qty,
-                move_id,
-                "Dropship test delivery",
             ),
         )
         cls.env.invalidate_all()
@@ -226,43 +202,24 @@ class TestSaleReportDeliveredBase(common.TransactionCase):
         return_picking_id = cls.env.cr.fetchone()[0]
         cls.env.cr.execute(
             "INSERT INTO stock_move "
-            "(name, product_id, product_uom_qty, product_uom, "
+            "(product_id, product_uom_qty, product_uom, "
             " quantity, location_id, location_dest_id, "
             " picking_id, sale_line_id, state, company_id, "
             " procure_method, date, "
             " create_date, write_date) "
-            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, 'done', %s, "
+            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, 'done', %s, "
             "'make_to_stock', NOW(), "
             "NOW(), NOW()) RETURNING id",
             (
-                "Dropship return",
                 order.order_line.product_id.id,
                 qty,
-                order.order_line.product_uom.id,
+                order.order_line.product_uom_id.id,
                 qty,
                 customer_loc.id,
                 supplier_loc.id,
                 return_picking_id,
                 order.order_line.id,
                 cls.company.id,
-            ),
-        )
-        return_move_id = cls.env.cr.fetchone()[0]
-        cls.env.cr.execute(
-            "INSERT INTO stock_valuation_layer "
-            "(company_id, product_id, quantity, "
-            " unit_cost, value, remaining_qty, stock_move_id, description, "
-            " create_date, write_date) "
-            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, NOW(), NOW())",
-            (
-                cls.company.id,
-                order.order_line.product_id.id,
-                qty,
-                0.0,
-                0.0,
-                qty,
-                return_move_id,
-                "Dropship test return",
             ),
         )
         cls.env.invalidate_all()
@@ -302,17 +259,16 @@ class TestSaleReportDelivered(TestSaleReportDeliveredBase):
         orders = order_1 + order_2
         self._validate_pickings(orders.picking_ids, 1.0)
         self.env.invalidate_all()
-        res = self.env["sale.report.delivered"].read_group(
+        res = self.env["sale.report.delivered"].formatted_read_group(
             domain=[("order_id", "in", orders.ids)],
-            fields=[
-                "order_id",
+            groupby=["order_id"],
+            aggregates=[
                 "margin_percent:sum",
                 "price_subtotal:sum",
                 "margin:sum",
             ],
-            groupby=["order_id"],
         )
-        self.assertAlmostEqual(res[0]["margin_percent"], 70.00)
+        self.assertAlmostEqual(res[0]["margin_percent:sum"], 70.00)
 
     @users("admin")
     def test_sale_report_delivered_read_group_admin(self):
@@ -334,10 +290,8 @@ class TestSaleReportDelivered(TestSaleReportDeliveredBase):
             [("product_id", "=", product.id), ("order_id", "=", order_1.id)]
         )
         self.assertAlmostEqual(item.product_uom_qty, 1)
-        self.assertEqual(len(move.stock_valuation_layer_ids), 1)
         # The user modifies the done ml and an adjustment layer is made
         move.move_line_ids.quantity = 0.7
-        self.assertEqual(len(move.stock_valuation_layer_ids), 2)
         self.env.invalidate_all()
         item = self.env["sale.report.delivered"].search(
             [("product_id", "=", product.id), ("order_id", "=", order_1.id)]
@@ -355,31 +309,30 @@ class TestSaleReportDelivered(TestSaleReportDeliveredBase):
         self._validate_pickings(picking, 2)
         return_picking = self._create_return(picking, 1, to_refund=True)
         self.env.invalidate_all()
-        items = self.env["sale.report.delivered"].read_group(
+        items = self.env["sale.report.delivered"].formatted_read_group(
             domain=[("product_id", "=", product.id), ("order_id", "=", order.id)],
-            fields=["picking_id", "product_uom_qty:sum", "price_subtotal:sum"],
             groupby=["picking_id"],
+            aggregates=["product_uom_qty:sum", "price_subtotal:sum"],
         )
         self.assertEqual(len(items), 2)
         delivery_item = [r for r in items if r["picking_id"][0] == picking.id][0]
         return_item = [r for r in items if r["picking_id"][0] == return_picking.id][0]
-        self.assertAlmostEqual(abs(delivery_item["product_uom_qty"]), 2)
-        self.assertAlmostEqual(abs(return_item["product_uom_qty"]), 1)
+        self.assertAlmostEqual(abs(delivery_item["product_uom_qty:sum"]), 2)
+        self.assertAlmostEqual(abs(return_item["product_uom_qty:sum"]), 1)
         # The user modifies the done ml and an adjustment layer is made
         return_move = return_picking.move_ids
         return_move.move_line_ids.quantity = 0.7
-        self.assertEqual(len(return_move.stock_valuation_layer_ids), 2)
         self.env.invalidate_all()
-        items = self.env["sale.report.delivered"].read_group(
+        items = self.env["sale.report.delivered"].formatted_read_group(
             domain=[("product_id", "=", product.id), ("order_id", "=", order.id)],
-            fields=["picking_id", "product_uom_qty:sum", "price_subtotal:sum"],
             groupby=["picking_id"],
+            aggregates=["product_uom_qty:sum", "price_subtotal:sum"],
         )
         self.assertEqual(len(items), 2)
         delivery_item = [r for r in items if r["picking_id"][0] == picking.id][0]
         return_item = [r for r in items if r["picking_id"][0] == return_picking.id][0]
-        self.assertAlmostEqual(abs(delivery_item["product_uom_qty"]), 2)
-        self.assertAlmostEqual(abs(return_item["product_uom_qty"]), 0.7)
+        self.assertAlmostEqual(abs(delivery_item["product_uom_qty:sum"]), 2)
+        self.assertAlmostEqual(abs(return_item["product_uom_qty:sum"]), 0.7)
 
     # ------------------------------------------------------------------------
     # Deliberately NOT testing Dropship modification: known bug in ROADMAP.rst
@@ -408,15 +361,15 @@ class TestSaleReportDelivered(TestSaleReportDeliveredBase):
         order = self._create_order(product, qty=2, confirm=True)
         delivery_picking = self._create_dropship_picking(order, 2)
         return_picking = self._create_dropship_return(order, delivery_picking, 1)
-        items = self.env["sale.report.delivered"].read_group(
+        items = self.env["sale.report.delivered"].formatted_read_group(
             domain=[("product_id", "=", product.id), ("order_id", "=", order.id)],
-            fields=["picking_id", "product_uom_qty:sum", "price_subtotal:sum"],
             groupby=["picking_id"],
+            aggregates=["product_uom_qty:sum", "price_subtotal:sum"],
         )
         self.assertEqual(len(items), 2)
         delivery_item = [r for r in items if r["picking_id"][0] == delivery_picking.id][
             0
         ]
         return_item = [r for r in items if r["picking_id"][0] == return_picking.id][0]
-        self.assertAlmostEqual(abs(delivery_item["product_uom_qty"]), 2)
-        self.assertAlmostEqual(abs(return_item["product_uom_qty"]), 1)
+        self.assertAlmostEqual(abs(delivery_item["product_uom_qty:sum"]), 2)
+        self.assertAlmostEqual(abs(return_item["product_uom_qty:sum"]), 1)
