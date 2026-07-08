@@ -9,7 +9,7 @@ class Name(models.AbstractModel):
     _inherit = "sale.report"
 
     product_packaging_id = fields.Many2one(
-        "product.packaging",
+        "uom.uom",
         string="Packaging",
         readonly=True,
     )
@@ -23,28 +23,11 @@ class Name(models.AbstractModel):
         result = super()._select_additional_fields()
         return dict(
             result,
-            product_packaging_id="l.product_packaging_id",
-            product_packaging_qty="SUM(l.product_packaging_qty)",
-            product_packaging_qty_delivered="""
-                COALESCE(
-                    SUM(
-                        l.qty_delivered
-                        / u.factor * u2.factor
-                        / product_packaging.qty
-                    ),
-                    0
-                )
-            """,
+            product_packaging_id="l.product_uom_id",
+            product_packaging_qty="SUM(l.product_uom_qty)",
+            product_packaging_qty_delivered="COALESCE(SUM(l.qty_delivered), 0)",
         )
-
-    def _from_sale(self):
-        result = super()._from_sale()
-        return f"""
-            {result}
-            LEFT JOIN product_packaging
-            ON l.product_packaging_id = product_packaging.id
-        """
 
     def _group_by_sale(self):
         result = super()._group_by_sale()
-        return f"{result}, l.product_packaging_id"
+        return f"{result}, l.product_uom_id"

@@ -6,15 +6,14 @@
         id="report_saleorder_document"
         inherit_id="sale.report_saleorder_document"
     >
-        <xpath expr="//td[@name='td_quantity']">
+        <xpath expr="//td[@name='td_product_quantity']">
             <div
-                t-if="line.product_packaging_id"
+                t-if="line.product_uom_id and line.product_uom_id != line.product_id.uom_id"
                 class="text-secondary"
                 style="white-space: nowrap;"
-                groups="product.group_stock_packaging"
             >
-                <span t-field="line.product_packaging_id" />:
-                <span t-field="line.product_packaging_qty" />
+                <span t-field="line.product_uom_id" />:
+                <span t-field="line.product_uom_qty" />
             </div>
         </xpath>
     </template>

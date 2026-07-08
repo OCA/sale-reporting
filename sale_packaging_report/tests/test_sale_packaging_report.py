@@ -10,13 +10,31 @@ class TestSaleReportPackaging(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.partner = cls.env.ref("base.res_partner_12")
-        cls.product = cls.env.ref("product.product_product_9")
-        cls.product_packaging = cls.env["product.packaging"].create(
+        cls.partner = cls.env["res.partner"].create({"name": "Test Partner"})
+        cls.uom_unit = cls.env["uom.uom"].create(
             {
-                "name": "Box of 12",
-                "qty": 12,
-                "product_id": cls.product.id,
+                "name": "Test Unit",
+                "relative_factor": 1.0,
+                "relative_uom_id": False,
+            }
+        )
+        cls.product = cls.env["product.product"].create(
+            {
+                "name": "Test Product",
+                "type": "consu",
+                "uom_id": cls.uom_unit.id,
+            }
+        )
+        cls.uom_dozen = cls.env["uom.uom"].create(
+            {
+                "name": "Dozen",
+                "relative_factor": 12.0,
+                "relative_uom_id": cls.uom_unit.id,
+            }
+        )
+        cls.product.write(
+            {
+                "uom_ids": [Command.link(cls.uom_dozen.id)],
             }
         )
         cls.order = cls.env["sale.order"].create(
@@ -26,10 +44,8 @@ class TestSaleReportPackaging(BaseCommon):
                     Command.create(
                         {
                             "product_id": cls.product.id,
-                            "product_uom": cls.product.uom_id.id,
-                            "product_uom_qty": 24.0,
-                            "product_packaging_id": cls.product_packaging.id,
-                            "product_packaging_qty": 2,
+                            "product_uom_id": cls.uom_dozen.id,
+                            "product_uom_qty": 2.0,
                         },
                     )
                 ],
@@ -40,31 +56,30 @@ class TestSaleReportPackaging(BaseCommon):
         self.order.action_confirm()
 
         self.env.invalidate_all()
-        sale_report = self.env["sale.report"].read_group(
+        sale_report = self.env["sale.report"]._read_group(
             domain=[("order_reference", "=", f"sale.order,{self.order.id}")],
-            fields=[
-                "product_packaging_id",
-                "product_packaging_qty",
-                "product_packaging_qty_delivered",
-            ],
             groupby=["product_packaging_id"],
+            aggregates=[
+                "product_packaging_qty:sum",
+                "product_packaging_qty_delivered:sum",
+            ],
         )
 
         self.assertTrue(sale_report, "No sale report entries found for the sale order.")
 
         report_entry = sale_report[0]
         self.assertEqual(
-            report_entry["product_packaging_id"][0],
-            self.product_packaging.id,
+            report_entry[0].id,
+            self.uom_dozen.id,
             "Incorrect product packaging in the report.",
         )
         self.assertEqual(
-            report_entry["product_packaging_qty"],
+            report_entry[1],
             2,
             "Incorrect product packaging quantity in the report.",
         )
         self.assertEqual(
-            report_entry["product_packaging_qty_delivered"],
+            report_entry[2],
             0,
             "Incorrect product packaging delivered quantity in the report.",
         )
