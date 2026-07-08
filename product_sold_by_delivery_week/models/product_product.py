@@ -95,23 +95,25 @@ class ProductProduct(models.Model):
                 int(locale_date["y"]),
             )
         # Get all the results in a single query
-        sold_grouped = self.env["stock.move"].read_group(
+        sold_grouped = self.env["stock.move"]._read_group(
             self._weekly_sold_delivered_domain(start_of_period, start_of_next_week),
-            ["date", "product_id"],
             ["date:week", "product_id"],
-            lazy=False,
         )
         if not sold_grouped:
             return {p: "0" * weeks_to_consider for p in self}
         weekly_product_ids = {}
-        for date_product in sold_grouped:
-            (int(date_product["date:week"][1:3]), int(date_product["date:week"][-4:]))
+        for date_week, product in sold_grouped:
+            if not date_week:
+                continue
+            locale_date = DateTimeFormat(
+                date_week, locale=self.env.user.lang or "en_US"
+            )
             week_year_tuple = (
-                int(date_product["date:week"][1:3]),
-                int(date_product["date:week"][-4:]),
+                int(locale_date["w"]),
+                int(locale_date["y"]),
             )
             weekly_product_ids.setdefault(week_year_tuple, [])
-            weekly_product_ids[week_year_tuple].append(date_product["product_id"][0])
+            weekly_product_ids[week_year_tuple].append(product.id)
         # We'll get a dict like this
         # {
         #     product.product(1,): '000000',
@@ -150,7 +152,7 @@ class ProductProduct(models.Model):
     @api.model
     def _action_recalculate_all_weekly_sold_delivered(self):
         """To be launched by the cron or the init hook"""
-        companies = self.env["res.company"].search([])
+        companies = self.env["res.company"].search([("id", "!=", False)])
         for company in companies:
             products = (
                 self.env["product.product"]

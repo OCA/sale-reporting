@@ -2,6 +2,8 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl)
 from odoo.tests import TransactionCase, new_test_user
 
+from ..hooks import post_init_hook
+
 
 class TestProductSoldByDeliveryWeek(TransactionCase):
     @classmethod
@@ -44,7 +46,7 @@ class TestProductSoldByDeliveryWeek(TransactionCase):
                         0,
                         {
                             "product_id": cls.product.id,
-                            "product_uom": cls.product.uom_id.id,
+                            "product_uom_id": cls.product.uom_id.id,
                             "product_uom_qty": 3.0,
                         },
                     ),
@@ -54,7 +56,7 @@ class TestProductSoldByDeliveryWeek(TransactionCase):
                         0,
                         {
                             "product_id": cls.product_expense_product.id,
-                            "product_uom": cls.product_expense_product.uom_id.id,
+                            "product_uom_id": cls.product_expense_product.uom_id.id,
                             "product_uom_qty": 3.0,
                         },
                     ),
@@ -100,3 +102,91 @@ class TestProductSoldByDeliveryWeek(TransactionCase):
             line._action_done()
             self.assertEqual(line.product_id.weekly_sold_delivered, "000001")
             self.assertEqual(line.product_id.weekly_sold_delivered_shown, "◌◌◌◌◌●")
+
+        partner_reporting = (
+            self.order.order_line[0]
+            .with_context(use_delivery_address=True)
+            .get_partner_for_reporting()
+        )
+        self.assertEqual(partner_reporting, self.order.partner_shipping_id)
+
+        self.env[
+            "product.product"
+        ].sudo()._action_recalculate_all_weekly_sold_delivered()
+        weekly_res = (
+            self.product.sudo()
+            .with_context(weekly_warehouse_id=self.env.ref("stock.warehouse0").id)
+            ._weekly_sold_delivered()
+        )
+        self.assertIn(self.product, weekly_res)
+
+        tmpl = (
+            self.env["product.template"].sudo().create({"name": "T", "type": "consu"})
+        )
+        attr = self.env["product.attribute"].sudo().create({"name": "A"})
+        v1 = (
+            self.env["product.attribute.value"]
+            .sudo()
+            .create({"name": "1", "attribute_id": attr.id})
+        )
+        v2 = (
+            self.env["product.attribute.value"]
+            .sudo()
+            .create({"name": "2", "attribute_id": attr.id})
+        )
+        self.env["product.template.attribute.line"].sudo().create(
+            {
+                "product_tmpl_id": tmpl.id,
+                "attribute_id": attr.id,
+                "value_ids": [(6, 0, [v1.id, v2.id])],
+            }
+        )
+        tmpl.product_variant_ids[0].sudo().weekly_sold_delivered = "01"
+        tmpl.product_variant_ids[1].sudo().weekly_sold_delivered = "10"
+        self.assertEqual(tmpl.weekly_sold_delivered, "000011")
+        self.assertEqual(tmpl.weekly_sold_delivered_shown, "◌◌◌◌●●")
+
+        self.assertTrue(self.product.product_tmpl_id.weekly_sold_delivered)
+
+        tmpl_no_variant = (
+            self.env["product.template"]
+            .sudo()
+            .create({"name": "No Variant", "type": "consu"})
+        )
+        tmpl_no_variant.product_variant_ids.sudo().action_archive()
+        self.assertFalse(tmpl_no_variant.weekly_sold_delivered)
+
+        products_no_company = (
+            self.env["product.product"]
+            .sudo()
+            .search([("company_id", "=", False), ("type", "!=", "service")])
+        )
+        self.assertTrue(products_no_company)
+
+        products_no_company.sudo().write({"company_id": self.env.company.id})
+        self.assertTrue(all(products_no_company.mapped("company_id")))
+
+        empty_company = self.env["res.company"].sudo().create({"name": "Empty"})
+        self.assertEqual(empty_company.name, "Empty")
+
+        self.env[
+            "product.product"
+        ].sudo()._action_recalculate_all_weekly_sold_delivered()
+        products_no_company.sudo().write({"company_id": False})
+        self.assertFalse(any(products_no_company.mapped("company_id")))
+
+        original_method = type(self.env["product.product"])._weekly_sold_delivered
+        type(self.env["product.product"])._weekly_sold_delivered = lambda self: {
+            self.env["product.product"]: "000000"
+        }
+        previous_val = self.product.weekly_sold_delivered
+        self.assertTrue(previous_val)
+        self.product.sudo()._recalculate_weekly_sold_delivered()
+        self.assertEqual(self.product.weekly_sold_delivered, previous_val)
+        self.assertNotEqual(self.product.weekly_sold_delivered, "000000")
+        type(self.env["product.product"])._weekly_sold_delivered = original_method
+
+    def test_04_post_init_hook(self):
+        """Test the post init hook"""
+        post_init_hook(self.env)
+        self.assertTrue(self.product.weekly_sold_delivered)
