@@ -21,7 +21,7 @@ class TestSaleReportDeliveredVolume(BaseCommon):
                     Command.create(
                         {
                             "product_id": cls.product.id,
-                            "product_uom": cls.product.uom_id.id,
+                            "product_uom_id": cls.product.uom_id.id,
                             "product_uom_qty": 3.0,
                             "qty_delivered": 2.0,
                         },
@@ -30,7 +30,7 @@ class TestSaleReportDeliveredVolume(BaseCommon):
                     Command.create(
                         {
                             "product_id": cls.product.id,
-                            "product_uom": cls.product.uom_id.id,
+                            "product_uom_id": cls.product.uom_id.id,
                             "product_uom_qty": 5.0,
                             "qty_delivered": 4.0,
                         },
