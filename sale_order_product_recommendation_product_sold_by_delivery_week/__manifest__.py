@@ -3,7 +3,7 @@
 {
     "name": "Product weekly sales hint on sales recommendation wizard",
     "summary": "Adds the weekly sales field to the recommendation wizard",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "development_status": "Beta",
     "category": "Sale",
     "website": "https://github.com/OCA/sale-reporting",
