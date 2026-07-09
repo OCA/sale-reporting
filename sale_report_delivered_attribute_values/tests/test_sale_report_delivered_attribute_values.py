@@ -59,14 +59,14 @@ class TestSaleReportDeliveredAttributeValues(common.TransactionCase):
         )
         # Create quants
         for product in cls.product_template.product_variant_ids:
-            res = product.action_update_quantity_on_hand()
+            res = product.action_open_quants()
             quant_form = Form(
                 cls.env["stock.quant"].with_context(**res["context"]),
                 view="stock.view_stock_quant_tree_inventory_editable",
             )
             quant_form.inventory_quantity = 1
             quant_form.location_id = cls.env.ref("stock.stock_location_stock")
-            return quant_form.save()
+            quant_form.save()
 
     def _create_and_complete_order(self, product):
         order_form = Form(self.env["sale.order"])
