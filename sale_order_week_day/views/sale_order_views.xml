@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    ~ Copyright 2026 Simone Rubino - PyTech
+    ~ License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <record id="view_sales_order_filter" model="ir.ui.view">
+        <field name="name">Add Day of Week to Sale Order filters</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter" />
+        <field name="arch" type="xml">
+            <search position="inside">
+                <field name="create_date_week_day" />
+                <field name="date_order_week_day" />
+            </search>
+            <group position="inside">
+                <filter
+                    string="Creation Day of Week"
+                    name="create_date_week_day"
+                    context="{
+                        'group_by': 'create_date_week_day',
+                    }"
+                />
+                <filter
+                    string="Order Day of Week"
+                    name="date_order_week_day"
+                    context="{
+                        'group_by': 'date_order_week_day',
+                    }"
+                />
+            </group>
+        </field>
+    </record>
+</odoo>
