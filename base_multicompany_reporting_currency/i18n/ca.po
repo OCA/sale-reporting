@@ -17,9 +17,38 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 
 #. module: base_multicompany_reporting_currency
+#: model_terms:ir.ui.view,arch_db:base_multicompany_reporting_currency.res_config_settings_view_form
+msgid ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
+"specific.\" aria-label=\"Values set here are company-specific.\" "
+"groups=\"base.group_multi_company\"/>"
+msgstr ""
+
+#. module: base_multicompany_reporting_currency
+#: model:ir.model.fields.selection,name:base_multicompany_reporting_currency.selection__res_company__multicompany_reporting_amount__total
+msgid "Amount total"
+msgstr ""
+
+#. module: base_multicompany_reporting_currency
+#: model_terms:ir.ui.view,arch_db:base_multicompany_reporting_currency.res_config_settings_view_form
+msgid "Choose which amount to use for the multicompany reporting"
+msgstr ""
+
+#. module: base_multicompany_reporting_currency
+#: model:ir.model,name:base_multicompany_reporting_currency.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: base_multicompany_reporting_currency
 #: model:ir.model,name:base_multicompany_reporting_currency.model_res_config_settings
 msgid "Config Settings"
 msgstr "Paràmetres de configuració"
+
+#. module: base_multicompany_reporting_currency
+#: model:ir.model.fields,field_description:base_multicompany_reporting_currency.field_res_company__multicompany_reporting_amount
+#: model:ir.model.fields,field_description:base_multicompany_reporting_currency.field_res_config_settings__multicompany_reporting_amount
+msgid "Multicompany Reporting Amount"
+msgstr ""
 
 #. module: base_multicompany_reporting_currency
 #: model:ir.model.fields,field_description:base_multicompany_reporting_currency.field_res_config_settings__multicompany_reporting_currency
@@ -30,3 +59,8 @@ msgstr "Moneda informes multicompanyia"
 #: model_terms:ir.ui.view,arch_db:base_multicompany_reporting_currency.res_config_settings_view_form
 msgid "Set Multicompany Reporting Currency"
 msgstr "Estableix la moneda dels informes multicompanyia"
+
+#. module: base_multicompany_reporting_currency
+#: model:ir.model.fields.selection,name:base_multicompany_reporting_currency.selection__res_company__multicompany_reporting_amount__untaxed
+msgid "Untaxed Amount"
+msgstr ""
