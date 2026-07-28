@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-12-01 09:31+0000\n"
+"PO-Revision-Date: 2026-07-28 08:46+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: base_multicompany_reporting_currency
 #: model_terms:ir.ui.view,arch_db:base_multicompany_reporting_currency.res_config_settings_view_form
@@ -23,21 +23,24 @@ msgid ""
 "specific.\" aria-label=\"Values set here are company-specific.\" "
 "groups=\"base.group_multi_company\"/>"
 msgstr ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"I valori qui impostati sono "
+"specifici per azienda.\" aria-label=\"I valori qui impostati sono specifici "
+"per azienda.\" groups=\"base.group_multi_company\"/>"
 
 #. module: base_multicompany_reporting_currency
 #: model:ir.model.fields.selection,name:base_multicompany_reporting_currency.selection__res_company__multicompany_reporting_amount__total
 msgid "Amount total"
-msgstr ""
+msgstr "Importo totale"
 
 #. module: base_multicompany_reporting_currency
 #: model_terms:ir.ui.view,arch_db:base_multicompany_reporting_currency.res_config_settings_view_form
 msgid "Choose which amount to use for the multicompany reporting"
-msgstr ""
+msgstr "Scegliere quale valore usare per la rendicontazione multi azienda"
 
 #. module: base_multicompany_reporting_currency
 #: model:ir.model,name:base_multicompany_reporting_currency.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Aziende"
 
 #. module: base_multicompany_reporting_currency
 #: model:ir.model,name:base_multicompany_reporting_currency.model_res_config_settings
@@ -48,12 +51,12 @@ msgstr "Impostazioni configurazione"
 #: model:ir.model.fields,field_description:base_multicompany_reporting_currency.field_res_company__multicompany_reporting_amount
 #: model:ir.model.fields,field_description:base_multicompany_reporting_currency.field_res_config_settings__multicompany_reporting_amount
 msgid "Multicompany Reporting Amount"
-msgstr ""
+msgstr "Valore rendicontazione multi azienda"
 
 #. module: base_multicompany_reporting_currency
 #: model:ir.model.fields,field_description:base_multicompany_reporting_currency.field_res_config_settings__multicompany_reporting_currency
 msgid "Multicompany Reporting Currency"
-msgstr "Valuta resoconto multi azienda"
+msgstr "Valuta rendicontazione multi azienda"
 
 #. module: base_multicompany_reporting_currency
 #: model_terms:ir.ui.view,arch_db:base_multicompany_reporting_currency.res_config_settings_view_form
@@ -63,4 +66,4 @@ msgstr "Imposta valuta resoconto multi azienda"
 #. module: base_multicompany_reporting_currency
 #: model:ir.model.fields.selection,name:base_multicompany_reporting_currency.selection__res_company__multicompany_reporting_amount__untaxed
 msgid "Untaxed Amount"
-msgstr ""
+msgstr "Imponibile"
