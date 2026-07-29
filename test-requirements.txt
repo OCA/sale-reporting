@@ -1,0 +1,2 @@
+# https://github.com/OCA/server-ux/pull/1314
+odoo14-addon-base_week_day @ git+https://github.com/OCA/server-ux.git@refs/pull/1314/head#subdirectory=setup/base_week_day
