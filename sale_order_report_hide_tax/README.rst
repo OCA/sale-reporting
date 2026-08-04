@@ -14,9 +14,9 @@ Sale order line hide tax in report
    !! source digest: sha256:461eccd06e840a9dd6a82ddbcfce25e5f5b6434130c11bd69f90dfcc59cb9997
    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-.. |badge1| image:: https://img.shields.io/badge/maturity-Alpha-red.png
+.. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
-    :alt: Alpha
+    :alt: Beta
 .. |badge2| image:: https://img.shields.io/badge/license-LGPL--3-blue.png
     :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
     :alt: License: LGPL-3
@@ -36,11 +36,6 @@ Hide taxes column in the quotation document that is sent to the
 customer. When all quotation lines have the same tax group, the Taxes
 column is automatically hidden to avoid displaying redundant information
 and to improve document clarity.
-
-.. IMPORTANT::
-   This is an alpha version, the data model and design can change at any time without warning.
-   Only for development or testing purpose, do not use in production.
-   `More details on development status <https://odoo-community.org/page/development-status>`_
 
 **Table of contents**
 
