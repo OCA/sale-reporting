@@ -10,9 +10,12 @@
         </th>
         <td name="td_name" position="before">
             <td name="td_image">
-                <span
-                    t-field="line.product_id.image_128"
-                    t-options="{'widget': 'image', 'max_width': '64', 'class': 'rounded'}"
+                <img
+                    t-if="line.product_id.image_128"
+                    t-att-src="image_data_uri(line.product_id.image_128)"
+                    style="max-width: 64px;"
+                    class="rounded"
+                    alt="Product image"
                 />
             </td>
         </td>
