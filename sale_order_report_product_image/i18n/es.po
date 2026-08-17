@@ -20,3 +20,8 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:sale_order_report_product_image.report_saleorder_document_image
 msgid "Image"
 msgstr "Imagen"
+
+#. module: sale_order_report_product_image
+#: model_terms:ir.ui.view,arch_db:sale_order_report_product_image.report_saleorder_document_image
+msgid "Product image"
+msgstr ""
