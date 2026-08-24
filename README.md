@@ -38,6 +38,7 @@ addon | version | maintainers | summary
 [sale_report_delivered_semaphore](sale_report_delivered_semaphore/) | 18.0.1.0.0 | <a href='https://github.com/CarlosRoca13'><img src='https://github.com/CarlosRoca13.png' width='32' height='32' style='border-radius:50%;' alt='CarlosRoca13'/></a> | Sale Report Delivered Semaphore
 [sale_report_delivered_subtotal](sale_report_delivered_subtotal/) | 18.0.1.0.0 | <a href='https://github.com/sergio-teruel'><img src='https://github.com/sergio-teruel.png' width='32' height='32' style='border-radius:50%;' alt='sergio-teruel'/></a> | Sale Report Delivered subtotal
 [sale_report_delivered_volume](sale_report_delivered_volume/) | 18.0.1.0.0 |  | Sale Report Delivered Volume
+[sale_report_salesman](sale_report_salesman/) | 18.0.1.0.0 | <a href='https://github.com/carolina-fernandez'><img src='https://github.com/carolina-fernandez.png' width='32' height='32' style='border-radius:50%;' alt='carolina-fernandez'/></a> | Adds the Sales Reporting menu to the Salespersons user group.
 [sale_report_salesperson_from_partner](sale_report_salesperson_from_partner/) | 18.0.1.0.0 | <a href='https://github.com/pilarvargas-tecnativa'><img src='https://github.com/pilarvargas-tecnativa.png' width='32' height='32' style='border-radius:50%;' alt='pilarvargas-tecnativa'/></a> | Sale Report Salesperson From Partner
 
 [//]: # (end addons)

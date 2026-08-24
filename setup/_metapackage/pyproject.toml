@@ -1,6 +1,6 @@
 [project]
 name = "odoo-addons-oca-sale-reporting"
-version = "18.0.20260525.0"
+version = "18.0.20260824.0"
 dependencies = [
     "odoo-addon-product_sold_by_delivery_week==18.0.*",
     "odoo-addon-sale_comment_template==18.0.*",
@@ -19,6 +19,7 @@ dependencies = [
     "odoo-addon-sale_report_delivered_semaphore==18.0.*",
     "odoo-addon-sale_report_delivered_subtotal==18.0.*",
     "odoo-addon-sale_report_delivered_volume==18.0.*",
+    "odoo-addon-sale_report_salesman==18.0.*",
     "odoo-addon-sale_report_salesperson_from_partner==18.0.*",
 ]
 classifiers=[
