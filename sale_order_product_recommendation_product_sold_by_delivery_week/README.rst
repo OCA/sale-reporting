@@ -67,6 +67,7 @@ Contributors
 
   - David Vidal
   - David Bañón
+  - Carlos Roca
 
 - Jairo Llopis (`Moduon <https://www.moduon.team>`__)
 

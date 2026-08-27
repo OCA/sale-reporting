@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Tecnativa - Carlos Roca
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="product_view_kanban_catalog" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field
+            name="inherit_id"
+            ref="product_sold_by_delivery_week.product_view_kanban_catalog"
+        />
+        <field name="arch" type="xml">
+            <!-- Replace the globally stored hint with the live, customer-filtered
+                 one so the catalog matches the recommendation wizard. -->
+            <field name="weekly_sold_delivered_shown" position="after">
+                <field
+                    groups="product_sold_by_delivery_week.group_weekly_selling_order_line"
+                    name="weekly_sold_delivered_catalog_shown"
+                />
+            </field>
+            <field name="weekly_sold_delivered_shown" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+        </field>
+    </record>
+</odoo>

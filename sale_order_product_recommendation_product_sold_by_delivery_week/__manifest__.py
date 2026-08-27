@@ -12,5 +12,8 @@
     "license": "AGPL-3",
     "depends": ["product_sold_by_delivery_week", "sale_order_product_recommendation"],
     "auto_install": True,
-    "data": ["wizard/sale_order_recommendation_view.xml"],
+    "data": [
+        "views/product_views.xml",
+        "wizard/sale_order_recommendation_view.xml",
+    ],
 }
