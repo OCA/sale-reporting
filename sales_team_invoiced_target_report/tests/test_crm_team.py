@@ -7,6 +7,13 @@ class TestCrmTeamInvoiced(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        cls.journal = cls.env["account.journal"].create(
+            {"name": "Journal Test", "code": "test", "type": "sale"}
+        )
+        cls.account = cls.env["account.account"].search(
+            [("account_type", "=", "income"), ("company_ids", "=", cls.env.company.id)],
+            limit=1,
+        )
         cls.team = cls.env["crm.team"].create({"name": "Test Team"})
         cls.team2 = cls.env["crm.team"].create({"name": "Test Team 2"})
         cls.partner_id = cls.env["res.partner"].create({"name": "Test Partner"})
@@ -21,7 +28,12 @@ class TestCrmTeamInvoiced(BaseCommon):
                 "partner_id": self.partner_id.id,
                 "invoice_line_ids": [
                     Command.create(
-                        {"name": "Test Line", "quantity": 1, "price_unit": amount}
+                        {
+                            "name": "Test Line",
+                            "quantity": 1,
+                            "price_unit": amount,
+                            "account_id": self.account.id,
+                        }
                     )
                 ],
             }

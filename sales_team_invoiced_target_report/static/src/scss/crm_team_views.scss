@@ -1,0 +1,16 @@
+.o_crm_team_kanban .o_kanban_renderer {
+    .o_crm_team_dashboard_content > .row:first-child {
+        min-height: 6rem;
+    }
+
+    .crm_team_kanban_bottom {
+        display: none;
+    }
+
+    .o_dashboard_bottom_block {
+        border-top: 1px solid map-get($grays, "300");
+        background-color: map-get($grays, "200");
+        padding-top: var(--KanbanRecord-padding-v);
+        padding-bottom: var(--KanbanRecord-padding-v);
+    }
+}

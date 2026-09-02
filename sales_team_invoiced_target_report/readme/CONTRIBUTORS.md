@@ -1,3 +1,4 @@
 - \[Tecnativa\](<https://www.tecnativa.com>):
   - Sergio Teruel
   - Juan Carlos Oñate
+  - Andrii Kompaniiets
