@@ -1,0 +1,7 @@
+- [Tecnativa](https://www.tecnativa.com):
+  - David Vidal
+  - Carlos Dauden
+  - César A. Sánchez
+  - Luis D. Lafaurie
+- Jairo Llopis (\[Moduon\](<https://www.moduon.team/>))
+- [Heliconia Solutions Pvt. Ltd.\](<https://www.heliconia.io>)
