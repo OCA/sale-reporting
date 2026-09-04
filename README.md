@@ -23,6 +23,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [base_multicompany_reporting_currency](base_multicompany_reporting_currency/) | 19.0.1.0.0 |  | Adds the possibility to specify Multicompany Reporting Currency
+[sale_comment_template](sale_comment_template/) | 19.0.1.0.0 |  | Comments texts templates on Sale documents
 [sale_order_line_position](sale_order_line_position/) | 19.0.1.0.0 |  | Adds position number on sale order line.
 [sale_order_report_hide_tax](sale_order_report_hide_tax/) | 19.0.1.0.0 | <a href='https://github.com/chienandalu'><img src='https://github.com/chienandalu.png' width='32' height='32' style='border-radius:50%;' alt='chienandalu'/></a> <a href='https://github.com/rafaelbn'><img src='https://github.com/rafaelbn.png' width='32' height='32' style='border-radius:50%;' alt='rafaelbn'/></a> | Hide taxes column when they don't add value
 [sale_order_report_product_image](sale_order_report_product_image/) | 19.0.1.0.0 |  | Show product images on Sale documents
