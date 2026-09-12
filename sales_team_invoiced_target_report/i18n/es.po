@@ -1,0 +1,178 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sales_team_invoiced_target_domain
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-02 12:26+0000\n"
+"PO-Revision-Date: 2026-09-02 14:33+0200\n"
+"Last-Translator: Andrii Kompaniiets <andrii.kompaniiets@tecnativa.com>\n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.9\n"
+
+#. module: sales_team_invoiced_target_domain
+#: model:ir.model.fields,field_description:sales_team_invoiced_target_domain.field_crm_team__opportunities_count
+msgid "# Opportunities"
+msgstr "# Oportunidades"
+
+#. module: sales_team_invoiced_target_domain
+#: model:ir.model.fields,field_description:sales_team_invoiced_target_domain.field_crm_team__opportunities_overdue_count
+msgid "# Overdue Opportunities"
+msgstr "# Oportunidades vencidas"
+
+#. module: sales_team_invoiced_target_domain
+#: model:ir.model.fields,field_description:sales_team_invoiced_target_domain.field_crm_team__quotations_amount
+msgid "Amount of quotations to invoice"
+msgstr "Importe de los presupuestos a facturar"
+
+#. module: sales_team_invoiced_target_domain
+#: model:ir.model,name:sales_team_invoiced_target_domain.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: sales_team_invoiced_target_domain
+#: model:ir.model,name:sales_team_invoiced_target_domain.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: sales_team_invoiced_target_domain
+#: model:ir.model.fields,field_description:sales_team_invoiced_target_domain.field_crm_team__dashboard_graph_data
+msgid "Dashboard Graph Data"
+msgstr ""
+
+#. module: sales_team_invoiced_target_domain
+#: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_domain.sale_team_invoiced_config_settings_form_view
+msgid "Define the domain for calculating the invoiced amount for Sales teams."
+msgstr ""
+"Define el dominio para calcular el importe facturado de los equipos de "
+"ventas."
+
+#. module: sales_team_invoiced_target_domain
+#: model:ir.model.fields,field_description:sales_team_invoiced_target_domain.field_crm_team__display_name
+#: model:ir.model.fields,field_description:sales_team_invoiced_target_domain.field_res_company__display_name
+#: model:ir.model.fields,field_description:sales_team_invoiced_target_domain.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: sales_team_invoiced_target_domain
+#: model:ir.model.fields,field_description:sales_team_invoiced_target_domain.field_crm_team__id
+#: model:ir.model.fields,field_description:sales_team_invoiced_target_domain.field_res_company__id
+#: model:ir.model.fields,field_description:sales_team_invoiced_target_domain.field_res_config_settings__id
+msgid "ID"
+msgstr ""
+
+#. module: sales_team_invoiced_target_domain
+#: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_domain.crm_team_view_kanban_dashboard_reporting
+msgid "Invoicing"
+msgstr "Facturación"
+
+#. module: sales_team_invoiced_target_domain
+#: model:ir.model.fields,field_description:sales_team_invoiced_target_domain.field_crm_team__quotations_count
+msgid "Number of quotations to invoice"
+msgstr "Número de presupuestos por facturar"
+
+#. module: sales_team_invoiced_target_domain
+#: model:ir.model.fields,field_description:sales_team_invoiced_target_domain.field_crm_team__sales_to_invoice_count
+msgid "Number of sales to invoice"
+msgstr "Número de ventas por facturar"
+
+#. module: sales_team_invoiced_target_domain
+#: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_domain.crm_team_view_kanban_dashboard_reporting
+msgid "Open Opportunities"
+msgstr "Oportunidades abiertas"
+
+#. module: sales_team_invoiced_target_domain
+#: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_domain.crm_team_view_kanban_dashboard_reporting
+msgid "Open Opportunity"
+msgstr "Oportunidad abierta"
+
+#. module: sales_team_invoiced_target_domain
+#: model:ir.model.fields,field_description:sales_team_invoiced_target_domain.field_crm_team__opportunities_amount
+msgid "Opportunities Revenues"
+msgstr "Ingresos de oportunidades"
+
+#. module: sales_team_invoiced_target_domain
+#: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_domain.crm_team_view_kanban_dashboard_reporting
+msgid "Order to Invoice"
+msgstr "Pedido a facturar"
+
+#. module: sales_team_invoiced_target_domain
+#: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_domain.crm_team_view_kanban_dashboard_reporting
+msgid "Orders to Invoice"
+msgstr "Pedidos a facturar"
+
+#. module: sales_team_invoiced_target_domain
+#: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_domain.crm_team_view_kanban_dashboard_reporting
+msgid "Overdue Opportunities"
+msgstr "Oportunidades vencidas"
+
+#. module: sales_team_invoiced_target_domain
+#: model:ir.model.fields,field_description:sales_team_invoiced_target_domain.field_crm_team__opportunities_overdue_amount
+msgid "Overdue Opportunities Revenues"
+msgstr "Ingresos de oportunidades vencidas"
+
+#. module: sales_team_invoiced_target_domain
+#: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_domain.crm_team_view_kanban_dashboard_reporting
+msgid "Overdue Opportunity"
+msgstr "Oportunidad vencida"
+
+#. module: sales_team_invoiced_target_domain
+#: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_domain.crm_team_view_kanban_dashboard_reporting
+msgid "Quotation"
+msgstr "Presupuesto"
+
+#. module: sales_team_invoiced_target_domain
+#: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_domain.crm_team_view_kanban_dashboard_reporting
+msgid "Quotations"
+msgstr "Presupuestos"
+
+#. module: sales_team_invoiced_target_domain
+#: model:ir.model,name:sales_team_invoiced_target_domain.model_crm_team
+msgid "Sales Team"
+msgstr "Equipo de ventas"
+
+#. module: sales_team_invoiced_target_domain
+#: model:ir.model.fields,field_description:sales_team_invoiced_target_domain.field_res_company__sales_team_invoiced_domain
+#: model:ir.model.fields,field_description:sales_team_invoiced_target_domain.field_res_config_settings__sales_team_invoiced_domain
+msgid "Sales Team Invoiced Domain"
+msgstr "Dominio de facturación del equipo de ventas"
+
+#. module: sales_team_invoiced_target_domain
+#. odoo-python
+#: code:addons/sales_team_invoiced_target_domain/model/crm_team.py:0
+msgid "Sales: Untaxed Total"
+msgstr "Ventas: Total sin impuestos"
+
+#. module: sales_team_invoiced_target_domain
+#. odoo-python
+#: code:addons/sales_team_invoiced_target_domain/model/crm_team.py:0
+msgid "Sample data"
+msgstr "Datos de ejemplo"
+
+#. module: sales_team_invoiced_target_domain
+#: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_domain.sale_team_invoiced_config_settings_form_view
+msgid "Team Invoiced Domain"
+msgstr "Dominio de facturación del equipo"
+
+#. module: sales_team_invoiced_target_domain
+#: model:ir.actions.act_window,name:sales_team_invoiced_target_domain.crm_team_reporting_action
+#: model:ir.ui.menu,name:sales_team_invoiced_target_domain.crm_team_reporting_menu
+msgid "Teams"
+msgstr "Equipos"
+
+#. module: sales_team_invoiced_target_domain
+#: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_domain.crm_team_view_kanban_dashboard_reporting
+msgid "Unassigned Lead"
+msgstr "Lead sin asignar"
+
+#. module: sales_team_invoiced_target_domain
+#: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_domain.crm_team_view_kanban_dashboard_reporting
+msgid "Unassigned Leads"
+msgstr "Leads sin asignar"

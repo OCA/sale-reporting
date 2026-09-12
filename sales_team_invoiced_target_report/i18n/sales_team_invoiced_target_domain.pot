@@ -1,0 +1,45 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sales_team_invoiced_target_domain
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sales_team_invoiced_target_domain
+#: model:ir.model,name:sales_team_invoiced_target_domain.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: sales_team_invoiced_target_domain
+#: model:ir.model,name:sales_team_invoiced_target_domain.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: sales_team_invoiced_target_domain
+#: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_domain.sale_team_invoiced_config_settings_form_view
+msgid "Define the domain for calculating the invoiced amount for Sales teams."
+msgstr ""
+
+#. module: sales_team_invoiced_target_domain
+#: model:ir.model,name:sales_team_invoiced_target_domain.model_crm_team
+msgid "Sales Team"
+msgstr ""
+
+#. module: sales_team_invoiced_target_domain
+#: model:ir.model.fields,field_description:sales_team_invoiced_target_domain.field_res_company__sales_team_invoiced_domain
+#: model:ir.model.fields,field_description:sales_team_invoiced_target_domain.field_res_config_settings__sales_team_invoiced_domain
+msgid "Sales Team Invoiced Domain"
+msgstr ""
+
+#. module: sales_team_invoiced_target_domain
+#: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_domain.sale_team_invoiced_config_settings_form_view
+msgid "Team Invoiced Domain"
+msgstr ""

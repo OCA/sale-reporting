@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="sale_team_invoiced_config_settings_form_view">
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='sale_management']" position="inside">
+                <block title="Team Invoiced Domain" name="team_invoiced_domain">
+                    <setting
+                        class="col-lg-12"
+                        id="variant_options"
+                        help="Define the domain for calculating the invoiced amount for Sales teams."
+                    >
+                        <field
+                            name="sales_team_invoiced_domain"
+                            widget="domain"
+                            options="{'model': 'account.move'}"
+                        />
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
