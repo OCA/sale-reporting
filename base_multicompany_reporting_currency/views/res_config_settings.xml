@@ -47,6 +47,27 @@
                         </p>
                     </div>
                 </setting>
+                <setting
+                    id="multicompany_reporting_amount"
+                    string="Multicompany Reporting Amount"
+                    help="Choose which amount to use for the multicompany reporting"
+                >
+                    <span
+                        class="fa fa-lg fa-building-o"
+                        title="Values set here are company-specific."
+                        aria-label="Values set here are company-specific."
+                        groups="base.group_multi_company"
+                    />
+                    <div class="content-group">
+                        <div class="mt16">
+                            <field
+                                name="multicompany_reporting_amount"
+                                class="oe_inline"
+                                widget="radio"
+                            />
+                        </div>
+                    </div>
+                </setting>
             </xpath>
         </field>
     </record>
