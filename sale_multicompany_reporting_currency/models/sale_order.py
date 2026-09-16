@@ -6,15 +6,9 @@ from odoo.tools import float_is_zero
 
 
 class SaleOrder(models.Model):
-    _inherit = "sale.order"
+    _name = "sale.order"
+    _inherit = ["sale.order", "multicompany.reporting.currency.mixin"]
 
-    multicompany_reporting_currency_id = fields.Many2one(
-        "res.currency",
-        compute="_compute_multicompany_reporting_currency_id",
-        readonly=True,
-        store=True,
-        default=lambda self: self.env.company._get_multicompany_reporting_currency(),
-    )
     multicompany_reporting_currency_rate = fields.Float(
         compute="_compute_multicompany_reporting_currency_rate",
         store=True,
@@ -25,18 +19,7 @@ class SaleOrder(models.Model):
         compute="_compute_amount_multicompany_reporting_currency",
         store=True,
         index=True,
-        readonly=True,
     )
-
-    @api.depends("company_id.multicompany_reporting_amount", "pricelist_id.currency_id")
-    def _compute_multicompany_reporting_currency_id(self):
-        multicompany_reporting_currency_id = (
-            self.env.company._get_multicompany_reporting_currency()
-        )
-        for record in self:
-            record.multicompany_reporting_currency_id = (
-                multicompany_reporting_currency_id
-            )
 
     @api.depends(
         "pricelist_id", "date_order", "company_id", "multicompany_reporting_currency_id"
@@ -66,6 +49,8 @@ class SaleOrder(models.Model):
 
     @api.depends(
         "amount_total",
+        "amount_untaxed",
+        "company_id.multicompany_reporting_amount",
         "multicompany_reporting_currency_id",
         "multicompany_reporting_currency_rate",
     )
@@ -73,7 +58,7 @@ class SaleOrder(models.Model):
         for record in self:
             reporting_amount = (
                 record.amount_total
-                if (record.company_id.multicompany_reporting_amount == "total")
+                if record.company_id.multicompany_reporting_amount == "total"
                 else record.amount_untaxed
             )
             if (

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
-    <record id="view_order_tree" model="ir.ui.view">
+    <record id="sale_order_tree" model="ir.ui.view">
         <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_order_tree" />
+        <field name="inherit_id" ref="sale.sale_order_tree" />
         <field name="arch" type="xml">
             <field name="amount_total" position="after">
-                <field name="multicompany_reporting_currency_id" invisible="1" />
+                <field
+                    name="multicompany_reporting_currency_id"
+                    column_invisible="True"
+                />
                 <field name="currency_rate" optional="hide" />
                 <field name="multicompany_reporting_currency_rate" optional="hide" />
                 <field
@@ -43,25 +45,4 @@
             </xpath>
         </field>
     </record>
-
-    <record id="view_quotation_tree" model="ir.ui.view">
-        <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_quotation_tree" />
-        <field name="arch" type="xml">
-            <field name="amount_total" position="after">
-                <field name="multicompany_reporting_currency_id" invisible="1" />
-                <field name="currency_rate" optional="hide" />
-                <field name="multicompany_reporting_currency_rate" optional="hide" />
-                <field
-                    name="amount_multicompany_reporting_currency"
-                    sum="Total"
-                    string="Total (Multicompany Reporting Currency)"
-                    widget="monetary"
-                    options="{'currency_field': 'multicompany_reporting_currency_id'}"
-                    optional="show"
-                />
-            </field>
-        </field>
-    </record>
-
 </odoo>
