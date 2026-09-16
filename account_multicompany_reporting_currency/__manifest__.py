@@ -3,7 +3,7 @@
 {
     "name": "Account Multicompany Reporting Currency",
     "summary": "Adds Amount in multicompany reporting currency to Account Moves",
-    "version": "16.0.1.0.0",
+    "version": "19.0.1.0.0",
     "category": "Accounting",
     "author": "Camptocamp SA, Odoo Community Association (OCA)",
     "license": "AGPL-3",
@@ -11,5 +11,6 @@
     "website": "https://github.com/OCA/sale-reporting",
     "data": ["views/account_move.xml"],
     "maintainers": ["yankinmax", "ivantodorovich"],
+    "installable": True,
     "auto_install": True,
 }

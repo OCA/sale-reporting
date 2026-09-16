@@ -6,15 +6,9 @@ from odoo.tools import float_is_zero
 
 
 class AccountMove(models.Model):
-    _inherit = "account.move"
+    _name = "account.move"
+    _inherit = ["account.move", "multicompany.reporting.currency.mixin"]
 
-    multicompany_reporting_currency_id = fields.Many2one(
-        "res.currency",
-        compute="_compute_multicompany_reporting_currency_id",
-        readonly=True,
-        store=True,
-        default=lambda self: self.env.company._get_multicompany_reporting_currency(),
-    )
     multicompany_reporting_currency_rate = fields.Float(
         compute="_compute_multicompany_reporting_currency_rate",
         store=True,
@@ -27,16 +21,6 @@ class AccountMove(models.Model):
         index=True,
         readonly=True,
     )
-
-    @api.depends("company_id.multicompany_reporting_amount", "currency_id")
-    def _compute_multicompany_reporting_currency_id(self):
-        multicompany_reporting_currency_id = (
-            self.env.company._get_multicompany_reporting_currency()
-        )
-        for record in self:
-            record.multicompany_reporting_currency_id = (
-                multicompany_reporting_currency_id
-            )
 
     @api.depends(
         "currency_id", "date", "company_id", "multicompany_reporting_currency_id"
@@ -66,6 +50,8 @@ class AccountMove(models.Model):
 
     @api.depends(
         "amount_total",
+        "amount_untaxed",
+        "company_id.multicompany_reporting_amount",
         "multicompany_reporting_currency_id",
         "multicompany_reporting_currency_rate",
     )

@@ -8,8 +8,11 @@
         <field name="model">account.move</field>
         <field name="inherit_id" ref="account.view_invoice_tree" />
         <field name="arch" type="xml">
-            <field name="amount_total_signed" position="after">
-                <field name="multicompany_reporting_currency_id" invisible="1" />
+            <field name="amount_total_in_currency_signed" position="after">
+                <field
+                    name="multicompany_reporting_currency_id"
+                    column_invisible="True"
+                />
                 <field name="multicompany_reporting_currency_rate" optional="hide" />
                 <field
                     name="amount_multicompany_reporting_currency"
@@ -28,7 +31,7 @@
         <field name="model">account.move</field>
         <field name="inherit_id" ref="account.view_move_form" />
         <field name="arch" type="xml">
-            <xpath expr="//group[hasclass('oe_subtotal_footer')]" position="inside">
+            <xpath expr="//field[@name='tax_totals']" position="after">
                 <label for="amount_multicompany_reporting_currency" />
                 <div class="text-nowrap">
                     <field name="multicompany_reporting_currency_id" invisible="1" />
