@@ -1,6 +1,6 @@
 [project]
 name = "odoo-addons-oca-sale-reporting"
-version = "19.0.20260904.0"
+version = "19.0.20260916.0"
 dependencies = [
     "odoo-addon-base_multicompany_reporting_currency==19.0.*",
     "odoo-addon-sale_comment_template==19.0.*",
@@ -9,6 +9,7 @@ dependencies = [
     "odoo-addon-sale_order_report_product_image==19.0.*",
     "odoo-addon-sale_quotation_builder==19.0.*",
     "odoo-addon-sale_report_salesman==19.0.*",
+    "odoo-addon-sales_team_invoiced_target_report==19.0.*",
 ]
 classifiers=[
     "Programming Language :: Python",

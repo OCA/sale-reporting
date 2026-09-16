@@ -29,6 +29,7 @@ addon | version | maintainers | summary
 [sale_order_report_product_image](sale_order_report_product_image/) | 19.0.1.0.0 |  | Show product images on Sale documents
 [sale_quotation_builder](sale_quotation_builder/) | 19.0.1.0.0 |  | Build great quotation templates
 [sale_report_salesman](sale_report_salesman/) | 19.0.1.0.0 | <a href='https://github.com/carolina-fernandez'><img src='https://github.com/carolina-fernandez.png' width='32' height='32' style='border-radius:50%;' alt='carolina-fernandez'/></a> | Adds the Sales Reporting menu to the Salespersons user group.
+[sales_team_invoiced_target_report](sales_team_invoiced_target_report/) | 19.0.1.0.0 |  | Sales Team Invoiced Target Report
 
 [//]: # (end addons)
 
