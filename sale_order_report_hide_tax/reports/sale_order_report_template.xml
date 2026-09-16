@@ -5,19 +5,12 @@
         inherit_id="sale.report_saleorder_document"
         priority="999"
     >
-        <xpath expr="//th[@name='th_taxes']" position="attributes">
-            <attribute
-                name="t-if"
-                add="doc.show_tax_column_in_report"
-                separator="and"
-            />
-        </xpath>
-        <xpath expr="//td[@name='td_product_taxes']" position="attributes">
-            <attribute
-                name="t-if"
-                add="doc.show_tax_column_in_report"
-                separator="and"
-            />
+        <xpath expr="//t[@t-set='display_taxes']" position="attributes">
+            <attribute name="t-value">
+                not hide_taxes_details
+                and doc.show_tax_column_in_report
+                and any(l._has_taxes() for l in lines_to_report)
+            </attribute>
         </xpath>
     </template>
 </odoo>

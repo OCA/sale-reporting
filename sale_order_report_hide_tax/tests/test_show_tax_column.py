@@ -1,5 +1,7 @@
 # Copyright 2025 Moduon Team S.L.
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0)
+from lxml import html as lxml_html
+
 from odoo import Command
 
 from odoo.addons.base.tests.common import BaseCommon
@@ -111,6 +113,43 @@ class TestShowTaxColumnInReport(BaseCommon):
             """Tax column should be hidden when all taxes
                 belong to the same tax group""",
         )
+
+    def test_same_tax_group_hides_tax_column_with_section_total(self):
+        self.order.order_line = [
+            Command.clear(),
+            Command.create(
+                {
+                    "name": "Services",
+                    "display_type": "line_section",
+                }
+            ),
+            Command.create(
+                {
+                    "product_id": self.product.id,
+                    "name": "Line 1",
+                    "product_uom_qty": 1,
+                    "price_unit": 100,
+                    "tax_ids": [Command.set([self.tax_1.id])],
+                }
+            ),
+            Command.create(
+                {
+                    "product_id": self.product.id,
+                    "name": "Line 2",
+                    "product_uom_qty": 1,
+                    "price_unit": 50,
+                    "tax_ids": [Command.set([self.tax_1.id])],
+                }
+            ),
+        ]
+        result = self.report._render_qweb_html("sale.report_saleorder", [self.order.id])
+        html = result[0].decode("utf-8")
+        document = lxml_html.fromstring(html)
+
+        self.assertNotIn("Taxes", html)
+        section_name = document.xpath("//*[@name='td_section_name']")[0]
+        self.assertEqual(section_name.get("colspan"), "3")
+        self.assertTrue(document.xpath("//*[@name='td_section_price']"))
 
     def test_mixed_tax_groups_show_tax_column(self):
         self.order.order_line = [
