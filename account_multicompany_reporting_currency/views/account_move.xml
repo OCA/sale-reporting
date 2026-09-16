@@ -4,7 +4,6 @@
     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 -->
 <odoo>
-
     <record id="view_invoice_tree" model="ir.ui.view">
         <field name="model">account.move</field>
         <field name="inherit_id" ref="account.view_invoice_tree" />
@@ -44,5 +43,4 @@
             </xpath>
         </field>
     </record>
-
 </odoo>
