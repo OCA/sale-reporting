@@ -1,0 +1,53 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_report_delivered_attribute_values
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2025-02-18 12:06+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.6.2\n"
+
+#. module: sale_report_delivered_attribute_values
+#: model:ir.model.fields,help:sale_report_delivered_attribute_values.field_sale_report_delivered__all_product_attribute_value_ids
+msgid ""
+"All Product Attribute Values used directly or indirecly for this line.\n"
+"Contains information about increased price, html color, etc."
+msgstr ""
+"Tutti i valori degli attributi del prodotto utilizzati direttamente o "
+"indirettamente per questa riga.\n"
+"Contiene informazioni su prezzo aumentato, colore HTML, ecc."
+
+#. module: sale_report_delivered_attribute_values
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered_attribute_values.view_sale_report_delivered_search
+msgid "Attribue Value"
+msgstr "Valore attributo"
+
+#. module: sale_report_delivered_attribute_values
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered_attribute_values.view_sale_report_delivered_search
+msgid "Attribute"
+msgstr "Attributo"
+
+#. module: sale_report_delivered_attribute_values
+#: model:ir.model.fields,field_description:sale_report_delivered_attribute_values.field_sale_report_delivered__all_product_attribute_value_ids
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered_attribute_values.view_sale_report_delivered_search
+msgid "Attribute Values"
+msgstr "Valori attributo"
+
+#. module: sale_report_delivered_attribute_values
+#: model:ir.model.fields,field_description:sale_report_delivered_attribute_values.field_sale_report_delivered__sale_line_id
+msgid "Sale Line"
+msgstr "Riga di vendita"
+
+#. module: sale_report_delivered_attribute_values
+#: model:ir.model,name:sale_report_delivered_attribute_values.model_sale_report_delivered
+msgid "Sales Delivered Analysis Report"
+msgstr "Resoconto analisi vendite consegnate"
