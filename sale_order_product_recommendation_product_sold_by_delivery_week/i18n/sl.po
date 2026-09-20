@@ -1,0 +1,61 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_product_recommendation_product_sold_by_delivery_week
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-06-22 16:51+0000\n"
+"Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
+"Language-Team: none\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 5.15.2\n"
+
+#. module: sale_order_product_recommendation_product_sold_by_delivery_week
+#: model_terms:ir.ui.view,arch_db:sale_order_product_recommendation_product_sold_by_delivery_week.sale_order_recommendation_view_form
+msgid "<small>Available: </small>"
+msgstr "<small>Na voljo: </small>"
+
+#. module: sale_order_product_recommendation_product_sold_by_delivery_week
+#: model_terms:ir.ui.view,arch_db:sale_order_product_recommendation_product_sold_by_delivery_week.sale_order_recommendation_view_form
+msgid "<small>Weekly sales: </small>"
+msgstr "<small>Tedenska prodaja: </small>"
+
+#. module: sale_order_product_recommendation_product_sold_by_delivery_week
+#: model:ir.model.fields,help:sale_order_product_recommendation_product_sold_by_delivery_week.field_sale_order_recommendation_line__qty_available
+msgid ""
+"Current quantity of products.\n"
+"In a context with a single Stock Location, this includes goods stored at this Location, or any of its children.\n"
+"In a context with a single Warehouse, this includes goods stored in the Stock Location of this Warehouse, or any of its children.\n"
+"stored in the Stock Location of the Warehouse of this Shop, or any of its children.\n"
+"Otherwise, this includes goods stored in any Stock Location with 'internal' type."
+msgstr ""
+"Trenutna količina proizvodov.\n"
+"V primeru, ko obstaja le ena skladiščna lokacija, vključuje blago, shranjeno "
+"na tej lokaciji ali v kateri koli od njenih podrejenih lokacij.\n"
+"V primeru, ko obstaja le eno skladišče, vključuje blago, shranjeno v tej "
+"lokaciji tega skladišča ali v kateri koli od njegovih podlokacij.\n"
+"Shranjeno v lokaciji te trgovine ali v kateri koli od njenih podlokacij.\n"
+"V nasprotnem primeru vključuje blago, shranjeno v kateri koli lokaciji tipa "
+"'interna'."
+
+#. module: sale_order_product_recommendation_product_sold_by_delivery_week
+#: model:ir.model.fields,field_description:sale_order_product_recommendation_product_sold_by_delivery_week.field_sale_order_recommendation_line__qty_available
+msgid "Qty. On Hand"
+msgstr "Kol. na voljo"
+
+#. module: sale_order_product_recommendation_product_sold_by_delivery_week
+#: model:ir.model,name:sale_order_product_recommendation_product_sold_by_delivery_week.model_sale_order_recommendation_line
+msgid "Recommended product for current sale order"
+msgstr "Priporočeni proizvod za trenutno odprt prodajni nalog"
+
+#. module: sale_order_product_recommendation_product_sold_by_delivery_week
+#: model:ir.model.fields,field_description:sale_order_product_recommendation_product_sold_by_delivery_week.field_sale_order_recommendation_line__weekly_sold_delivered_shown
+msgid "Weekly Sold"
+msgstr "Tedensko prodano"
