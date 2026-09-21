@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 ACSONE SA/NV
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template
+        id="report_saleorder_document"
+        inherit_id="sale.report_saleorder_document"
+    >
+        <div id="informations" position="after">
+            <div class="row mb-4" id="project">
+                <div t-if="doc.project_id" class="col">
+                    <strong>Project</strong>
+                    <div t-field="doc.project_id">Project 1</div>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>

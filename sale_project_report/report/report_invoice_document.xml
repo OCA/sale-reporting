@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 ACSONE SA/NV
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+        <div id="informations" position="after">
+            <div id="project_informations" class="row mb-4" t-if="o.project_ids">
+                <div class="col" t-if="o.project_ids" name="projects">
+                    <strong>Project(s)</strong>
+                    <div t-field="o.project_ids">SO123</div>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>
