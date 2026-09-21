@@ -1,0 +1,2 @@
+odoo-addon-sale_semaphore @ git+https://github.com/OCA/sale-workflow.git@refs/pull/4456/head#subdirectory=sale_semaphore
+odoo-addon-sale_report_delivered @ git+https://github.com/OCA/sale-reporting.git@refs/pull/387/head#subdirectory=sale_report_delivered
