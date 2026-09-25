@@ -7,30 +7,30 @@ msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-14 09:55+0000\n"
-"PO-Revision-Date: 2026-09-14 11:56+0200\n"
-"Last-Translator: Andrii Kompaniiets <andrii.kompaniiets@tecnativa.com>\n"
+"PO-Revision-Date: 2026-09-25 19:14+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: sales_team_invoiced_target_report
 #: model:ir.model.fields,field_description:sales_team_invoiced_target_report.field_crm_team__opportunities_count
 msgid "# Opportunities"
-msgstr ""
+msgstr "N° opportunità"
 
 #. module: sales_team_invoiced_target_report
 #: model:ir.model.fields,field_description:sales_team_invoiced_target_report.field_crm_team__opportunities_overdue_count
 msgid "# Overdue Opportunities"
-msgstr ""
+msgstr "N° opportunità in ritardo"
 
 #. module: sales_team_invoiced_target_report
 #: model:ir.model.fields,field_description:sales_team_invoiced_target_report.field_crm_team__quotations_amount
 msgid "Amount of quotations to invoice"
-msgstr ""
+msgstr "Numero di preventivi da fatturare"
 
 #. module: sales_team_invoiced_target_report
 #: model:ir.model,name:sales_team_invoiced_target_report.model_res_company
@@ -45,7 +45,7 @@ msgstr "Impostazioni configurazione"
 #. module: sales_team_invoiced_target_report
 #: model:ir.model.fields,field_description:sales_team_invoiced_target_report.field_crm_team__dashboard_graph_data
 msgid "Dashboard Graph Data"
-msgstr ""
+msgstr "Dati del grafico della dashboard"
 
 #. module: sales_team_invoiced_target_report
 #: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_report.sale_team_invoiced_config_settings_form_view
@@ -59,79 +59,79 @@ msgstr ""
 #: model:ir.model.fields,field_description:sales_team_invoiced_target_report.field_res_company__display_name
 #: model:ir.model.fields,field_description:sales_team_invoiced_target_report.field_res_config_settings__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #. module: sales_team_invoiced_target_report
 #: model:ir.model.fields,field_description:sales_team_invoiced_target_report.field_crm_team__id
 #: model:ir.model.fields,field_description:sales_team_invoiced_target_report.field_res_company__id
 #: model:ir.model.fields,field_description:sales_team_invoiced_target_report.field_res_config_settings__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: sales_team_invoiced_target_report
 #: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_report.crm_team_view_kanban_dashboard_reporting
 msgid "Invoicing"
-msgstr ""
+msgstr "Fatturazione"
 
 #. module: sales_team_invoiced_target_report
 #: model:ir.model.fields,field_description:sales_team_invoiced_target_report.field_crm_team__quotations_count
 msgid "Number of quotations to invoice"
-msgstr ""
+msgstr "Numero di preventivi da fatturare"
 
 #. module: sales_team_invoiced_target_report
 #: model:ir.model.fields,field_description:sales_team_invoiced_target_report.field_crm_team__sales_to_invoice_count
 msgid "Number of sales to invoice"
-msgstr ""
+msgstr "Numero di vendite da fatturare"
 
 #. module: sales_team_invoiced_target_report
 #: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_report.crm_team_view_kanban_dashboard_reporting
 msgid "Open Opportunities"
-msgstr ""
+msgstr "Opportunità aperte"
 
 #. module: sales_team_invoiced_target_report
 #: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_report.crm_team_view_kanban_dashboard_reporting
 msgid "Open Opportunity"
-msgstr ""
+msgstr "Opportunità aperta"
 
 #. module: sales_team_invoiced_target_report
 #: model:ir.model.fields,field_description:sales_team_invoiced_target_report.field_crm_team__opportunities_amount
 msgid "Opportunities Revenues"
-msgstr ""
+msgstr "Ricavi opportunità"
 
 #. module: sales_team_invoiced_target_report
 #: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_report.crm_team_view_kanban_dashboard_reporting
 msgid "Order to Invoice"
-msgstr ""
+msgstr "Ordine da fatturare"
 
 #. module: sales_team_invoiced_target_report
 #: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_report.crm_team_view_kanban_dashboard_reporting
 msgid "Orders to Invoice"
-msgstr ""
+msgstr "Ordini da fatturare"
 
 #. module: sales_team_invoiced_target_report
 #: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_report.crm_team_view_kanban_dashboard_reporting
 msgid "Overdue Opportunities"
-msgstr ""
+msgstr "Opportunità in ritardo"
 
 #. module: sales_team_invoiced_target_report
 #: model:ir.model.fields,field_description:sales_team_invoiced_target_report.field_crm_team__opportunities_overdue_amount
 msgid "Overdue Opportunities Revenues"
-msgstr ""
+msgstr "Ricavi opportunità in ritardo"
 
 #. module: sales_team_invoiced_target_report
 #: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_report.crm_team_view_kanban_dashboard_reporting
 msgid "Overdue Opportunity"
-msgstr ""
+msgstr "Opportunità in ritardo"
 
 #. module: sales_team_invoiced_target_report
 #: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_report.crm_team_view_kanban_dashboard_reporting
 msgid "Quotation"
-msgstr ""
+msgstr "Preventivo"
 
 #. module: sales_team_invoiced_target_report
 #: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_report.crm_team_view_kanban_dashboard_reporting
 msgid "Quotations"
-msgstr ""
+msgstr "Preventivi"
 
 #. module: sales_team_invoiced_target_report
 #: model:ir.model,name:sales_team_invoiced_target_report.model_crm_team
@@ -148,13 +148,13 @@ msgstr "Dominio fatturato team di vendita"
 #. odoo-python
 #: code:addons/sales_team_invoiced_target_report/model/crm_team.py:0
 msgid "Sales: Untaxed Total"
-msgstr ""
+msgstr "Vendite: totale imponibile"
 
 #. module: sales_team_invoiced_target_report
 #. odoo-python
 #: code:addons/sales_team_invoiced_target_report/model/crm_team.py:0
 msgid "Sample data"
-msgstr ""
+msgstr "Dati esempio"
 
 #. module: sales_team_invoiced_target_report
 #: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_report.sale_team_invoiced_config_settings_form_view
@@ -165,14 +165,14 @@ msgstr "Dominio fatturato team"
 #: model:ir.actions.act_window,name:sales_team_invoiced_target_report.crm_team_reporting_action
 #: model:ir.ui.menu,name:sales_team_invoiced_target_report.crm_team_reporting_menu
 msgid "Teams"
-msgstr ""
+msgstr "Team"
 
 #. module: sales_team_invoiced_target_report
 #: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_report.crm_team_view_kanban_dashboard_reporting
 msgid "Unassigned Lead"
-msgstr ""
+msgstr "Contatto non assegnato"
 
 #. module: sales_team_invoiced_target_report
 #: model_terms:ir.ui.view,arch_db:sales_team_invoiced_target_report.crm_team_view_kanban_dashboard_reporting
 msgid "Unassigned Leads"
-msgstr ""
+msgstr "Contatti nonassegnati"
