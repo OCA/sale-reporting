@@ -1,0 +1,2 @@
+Hide taxes column in the quotation document that is sent to the customer.
+When all quotation lines have the same tax group, the Taxes column is automatically hidden to avoid displaying redundant information and to improve document clarity.
