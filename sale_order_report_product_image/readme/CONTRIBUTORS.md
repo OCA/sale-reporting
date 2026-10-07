@@ -13,3 +13,5 @@
 - `Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>`_
 - [Komit](https://komit-consulting.com)
   - Hieu, Vo Minh Bao \<<hieu.vmb@komit-consulting.com>\>
+- [Niboo](https://www.niboo.com)
+  - Riccardo Accardi \<<rac@niboo.com>\>

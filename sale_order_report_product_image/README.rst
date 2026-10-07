@@ -102,6 +102,10 @@ Contributors
 
   - Hieu, Vo Minh Bao <hieu.vmb@komit-consulting.com>
 
+- `Niboo <https://www.niboo.com>`__
+
+  - Riccardo Accardi <rac@niboo.com>
+
 Maintainers
 -----------
 
