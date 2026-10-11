@@ -11,3 +11,7 @@ class ResConfigSettings(models.TransientModel):
         "res.currency",
         config_parameter="base_multicompany_reporting_currency.multicompany_reporting_currency",
     )
+    multicompany_reporting_amount = fields.Selection(
+        related="company_id.multicompany_reporting_amount",
+        readonly=False,
+    )
