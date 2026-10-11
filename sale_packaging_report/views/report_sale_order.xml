@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 Moduon Team S.L.
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0) -->
+<data>
+    <template
+        id="report_saleorder_document"
+        inherit_id="sale.report_saleorder_document"
+    >
+        <xpath expr="//td[@name='td_product_quantity']">
+            <div
+                t-if="line.product_uom_id and line.product_uom_id != line.product_id.uom_id"
+                class="text-secondary"
+                style="white-space: nowrap;"
+            >
+                <span t-field="line.product_uom_id" />:
+                <span t-field="line.product_uom_qty" />
+            </div>
+        </xpath>
+    </template>
+</data>
