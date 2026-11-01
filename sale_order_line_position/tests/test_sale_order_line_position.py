@@ -1,5 +1,7 @@
 # Copyright 2021 Camptocamp SA
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl)
+from lxml import etree
+
 from odoo.tests import TransactionCase
 
 
@@ -88,3 +90,32 @@ class TestSaleOrderLinePosition(TransactionCase):
         self.order.state = "sent"
         self.order.order_line[0].unlink()
         self.assertEqual(new_line.position, 3)
+
+    def test_view_skips_nested_list(self):
+        """A list nested in the line form keeps the position column out of it."""
+        form_view = self.env.ref("sale.view_order_form")
+        self.env["ir.ui.view"].create(
+            {
+                "name": "sale.order.form.nested.list",
+                "model": "sale.order",
+                "inherit_id": form_view.id,
+                "arch": """
+                    <xpath expr="//field[@name='order_line']/form/group"
+                           position="after">
+                        <field name="tax_id">
+                            <tree>
+                                <field name="sequence" widget="handle" />
+                                <field name="name" />
+                            </tree>
+                        </field>
+                    </xpath>
+                """,
+            }
+        )
+        arch = etree.fromstring(
+            self.env["sale.order"].get_view(form_view.id, "form")["arch"]
+        )
+        self.assertTrue(
+            arch.xpath("//field[@name='order_line']/tree/field[@name='position']")
+        )
+        self.assertFalse(arch.xpath("//field[@name='tax_id']//field[@name='position']"))
