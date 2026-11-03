@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template
+        id="report_saleorder_document"
+        inherit_id="sale.report_saleorder_document"
+        priority="999"
+    >
+        <xpath expr="//t[@t-set='display_taxes']" position="attributes">
+            <attribute name="t-value">
+                not hide_taxes_details
+                and doc.show_tax_column_in_report
+                and any(l._has_taxes() for l in lines_to_report)
+            </attribute>
+        </xpath>
+    </template>
+</odoo>
