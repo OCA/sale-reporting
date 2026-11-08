@@ -1,0 +1,28 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_report_delivered_partner_priority
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-06-22 16:42+0000\n"
+"Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
+"Language-Team: none\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 5.15.2\n"
+
+#. module: sale_report_delivered_partner_priority
+#: model:ir.model.fields,field_description:sale_report_delivered_partner_priority.field_sale_report_delivered__priority_id
+msgid "Priority"
+msgstr "Prioriteta"
+
+#. module: sale_report_delivered_partner_priority
+#: model:ir.model,name:sale_report_delivered_partner_priority.model_sale_report_delivered
+msgid "Sales Delivered Analysis Report"
+msgstr "Poročilo - analiza dobavljenih prodaj"
