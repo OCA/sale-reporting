@@ -1,0 +1,280 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_report_delivered
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2025-03-05 12:06+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2\n"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__nbr
+msgid "# of Lines"
+msgstr "N° di righe"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__amount_cost
+msgid "Amount cost"
+msgstr "Costo del valore"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__analytic_account_id
+msgid "Analytic Account"
+msgstr "Conto analitico"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__campaign_id
+msgid "Campaign"
+msgstr "Campagna"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields.selection,name:sale_report_delivered.selection__sale_report_delivered__state__cancel
+msgid "Cancelled"
+msgstr "Annullata"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__company_id
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
+msgid "Company"
+msgstr "Azienda"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__partner_id
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__country_id
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
+msgid "Customer Country"
+msgstr "Nazione cliente"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__commercial_partner_id
+msgid "Customer Entity"
+msgstr "Entità cliente"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__industry_id
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
+msgid "Customer Industry"
+msgstr "Settore cliente"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__date
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
+msgid "Date"
+msgstr "Data"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields.selection,name:sale_report_delivered.selection__sale_report_delivered__state__draft
+msgid "Draft Quotation"
+msgstr "Preventivo bozza"
+
+#. module: sale_report_delivered
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
+msgid "Extended Filters"
+msgstr "Filtri estesi"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__weight
+msgid "Gross Weight"
+msgstr "Peso lordo"
+
+#. module: sale_report_delivered
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
+msgid "Group By"
+msgstr "Raggruppa per"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__id
+msgid "ID"
+msgstr "ID"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__margin
+msgid "Margin delivered"
+msgstr "Margine consegnato"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__margin_percent
+msgid "Margin delivered(%)"
+msgstr "Margine consegnato (%)"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__medium_id
+msgid "Medium"
+msgstr "Medio"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__order_id
+msgid "Order"
+msgstr "Ordine"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__name
+msgid "Order Reference"
+msgstr "Riferimento ordine"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__picking_id
+msgid "Picking"
+msgstr "Prelievo"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__pricelist_id
+msgid "Pricelist"
+msgstr "Listino prezzi"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__product_tmpl_id
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
+msgid "Product"
+msgstr "Prodotto"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__categ_id
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
+msgid "Product Category"
+msgstr "Categoria prodotto"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__product_id
+msgid "Product Variant"
+msgstr "Variante prodotto"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__product_uom_qty
+msgid "Qty"
+msgstr "Q.tà"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields.selection,name:sale_report_delivered.selection__sale_report_delivered__state__sent
+msgid "Quotation Sent"
+msgstr "Preventivo inviato"
+
+#. module: sale_report_delivered
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
+msgid "Quotations"
+msgstr "Preventivi"
+
+#. module: sale_report_delivered
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_pivot
+msgid "Sales Analysis"
+msgstr "Analisi delle vendite"
+
+#. module: sale_report_delivered
+#: model:ir.actions.act_window,name:sale_report_delivered.action_sale_report_delivered
+msgid "Sales Analysis From Deliveries"
+msgstr "Analisi vendite dalle consegne"
+
+#. module: sale_report_delivered
+#: model:ir.model,name:sale_report_delivered.model_sale_report_delivered
+msgid "Sales Delivered Analysis Report"
+msgstr "Resoconto analisi vendite consegnate"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields.selection,name:sale_report_delivered.selection__sale_report_delivered__state__done
+msgid "Sales Done"
+msgstr "Vendita effettuata"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields.selection,name:sale_report_delivered.selection__sale_report_delivered__state__sale
+msgid "Sales Order"
+msgstr "Ordine di vendita"
+
+#. module: sale_report_delivered
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
+msgid "Sales Orders"
+msgstr "Ordini di vendita"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__team_id
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
+msgid "Sales Team"
+msgstr "Team di vendita"
+
+#. module: sale_report_delivered
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_graph
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
+msgid "Sales analysis from deliveries"
+msgstr "Analisi vendite dalle consegne"
+
+#. module: sale_report_delivered
+#: model:ir.ui.menu,name:sale_report_delivered.menu_report_sale_stock_delivery
+msgid "Sales from deliveries"
+msgstr "Vendite dalle consegne"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__user_id
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
+msgid "Salesperson"
+msgstr "Addetto vendite"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__user_from_partner_id
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
+msgid "Salesperson From Partner"
+msgstr "Venditore dal partner"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__source_id
+msgid "Source"
+msgstr "Origine"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__state
+#: model_terms:ir.ui.view,arch_db:sale_report_delivered.view_sale_report_delivered_search
+msgid "Status"
+msgstr "Stato"
+
+#. module: sale_report_delivered
+#: model_terms:ir.actions.act_window,help:sale_report_delivered.action_sale_report_delivered
+msgid ""
+"This report performs analysis on your sales orders from deliveries. Analysis "
+"check your sales revenues and sort it by different group criteria (salesman, "
+"partner, product, etc.) Use this report to perform analysis on sales not "
+"having invoiced yet. If you want to analyse your turnover, you should use "
+"the Invoice Analysis report in the Accounting application."
+msgstr ""
+"Questo resoconto effettua l'analisi sugli ordini di vendita dalle consegne. "
+"L'analisi controlla i ricavi delle vendite e li ordina per diversi gruppi di "
+"criteri (addetto vendita, partner, prodotto, ecc.). Utilizzare questo "
+"resoconto per effettuare analisi sulle vendite che non sono ancora state "
+"fatturate. Se si vuole analizzare il fatturato, si deve usare il resoconto "
+"analisi fatture nell'applicazione contabilità."
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__product_uom
+msgid "Unit of Measure"
+msgstr "Unità di misura"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__price_subtotal
+msgid "Untaxed total delivered"
+msgstr "Totale consegnato tasse escluse"
+
+#. module: sale_report_delivered
+#: model:ir.model.fields,field_description:sale_report_delivered.field_sale_report_delivered__volume
+msgid "Volume"
+msgstr "Volume"
