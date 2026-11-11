@@ -20,14 +20,17 @@ msgstr ""
 "Project-Id-Version: Odoo Server 15.5alpha1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-20 09:02+0000\n"
-"PO-Revision-Date: 2022-09-22 05:55+0000\n"
-"Last-Translator: Tadeusz Karpiński, 2023\n"
+"PO-Revision-Date: 2026-11-11 13:46+0000\n"
+"Last-Translator: leszekszczepkowski <leszekszczepkowski@gmail.com>\n"
 "Language-Team: Polish (https://app.transifex.com/odoo/teams/41243/pl/)\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: pl\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && "
+"(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
+"n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: sale_quotation_builder
 #: model_terms:ir.ui.view,arch_db:sale_quotation_builder.so_template
@@ -118,11 +121,12 @@ msgid ""
 "                                your references, your methodology or\n"
 "                                guarantees, your team, SLA, terms and conditions, etc."
 msgstr ""
-"Świetne szablony ofert znacząco\n"
-"                                <strong>poprawią Twój wskaźnik sukcesu</strong>. The\n"
-"                                Pierwsza sekcja dotyczy zazwyczaj Twojej firmy,\n"
-"                                twoich referencji, twojej metodologii lub\n"
-"                                gwarancji, twojego zespołu, umowy SLA, regulaminu itd."
+"Dobre szablony ofert wyraźnie\n"
+"                                <strong>zwiększają skuteczność sprzedaży</"
+"strong>. Pierwsza\n"
+"                                sekcja zwykle mówi o twojej firmie,\n"
+"                                referencjach, metodzie pracy albo\n"
+"                                gwarancjach, zespole, SLA, warunkach itd."
 
 #. module: sale_quotation_builder
 #: model_terms:sale.order.template,website_description:sale_quotation_builder.sale_order_template_default
@@ -132,10 +136,10 @@ msgid ""
 "                        template (from the Configuration menu), all future quotations will\n"
 "                        use this modified template."
 msgstr ""
-"Jeśli edytujesz ofertę z poziomu 'Podglądu' oferty, to\n"
-"aktualizujesz tylko tę ofertę. Jeśli edytujesz ofertę\n"
-"(z menu Konfiguracja), wszystkie przyszłe wyceny będą korzystały z tak zmodyfikowanego szablonu.\n"
-"będą korzystać z tego zmodyfikowanego szablonu."
+"Jeśli edytujesz ofertę z jej podglądu, zmieniasz\n"
+"                        tylko tę ofertę. Jeśli edytujesz szablon oferty\n"
+"                        (z menu Konfiguracja), wszystkie przyszłe oferty\n"
+"                        będą korzystać ze zmienionego szablonu."
 
 #. module: sale_quotation_builder
 #: model_terms:ir.ui.view,arch_db:sale_quotation_builder.brand_promotion
@@ -179,9 +183,9 @@ msgid ""
 "                                stand on; we build it with a relentless\n"
 "                                focus on fabric, performance and craftsmanship."
 msgstr ""
-"Jakość produktu jest fundamentem, na którym stoimy.\n"
-"Jakość produktu to fundament, na którym stoimy; budujemy ją dzięki nieustannemu\n"
-"koncentrując się na tkaninie, wydajności i rzemiośle."
+"Jakość produktu to fundament, na którym stoimy;\n"
+"                                budujemy ją, nieustannie dbając o materiał,\n"
+"                                wydajność i rzemiosło."
 
 #. module: sale_quotation_builder
 #: model_terms:ir.ui.view,arch_db:sale_quotation_builder.sale_order_portal_content_inherit_sale_quotation_builder
@@ -234,7 +238,7 @@ msgstr "Pozycja zamówienia sprzedaży"
 #. module: sale_quotation_builder
 #: model_terms:ir.ui.view,arch_db:sale_quotation_builder.so_template
 msgid "Terms &amp; Conditions"
-msgstr "Terminy i warunki"
+msgstr "Warunki i postanowienia"
 
 #. module: sale_quotation_builder
 #: model:ir.model.fields,help:sale_quotation_builder.field_product_product__quotation_only_description
@@ -260,10 +264,11 @@ msgid ""
 "                                application, using the menu: Configuration /\n"
 "                                Quotation Templates."
 msgstr ""
-"To jest <strong>przykładowy szablon oferty</strong>. Należy.\n"
-"dostosować go do własnych potrzeb z poziomu aplikacji <i>Sprzedaż</i>\n"
-"z poziomu aplikacji Sprzedaż, korzystając z menu: Konfiguracja /.\n"
-"Szablony ofert."
+"To jest <strong>przykładowy szablon oferty</strong>. Dostosuj go\n"
+"                                do własnych potrzeb w aplikacji <i>Sprzedaż</"
+"i>,\n"
+"                                w menu: Konfiguracja /\n"
+"                                Szablony ofert."
 
 #. module: sale_quotation_builder
 #: model_terms:ir.ui.view,arch_db:sale_quotation_builder.so_template
@@ -301,7 +306,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:sale_quotation_builder.field_sale_order_template_option__website_description
 #: model_terms:ir.ui.view,arch_db:sale_quotation_builder.sale_order_template_view_form_inherit_sale_quotation_builder
 msgid "Website Description"
-msgstr "Opis strony"
+msgstr "Opis na stronie internetowej"
 
 #. module: sale_quotation_builder
 #: model_terms:sale.order.template,website_description:sale_quotation_builder.sale_order_template_default
