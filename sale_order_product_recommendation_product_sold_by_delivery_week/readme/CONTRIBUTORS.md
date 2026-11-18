@@ -1,0 +1,4 @@
+- [Tecnativa](https://www.tecnativa.com):
+  - David Vidal
+  - David Bañón
+- Jairo Llopis ([Moduon](https://www.moduon.team))
