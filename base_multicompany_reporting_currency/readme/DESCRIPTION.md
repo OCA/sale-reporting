@@ -15,6 +15,8 @@ This module adds:
 - a system parameter to store the chosen multicompany reporting currency DB-wide
 - a mixin model to inherit for handling all basic operations - eg: automatically update
   the multicompany reporting currency on a model's records when the settings change
+- a company-specific setting to choose which amount (total or untaxed) should be used
+  for the multicompany reporting, for apps that report on documents with taxes
 
 Multicompany reporting currency field will be used in other dependent modules to
 compare amounts in different companies and documents.
