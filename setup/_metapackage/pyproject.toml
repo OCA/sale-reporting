@@ -1,0 +1,11 @@
+[project]
+name = "odoo-addons-oca-sale-reporting"
+version = "20.0.20261126.0"
+dependencies = [
+    "odoo-addon-sale_order_report_hide_tax==20.0.*",
+]
+classifiers=[
+    "Programming Language :: Python",
+    "Framework :: Odoo",
+    "Framework :: Odoo :: 20.0",
+]
